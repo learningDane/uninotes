@@ -4,7 +4,7 @@ piano di taglio
 [[Algoritmo di Riduzione del Gap Branch and Bound]] 
 [[Algoritmo di Riduzione del Gap tramite Piano di Taglio]] 
 # Trucchi
-### Calcolatrice
+### Calcolatrice ti-nspire cx cas 2
 `hessian(hfunc)` con hfunc quadratica: restituisce l'hessiana di f
 `eig(hfunc)` con hfunc funzione quadratica: restituisce gli autovalori della hessiana della f
 `grad(hfunc)` con hfunc quadratica restituisce il gradiente di f
@@ -15,27 +15,3 @@ piano di taglio
 1. è necessario scrivere i cammini aumentanti nell'ffek
 2. nel branch and bound NON scrivere le fogli "vuote"
 3. sempre meglio provare qualcosa e a malapena abbozzarlo che lasciare vuoto
-
-# Errori scritto 1
-1. non ho fatto piano di taglio
-2. ho disegnato la foglia di un insieme vuoto nel branch and bound
-3. non ho scritto quali sono i cammini aumentanti
-4. calcolo errato: calcolo di una f(x) 
-# Orale
-Modelli:
-PL
-- produzione
-- duale ausiliario
-PLI
-- assegnamento
-- trasporto
-- zaino
-- bin packing
-- TSP
-- localizzazione
-- copertura
-PLR
-- flusso su reti
-- potenziale su reti
-- flusso massimo
-- cammino di costo minimo

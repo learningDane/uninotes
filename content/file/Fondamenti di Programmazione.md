@@ -1,4 +1,5 @@
-#uni 
+#uni p0 fatta, p1 fatta, p2.78
+p1.123!!!
 Marco Cococcioni - CLion
 [[Introduzione alla Programmazione]] 
 [[Algoritmi]] 
