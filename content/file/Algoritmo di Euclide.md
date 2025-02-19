@@ -16,7 +16,11 @@ $\frac{r}{r_1}$, se $r_2=0$ mi fermo...
 
 ---
 ## Dimostrazione McD
-Dimostrazione che $$McD(a,\ b)=McD(b,\ r)$$Creo due [[Insiemi]]: 
+Dimostrazione che 
+$$
+McD(a,\ b)=McD(b,\ r)
+$$
+Creo due [[Insiemi]]: 
 $A=\{n\ tale\ che\ n|a\ e\ n|b \}$ `insieme dei divisori di a e b`
 $B=\{n\ tale\ che\ n|b\ e\ n|r \}$ `insieme dei divisori di b e r`
 Per dimostrare che gli McD dei due insiemi sono uguali devo dimostrare che gli insiemi stessi sono uguali, quindi devo dimostrare che:
@@ -43,7 +47,11 @@ $a=n*(b_1*q+r_1)$
 Segue che $n|a$.
 Di conseguenza i valori $n$ di $B$ dividono anche $a$ e $r$, di conseguenza appartengono anche a $A$.
 
-Segue che A è  contenuto di B e B è contenuto di A quindi $A=B$, allora: $$McD(a,\ b)=McD(b,\ r)$$C.V.D.
+Segue che A è  contenuto di B e B è contenuto di A quindi $A=B$, allora: 
+$$
+McD(a,\ b)=McD(b,\ r)
+$$
+C.V.D.
 
 ## Programma
 Questo programma commentato svolge questo procedimento, in C++:

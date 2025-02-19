@@ -354,20 +354,26 @@ scrivere una query che restituisca il codice fiscale dei pazienti che sono stati
 
 Scrivere una stored procedure che stampi la parcella media di una specializzazione specificata come parametro
 DROP PROCEDURE IF EXISTS parcella_media_spec; 
-DELIMITER $$ 
+DELIMITER 
+$$
+ 
 CREATE PROCEDURE parcella_media_spec(IN _specializzazione VARCHAR(100)) 
 	BEGIN 
 		SELECT AVG(M.Parcella) 
 		FROM Medico M 
 		WHERE M.Specializzazione = _specializzazione; 
-	END $$ 
+	END 
+$$
+ 
 DELIMITER ; 
 
 CALL parcella_media_spec(‘Ortopedia’);
 
 Scrivere una stored procedure che restituisca il numero di pazienti visitati da medici di una data specializzazione, ricevuta come parametro 
 DROP PROCEDURE IF EXISTS tot_pazienti_visitati_spec; 
-DELIMITER $$ 
+DELIMITER 
+$$
+ 
 CREATE PROCEDURE tot_pazienti_visitati_spec( IN _specializzazione VARCHAR(100), OUT totale_pazienti_ INT) 
 	BEGIN 
 		SELECT COUNT(DISTINCT V.Paziente) INTO totale_pazienti_ 
@@ -375,7 +381,9 @@ CREATE PROCEDURE tot_pazienti_visitati_spec( IN _specializzazione VARCHAR(100), 
 			INNER JOIN Medico M 
 			ON V.Medico = M.Matricola 
 		WHERE M.Specializzazione = _specializzazione; 
-	END $$ 
+	END 
+$$
+ 
 DELIMITER ; 
 
 CALL tot_pazienti_visitati_spec(‘Neurologia’, @quantiPazienti); 
@@ -384,7 +392,9 @@ SELECT @quantiPazienti;
 
 Scrivere una stored procedure che riceva come parametro un intero t e una specializzazione s e restituisca in uscita true se il numero di visite della specializzazione s nel mese in corso è superiore a t, false se è inferiore, e NULL se è uguale.
 DROP PROCEDURE IF EXISTS numero_visite;
-DELIMITER $$
+DELIMITER 
+$$
+
 CREATE PROCEDURE numero_visite(IN _minimovisite INT, IN _specializzazione VARCHAR, OUT maggiore BOOL)
 	BEGIN
 		DECLARE visite_mese_attuali INT DEFAULT 0;
@@ -400,14 +410,18 @@ CREATE PROCEDURE numero_visite(IN _minimovisite INT, IN _specializzazione VARCHA
 		ELSE
 			SET maggiore = FALSE;
 		END IF;
-	END $$
+	END 
+$$
+
 DELIMITER;
 
 CALL numero_visite(10, 'Otorinolaringoiatria',@controllo);
 
 Scrivere una stored procedure che restituisca la data in cui un paziente, il cui codice fiscale è passato come parametro, è stato visitato per la prima volta, e il nome e cognome del medico che lo ha visitato in tale circostanza. In caso di più medici, per semplicità, selezionarne uno.
 DROP PROCEDURE IF EXISTS prima_data_paziente;
-DELIMITER $$
+DELIMITER 
+$$
+
 CREATE PROCEDURE prima_data_paziente(IN _codicefiscale VARCHAR, OUT _nomemedico VARCHAR, OUT _cognomemedico VARCHAR, OUT _datavisita DATE)
 	BEGIN
 		SELECT MIN(visita.data) INTO dataPrimaVisita
@@ -421,7 +435,9 @@ CREATE PROCEDURE prima_data_paziente(IN _codicefiscale VARCHAR, OUT _nomemedico 
 		WHERE visita.data = dataPrimaVisita
 			and visita.paziente = _codicefiscale
 		LIMIT 1;
-	END $$
+	END 
+$$
+
 DELIMITER;
 ```
 ![[Pasted image 20240909094826.png]]

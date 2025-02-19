@@ -20,7 +20,7 @@ Argomenti
 [[Algoritmo delle Toppe]] 
 Parte 1: PL
 [[Problema di Programmazione Lineare (PL)]] 
-	[[Teorema Fondamentale dei Problemi PL]] scrivi dimostrazione
+	[[Teorema Fondamentale dei Problemi PL]] 
 	[[Teoria della Dualità]] 
 	[[Algoritmo del Simplesso]] 
 [[Problema di Produzione]] 

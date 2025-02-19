@@ -11,10 +11,18 @@ Adesso devo trovare l'arco uscente, in particolare l'arco uscente deve far parte
 	   2. $C=C^+\cup C^-$ dove $C^+$ sono gli archi concordi con il verso del ciclo, e $C^-$ quelli discordi.
 	   3. ___Regola di Update___:
 	      con $\theta \geq 0,\in N$ 
-	      $$x(\theta)=\begin{cases} \overline x_{ij} + \theta \quad(i,j)\in C^+ \\ \overline x_{ij}-\theta \quad (i,j) \in C^- 
+	      
+$$
+x(\theta)=\begin{cases} \overline x_{ij} + \theta \quad(i,j)\in C^+ \\ \overline x_{ij}-\theta \quad (i,j) \in C^- 
 	      \\ \overline x_{ij} \quad \quad \ \ \ (i,j) \notin C
-	      \end{cases}$$
-	    ___Teorema___: La funzione obiettivo, calcolata sul nuovo flusso, è uguale al costo precedente, più theta volte il costo dell'arco entrante: $$c^Tx(\theta)=c^T\overline x + \theta \cdot c_{ij}^π$$
+	      \end{cases}
+$$
+
+	    ___Teorema___: La funzione obiettivo, calcolata sul nuovo flusso, è uguale al costo precedente, più theta volte il costo dell'arco entrante: 
+$$
+c^Tx(\theta)=c^T\overline x + \theta \cdot c_{ij}^π
+$$
+
 3. Prendo $\theta = min\{\overline x_{ij} \} \quad (i,j)\in C$ 
    e il primo arco di cui prendo il valore è l'arco uscente ([[Regole Anticiclo di Blend]])
 ### Ammissibilità

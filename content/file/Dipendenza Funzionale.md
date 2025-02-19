@@ -38,10 +38,18 @@ E indichiamo con $F \vdash X \to Y$ il fatto che la FD $X \to Y$ sia derivabile 
 - ___Identità___:
   $\{ \} \vdash X \to X$ 
 # Chiusura di un insieme di attributi
-Dato uno schema $R(T,F)$ con $X \in T$, la chiusura di $X$ rispetto a $F$ è definita come: $$X_F^+=\{ A \in T |F \vdash X \to A \}$$
+Dato uno schema $R(T,F)$ con $X \in T$, la chiusura di $X$ rispetto a $F$ è definita come: 
+$$
+X_F^+=\{ A \in T |F \vdash X \to A \}
+$$
+
 Se non vi sono ambiguità per semplicità scriviamo $X^+$.
 ### Teorema della chiusura degli attributi
-$$F \vdash X \to Y \iff Y \in X^+$$
+
+$$
+F \vdash X \to Y \iff Y \in X^+
+$$
+
 # Correttezza e Completezza
 $RI$ è corretto se $F \vdash X \to Y \implies F \vDash X \to Y$ : applicando $RI$ ad un insieme di $F$ di FD si ottengono solo dipendenze logicamente implicate da $F$.
 $RI$ è completo se $F \vDash X \to Y \implies X \to Y$ : applicando $RI$ ad un insieme $F$ di FD si ottengono tutte le dipendenze logicamente implicate da $F$.
@@ -50,7 +58,11 @@ _Le regole di inferenza di Armstrong sono corrette e complete_.
 Questo teorema ci permette di scambiare $\vDash$ (soddisfa) con $\vdash$ (implica) ovunque, in particolare nella definizione di chiusura degli attributi.
 Si può dimostrare che le regole di inferenza di Armstrong sono __minimali__, cioè ignorandone anche solo una di esse, l'insieme di regole che rimane non è più completo.
 # Chiusura di un insieme di dipendenza funzionali
-Sia $F$ definito su $R(Z)$, la chiusura di $F$ è l'insieme $F^+$ di tutte le FD implicate da $F$: $$F^+= \{ X \to Y | F \implies X \to Y \}$$
+Sia $F$ definito su $R(Z)$, la chiusura di $F$ è l'insieme $F^+$ di tutte le FD implicate da $F$: 
+$$
+F^+= \{ X \to Y | F \implies X \to Y \}
+$$
+
 Dato un insieme $F$ definite su $R(Z)$, un'istanza $r$ di $R$ che soddisfa $F$ soddisfa anche le FD di $F^+$.
 # Calcolo di $F^+$ 
 per calcolare $F^+$ possiamo usare le regole di inferenza di Armstrong:

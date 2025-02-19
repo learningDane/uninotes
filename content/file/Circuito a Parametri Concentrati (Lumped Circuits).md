@@ -54,12 +54,20 @@ Non puoi mettere [[#Generatori di Corrente]] in serie a meno che non siano dei [
 ```
 
 La corrente totale ($i_{tot}(t)$) è rappresentata dalla somma algebrica di tutte le correnti presenti nel parallelo secondo la [[Prima Legge di Kirchkoff]] :
-$$i_{tot}(t)=i_1(t)+i_2(t)+...+i_n(t)$$
+
+$$
+i_{tot}(t)=i_1(t)+i_2(t)+...+i_n(t)
+$$
+
 # Tensione/Potenziale
 ## Definizione
 
 La Differenza di Potenziale è il lavoro che serve per spostare $q^{(+)}$ da A a B
-$$V_{ab}(t)=\frac{L_{ab}(t)}{q^{(+)}}=[\frac{w}{C}]=[V]$$
+
+$$
+V_{ab}(t)=\frac{L_{ab}(t)}{q^{(+)}}=[\frac{w}{C}]=[V]
+$$
+
 Forti parallelismi tra ***rete elettrica*** e ***rete idraulica***: le cariche vanno da Potenziale Maggiore a Potenziale Minore. 
 
 Se il circuito non ha "salti" di Potenziale allora serve una "pompa": il [[#Generatore di Tensione]]
@@ -102,7 +110,11 @@ Dei [[#Generatori di Tensione]] sono in *serie* se sono attraversati dalla stess
 \end{document}
 ```
 La $V_{eq}$ sarà data dalla somma algebrica di tutti i generatori nella serie:
-$$V_{eq}=V_{AB}=V_1+V_2+...+V_n$$
+
+$$
+V_{eq}=V_{AB}=V_1+V_2+...+V_n
+$$
+
 il segno di ogni singola V dipende dal verso della corrente e dal contrassegno su ognuno di essi:
 - se corrente concorde al contrassegno allora ***meno*** (riferimento [[#Associato]])
 - se corrente opposta al contrassegno allora ***più*** (riferimento [[#Non Associato]])
@@ -129,13 +141,25 @@ Non puoi mettere dei [[#Generatori di Tensione]] in *parallelo* a meno che non c
 ```
 
 Secondo la [[Seconda Legge di Kirchkoff]] la somma dei voltaggi calcolati su una maglia è uguale a 0:
-$$\sum^{n}_{I=1}V_i(t)=0$$
+
+$$
+\sum^{n}_{I=1}V_i(t)=0
+$$
+
 # Generatori Pilotati
 
 Possono essere di *tensione* o di *corrente* e vengono influenzati da altre correnti o tensioni moltiplicate per un certo valore:
 es.
-$$V_{BA}(t)= \alpha V(t)$$
-$$i_{BA}=\beta V(t)$$
+
+$$
+V_{BA}(t)= \alpha V(t)
+$$
+
+
+$$
+i_{BA}=\beta V(t)
+$$
+
 # Bipoli Elettrici
 
 |                  | Memoria | Energia                           | t Invariante                   |
@@ -146,9 +170,17 @@ $$i_{BA}=\beta V(t)$$
 ## Resistori
 
 "Rallenta" le cariche che passano al suo interno, quindi modifica la Differenza di Potenziale tra i due capi:
-$$V_R(t)=\ R\ *\ i_R(t)=\ [\frac {V} {A}]=[\ohm]$$
+
+$$
+V_R(t)=\ R\ *\ i_R(t)=\ [\frac {V} {A}]=[\ohm]
+$$
+
 La resistenza però dipende anche da fattori intrinsechi al resistore se non trascurati come la *lunghezza*, la *sezione*, la ***resistività*** $\rho$ = $[\ohm*m]$
-$$R = \rho \frac{l}{S}$$
+
+$$
+R = \rho \frac{l}{S}
+$$
+
 ### Resistenze in Serie
 
 Due o più [[#Resistori]] si dicono in *serie* se sono attraversati dalla stessa corrente:
@@ -184,9 +216,17 @@ Due o più [[#Resistori]] si dicono in *serie* se sono attraversati dalla stessa
 \end{document}
 ```
 La resistenza equivalente $R_{eq}$ si trova facendo la somma algebrica di tutte le resistenze della serie
-$$R_{eq}=R_1+R_2+. . .+R_n$$
+
+$$
+R_{eq}=R_1+R_2+. . .+R_n
+$$
+
 Quindi automaticamente la differenza di potenziale tra i nodi A e B diventa:
-$$V_{ab}(t)=R_{eq}\ * \ i_{ab}(t)$$
+
+$$
+V_{ab}(t)=R_{eq}\ * \ i_{ab}(t)
+$$
+
 
 ### Resistenze in Parallelo
 
@@ -239,9 +279,17 @@ Due o più [[#Resistori]] si dicono in *parallelo* se si trovano allo stesso [[#
 ```
 
 La resistenza equivalente $R_{eq}$ si trova facendo la somma algebrica delle ***conduttanze*** ($G=\frac{1}{R}$) di tutte le resistenze del parallelo
-$$\frac{1}{R_{eq}}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+...+\frac{1}{R_{n}}$$
+
+$$
+\frac{1}{R_{eq}}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+...+\frac{1}{R_{n}}
+$$
+
 viene da se che la corrente ($i_{eq}$) che scorre da A a B sarà:
-$$i_{eq}(t)=V_{AB}(t)*R_{eq}$$
+
+$$
+i_{eq}(t)=V_{AB}(t)*R_{eq}
+$$
+
 ### Resistenze a Triangolo
 
 Tre resistenze sono a *Triangolo* se a 2 a 2 condividono dei "braccetti"
@@ -285,7 +333,11 @@ Questa configurazione la posso trasformare, inserendo un nodo comune alle 3 al c
 \end{document}
 ```
 a questo punto se voglio sapere $R_x$ mi basterà fare
-$$R_X=\frac{R_{XY}\cdot R_{XZ}} {R_{XY}+R_{XZ}+R_{YZ}}$$
+
+$$
+R_X=\frac{R_{XY}\cdot R_{XZ}} {R_{XY}+R_{XZ}+R_{YZ}}
+$$
+
 Quando faccio queste equivalenze devo stare attento a non usare nodi importanti come potevano essere prima A e B che ti collegano al resto del circuito.
 ### Resistenze a Stella
 
@@ -330,4 +382,8 @@ la trasformazione definita prima è reversibile quindi da [[#Resistenze a Stella
 ```
 a questo punto se voglio conoscere $R_{xy}$ mi basterà fare
 
-$$R_{XY}=\frac{R_XR_Y+R_XR_Z+R_YR_Z}{R_Z}$$
+
+$$
+R_{XY}=\frac{R_XR_Y+R_XR_Z+R_YR_Z}{R_Z}
+$$
+
