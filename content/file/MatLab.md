@@ -30,7 +30,8 @@ $$
 A\cdot x≤b \\
 Aeq\cdot x=beq \\
 lb ≤ x ≤ub
-\end{cases}$$
+\end{cases}
+$$
 ```Matlab
 [x,fval,exitflag,output,lambda]=quadprog(h,f,a,b,aeq,beq,lb,ub,x0,options)
 ``` 
