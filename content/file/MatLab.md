@@ -24,7 +24,8 @@ $$\begin{cases} min \ c^T x \\ Ax \leq b \\ A_{eq} = b_{eq} \\ LB \leq x \leq UB
 dove `intcom` è la lista degli indici di variabili che devono essere intere.
 se per esempio ho 4 variabili e le voglio tutte intere: `int=[1 2 3 4]` oppure `int=[1;2;3;4]` 
 # Quadprog
-$$\begin{cases} 
+$$
+\begin{cases} 
 \min \frac{1}{2}x^THx+f^Tx \\
 A\cdot x≤b \\
 Aeq\cdot x=beq \\
