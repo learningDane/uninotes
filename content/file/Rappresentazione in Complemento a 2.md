@@ -8,8 +8,19 @@ $X=01...11 \implies x = 2^{(p-1)}-1$
 $X=10...00 \implies x = -2^{(p-1)}$ 
 $X = 11...11 \implies x = -1$ 
 Codifica:
-$$X = \begin{cases} x \ \ \ x \geq 0 \\ 2^N+1 \ \ \ x < 0 \end{cases}$$
+
+$$
+X = \begin{cases} x \ \ \ x \geq 0 \\ 2^N+1 \ \ \ x < 0 \end{cases}
+$$
+
 Decodifica:
-$$x = \begin{cases} X \ se \ MSB = 0 \\ - (\overline X + 1) \ se \ MSB = 1 \end{cases}$$
+
+$$
+x = \begin{cases} X \ se \ MSB = 0 \\ - (\overline X + 1) \ se \ MSB = 1 \end{cases}
+$$
+
 Intervallo di Rappresentabilità:
-$$[-2^{(N-1)}, \ (2^{(N-1)}-1)]$$
+
+$$
+[-2^{(N-1)}, \ (2^{(N-1)}-1)]
+$$

@@ -1,7 +1,9 @@
 #uni 
 Io ho fatto così:
 aggiungo la 21esima variabile, $x_{21}$, che non conto come oggetto
+
 $$
+
 \begin{cases} 
 \max \sum_{i=1}^{20}v_i\cdot x_i \quad \quad nb: \ esclusa \ x_{21} \ dalla \ sommatoria
 \\
@@ -11,7 +13,9 @@ $$
 \\
 x_i\in \{ 0,1\} \quad\forall i
 \end{cases}
+
 $$
+
 così $x_{21}$ può essere solo $0$ 0 $1$ e di conseguenza la somma delle $x$, ovvero il numero di oggetti che porto, può solo essere $3$ oppure $5$ 
 
 [[Ricerca Operativa]].

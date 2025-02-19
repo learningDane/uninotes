@@ -55,15 +55,23 @@ L'euristica fondamentale: selezioni e proiezioni il più presto possibile.
 Due espressioni sono equivalenti se producono lo stesso risultato (qualunque sia l'istanza attuale). I DBMS cercano di eseguire espressioni equivalenti ma meno costose.
 ___Push Selections Down___:
 	Riduce la dimensione del risultato intermedio e quindi il costo dell'operazione 
+
 $$
+
 \sigma(R_1 \bowtie R_2)\equiv R_1 \bowtie \sigma(R_2)
+
 $$
+
 
 ___Push Projections down___:
 	Riduce risultato intermedio 
+
 $$
+
 \pi(R_1\bowtie R_2)\equiv R_1 \bowtie \pi(R_2)
+
 $$
+
 
 # Relazioni Derivate
 Sono relazioni in funzione del contenuto di altre relazioni. 
@@ -80,15 +88,23 @@ Esempio di _vista_: $supervisione=\pi_{etc}(afferenza \bowtie direzione)$
   _per ogni impiegato trovare tutti i superiori_, in algebra relazionale l'operazione si simulerebbe con un numero di join __illimitato__.
 # Divisione
 Dati due insiemi di attributi disgiunti $X_1,X_2$, una relazione $r$ su $X_1 \cup X_2$ e una relazione $r_2$ su $X_2$, la ___divisione___ $r \div r_2$ è una relazione su $X_1$ che contiene le tuple ottenute come proiezione di tuple di $r$ che si combinano con tutte le tuple di $r_2$ per formare tuple di $r$: 
+
 $$
+
 r\div r_2= \{t_1 su X_1 | per \ ogni \ t_2 \in r_2 \ esiste \ t \in r\ con \ t[X_1] = t_1 \ e \ t[X_2]=t_2\}
+
 $$
+
 
 Quindi in parole povere restituisce solo i valori di un attributo di $r$ che hanno una tupla per ogni valori di un attributo di $r_2$. Ad Esempio $sedi \div uffici$ restituisce tutte le filiali che hanno tutti gli uffici.
 Questo è un operatore __derivato__ poiché può essere espresso come segue: 
+
 $$
+
 r\div r_2=\pi_{X_1}(r)-\pi_{X_1}((\pi_{X_1}(r) \times r_2)-r)
+
 $$
+
 
 # Simboli Katex Utili
 leftarrow: \leftarrow: $\leftarrow$ 

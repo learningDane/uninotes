@@ -2,9 +2,13 @@
 - il gradiente è il vettore composto dalle derivate parziali della funzione.
 - Teorema di Fermat: con $f \in C^1$, se $\nabla f(\overline x)=0$ allora $\overline x$ è punto di min/max locale.
 - L'Hessiana è la matrice composta dalle derivate parziali (derivate due volte) della funzione:
-  $$Hf(x)=\begin{bmatrix} \frac{\delta^2f(x)}{\delta x^2_1} \quad ... \quad \frac{\delta^2f(x)}{\delta x_1 \delta x_n} \\
+  
+$$
+Hf(x)=\begin{bmatrix} \frac{\delta^2f(x)}{\delta x^2_1} \quad ... \quad \frac{\delta^2f(x)}{\delta x_1 \delta x_n} \\
   ... \quad \quad \quad\quad ... \\
-					\frac{\delta^2 f(x)}{\delta x_2 \delta x_1 } \quad ... \quad \frac{\delta^2f(x)}{\delta x_n^2} \end{bmatrix}$$
+					\frac{\delta^2 f(x)}{\delta x_2 \delta x_1 } \quad ... \quad \frac{\delta^2f(x)}{\delta x_n^2} \end{bmatrix}
+$$
+
 	Per il Teorema di Schwartz l'Hessiana è simmetrica.
 - Sia $\overline x$ stazionario, se $Hf(\overline x) > 0$ allora $\overline x$ è minimo locale. $\implies$ se $\overline x$ è minimo locale, allora $Hf(\overline x) >0$ 
 - Una matrice è definita positiva ($> 0$) se $<Ax, x > > 0 \forall x$, è invece semidefinita positiva ($\geq 0$) se $<Ax,x> \geq 0 \forall x$ 
@@ -12,7 +16,11 @@
 - Teorema: le matrici simmetriche hanno autovalori Reali.
   quindi sulla Hessiana posso controllare $\det (H-\lambda I)=0, \quad \lambda > 0 ?$ 
 - Quindi in questo ordine ho questi insiemi (Diagramma di Venn): Punti stazionari ($\nabla f =0$) $\rightarrow$ $H≥0$ $\rightarrow$ minimi locali $\rightarrow$ $H > 0$, quindi come criterio di stop dobbiamo usare la condizione necessaria $H ≥ 0$ 
-- Teorema del calcolo della derivata direzionale: $$f'(\overline x, \overline d)=<\nabla f(\overline x),\overline d >$$
+- Teorema del calcolo della derivata direzionale: 
+$$
+f'(\overline x, \overline d)=<\nabla f(\overline x),\overline d >
+$$
+
 - __Forma quadratica___:
   $f(x)=x^T Qx+c^T x$ con $2Q=Hf$ 
   quindi se $f(x)=6x_1^2 +3x_1x_2 + 5x_2^2$ allora $Q=\begin{bmatrix} 6 \quad \frac{3}{2} \\ \frac{3}{2} \quad 5\end{bmatrix}$ e $H=\begin{bmatrix} 12 \quad 3 \\ 3 \quad 10 \end{bmatrix}$ 

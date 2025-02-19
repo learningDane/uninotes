@@ -1,20 +1,36 @@
 #uni 
 Un problema di programmazione lineare segue il seguente [[Modello Matematico]]:
-$$\begin{cases} min/max \ c^T \cdot x \\ Ax \leq b \\ Bx \geq d \\ Cx = e \\ se \ non \ cooperativo \ aggiungere \ x\in Z^n\end{cases}$$
+
+$$
+\begin{cases} min/max \ c^T \cdot x \\ Ax \leq b \\ Bx \geq d \\ Cx = e \\ se \ non \ cooperativo \ aggiungere \ x\in Z^n\end{cases}
+$$
+
 Ogni problema PL può essere portato nella seguente forma standard.
 
 >Un problema di Programmazione Lineare (PL) consiste nel trovare il massimo o il minimo di una funzione lineare soggetta ad un insieme finito di vincoli lineari di disuguaglianza o di uguaglianza.
 ### Forma Standard
 Una forma standard è un formato in cui possono essere portati TUTTI i problemi attraverso le trasformazioni equivalenti. Ciò si fa per semplicizzare oppure perché programmi come [[MatLab]] accettano solo alcuni formati standard.
 ###### Formato Primale Standard
-$$\begin{cases} max \ c^T \cdot x \\ Ax \leq b\end{cases}$$
+
+$$
+\begin{cases} max \ c^T \cdot x \\ Ax \leq b\end{cases}
+$$
+
 ###### Formato Duale Standard
-$$\begin{cases} min \ b^Ty \\ A^Ty=c \\ y\geq 0 \end{cases}$$
+
+$$
+\begin{cases} min \ b^Ty \\ A^Ty=c \\ y\geq 0 \end{cases}
+$$
+
 altro modo di scrivere il poliedro: $y^TA=c^T$ 
 una sol è ammissibile se ogni comp è $\geq0$
 una sol è degenere se almeno una $x_B = 0$ 
 ###### Formato Linprog Standard
-$$\begin{cases} min \ c^T x \\ Ax \leq b \\ A_{eq} = b_{eq} \\ LB \leq x \leq UB \end{cases}$$
+
+$$
+\begin{cases} min \ c^T x \\ Ax \leq b \\ A_{eq} = b_{eq} \\ LB \leq x \leq UB \end{cases}
+$$
+
 ##### Trasformazioni Equivalenti
 1. i $\geq$ diventano $\leq$
 2. i $=$ diventano un sistema $\begin{cases} \leq \\ \leq \end{cases}$ RADDOPPIO DEI VINCOLI

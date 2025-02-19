@@ -17,4 +17,7 @@ Un punto $\overline x$ del poliedro $P$ è ___vertice___ se e solo se è _soluzi
 Una soluzione di base si dice ___degenere___ quando è generata da più basi.
 SOLO in $R^2$ una soluzione degenere implica l'esistenza di un vincolo superfluo e quindi eliminabile.
 # Numero di Basi di un sistema
-Il numero di basi di un sistema di $m$ vincoli su $n$ variabili è dato da: $$num=\begin{pmatrix} m \\ n\end{pmatrix}=\frac{m!}{n!(m-n)!}$$
+Il numero di basi di un sistema di $m$ vincoli su $n$ variabili è dato da: 
+$$
+num=\begin{pmatrix} m \\ n\end{pmatrix}=\frac{m!}{n!(m-n)!}
+$$

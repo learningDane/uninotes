@@ -2,7 +2,11 @@
 Abbiamo già parlato della classe [[Problema di Programmazione Non Lineare Non Vincolato (PNLnV)]], ma questi problemi nella realtà non esistono (pressoché), parliamo quindi di questo stesso problema ma stavolta vincolato.
 # Dominio/Regione Ammissibile della PNL
 $f:D\subset R^n \to R$ 
-$$D=\{x\in R^n : g_1(x)≤0, \ ... \ , g_m(x) ≤ 0, \quad h_1(x)=0, \ ... \ ,h_p(x)=0\}$$con $g:R^n\to R^m, \quad g=(g_1, ...,g_m)$    e     $h:R^n\to R^p, \quad (h_1,...,h_p)$
+
+$$
+D=\{x\in R^n : g_1(x)≤0, \ ... \ , g_m(x) ≤ 0, \quad h_1(x)=0, \ ... \ ,h_p(x)=0\}
+$$
+con $g:R^n\to R^m, \quad g=(g_1, ...,g_m)$    e     $h:R^n\to R^p, \quad (h_1,...,h_p)$
 ### Possibili Proprietà dei Domini della PNL
 1. ___Chiuso___: la frontiera appartiene all'insieme
 2. ___Limitato___: rientra dentro una palla

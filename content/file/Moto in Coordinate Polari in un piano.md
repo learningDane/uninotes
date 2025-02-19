@@ -21,9 +21,15 @@ La velocità è tangente alla traiettoria.
 L'accelerazione ha solo componente radiale.
 Periodo $T= \frac{2 \pi}{|ω|}$ 
 Frequenza $V=\frac{1}{|T|}$ 
-$$\begin{matrix} \vec ω=\frac{d\vec \theta}{dt} = (0,0,\theta) = \hat z \dot \theta \implies ω_z= ω =\frac{d\theta}{dt}=\dot \theta \implies [\vec ω ]= rad/s \\ \vec V = \frac{d \vec R}{dt} = \frac{d}{dt}(R\cos \theta, R \sin \theta, 0 ) = \vec ω \land \vec R= \hat \theta \dot \theta R= ωR\hat \theta \\ \vec a = -ω^2R\hat R=-\frac{V^2}{R}\hat R\end{matrix}$$
+
+$$
+\begin{matrix} \vec ω=\frac{d\vec \theta}{dt} = (0,0,\theta) = \hat z \dot \theta \implies ω_z= ω =\frac{d\theta}{dt}=\dot \theta \implies [\vec ω ]= rad/s \\ \vec V = \frac{d \vec R}{dt} = \frac{d}{dt}(R\cos \theta, R \sin \theta, 0 ) = \vec ω \land \vec R= \hat \theta \dot \theta R= ωR\hat \theta \\ \vec a = -ω^2R\hat R=-\frac{V^2}{R}\hat R\end{matrix}
+$$
+
 # Riepilogo
-$$\begin{array} {|c|c|} \hline grandezza & circolare \ uniforme & circolare \ n/f & generale
+
+$$
+\begin{array} {|c|c|} \hline grandezza & circolare \ uniforme & circolare \ n/f & generale
 \\ \hline
 \theta & 
 lienare \ con \ t &
@@ -79,4 +85,6 @@ a_\theta &
 aR &
 aR+2ω\dot R
 \\ \hline
-\end{array}$$
+\end{array}
+$$
+

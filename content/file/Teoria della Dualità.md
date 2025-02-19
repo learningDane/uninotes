@@ -1,5 +1,9 @@
 #uni 
-Dato un [[Problema di Programmazione Lineare (PL)]] in [[Problema di Programmazione Lineare (PL)#Formato Primale Standard]] ne individuiamo il suo ___complementare duale___: $$(P)\begin{cases} max \ c^T \cdot x \\ Ax \leq b \end{cases} \to (D)\begin{cases} min \ b^T \cdot y \\ A^Ty = c \\ y \geq 0\end{cases}$$
+Dato un [[Problema di Programmazione Lineare (PL)]] in [[Problema di Programmazione Lineare (PL)#Formato Primale Standard]] ne individuiamo il suo ___complementare duale___: 
+$$
+(P)\begin{cases} max \ c^T \cdot x \\ Ax \leq b \end{cases} \to (D)\begin{cases} min \ b^T \cdot y \\ A^Ty = c \\ y \geq 0\end{cases}
+$$
+
 Questa è una operazione di dualità, trovare il duale di un primale; Inoltre il duale di un duale è il suo primale!! 
 # Teorema della Dualità Forte / degli Scarti Complementari
 Sia $(P)$ un problema PL con Duale (D), se $x,y$ sono soluzioni ammissibili di $(P),(D)$ e inoltre:

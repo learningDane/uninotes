@@ -11,10 +11,18 @@ _Teorema_:
 Nota bene: la precedente definizione non richiede che gli schemi $R_i$ siano disgiunti.
 Affinché uno schema e la sua decomposizione siano equivalenti quest'ultima deve _preservare i dati_ e _preservare le dipendenze_.
 ##### Teorema della perdita dei dati
-Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, allora per ogni istanza di $r$ di $R(T)$ si ha $$r \in π_{T_1}(r) \bowtie ... \bowtie π_{T_k}$$
+Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, allora per ogni istanza di $r$ di $R(T)$ si ha 
+$$
+r \in π_{T_1}(r) \bowtie ... \bowtie π_{T_k}
+$$
+
 Questo teorema ci dice che perdiamo informazione quando, ricostruendo una relazione, otteniamo più tuple che nella relazione originaria.
 ### Decomposizione che preserva dati
-Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, $\rho$ è una decomposizione che __preserva i dati__ se e solo se, per ogni relazione $r$ che soddisfa $R(T,F)$, si ha: $$r = π_{T_1}(r) \bowtie ... \bowtie π_{T_k}$$
+Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, $\rho$ è una decomposizione che __preserva i dati__ se e solo se, per ogni relazione $r$ che soddisfa $R(T,F)$, si ha: 
+$$
+r = π_{T_1}(r) \bowtie ... \bowtie π_{T_k}
+$$
+
 Questa definizione ci dice che in una decomposizione che preserva dati, ogni istanza valida $r$ della relazione di partenza deve essere uguale al join naturale delle sue proiezioni sui vari $T_i$.
 ##### Teorema di preservazione dei dati
 Sia $\rho = \{R_1(T_1),R_2(T_2)\}$ una decomposizione di $R(T,F)$, essa preserva i dati se e solo se $T_1 \cap T_2 \to T_1 \in F^+$ oppure $T_1 \cap T_2 \to T_2 \in F^+$.
@@ -29,7 +37,11 @@ Per fare ciò è necessario:
 	- per ogni $X \to Y \in F$ calcoliamo $X_G^+$ e verifichiamo se $Y \in X_F^+$ 
 	- di nuovo invertendo $F$ e $G$.
 # Proiezione di un insieme di dipendenze
-Dato $R(T,F)$ e $T_i \in T$, la proiezione dell'insieme di FD $F$ sull'insieme di attributi $T_i$ è $$π_{T_i}(F)=\{ X \to Y \in F^+ | X,Y \in T_i\}$$
+Dato $R(T,F)$ e $T_i \in T$, la proiezione dell'insieme di FD $F$ sull'insieme di attributi $T_i$ è 
+$$
+π_{T_i}(F)=\{ X \to Y \in F^+ | X,Y \in T_i\}
+$$
+
 ### Algoritmo per il calcolo di $π_{T_i}(F)$ 
 _Input_: $R(T,F)$ e $T_i \in T$ 
 _Output_: $π_{T_I}(F)$ 

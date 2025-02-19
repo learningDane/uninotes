@@ -9,11 +9,15 @@ Associo ad ogni utente/quartiere il numero di clienti/abitanti stimati, con un d
 - $D$ = distanza di copertura
 - $z_j$ = $1$ se il nodo $j$ è coperto dalla soluzione scelta
 - $a_{ij}$ = $1$ se il nodo $j$ è coperto da $i$ 
-$$\begin{cases} 
+
+$$
+\begin{cases} 
 \max \sum_j h_j \cdot z_j \\
 \sum_i a_{ij} \cdot x_i ≥ z_i \quad \forall j \quad (1)\\
 \sum_i x_i =p \\ 
 x_{ij} \in \{0,1\} \\ 
 z_j \in \{0,1\}
-\end{cases}$$
+\end{cases}
+$$
+
 $(1)$: per coprire il nodo $j$, dobbiamo aprire il servizio in almeno una postazione che lo copra.

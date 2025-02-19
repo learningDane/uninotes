@@ -4,9 +4,13 @@ Per capire la derivata prendiamo in esempio una funzione di equazione di secondo
 Ci basta fare il rapporto tra la differenza dell'ordinata dei due punti e la differenza dell'ascissa degli stessi: $m=\frac{f(x_1) - f(x_0)}{x_1 - x_0}$. Ora riscriviamo $x_1 = x_0 + h$ e sostituiamo: $m=\frac{f(x_0 + h) - f(x_0)}{h}$. Ora più rimpiccioliamo $h$, la differenza tra le due ascisse, e più ci avviciniamo al coefficiente angolare effettivo nel punto $x_0$. 
 # Rapporto Incrementale
 Ora per ottenere definitivamente il coefficiente angolare adoperiamo l'operazione di limite, ed ecco che arriviamo a quello che si chiama rapporto incrementale: 
+
 $$
+
 \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}
+
 $$
+
 Se questo limite esiste ed è finito, la funzione $f(x)$ si dice ___derivabile___ nel punto $x_0$ e il valore che assume il limite si dice ___derivata di $f$ in $x_0$___.
 # Notazioni
 $f'(x_0)$ (___Notazione di Lagrange___) oppure $\dot{f}(x_0)$ (___Notazione di Newton___) oppure $\frac{d^n}{dx^n} f(x_0)$ (___Notazione di Leibniz___) oppure $D^n f(x_0)$ (___Notazione di Eulero___). 
@@ -37,28 +41,44 @@ se $f(x) = \log_ax$ allora $f'(x) = \frac{1}{x}\log_ae=\frac{1}{x}\frac{1}{\ln a
 # Regole di Derivazione
 ### Somma
 
+
 $$
+
 D \ f(x) + g(x) = f'(x) + g'(x)
+
 $$
+
 
 ### Prodotto
 
+
 $$
+
 D\ f(x)g(x) = f'(x)g(x)+f(x)g'(x)
+
 $$
+
 
 ### Rapporto
 
+
 $$
+
 D\frac{f(x)}{g(x)}=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}
+
 $$
+
 
 # Tabella delle Derivate
 
+
 $$
+
 \begin{array} {|c|c|} \hline Derivate
 \\ \hline
 D\ k = 0 & 
 D\ \sin x = \cos x \\ \hline
 \end{array}
+
 $$
+

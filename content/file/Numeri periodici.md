@@ -6,5 +6,9 @@ Esistono due tipi di numeri periodici:
 - numeri periodici misti
 	numeri in cui la parte decimale è suddivisa in antiperiodo e periodo.
 
-La periodicità è indicata con il segno: $$0,12\overline{345}$$
+La periodicità è indicata con il segno: 
+$$
+0,12\overline{345}
+$$
+
 Dove la parte contrassegnata è il periodo.

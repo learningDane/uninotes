@@ -1,5 +1,9 @@
 #uni 
-Numero di equazioni: $$n_{eq}=n_{rami}-(n_{nodi}-1) -n_{gen. \ corrente \ ind.})$$
+Numero di equazioni: 
+$$
+n_{eq}=n_{rami}-(n_{nodi}-1) -n_{gen. \ corrente \ ind.})
+$$
+
 1. Disegno una maglia passante per un generatore indipendente di corrente
 2. Elimino il ramo sul quale sta il generatore
 3. Se ci sono altri generatori indip. di corrente torno al punto `1`

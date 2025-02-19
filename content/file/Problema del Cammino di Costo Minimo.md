@@ -6,10 +6,14 @@ Questo è il problema di trovare (se esistono) i cammini orientati di costo mini
 Tale problema si può formulare come un problema di flusso di costo minimo ponendo le capacità superiori $u_{ij} = +∞$ ed i bilanci dei nodi tutti uguali ad $1$ tranne quello del nodo $r\quad$:   $b=\begin{cases} 1 \quad se \ i≠ r \\ -n+1 \quad se \ i=r\end{cases}$ 
 # Modello
 Identico a quello del [[Problema di Programmazione Matematica a Reti non Capacitate (PLRnC)]].
-$$\begin{cases} 
+
+$$
+\begin{cases} 
 \min \sum_{(i,j)\in A}c_{ij} \cdot x_{ij} \\
 \sum_i x_{ij} - \sum_i x_{ji} = b_j \quad \forall j \quad  b=\begin{cases} 1 \quad se \ i≠ r \\ -n+1 \quad se \ i=r\end{cases}\\
 x_{ij}\in N \quad \forall(i,j)\in A
-\end{cases}$$
+\end{cases}
+$$
+
 # Risoluzione
 La soluzione di questa classe di problemi è molto facile in quando necessita solamente dell'applicazione dell'[[Algoritmo di Dijkstra]]. 

@@ -8,8 +8,12 @@ $I$: insieme delle possibili postazioni
 $x_i=\begin{cases} 1 \quad servizio \ posizionato \ in \ i \\ 0 \quad altrimenti \end{cases}$ 
 - minimizzare il numero di ambulanze
 - vincoli: tutti gli utenti devono essere  raggiunti in al più {target}.
-$$\begin{cases}
+
+$$
+\begin{cases}
 \min \sum_i x_i \\
 \sum_i a_{ij} \cdot x_i ≥ 1 \quad \forall j \\ 
 x_i \in \{0,1\}
-\end{cases}$$
+\end{cases}
+$$
+

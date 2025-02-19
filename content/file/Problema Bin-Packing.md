@@ -7,12 +7,16 @@ $n$ oggetti, $m$ contenitori
 Variabili:
 - $x_{ij}=(j \ è \ dentro \ i) \quad ? \quad 1 : 0$  
 - $y_i=(i \ è \ usato)\quad ? \quad 1:0$ 
-$$\begin{cases} \min \sum_{i=1}^my_i
+
+$$
+\begin{cases} \min \sum_{i=1}^my_i
 \\ \sum_{i=1}^mx_{ij}=1 \quad \quad \forall j\in[i;n]
 \\ \sum_{j=1}^np_jx_{ij}\leq Cy_i \quad \forall i\in[i;m]
 \\ x_{ij}\in \{ 0,1\}
 \\ y_i\in \{ 0,1\}
-\end{cases}$$
+\end{cases}
+$$
+
 $A$ è di dimensioni: $(n+m)\times(n\cdot m+m)$ 
 # Risoluzione
 Essendo questo un problema di PLI, troviamo una $V_S$, una $V_I$, e applichiamo un algoritmo di riduzione del gap.
@@ -33,7 +37,11 @@ _decreasing = ordinare oggetti per peso decrescente_
    prendo un oggetto, lo metto nel bin con minore capienza rimanente, se non entra, in quello dopo
    ripeto: riordino i bin, metto un oggetto, riordino ecc
 ### Vi
-La valutazione inferiore di questo problema è particolarmente semplice, è l'approssimazione per eccesso del valore associato alla soluzione del rilassato continuo del problema: $$V_I=\left \lceil \frac{\sum_{j=1}^np_j}{C}\right\rceil$$
+La valutazione inferiore di questo problema è particolarmente semplice, è l'approssimazione per eccesso del valore associato alla soluzione del rilassato continuo del problema: 
+$$
+V_I=\left \lceil \frac{\sum_{j=1}^np_j}{C}\right\rceil
+$$
+
 # Comando Matlab
 Bisogna usare [[MatLab#Intlinprog]], la difficoltà è scrivere $b$ poiché è in funzione di un'altra variabile, le $y$.
 Semplicemente porto le b, che sono $Py_i$, a sinistra dell'uguale, come fossero una ulteriore $x_{ij}$ 

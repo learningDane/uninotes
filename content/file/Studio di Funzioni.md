@@ -21,13 +21,33 @@ L'asintoto è obliquo se $\lim_{x \to \pm \infty} = \pm \infty$ e $q$ e $k$ sono
 - $q=\lim_{x \to \infty} f(x) - mx$ 
   se anche $q$ è finito allora l'asintoto obliquo esiste e ne abbiamo trovato l'equazione.
 # Punti di Non Derivabilità
-Una funzione è derivabile in punto $x_0$ se $$f'_-(x_0)=f'_+(x_0) = L \in R$$
+Una funzione è derivabile in punto $x_0$ se 
+$$
+f'_-(x_0)=f'_+(x_0) = L \in R
+$$
+
 ### Flesso a Tangente Verticale
-$$f'_-(x_0)=f'_+(x_0) = \pm \infty$$
+
+$$
+f'_-(x_0)=f'_+(x_0) = \pm \infty
+$$
+
 ### Cuspide
-$$f'_-(x_0) = \pm \infty  \ e \ f'_+(x_0) =  \infty \ di \ segno \ opposto$$
+
+$$
+f'_-(x_0) = \pm \infty  \ e \ f'_+(x_0) =  \infty \ di \ segno \ opposto
+$$
+
 ### Punto Angoloso
-$$f'_-(x_0)\neq f'_+(x_0) \neq \pm \infty$$E l'angolo compreso è: $$\tan \alpha = \frac{f'_-(x_0)-f'_+(x_0)}{1+ f'_-(x_0) \cdot f'_+(x_0)}$$
+
+$$
+f'_-(x_0)\neq f'_+(x_0) \neq \pm \infty
+$$
+E l'angolo compreso è: 
+$$
+\tan \alpha = \frac{f'_-(x_0)-f'_+(x_0)}{1+ f'_-(x_0) \cdot f'_+(x_0)}
+$$
+
 # Derivata I, Massimi e Minimi
 Per studiare massimi e minimi di una funzione si studia il suo andamento attraverso la [[Derivata]] Prima. Se la Derivata è positiva la funzione sale, se è negativa scende. Nei punti in cui $f'(x_0) = 0$ abbiamo dei punti di massimo e minimo, ne possiamo trovare altri agli estremi degli insiemi che formano il dominio.
 # Derivata II, Concavità
@@ -35,8 +55,20 @@ Quando la Derivata Seconda è positiva, la derivata prima sale e quindi si ha un
 ###### Punti di Flesso
 Nelle radici della funzione derivata Seconda di una Funzione troviamo i ___Punti di Flesso___, che possono essere ascendenti, discendenti, orizzontali, verticali oppure obliqui:
 ### Flesso Orizzontale
-$$f'(x_0) = f''(x_0) = 0$$
+
+$$
+f'(x_0) = f''(x_0) = 0
+$$
+
 ### Flesso Obliquo
-$$f''(x_0) + 0 ; \ f'(x_0) \neq 0$$
+
+$$
+f''(x_0) + 0 ; \ f'(x_0) \neq 0
+$$
+
 ### Flesso Verticale
-$$f''(x_0) \nexists \ ; \ f'_-(x_0)=f'_+(x_0)= \pm \infty$$ 
+
+$$
+f''(x_0) \nexists \ ; \ f'_-(x_0)=f'_+(x_0)= \pm \infty
+$$
+ 

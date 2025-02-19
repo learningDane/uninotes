@@ -1,7 +1,23 @@
 #uni 
-$$\Delta x=x(t_2)-x(t_1)$$con $t_2>t_1$ 
-_Velocità media_: $$v_m=\frac{\Delta x}{\Delta t} [m/s]$$
-_Legge Oraria_: $$x(t)=x_0+vt$$_Dimostrazione che la velocità è la derivata della posizione_: $$v(t)=\frac{x(t+h)-x(t)}{h}$$
+
+$$
+\Delta x=x(t_2)-x(t_1)
+$$
+con $t_2>t_1$ 
+_Velocità media_: 
+$$
+v_m=\frac{\Delta x}{\Delta t} [m/s]
+$$
+
+_Legge Oraria_: 
+$$
+x(t)=x_0+vt
+$$
+_Dimostrazione che la velocità è la derivata della posizione_: 
+$$
+v(t)=\frac{x(t+h)-x(t)}{h}
+$$
+
 
 ```functionplot
 ---

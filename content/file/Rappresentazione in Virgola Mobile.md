@@ -4,10 +4,22 @@ notazione scientifica: $r = \pm m \cdot \beta^e$
 Rappresentazione di un binario:
 	- La mantissa con parte intera è costituita da un solo bit di valore 1
 	- La rappresentazione è una tripla costituita da tre numeri naturali
-$$r \iff R = ( s,\ E,\ F)$$La rappresentazione R è costituita da 3 naturali, $s,E,F$ dove:
+
+$$
+r \iff R = ( s,\ E,\ F)
+$$
+La rappresentazione R è costituita da 3 naturali, $s,E,F$ dove:
 	$s$ = codifica del segno (1 bit)
 	$F$ = codifica della parte frazionaria della mantissa su $G$ bit
-	$E$ = codifica dell'esponente su $K$ bit $$R = ( s,\ E,\ F)$$$$r = (s==0)?[+(1+f)\cdot due^e]:[-(1+f)\cdot due^e]$$$f = F/2^g$ è la parte frazionaria della mantissa ($m=1+f=1+F/2^G$) 
+	$E$ = codifica dell'esponente su $K$ bit 
+$$
+R = ( s,\ E,\ F)
+$$
+
+$$
+r = (s==0)?[+(1+f)\cdot due^e]:[-(1+f)\cdot due^e]
+$$
+$f = F/2^g$ è la parte frazionaria della mantissa ($m=1+f=1+F/2^G$) 
 	$e = +E-(2^{K-1} - 1)$ è l'esponente rappresentato dal numero naturale $E$ ([[Rappresentazione con Bias dei Numeri Naturali]]) 
 	Conseguenza dell'uno _implicito_: lo _zero_ non è rappresentabile!
 ___Half Precision___: 16 bit, K = 5 e G = 10; $max = 0.11111.1111111111 = 2^{17}$; $min = 1.11111.1111111111$;

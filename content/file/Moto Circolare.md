@@ -1,5 +1,13 @@
 #uni 
-Un punto ache si muove di moto circolare uniforme di velocità $v$ necessita di una accelerazione centripeta: $$a_c=\frac{v^2}{r}$$Questa accelerazione è sempre perpendicolare a $\vec v$. Questa accelerazione deve essere fornita da una forza, ___Forza Radiale___ $F_r$: $$\sum F_r=ma_c=m\frac{v^2}{r}$$
+Un punto ache si muove di moto circolare uniforme di velocità $v$ necessita di una accelerazione centripeta: 
+$$
+a_c=\frac{v^2}{r}
+$$
+Questa accelerazione è sempre perpendicolare a $\vec v$. Questa accelerazione deve essere fornita da una forza, ___Forza Radiale___ $F_r$: 
+$$
+\sum F_r=ma_c=m\frac{v^2}{r}
+$$
+
 Se scomponiamo velocità e accelerazione in parte tangenziale e parte radiale, capiamo che $a_{tangenziale}$ dipende dalla variazione del modulo della velocità $\vec v$, mentre $a_{radiale}$ dipende dalla variazione del vettore della velocità.
 	$\vec a = \sqrt{\vec a_r^2 + \vec a_t^2}$ 
 	$|\vec a_t|= \frac{d|\vec v|}{dt}$ 
@@ -22,4 +30,7 @@ La velocità è tangente alla traiettoria.
 L'accelerazione ha solo componente radiale.
 Periodo $T= \frac{2 \pi}{|w|}$ 
 Frequenza $V=\frac{1}{|T|}$ 
-$$\begin{matrix} \vec w=\frac{d\vec \theta}{dt} = (0,0,\theta) = \hat z \dot \theta \implies w_z= w =\frac{d\theta}{dt}=\dot \theta \implies [\vec w ]= rad/s \\ \vec V = \frac{d \vec R}{dt} = \frac{d}{dt}(R\cos \theta, R \sin \theta, 0 ) = \vec w \land \vec R= \hat \theta \dot \theta R= wR\hat \theta \\ \vec a = -w^2R\hat R=-\frac{V^2}{R}\hat R\end{matrix}$$
+
+$$
+\begin{matrix} \vec w=\frac{d\vec \theta}{dt} = (0,0,\theta) = \hat z \dot \theta \implies w_z= w =\frac{d\theta}{dt}=\dot \theta \implies [\vec w ]= rad/s \\ \vec V = \frac{d \vec R}{dt} = \frac{d}{dt}(R\cos \theta, R \sin \theta, 0 ) = \vec w \land \vec R= \hat \theta \dot \theta R= wR\hat \theta \\ \vec a = -w^2R\hat R=-\frac{V^2}{R}\hat R\end{matrix}
+$$

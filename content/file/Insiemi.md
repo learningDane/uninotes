@@ -30,25 +30,69 @@ Ma se $M_1$ deve essere più grande di tutti gli elementi di $A$ deve essere anc
 ### Le operazioni
 Le operazioni con gli insiemi sono le seguenti:
 ##### Unione
-indicato con il simbolo: $$\land$$
-$$A\land B=tutti\ gli\ oggetti\ di\ A\ e\ di\ B$$
+indicato con il simbolo: 
+$$
+\land
+$$
+
+
+$$
+A\land B=tutti\ gli\ oggetti\ di\ A\ e\ di\ B
+$$
+
 
 ##### Intersezione
-indicata con il simbolo: $$\lor$$
-$$A\lor B = tutti\ gli\ oggetti\ sia\ in\ A\ che\ in\ B$$
+indicata con il simbolo: 
+$$
+\lor
+$$
+
+
+$$
+A\lor B = tutti\ gli\ oggetti\ sia\ in\ A\ che\ in\ B
+$$
+
 ##### Prodotto Cartesiano
-Indicato con il simbolo: $$\times$$$$A \times B = \{(a,b) \ t.c.\ a \in A, b \in B\}$$
+Indicato con il simbolo: 
+$$
+\times
+$$
+
+$$
+A \times B = \{(a,b) \ t.c.\ a \in A, b \in B\}
+$$
+
 Il prodotto cartesiano tra due insiemi è un insieme composto tra coppie ordinate di argomenti contenuti uno in A ed uno in B.
 
 ##### Sottoinsieme
-Indicato con il simbolo: $$\subseteq$$$$A\subseteq B\implies \forall x \in A, x \in B $$
+Indicato con il simbolo: 
+$$
+\subseteq
+$$
+
+$$
+A\subseteq B\implies \forall x \in A, x \in B 
+$$
+
 	Dire che A è un sottoinsieme di B vuol dire che ogni elemento di A è anche un elemento di B.
 
 # Punti Interni, Esterni e di Frontiera
-Un _punto interno_ è un punto per il quale esiste almeno un intorno interamente contenuto nell'insieme. Definizione: $x_0 \in A$ , $x_0$ è un punto interno di $A$ se $$\exists \epsilon>0 \ t.c. \ B(x_0,\epsilon) \subset A$$
-Un _punto esterno_ è un punto per il quale esiste almeno un intorno completamente contenuto nel complementare dell'insieme. Definizione: $x_0$ è esterno ad $A$ se $$\exists \epsilon >0 : B(x_0,\epsilon)\cap A = \emptyset$$
+Un _punto interno_ è un punto per il quale esiste almeno un intorno interamente contenuto nell'insieme. Definizione: $x_0 \in A$ , $x_0$ è un punto interno di $A$ se 
+$$
+\exists \epsilon>0 \ t.c. \ B(x_0,\epsilon) \subset A
+$$
+
+Un _punto esterno_ è un punto per il quale esiste almeno un intorno completamente contenuto nel complementare dell'insieme. Definizione: $x_0$ è esterno ad $A$ se 
+$$
+\exists \epsilon >0 : B(x_0,\epsilon)\cap A = \emptyset
+$$
+
 Un _punto di frontiera_ è un punto sia interno che esterno.
-Definizione: $x_0$ è un punto di Frontiera di $A$ se $$\forall \epsilon > 0 :\exists y_1\in A, \ \exists y_2 \in A^C : y_1,y_2 \in B(x_0, \epsilon)$$
+Definizione: $x_0$ è un punto di Frontiera di $A$ se 
+$$
+\forall \epsilon > 0 :\exists y_1\in A, \ \exists y_2 \in A^C : y_1,y_2 \in B(x_0, \epsilon)
+$$
+
 ### Diversi tipi di insiemi:
 ##### N: i numeri naturali
 	numeri interi positivi
@@ -67,4 +111,8 @@ Per comodità si può rappresentare un numero $r\in R$ con $n$ cifre decimali:
 $[r]_n$: troncatura del numero $r$ con $n$ cifre decimali
 ### Cardinalità 
 Indicata con il simbolo # :
-$$\#(A)=n \in N \implies \exists \ f\ bigettiva\ t.c.\ f: A \to \{ 1,\ 2,\ 3,\ ...\ ,\ n\}$$ A è finito se: $\exists \ n \in N\ t.c.\ \#A=n$ 
+
+$$
+\#(A)=n \in N \implies \exists \ f\ bigettiva\ t.c.\ f: A \to \{ 1,\ 2,\ 3,\ ...\ ,\ n\}
+$$
+ A è finito se: $\exists \ n \in N\ t.c.\ \#A=n$ 

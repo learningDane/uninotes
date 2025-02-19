@@ -2,7 +2,15 @@
 Una successione numerica è una funzione che associa ad ogni numero naturale n un numero reale r.
 Sono indicate con $f_n$ dove $n\in N$.
 Una successione si dice limitata se: $\exists M > 0 \ t.c. \ |a_n| < M, \ \forall n \ in N$
-Il [[Limiti]] della successione è dato da: $$\forall \epsilon > 0 \exists n_0 \ in N \ con \ n_0 > 0 \ t.c. \ \forall n>n_0 \ risulta \ |a_n - a | < \epsilon$$$$lim_{n \to \infty} a_n = a$$
+Il [[Limiti]] della successione è dato da: 
+$$
+\forall \epsilon > 0 \exists n_0 \ in N \ con \ n_0 > 0 \ t.c. \ \forall n>n_0 \ risulta \ |a_n - a | < \epsilon
+$$
+
+$$
+lim_{n \to \infty} a_n = a
+$$
+
 ### Successioni monotone
 Una Successione è detta _monotona crescente_ se $\forall n \in N \ : \ a_n < a_{n+1}$
 Una Successione è invece detta _monotona non decrescente (o crescente in senso lato)_ se $\forall n \in N \ : \ a_n \leq a_{n+1}$ 

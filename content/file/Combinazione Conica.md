@@ -3,9 +3,13 @@
 Dati $x^1,...,x^k \in R^n$
 Un punto $y$ si dice combinazione conica di $x^1,...,x^k$ se $\exists \lambda _i \geq 0, i = 1,...,k$ 
 tale che 
+
 $$
+
 y = \sum_{i=1} ^k \lambda _ix^i
+
 $$
+
 
 L'insieme di tutte le possibili combinazioni coniche
 

@@ -298,12 +298,16 @@ Sono supportate a partire dalla versione 5.0 di MySQL.
 Scrivere una stored procedure che restituisca le specializzazioni mediche offerte dalla clinica:
 ```MySQL
 DROP PROCEDURE IF EXISTS mostra_specializzazioni; 
-DELIMITER $$ 
+DELIMITER 
+$$
+ 
 CREATE PROCEDURE mostra_specializzazioni( ) 
 	BEGIN 
 		SELECT DISTINCT Specializzazione 
 		FROM Medico; 
-	END $$ 
+	END 
+$$
+ 
 DELIMITER ;
 
 per chiamarla poi:
@@ -347,13 +351,17 @@ Scrivere una stored procedure che stampi la parcella media di una specializzazio
 
 DROP PROCEDURE IF EXISTS parcella_media_spec;
 
-DELIMITER $$
+DELIMITER 
+$$
+
 CREATE PROCEDURE parcella_media_spec(IN _specializzazione VARCHAR(100))
 	BEGIN
 		SELECT AVG(medico.parcella)
 		FROM medico
 		WHERE medico.specializzazione = _specializzazione;
-	END $$
+	END 
+$$
+
 DELIMITER;
 
 CALL parcella_media_spec('ortopedia');    |-> chiamata
@@ -364,7 +372,9 @@ Un parametro in uscita può essere modificato per assumere il valore del risulta
 Scrivere una stored procedure che restituisca il numero di pazienti visitati da medici di una data specializzazione, ricevuta come parametro
 
 DROP PROCEDURE IF EXISTS tot_pazienti_visitati_spec;
-DELIMITER $$
+DELIMITER 
+$$
+
 CREATE PROCEDURE tot_pazienti_visitati_spec(
 		IN _specializzazione VARCHAR(100),
 		OUT totale_pazienti_ INT)
@@ -374,7 +384,9 @@ CREATE PROCEDURE tot_pazienti_visitati_spec(
 			inner join medico
 			on visita.medico = medico.matricola
 		where medico.specializzazione = _specializzazione;
-	END $$
+	END 
+$$
+
 DELIMITER;
 
 CALL tot_pazienti_visitati_spec('neurologia', @quantipazienti);

@@ -26,10 +26,18 @@ Date le funzioni $g$ ed $f$, la funzione composta $g \circ f$ associa ad ogni $x
 In generale $g \circ f \neq f \circ g$ .
 # Tipi di Funzioni
 ###### __iniettiva__
-$$\forall a_1,a_2 \in A\ \ t.c.\ \ a_1\neq a_2 \implies f(a_1) \neq f(a_2)$$
+
+$$
+\forall a_1,a_2 \in A\ \ t.c.\ \ a_1\neq a_2 \implies f(a_1) \neq f(a_2)
+$$
+
 A ogni elemento di $B$, $f$ lega al più un elemento di $A$.
 ##### __suriettiva__ o invertibile
-$$\forall \ b \in B,\ \exists \ a \in A,\ t.c.\ f(a)=b$$
+
+$$
+\forall \ b \in B,\ \exists \ a \in A,\ t.c.\ f(a)=b
+$$
+
 a ogni elemento di $B$ è associato almeno un elemento di $A$.
 ##### __biunivoca__ o bicettiva 
 Una funzione sia iniettiva che suriettiva, lega ad ogni elemento di $A$ uno ed uno solo elemento di $B$ e ad ogni elemento di $B$ uno ed uno solo elemento di $A$.
@@ -53,13 +61,25 @@ Una funzione periodica non può essere iniettiva.
 Se una funzione è periodica di periodo $T_1$, allora $f(kx)$ è periodica di periodo $T= \frac{T_1}{k}$ .
 
 # Funzioni a tratti
-Una funzione è detta definita a tratti se per tratti diversi di dominio ha relazioni diverse. $$f(x) = \begin{cases} \frac{x}{2} \ se\ n\ è\ pari \\ 1\ se\ è\ dispari\end{cases} $$
+Una funzione è detta definita a tratti se per tratti diversi di dominio ha relazioni diverse. 
+$$
+f(x) = \begin{cases} \frac{x}{2} \ se\ n\ è\ pari \\ 1\ se\ è\ dispari\end{cases} 
+$$
+
 
 # Successioni
 Una successione numerica è una funzione che associa ad ogni numero naturale n un numero reale r.
 Sono indicate con $f_n$ dove $n\in N$.
 Una successione si dice limitata se: $\exists M > 0 \ t.c. \ |a_n| < M, \ \forall n \ in N$
-Il [[Limiti]] della successione è dato da: $$\forall \epsilon > 0 \exists n_0 \ in N \ con \ n_0 > 0 \ t.c. \ \forall n>n_0 \ risulta \ |a_n - a | < \epsilon$$$$lim_{n \to \infty} a_n = a$$
+Il [[Limiti]] della successione è dato da: 
+$$
+\forall \epsilon > 0 \exists n_0 \ in N \ con \ n_0 > 0 \ t.c. \ \forall n>n_0 \ risulta \ |a_n - a | < \epsilon
+$$
+
+$$
+lim_{n \to \infty} a_n = a
+$$
+
 ### Successioni monotone
 Una Successione è detta _monotona crescente_ se $\forall n \in N \ : \ a_n < a_{n+1}$
 Una Successione è invece detta _monotona non decrescente (o crescente in senso lato)_ se $\forall n \in N \ : \ a_n \leq a_{n+1}$ 
@@ -85,7 +105,11 @@ Ogni Successione Monotona limitata ammette come limite l'estremo, superiore o in
 # Permutazione
 Sia $A$ un insieme, una permutazione di $A$ è una funzione $f$ biunivoca tale che $f: A \to A$.
 # Funzione crescente
-Una funzione è crescente se: $$\forall x_1\ e\ x_2\  \in D\ t.c.\ x_1<x_2\ \implies f(x_1) \leq f(x_2)$$
+Una funzione è crescente se: 
+$$
+\forall x_1\ e\ x_2\  \in D\ t.c.\ x_1<x_2\ \implies f(x_1) \leq f(x_2)
+$$
+
 È invece ___strettamente crescente___ se risulta che $f(x_1)\ <\  f(x_2)$.
 
 ##### Dimostrazione esempio

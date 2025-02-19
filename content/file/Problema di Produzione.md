@@ -17,6 +17,10 @@ Creiamo la funzione obiettivo:
 | Finiture B   | -   | 30h  | 105h |
 Applichiamo il modello matematico di Programmazione Lineare:
 Questo è il nostro $Ax \leq b$: 
-$$\begin{pmatrix} 30 \ 20\\ 10 \ 20\\ 10 \ 0\\ 0 \ 30\\ -1 \ 0 \\ 0 \ -1 \end{pmatrix} \cdot \begin{pmatrix}x_A \\ x_B \end{pmatrix} \leq \begin{pmatrix} 120 \\ 80\\ 62\\ 105\\ 0\\ 0\end{pmatrix}$$
+
+$$
+\begin{pmatrix} 30 \ 20\\ 10 \ 20\\ 10 \ 0\\ 0 \ 30\\ -1 \ 0 \\ 0 \ -1 \end{pmatrix} \cdot \begin{pmatrix}x_A \\ x_B \end{pmatrix} \leq \begin{pmatrix} 120 \\ 80\\ 62\\ 105\\ 0\\ 0\end{pmatrix}
+$$
+
 troviamo questi l'intersezione di questi semipiani ed abbiamo trovato la [[Regione Ammissibile]].
 Adesso non resta che trovare il massimo della funzione $max \ c^T \cdot x$, che in questo caso è: $max \ 8,4\cdot x_A + 11,2 \cdot x_B$ 

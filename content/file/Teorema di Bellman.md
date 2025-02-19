@@ -17,4 +17,8 @@
 - $C^π_{ij} \leq 0 : (i,j)\in U$
   ovvero costi ridotti di archi $\in U$ (non di base) $\leq 0$ 
 # Costo Ridotto
-Definito il ___costo ridotto relativo ad un arco___: $$C^π_{ij}=c_{ij}+π_i - π_j$$ 
+Definito il ___costo ridotto relativo ad un arco___: 
+$$
+C^π_{ij}=c_{ij}+π_i - π_j
+$$
+ 

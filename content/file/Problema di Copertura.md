@@ -9,11 +9,15 @@ Dobbiamo minimizzare i costi, la somma dei costi di apertura delle postazioni.
 - $c_i$ = costo di aprire servizio in $i$ 
 - $D$ = distanza massima per considerare domanda coperta da servizio
 - minimizzare i costi
-$$\begin{cases}
+
+$$
+\begin{cases}
 \min \sum_i c_i \cdot x_i \\
 \sum_i a_{ij} \cdot x_i ≥ 1 \quad \forall j \quad a_{ij}=(d_{ij} ≤D)\ ?\  1:0 \\ 
 x_i \in \{0,1\}
-\end{cases}$$
+\end{cases}
+$$
+
 # Regole di Riduzione di una Matrice a Priori
 1. una riga di tutti $0$ vuol dire [[Regione Ammissibile]] vuota, quindi non si può presentare
 2. una colonna di tutti $0$ possiamo toglierla

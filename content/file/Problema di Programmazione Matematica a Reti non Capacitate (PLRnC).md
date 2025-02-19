@@ -63,7 +63,11 @@ La matrice $E$ è la [[#Matrice di Incidenza della Rete]] meno una riga a caso, 
 Quindi ha dimensione $n-1 \times m$ 
 Con $T$ indico Base, con $L$ indico non di Base (sta per _lower bound_ del flusso).
 È in [[Problema di Programmazione Lineare (PL)#Formato Duale Standard]].
-$$\begin{cases} min \quad c^Tx \\ E \ x=b \\ x \geq 0\end{cases}$$
+
+$$
+\begin{cases} min \quad c^Tx \\ E \ x=b \\ x \geq 0\end{cases}
+$$
+
 # Tecnica per Costruzione di Soluzione associata a Base
 Prendo una Base, ovvero un albero di copertura (prendo $n-1$ archi)
 Pongo a $0$ le variabili non di base $x_L$.
@@ -85,5 +89,9 @@ Per controllare se una soluzione è di base, deve avere almeno $m-(n-1)$ zeri, c
 # Considerazioni sul Modello Multiobiettivo
 Se cerchiamo di risolvere un problema con più di un obiettivo, potendo noi risolvere solo problemi con un obiettivo, trasformiamo tutti gli obiettivi meno che uno in vincoli, e li aggiungiamo al modello.
 Esempio con due obiettivi:
-$$\begin{cases} min \quad c^Tx \\ E\cdot x=b \\ c^T\cdot x\leq C \\ x \geq 0 \end{cases}$$
+
+$$
+\begin{cases} min \quad c^Tx \\ E\cdot x=b \\ c^T\cdot x\leq C \\ x \geq 0 \end{cases}
+$$
+
 questa aggiunta di vincoli però rende la matrice $E$ non più una [[#Matrice di Incidenza della Rete]] e quindi perdiamo la validità del [[Teorema di Interezza]].
