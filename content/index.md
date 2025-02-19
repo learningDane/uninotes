@@ -1,6 +1,7 @@
 ---
 title: Benvenuti nei miei Appunti!
 ---
+Le Materie di Ingegneria Informatica: [[Index Ingegneria Informatica]] 
 Questi sono appunti presi tramite [Obsidian](https://obsidian.md), durante la mia triennale in Ingegneria Informatica a Pisa.  
 Alcune materie non sono state completamente documentate (vd. Reti Logiche) e pertanto ne scoraggio l'uso integrale.
 Sentitevi liberi nel caso di queste materie di usufruirne solo in parte per argomenti che magari ho comunque documentato bene ovviamente!
