@@ -23,6 +23,7 @@ $x^{k+1}=x^k+t_kd^k$ , calcolo $d^k=-\nabla f(x^k)$ e calcolo $t_k=argmin_{t≥0
 con $\Phi(t)=f(x^k+t_kd^k)$ 
 ### Metodo del gradiente a Passo costante
 per MAX
+
 $$\begin{matrix}
 d^k=\nabla f(x^k)
 \\
@@ -36,5 +37,6 @@ d^k=H\cdot f(x^k)^-1\cdot\nabla f(x^k)
 t_k=1
 \end{matrix}
 $$
+
 ### Teorema del metodo del Gradiente
 La successione del gradiente con ricerca esatta, o termina in un numero finito di passo in un punto stazionario, oppure i suoi punti di accumulazione sono punti stazionari.
