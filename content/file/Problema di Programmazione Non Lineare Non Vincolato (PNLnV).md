@@ -36,15 +36,12 @@ con $\Phi(t)=f(x^k+t_kd^k)$
 ### Metodo del gradiente a Passo costante
 per MAX
 
-
 $$
-
 \begin{matrix}
 d^k=\nabla f(x^k)
 \\
 0≤t_k≤\frac{2}{L} \quad con \ L≥|\frac{∂^2f}{∂x_1x_2}|
 \end{matrix}
-
 $$
 
 ### Metodo di Newton
@@ -58,7 +55,6 @@ t_k=1
 \end{matrix}
 
 $$
-
 
 ### Teorema del metodo del Gradiente
 La successione del gradiente con ricerca esatta, o termina in un numero finito di passo in un punto stazionario, oppure i suoi punti di accumulazione sono punti stazionari.

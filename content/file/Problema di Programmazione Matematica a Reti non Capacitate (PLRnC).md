@@ -1,7 +1,6 @@
 #uni 
 Questo è un problema di programmazione lineare reale/intero.
 Su questa famiglia di problemi vale il [[Teorema di Interezza]], e poiché il [[Problema di Trasporto]] ne è sottoinsieme vale anche su questa classe.
-Vale il [[Teorema Astratto di Equivalenza tra PL e PLI]].
 Si risolve con il simplesso duale, ma per sua natura possiamo semplificare molto l'algoritmo, applicandone una versione particolare apposita: [[Algoritmo del Simplesso su Reti]]. 
 Si fa utilizzo dei Nodi. 
 - $|N|=n$ 

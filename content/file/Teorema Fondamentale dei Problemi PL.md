@@ -18,3 +18,5 @@ Quindi tolti questi 3 casi patologici:
 	2. poliedro senza vertici
 	3. poliedro illimitato
 	Allora almeno un vertice è soluzione ottima.
+# Dimostrazione
+copia da quaderno

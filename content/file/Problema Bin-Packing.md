@@ -1,7 +1,7 @@
 #uni 
 Questo è un [[Problema di Programmazione Lineare Intera (PLI)]].
 Ho un numero di oggetti di cui conosco il peso e ho un indeterminato numero di contenitori (Bin) di cui conosco la capienza.
-Trovare l'assegnamento che porti all'utilizzo del minor numero possibile di contenitori
+Trovare l'assegnamento che porti all'utilizzo del minor numero possibile di contenitori.
 # Modello
 $n$ oggetti, $m$ contenitori
 Variabili:

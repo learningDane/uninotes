@@ -6,7 +6,7 @@ Argomenti
 [[Introduzione alla Ricerca Operativa]] 
 Parte 1: PL
 [[Problema di Programmazione Lineare (PL)]] 
-	[[Teorema Fondamentale dei Problemi PL]] 
+	[[Teorema Fondamentale dei Problemi PL]] scrivi dimostrazione
 	[[Teoria della Dualità]] 
 	[[Algoritmo del Simplesso]] 
 [[Problema di Produzione]] 
@@ -24,7 +24,6 @@ Parte 2: PLI
 [[Problema di Localizzazione]] 
 [[Problema di Copertura]] 
 [[Problema di Massima Copertura]] 
-	[[Teorema di Gomery]] 
 	[[Algoritmo di Riduzione del Gap tramite Piano di Taglio]] 
 	[[Algoritmo di Riduzione del Gap Branch and Bound]] 
 Parte 3: PLR
@@ -56,7 +55,7 @@ Note:
 [[Poliedro]] 
 [[Combinazione Convessa]] 
 [[Combinazione Conica]] 
-[[Vertice]] 
+[[vertice]] 
 [[Teorema di Rappresentazione dei Poliedri (di Weyl)]]  
 [[MatLab]] 
 [[Regole Anticiclo di Blend]] 

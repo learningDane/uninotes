@@ -38,14 +38,12 @@ se per esempio ho 4 variabili e le voglio tutte intere: `int=[1 2 3 4]` oppure `
 # Quadprog
 
 $$
-
 \begin{cases} 
 \min \frac{1}{2}x^THx+f^Tx \\
 A\cdot x≤b \\
 Aeq\cdot x=beq \\
 lb ≤ x ≤ub
 \end{cases}
-
 $$
 
 ```Matlab

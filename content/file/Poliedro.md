@@ -6,7 +6,7 @@ $$
 P={Ax \leq b}
 $$
 
-Un poliedro puo essere rappresentato secondo il [[Teorema di Rappresentazione dei Poliedri (di Weyl)]], come unioni di vertici ([[Vertice]]) e vettori o come [[Sistema Lineare]].
+Un poliedro puo essere rappresentato secondo il [[Teorema di Rappresentazione dei Poliedri (di Weyl)]], come unioni di vertici ([[vertice]]) e vettori o come [[Sistema Lineare]].
 $A \in R^{m\times n}$ 
 $b\in R^m$ 
 $(m \geq n)$ 

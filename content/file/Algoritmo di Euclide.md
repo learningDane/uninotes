@@ -17,13 +17,9 @@ $\frac{r}{r_1}$, se $r_2=0$ mi fermo...
 ---
 ## Dimostrazione McD
 Dimostrazione che 
-
 $$
-
 McD(a,\ b)=McD(b,\ r)
-
 $$
-
 Creo due [[Insiemi]]: 
 $A=\{n\ tale\ che\ n|a\ e\ n|b \}$ `insieme dei divisori di a e b`
 $B=\{n\ tale\ che\ n|b\ e\ n|r \}$ `insieme dei divisori di b e r`
@@ -52,13 +48,9 @@ Segue che $n|a$.
 Di conseguenza i valori $n$ di $B$ dividono anche $a$ e $r$, di conseguenza appartengono anche a $A$.
 
 Segue che A è  contenuto di B e B è contenuto di A quindi $A=B$, allora: 
-
 $$
-
 McD(a,\ b)=McD(b,\ r)
-
 $$
-
 C.V.D.
 
 ## Programma

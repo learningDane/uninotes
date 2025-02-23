@@ -29,7 +29,7 @@ $$
 - $V_I$: Risolvo il rilassato continuo $\begin{cases} min \quad c^T\cdot x \\ Ax\geq \vec e \\ 0 \leq x \leq 1 \end{cases}$ e arrotondo per eccesso essendo un problema di minimo
 - $V_S$: la S.A.
   1. senza costi: (caso particolare dell'algoritmo con costi) saturiamo progressivamente, apriamo postazioni con più quartieri forniti, cancello la colonna della postazione e cancello le righe servite, vediamo cosa rimane e ripetiamo
-  2. con i costi: [[Algoritmo Chvatal]] 
+  2. con i costi: [[Algoritmo di Chvatal]] 
 - Algoritmo di riduzione del gap: [[Algoritmo di Riduzione del Gap tramite Piano di Taglio]]. 
 # Esempio
 Per esempio dobbiamo fornire le ambulanze, il tempo di arrivo di una ambulanza deve essere minore di 20 minuti.

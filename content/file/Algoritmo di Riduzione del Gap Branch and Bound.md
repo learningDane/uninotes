@@ -4,10 +4,10 @@ Si fonda sul concetto di [[Albero di Enumerazione Totale]].
 È possibile applicarlo a qualsiasi [[Problema di Programmazione Lineare Intera (PLI)]], basta che abbia una $V_I$ ed una $V_S$ facilmente calcolabili.
 # Algoritmo
 Parto con $V_i$ come _valore corrente_.
-Tramite la regola di taglio:
+Tramite le regole di taglio:
 Taglio un ramo e scopro se tra le soluzioni sotto quel ramo ce ne è una migliore del _valore corrente_, in caso contrario taglio via quel ramo e quindi nego la variabile di quel ramo.
 Se invece trovo un valore migliore, lo tengo come _valore corrente_, taglio il ramo e fisso la variabile di quel ramo.
-___Tagliare___: visita implicita del sottoalbero.
+___Tagliare___: visita implicita del sottoalbero, ovvero ho tutte le informazioni che mi servono su tutte le foglie del sottoalbero.
 Questo algoritmo finisce quando ho fatto una ___visita implicita___ per ogni ramo.
 ### Regole di Taglio (Branch)
 ##### minimo (TSP)

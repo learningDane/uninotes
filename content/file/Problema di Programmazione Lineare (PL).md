@@ -2,7 +2,7 @@
 Un problema di programmazione lineare segue il seguente [[Modello Matematico]]:
 
 $$
-\begin{cases} min/max \ c^T \cdot x \\ Ax \leq b \\ Bx \geq d \\ Cx = e \\ se \ non \ cooperativo \ aggiungere \ x\in Z^n\end{cases}
+\begin{cases} min/max \ c^T \cdot x \\ A\cdot x \leq b \\ B\cdot x \geq d \\ C\cdot x = e \\ \text{se non cooperativo aggiungere}\ x\in Z^n\end{cases}
 $$
 
 Ogni problema PL può essere portato nella seguente forma standard.
