@@ -8,7 +8,7 @@ Marco Cococcioni - CLion
 [[C++]] 
 [[Operatori]] 
 [[Variabili]] 
-[[Memoria RAM]] 
+[[Memoria]] 
 [[Conversioni di Variabili]] 
 [[Char]] 
 [[Librerie]] 

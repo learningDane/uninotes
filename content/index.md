@@ -23,10 +23,11 @@ ___Davide Squeri___
 - [ ] [[Reti Logiche]] †9 
 - [ ] [[Ricerca Operativa]] †9
 ---
+in corso d'opera
 - [x] [[Fondamenti di Automatica]] †9 
 - [x] [[Economia ed Organizzazione Aziendale]] †6 
-- [x] [[Calcolo Numerico]] †6 
-- [x] [[Calcolatori Elettronici]] †9 
+- [ ] [[Calcolo Numerico]] †6 
+- [ ] [[Calcolatori Elettronici]] †9 
 ---
 # Anno III
 calma, sono classe 2004
