@@ -1,5 +1,5 @@
 #uni 
-Francesco Pistolesi e Nicola Tonellotto, 9 cfu
+Francesco Pistolesi e Nicola Tonellotto, 9cfu
 [[Informazioni sul Corso di Basi di Dati]] 
 Algebra Relazionale:
 [[Sistema Informativo]] 
