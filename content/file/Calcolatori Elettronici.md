@@ -3,3 +3,4 @@
 Argomenti
 [[Struttura del Calcolatore]] 
 [[Memoria]] 
+[[Macchina Virtuale del corso di Calcolatori Elettronici]] 

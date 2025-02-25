@@ -7,7 +7,7 @@ Il problema consiste nel trovare la combinazione di oggetti che permette di port
 $$
 \begin{cases} \max v^T\cdot x \\ 
 \sum_i x_i ≤ C \\ 
-x_i \in \{0,1\} \quad oppure \quad x_i \in N\end{cases}
+x_i \in \{0,1\} \quad \text{oppure} \quad x_i \in N\end{cases}
 $$
 
 - binario: ogni oggetto può essere portato oppure no, una sola volta: $x$ può essere $0,1$ 
