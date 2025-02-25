@@ -24,8 +24,8 @@ ___Davide Squeri___
 - [ ] [[Ricerca Operativa]] †9
 ---
 in corso d'opera
-- [x] [[Fondamenti di Automatica]] †9 
-- [x] [[Economia ed Organizzazione Aziendale]] †6 
+- [ ] [[Fondamenti di Automatica]] †9 
+- [ ] [[Economia ed Organizzazione Aziendale]] †6 
 - [ ] [[Calcolo Numerico]] †6 
 - [ ] [[Calcolatori Elettronici]] †9 
 ---
