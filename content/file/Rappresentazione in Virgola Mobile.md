@@ -35,6 +35,7 @@ Derivati:
 __Problema__: Su un computer non possiamo utilizzare infinite cifre, dobbiamo quindi troncare la mantissa ed usare un insieme limitato per l'esponente, qui entrano in gioco i [[#Numeri di Macchina]].
 # Numeri di Macchina
 $$
+\large
 \begin{matrix}
 \text{dati} \quad \beta \in N, m\in N ,\quad L,U \in Z \quad \text{tale che} \quad L<U \\
 \text{Definiamo}  \\
@@ -43,7 +44,7 @@ $$
 $$
 esempio per $\beta=2, L=-1, m=3, U=3 \to [\beta^i,\beta^{i+1}]$
 ![[esempiorapprvirgola1.svg|700]]
-se guardiamo i numeri in scala logaritmica sarebbero equispaziati.
+se guardiamo i numeri in scala logaritmica sarebbero **equispaziati**.
 In ogni intervallo $[2^i;2^{i+1}]$ ho numeri di macchina che hanno esponente $e=i+1$ e variano solo di mantissa.
 
 ==Minimo Numero Rappresentabile==: $\beta^{L-1}$

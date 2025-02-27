@@ -1,12 +1,33 @@
 #uni 
-- il pretest a risposta multipla vale per sempre, anche se bocci all'esame, il pretest non concorre alla voto. Va fatto sul proprio computer.
-L'esame è composto da una prova pratica con Pistolesi ed una prova orale in forma scritta con il professore Tonellotto, da fare lo stesso giorno in sequenza.
-- Prova pratica: 2 ore
-	- esercizio di progettazione di un database con Tonellotto. CARTA
-	- esercizio di programmazione, traccia con descrizione di una funzionalità da implementare sul database usato durante tutto il corso in linguaggio SQL/PL-SQL con sintassi MySQL, con Pistolesi, "query". COMPUTER
-	l'esame va fatto sul proprio computer.
-- Non si può portare niente all'esame.
-- Il voto dell'esame è la media fra il voto in trentesimi della prova pratica e il voto in trentesimi della prova orale.
+Le Slide sono solo un supporto, vanno seguite le lezioni.
+1. ==Pretest==: test a risposta multipla, superato con un punteggio pari a 60%, e dura per 7 appelli. Svolto sul proprio calcolatore.
+2. ==Prova Pratica==: esercizio di progettazione di un database + esercizio di programmazione [[MySQL]] sul database usato a lezione. Fatto con Pistolesi.
+3. ==Prova Orale==: domande a risposta aperta ed esercizi sulla parte di Teoria. Fatto con Tonellotto.
+
+Prova Pratica ed Orale devono essere sostenute insieme nello stesso appello.
+Non si possono portare appunti.
+Il voto finale è la media tra prova pratica e orale, arrotondata per eccesso.
+
 Su valutami vi è un solo slot, se non ho fatto il pretest l'iscrizione è per il pretest, altrimenti è per l'esame, scrivi nelle note a cosa ti stai iscrivendo.
 Didattica:
-Le Slide sono solo un supporto, vanno seguite le lezioni.
+# Parziali
+Date Potenziali:
+- Venerdì 11 Aprile 2025
+- Venerdì 23 Maggio 2025
+Mi raccomando iscriversi online entro tre giorni dalla data prevista!
+### Struttura
+Ogni parziale è composto da 20 domande a scelta multipla, ogni risposta corretta vale 1,5.
+Il voto minimo è 15.
+Il voto finale è calcolato come media arrotondata per eccesso.
+- Il primo compitino arriva fino alle progettazione logica.
+- Il secondo compitino comprende tutta la roba del Pistolesi
+
+Se il voto finale dei parziali è maggiore 18 è possibile:
+- convalidare il voto come finale (necessario iscriversi e scrivere nelle note "convalidazione")
+- sostenere unicamente la prova orale, in caso di valutazione insufficiente all'orale è necessario risostenere tutto.
+Se il voto finale dei parziali è compreso tra 15 e 18 (non compreso):
+- è necessario svolgere l'orale per ottenere la sufficienza.
+  
+Rimane possibile ignorare i compitini e svolgere l'esame per intero (anche se si ha passato i compitini).
+
+Svolti sul proprio computer e non è possibile portare appunti.

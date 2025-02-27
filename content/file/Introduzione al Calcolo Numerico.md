@@ -1,6 +1,6 @@
 #uni 
 Calcolo Numerico $\equiv$ Analisi Numerica (numerical analisys): Lo studio degli algoritmi per problemi di matematica che riguardano il continuo e/o grandi moli di dati.
-"Matematica del Continuo"= i dati con cui abbiamo a che fare sono basati su numeri reali.
+"**Matematica del Continuo**"= i dati con cui abbiamo a che fare sono basati su numeri reali.
 
 Sono necessarie approssimazioni per due motivi:
 1. rappresentare oggetti matematici che richiedono infiniti parametri

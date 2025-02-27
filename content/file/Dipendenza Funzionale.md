@@ -1,12 +1,21 @@
 #uni 
-Una dipendenza funzionale (___FD___) esprime un legame semantico tra due gruppi di attributi di uno schema di relazione $R$. Una FD è una proprietà di $R$ non di una $r$ di $R$ è perciò non può essere dedotta da una $R$ ma deve essere dedotta da qualcuno che conosce la semantica degli attributi di $R$. Vengono anche usate per verificare la presenza di anomalie e per la [[Normalizzazione]]. Con $R(X,F)$ intendiamo uno schema di relazione $R(X)$ che verifica un insieme di dipendenza funzionali $F$.
-Definizione formale:
-	esiste in $r$ su $R(X)$ una FD da due sottoinsiemi non vuoti di $X$, da $Y$ a $Z$ se per ogni coppia di tuple $t_1$ e $t_2$ di $r$ con gli stessi valori su $Y$, risulta che $t_1$ e $t_2$ hanno gli stessi valori anche su $Z$, e si scrive $Y \to Z$ (che NON implica $Z \to Y$).
-	In breve: Dati due insiemi di attributi $X$ e $Y$, si dice che $X$ determina $Y$ ($X \to Y$) se e solo se date due tuple distinte $t_1$ e $t_2$, se $t_1[X]=t_2[X]$ allora $t_1[Y]=t_2[Y]$.
-Questa definizione non è direttamente utilizzabile nella pratica perché prevede una quantificazione universale sulle istanze del [[Database]]. Non abbiamo un algoritmo capace di calcolare tutte le FD implicate da un insieme $F$.
+Una dipendenza funzionale (___FD___) esprime un legame semantico tra due gruppi di attributi di uno schema di relazione $R$. Una FD è una proprietà di $R$ non di una $r$ di $R$ e perciò non può essere dedotta da una $R$ ma deve essere dedotta da qualcuno che conosce la semantica degli attributi di $R$.
+
+Vengono anche usate per verificare la presenza di anomalie e per la [[Normalizzazione]]. Con $R(X,F)$ intendiamo uno schema di relazione $R(X)$ che verifica un insieme di dipendenza funzionali $F$.
+
+### Definizione formale
+Esiste in $r$ su $R(X)$ una FD da due sottoinsiemi non vuoti di $X$, da $Y$ a $Z$ se per ogni coppia di tuple $t_1$ e $t_2$ di $r$ con gli stessi valori su $Y$, risulta che $t_1$ e $t_2$ hanno gli stessi valori anche su $Z$, e si scrive $Y \to Z$ (che NON implica $Z \to Y$).
+
+In breve: Dati due insiemi di attributi $X$ e $Y$, si dice che $X$ determina $Y$ ($X \to Y$) se e solo se date due tuple distinte $t_1$ e $t_2$, se $t_1[X]=t_2[X]$ allora $t_1[Y]=t_2[Y]$.
+Se $A \to B$: se due tuple hanno un valore uguale in $A$, lo hanno anche in $B$.
+
+Questa definizione non è direttamente utilizzabile nella pratica perché prevede una quantificazione universale sulle istanze del [[Database]].
+Non abbiamo un algoritmo capace di calcolare tutte le FD implicate da un insieme $F$.
+
+---
 # Dipendenze Funzionali Particolari
 - Una FD è ___completa___ quando $Y \to Z$ e, per ogni $W \in Y$, non vale $W \to Z$ 
-- se $Y$ è una superchiave ([[Modello Logico Relazionale#Chiave e Superchiave]]) di $R(X)$, allora $Y$ determina ogni altro attributo della relazione, quindi $Y\to X$ 
+- se $Y$ è una superchiave ([[Modello Logico Relazionale#Chiave e Superchiave]]) di $R(X)$, allora $Y$ determina ogni altro attributo della relazione, quindi $Y\to X$.
 - se $Y$ è una chiave, allora $Y \to X$ è una dipendenza funzionale completa
 - una FD è ___banale___ se è sempre soddisfatta, eg:
   1. $Y \to Y$ è banale
@@ -23,6 +32,20 @@ Armstrong ha fornito delle regole di inferenza che permettono di derivare costru
    Se $X \to Y$ allora $XZ \to YZ$ per qualunque $Z$
 3. ___Transitività___:
    Se $X \to Y$ e $Y \to Z$ allora $X \to Z$ 
+# Calcolo delle chiavi con dipendenze funzionali
+Definizione di chiave e superchiave tramite il concentto di [[Dipendenza Funzionale]]:
+
+Dato uno schema $R(T,F)$, un insieme di attributi $k \in T$ si dice __superchiave__ di $R$ se $K \to T \in F^+$.
+Un insieme di attributi $K \in T$ si dice __chiave__ di $R$ se $K$ è una superchiave di $R$ e se non esiste alcun sottoinsieme proprio di $K$ che sia superchiave di $R$.
+
+Trovare tutte le chiavi di $R(Z)$ ha complessità esponenziale nel caso peggiore:
+- Gli attributi che stanno solo a sinistra stanno in tutte le chiavi, chiamiamo $N$ questo insieme
+- quelli che stanno solo a destra non stanno in nessuna chiave
+- si aggiunge a $N$ un attributo ala volta tra quelli che non stanno solo a destra, poi una coppia di attributi e così via... Chiamiamo $X_i$ questo sottoinsieme di attributi, ogni volta si controlla se la FD $N \cup X_i \to Z$ esiste
+### Verificare una chiave
+Per verificare se un insieme di attributi è chiave o superchiave possiamo usare l'algoritmo per il calcolo della chiusura di un insieme di attributi ([[Dipendenza Funzionale#Calcolo di $X +$]]).
+- $X \in T$ è superchiave di $R(T,F)$  se e solo se $X \to T \in F^+$, ovvero se e solo se $T \in X^+$ 
+- $X \in T$ è chiave di $R(T,F)$ se e solo se $T \in X^+$, e non esiste $Y \in X$ tale che $T \in Y^+$ 
 # Derivazione
 Una derivazione di $f$ (FD) da $F$ (insieme di FD) secondo $RI$ (regole di inferenza) è una sequenza finita $f_1,...,f_m$ dove:
 - $f_m = f$ 

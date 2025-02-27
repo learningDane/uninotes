@@ -145,7 +145,7 @@ Ipotesi: $f \in C([a,b]) , f \ derivabile \ in \ ]a,b[ , f(a) = f(b)$
 Tesi: $\exists c \in ]a,b[ : f'(c) = 0$ 
 ### Teorema di Lagrange
 Ipotesi: $f \in C([a,b]) , f \ derivabile \ in \ ]a,b[$
-Tesi: $\exists c \in ]a,b[ : f'(c) = \frac {f(b) - f{a}}{b-a}$ 
+Tesi: $\exists c \in ]a,b[ : f'(c) = \frac {f(b) - f(a)}{b-a}$ 
 ###### I corollario
 ###### II Corollario
 se $f'(x) \geq 0 , \forall x \in ]a,b[ \implies f \ crescente$ 

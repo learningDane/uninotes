@@ -1,7 +1,7 @@
-#uni Berselli Luigi Carlo
+#uni 12cfu - Berselli Luigi Carlo
 [[Insiemi]] 
 [[Funzioni]] 
-[[Successioni]]
+[[Successioni]] 
 [[Principio di induzione]] 
 [[Valori Assoluti]]
 [[Numeri Immaginari (o Complessi)]]

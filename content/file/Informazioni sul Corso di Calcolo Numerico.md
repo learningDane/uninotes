@@ -16,8 +16,9 @@ Non ottenere la sufficienza alla prova orale o rifiutare il voto, comporta ripet
 # Programma del Corso
 1. Analisi dell'errore per [[funzioni]] scalari.
 2. Richiami di [[Algebra Lineare]] 
-3. [[Sistema Lineare]] 
-4. Interpolazione ed approssimazione di funzioni nel senso dei minimi quadrati
-5. [[Integrazione]] 
+3. [[Sistema Lineare]] $A_{matrice}\cdot x = b_{vettore}$
+4. **Interpolazione** ed **approssimazione di funzioni** nel senso dei **minimi quadrati**
+5. [[Integrazione]] $\int_{a}^{b}f(x)dx$ 
 6. Equazioni non Lineari
-7. Problemi degli Autovalori
+7. Problemi degli **Autovalori**:
+	data $A\in C^{mxm}$ trovare $(\lambda,x)\quad|\quad A\cdot x=\lambda \cdot x$ con $x\neq0$ 

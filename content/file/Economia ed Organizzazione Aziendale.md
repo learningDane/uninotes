@@ -1,0 +1,27 @@
+#uni 6cfu - Antonella Martini, Vito Giordano
+[[Informazioni sul Corso di Economia ed Organizzazione Aziendale]]
+Argomenti:
+[[PIL]] 
+[[Economia]] 
+[[Economia Aziendale]] 
+[[Modello di Business]] 
+
+Modulo I, Bilancio, Analisi, Costi:
+- Costruzione di un bilancio di esercizio
+- Analisi di bilancio per indici per definire lo stato di salute di un'impresa
+- Tipologie di costi e impiego nelle decisioni d'impresa (analisi break-even)
+
+Modulo II, Modelli di Business:
+- Cos'è un modello di business
+- Business model canvas: come si costruisce
+- Casi di applicazione
+
+Modulo III, Governance:
+- Cos'è una società e quali sono le tipologie societarie esistenti in Italia
+- Cosa è un'azione e cosa un'obbligazione
+- Cos'è un gruppo, come si classifica e come si forma
+- Come sono strutturate le imprese
+
+Modulo IV, Investimenti:
+- Principi della finanza aziendale
+- Tecniche di valutazione degli investimenti

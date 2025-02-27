@@ -12,3 +12,9 @@ Alcuni termini:
 Un ___sistema dinamico___ è un "oggetto" caratterizzato da grandezze (stati e uscite) che variano nel tempo e che interagiscono con l'ambiente esterno.
 
 Un sistema dinamico è normalmente costituito da più sottosistemi che interagiscono tra loro.
+# Una rappresentazione generale
+![[modellogeneraleautomatica1.svg|400]]
+A partire da questa interpretazione possiamo avere 3 problemi, in base a quale informazione manca:
+1. [[Modellistica]]: trovare il modello.
+2. [[Simulazione]]: trovare l'uscita
+3. [[Problema del Controllo]]: Studiare come agire dall'esterno su un sistema per modificare la naturale evoluzione ed ottenere un comportamento desiderato.

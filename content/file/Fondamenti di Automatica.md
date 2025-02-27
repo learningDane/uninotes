@@ -3,3 +3,6 @@
 Argomenti
 [[Introduzione all'Automatica]] 
 [[Modellistica]] 
+[[Equilibri e Stabilità]] 
+[[Stabilità secondo Lyapunov]] 
+[[Formula di Lagrange]] 
