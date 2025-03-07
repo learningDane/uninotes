@@ -1,6 +1,6 @@
 #uni 
 # Formula di Taylor
-La formula di Taylor serve ad approssimare, almeno localmente, tutte le funzioni sufficientemente regolari con polinomi.
+La formula di Taylor serve ad approssimare, almeno localmente, tutte le funzioni sufficientemente regolari, con polinomi.
 ###### Ipotesi: 
 1. Sia $f(x)$ una funzione definita in un certo intervallo $(-δ , δ)$ per qualche $δ>0$
 2. $f(x)$ derivabile $n-1$ volte nell'intervallo
@@ -14,7 +14,7 @@ Con $T_n$ :
 $$
 T_n(x)= f(x) + \frac{f'(x_0)}{1!}x + \frac{f''(x_0)}{2!}x^2 + ...+\frac{f^{(n)}(x_0)}{n!} x^n= \sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!} (x-x_0)^k
 $$
-$T_n$ prende il nome di _polinomio di Taylor_ di grado $n$ generato da $f$,con centro in $x_0$ 
+$T_n$ prende il nome di ==polinomio di Taylor== di grado $n$ generato da $f$,con centro in $x_0$ 
 Se $x_0 = 0$ $T_n$ è anche detto _polinomio di Mac Laurin di grado $n$_. $T_n[f]$ è il polinomio di Taylor di grado $n$ generato da $f$.
 # Proprietà
 Siano $f$ e $g$ funzioni derivabili $n$ volte in $x_0$, $c_1,c_2 \in R$ allora: 

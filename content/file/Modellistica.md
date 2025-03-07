@@ -19,9 +19,9 @@ Questo è un mix tra i primi due, conosciamo il comportamento generale ma dobbia
 ![[macchinaastatifiniti1.svg]]
 Questo è un modello molto potente per studiare il comportamento di sistemi, finché rimaniamo in numero di stati relativamente basso (<100).
 
-Un sistema viene detto ==discreto== se è possibile saltare stati e quindi non doverli percorrere uno ad uno in ordine.
+Un sistema viene detto ==discreto== se il tempo è una variabile $k \in Z$, si parla quindi di stati.
 
-Noi ci concentreremo su sistemi ==continui==, ovvero le variabili di stato si evolvono continuamente nel tempo.
+Noi ci concentreremo su sistemi ==continui==, ovvero le variabili di stato si evolvono continuamente nel tempo, che è quindi una variabile $t \in R$.
 I sistemi continui non sono macchine a stati finiti.
 
 ### Esempio: controllo del livello del serbatoio

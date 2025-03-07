@@ -48,9 +48,6 @@ Gli attributi che costituiscono la chiave primaria sono normalmente evidenziati,
 | 65473       | Pippi   | Pippo |
 | 78645       | Lippi   | Lippo |
 in questo esempio matricola è chiave primaria, visibile attraverso l'italico.
-### Chiavi esterne
-Data una relazione $R$, un insieme di attributi è __chiave esterna__ se compare come chiave in un'altra relazione.
-Una chiave esterna garantisce il soddisfacimento del [[#Vincolo di Integrità Referenziale]], e garantisce che ad ogni tupla di $R$ sia associata una tupla nell'altra relazione.
 # Vincoli di Integrità
 Un vincolo di integrità è una funzione booleana associata ad una base di dati e chiamata su ogni istanza di essa, che se soddisfatta esprime la correttezza del [[Database]] rispetto all'applicazione.
 Questi permettono una descrizione più accurata della realtà, sono utili nella progettazione e sono usati nei [[DBMS]] nella esecuzione delle interrogazioni.
@@ -69,10 +66,27 @@ Il suo soddisfacimento è definito rispetto ad una singola relazione della base 
 I vincoli di chiave sono i più importanti vincoli del modello relazionale e sono particolari vincoli che fanno parte della categoria [[Dipendenza Funzionale]].
 ### Vincoli interrelazionali
 Il suo soddisfacimento è definito rispetto a più relazioni della base di dati.
-
----
 ##### Vincolo di Integrità Referenziale
-Un vincolo di integrità referenziale fra gli attributi $X$ di una relazione $R_1$ e una relazione $R_2$ impone ai valori su $X$ in $R_1$ DIVERSI da NULL di comparire come valori della chiave primaria di $R_2$.
+Data una relazione, un insieme di attributi della
+relazione che corrispondono a una chiave primaria di
+un’altra relazione è chiamato ==chiave esterna== (foreign key).
+Possono essere pensate come puntatori logici.
+
+Un vincolo di integrità referenziale fra gli attributi $X$ di una relazione $R_1$ (con $X$ chiave esterna di $R_{1}$)e una relazione $R_2$ impone ai valori su $X$ in $R_1$ DIVERSI da NULL di comparire come valori della chiave __primaria__ di $R_2$.
 Nota che in questo caso l'ordine degli attributi tra cui è stabilito il vincolo è significativo.
+
+Una chiave esterna garantisce il soddisfacimento del [[#Vincolo di Integrità Referenziale]], e garantisce che ad ogni tupla di $R$ sia associata una tupla nell'altra relazione.
+# Possibili operazioni di aggiornamento
+- __Inserimento__ di nuovi dati
+	- attenzione a vincoli intra-relazionali
+	- attenzione a vincoli di integrità referenziale
+- __Cancellazione__ di dati esistenti
+	- attenzione a vincoli di integrità referenziali
+- __Modifica__ di dati esterni
+	- equivale a cancellazione+inserimento, quindi attenzione a entrambe le operazioni.
 ### Reazione alla violazione di vincoli
-Quando si tenta di compiere un'operazione che viola un vincolo entrano in gioco diversi meccanismi, che prendono il nome di ___azioni compensative___.
+Quando si tenta di compiere un'operazione che viola un vincolo entrano in gioco diversi meccanismi nel [[DBMS]], che prendono il nome di ___azioni compensative___.
+Esempi di azioni compensative:
+- rifiuto dell'operazione
+- eliminazione in cascata, ovvero elimino tutte le tuple che violano un vincolo (nota che quando il sistema cancella una tupla rischia di violare di nuovo un vincolo di integrità referenziale, per questo si chiama eliminazione in cascata).
+- introduzione di valori nulli

@@ -9,7 +9,6 @@ Non si possono portare appunti.
 Il voto finale è la media tra prova pratica e orale, arrotondata per eccesso.
 
 Su valutami vi è un solo slot, se non ho fatto il pretest l'iscrizione è per il pretest, altrimenti è per l'esame, scrivi nelle note a cosa ti stai iscrivendo.
-Didattica:
 # Parziali
 Date Potenziali:
 - Venerdì 11 Aprile 2025

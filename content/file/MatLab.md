@@ -1,5 +1,40 @@
 #uni 
-# Linprog
+MATLAB è un ambiente per il [[Calcolo Numerico]] e l'analisi statistica scritto in [[C]], che comprende anche l'omonimo linguaggio di programmazione creato dalla [[MathWorks]].
+
+Se si incontra una funzione di cui non si conosce/ricorda l'utilizzo è possibile invocare la guida: `help nomefunzione`.
+# Funzioni
+```Octave
+function[y1] = nomefunzione(x1,x2)
+```
+- input x1 e x2, output y1
+Questa dichiarazione deve essere la prima istruzione eseguibile del file che contiene la funzione.
+puoi salvare una funzione in:
+- un file nomefunzione.m
+- oppure un file che contiene solamente definizioni di funzioni, il nome del file deve corrispondere con il nome della prima funzione contenuta nel file
+- oppure in uno script che contiene comandi e definizioni di funzione, in questo caso le funzioni devono essere contenuta alla fine del file e lo script non può avere il nome di nessuna delle funzioni al suo interno
+
+Un file può contenere molteplici funzioni locali o innestate. Al fine della leggibilità è consigliato terminare ogni funzione con `end`.
+
+In particolare la parola chiave `end` è richiesta sempre in questi casi:
+- una qualunque funzione in un file contiene una funzione innestata
+- la funzione è una funzione locale all'interno di un file che contiene solo funzioni e, a sua volta, ogni funzione locale usa la parola chiave `end`.
+- la funzione è locale all'interno di uno script
+
+Per terminare una esecuzione prima dell'`end` della funzione si può usare `return`.
+##### Esempio
+```Octave
+function [area] = areacerchio(raggio)
+%AREACERCHIO Funzione che calcola l’area del cerchio di raggio r
+%se viene fornito un raggio negativo ritorna il valore flag -1
+if raggio < 0
+	area = -1;
+	return
+	end
+area = pi*raggio^2;
+end
+```
+# Optimization ToolBox
+### Linprog
 Per risolvere un [[Problema di Programmazione Lineare (PL)]], [[MatLab]] offre ___linprog___.
 Risolve i problemi nel seguente forma: 
 $$
@@ -8,7 +43,7 @@ $$
 
 dove $LB$ e $UB$ sono i vettori dei lower e upper bound.
 Questa forma è una forma standard, quindi ogni problema PL può essere portato in questa forma
-# Esempio
+### Esempio
 
 $$
 \begin{cases} max \ x_1+x_2 \\ 3x_1+5x_2\geq 7 \\ 2x_1+6x_2-9x_3 = 9 \\ x_1, x_2, x_3 \geq 0 \\ x_2 \leq 8\end{cases}
@@ -26,7 +61,7 @@ Digitare: (ordine e nomi alle matrici non contano, conta solo ordine nel comando
 >> [x,v]=linprog(c,a,b,aeq,beq,lb,ub)
 >> appare soluzione: x=(val ottimo)
 ```
-# Intlinprog
+### Intlinprog
 
 $$
 \begin{cases} min \ c^T x \\ Ax \leq b \\ A_{eq} = b_{eq} \\ LB \leq x \leq UB \\ x \end{cases}
@@ -35,7 +70,7 @@ $$
 `[x,v]=intlinprog(c,int,a,b,aeq,beq,lb,ub)`
 dove `intcom` è la lista degli indici di variabili che devono essere intere.
 se per esempio ho 4 variabili e le voglio tutte intere: `int=[1 2 3 4]` oppure `int=[1;2;3;4]` 
-# Quadprog
+### Quadprog
 
 $$
 \begin{cases} 
@@ -54,14 +89,14 @@ esempio: $f(x)=\frac{1}{2}x^2+y^2 -xy-2x-6y$
 `f = [-2 ; -6]` 
 `a = [1 1; -1 2; 2 1];`
 `b = [2; 2; 3];` 
-### exitflag
+######### exitflag
 ![[Pasted image 20250107122104.png]]
-# Assignment
+### Assignment
 Restituisce l'assegnamento di costo minimo del TSP, per fare poi l'algoritmo delle toppe. 
 ```Matlab
 assignment([matricespecchiatadeicostiTSP])
 ```
-# fgh_display(f,g,h,x,range,c)
+### fgh_display(f,g,h,x,range,c)
 Disegna il dominio e il valore della funzione su questo dominio.
 ```Matlab
 f=x1*2+3*x1*x2 ...
@@ -70,18 +105,18 @@ g1= x2+3 ..
 g4= ..
 fgh_display(f, [g1;g2;g3;g4], [], [],[],[])
 ```
-# minsearch
+### minsearch
 ```Matlab
 [x,fval]= fminsearch('6*x(1)^2+3*x(2)-9*x(1)*x(2) ecc',x0)
 ```
 ![[Pasted image 20250125184419.png]]
-# Gradiente proiettato
+### Gradiente proiettato
 esegue un passo del gradiente proiettato, inserire bene le matrici vettore, b e x, non possono essere inserite matrici righe.
 MINIMIZZA
 ```Matlab
 RicOp.gradienteProiettato(f,a,b,xk,100)
 ```
-# Gomory
+### Gomory
 esegue un taglio di gomory a partire da una certa X di base.
 Vanno inseriti i dettagli della forma duale std, quindi con gli scarti!!!
 MI RACCOMANDO I PUNTI E VIRGOLI PER I VETTORI COLONNA.
@@ -95,7 +130,7 @@ x=[32 ; 12 ; s1 ; s2]
 a=[123 132 1 0 ; 3 98 0 1]
 b=[12 ; 1]
 ```
-# Simplex
+### Simplex
 esegue un passo del simplesso, MASSIMIZZA ATTENZIONE!!!!!
 ```Matlab
 RicOp.pSimplex(f,A,b,base,iter)

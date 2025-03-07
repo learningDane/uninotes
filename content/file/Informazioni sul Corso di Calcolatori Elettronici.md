@@ -7,3 +7,5 @@ Argomenti del corso:
 2. Protezione
 3. Memoria virtuale
 Questi compongo la multiprogrammazione
+
+All'esame si può portare TUTTO, anche esami passati.
