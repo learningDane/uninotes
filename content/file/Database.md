@@ -9,7 +9,7 @@ I Database hanno:
 
 Una base di dati è una risorsa integrata, condivisa fra applicazioni e quindi necessita di meccanismi di autorizzazione e controllo della concorrenza e dell'incoerenza.
 
-Il linguaggio usato per interagire con i database è l'[[MySQL]].
+Il linguaggio usato per interagire con i database è l'[[SQL]].
 # Problemi della condivisione
 I possibili problemi possono essere:
 - ripetizione di informazioni

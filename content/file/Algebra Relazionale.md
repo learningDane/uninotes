@@ -34,7 +34,7 @@ Operatori su relazioni:
 # Ottimizzazione delle Interrogazioni
 Il ___query processor___ (o ottimizzatore) è un modulo del [[DBMS]] che si occupa di ottimizzare le query che invece sono espresse ad alto livello.
 Questa è l'__esecuzione delle Interrogazioni__:
-	[[MySQL]]: Analisi lessicale, sintattica e semantica -> Algebra: ottimizzazione algebrica -> algebra: ottimizzazione basata sui costi
+	[[SQL]]: Analisi lessicale, sintattica e semantica -> Algebra: ottimizzazione algebrica -> algebra: ottimizzazione basata sui costi
 ### Profili delle Relazioni
 Contengono informazioni quantitative:
 - cardinalità delle relazioni
@@ -48,9 +48,9 @@ Il termine ottimizzazione è improprio perché il processo utilizza euristiche. 
 L'euristica fondamentale: selezioni e proiezioni il più presto possibile.
 ### Procedura Euristica di Ottimizzazione
 1. decomporre le selezioni congiuntive in successive selezioni atomiche
-2. anticipare selezioni a partire dalle più selettive
+2. anticipare selezioni a partire dalle più selettive (push selections down)
 3. combinare prodotti cartesiani e selezioni per formare join
-4. anticipare le proiezioni (anche introducendone di nuove)
+4. anticipare le proiezioni (anche introducendone di nuove) (push projections down)
 ### Equivalenza di Espressioni
 Due espressioni sono equivalenti se producono lo stesso risultato (qualunque sia l'istanza attuale). I DBMS cercano di eseguire espressioni equivalenti ma meno costose.
 ___Push Selections Down___:
@@ -69,7 +69,7 @@ $$
 Sono relazioni in funzione del contenuto di altre relazioni. 
 Ne esistono 2 tipi:
 - Viste __materializzate___
-  sono relazioni derivate memorizzate nella base di dati e quindi sono immediatamente disponibili, sono però ridondanti, pesanti e raramente supportate dai [[DBMS]]
+  sono relazioni derivate memorizzate nella base di dati e quindi sono immediatamente disponibili, sono però ridondanti, pesanti e raramente supportate dai [[DBMS]].
 - Viste __virtuali__ (o semplicemente __viste__)
   non sono memorizzate e quindi vengono calcolate quando chiamate. Vengono eseguite sostituendo la loro definizione al posto della vista. Servono solo per semplificare la scrittura delle interrogazioni e quindi la manutenibilità del codice.
 Esempio di _vista_: $supervisione=\pi_{etc}(afferenza \bowtie direzione)$ 
@@ -89,17 +89,3 @@ Questo è un operatore __derivato__ poiché può essere espresso come segue:
 $$
 r\div r_2=\pi_{X_1}(r)-\pi_{X_1}((\pi_{X_1}(r) \times r_2)-r)
 $$
-
-# Simboli Katex Utili
-leftarrow: \leftarrow: $\leftarrow$ 
-select: sigma: $\sigma$ 
-project: pi: $\pi$ 
-inner/natural join: bowtie: $\bowtie$ 
-cross product: times: $\times$ 
-rename: rho: $\rho$ 
-leg: $\leq$ 
-geq: $\geq$ 
-neq: $\neq$ 
-and: wedge: $\wedge$ 
-or: vee: $\vee$ 
-not: neg: $\neg$ 

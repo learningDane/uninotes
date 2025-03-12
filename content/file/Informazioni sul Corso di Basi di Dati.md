@@ -1,7 +1,7 @@
 #uni 
 Le Slide sono solo un supporto, vanno seguite le lezioni.
 1. ==Pretest==: test a risposta multipla, superato con un punteggio pari a 60%, e dura per 7 appelli. Svolto sul proprio calcolatore.
-2. ==Prova Pratica==: esercizio di progettazione di un database + esercizio di programmazione [[MySQL]] sul database usato a lezione. Fatto con Pistolesi.
+2. ==Prova Pratica==: esercizio di progettazione di un database + esercizio di programmazione [[SQL]] sul database usato a lezione. Fatto con Pistolesi.
 3. ==Prova Orale==: domande a risposta aperta ed esercizi sulla parte di Teoria. Fatto con Tonellotto.
 
 Prova Pratica ed Orale devono essere sostenute insieme nello stesso appello.

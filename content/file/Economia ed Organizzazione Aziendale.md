@@ -5,6 +5,8 @@ Argomenti:
 [[Economia]] 
 [[Economia Aziendale]] 
 [[Modello di Business]] 
+[[Diritto dell'Impresa]] 
+[[Diritto delle Società]] 
 
 Modulo I, Bilancio, Analisi, Costi:
 - Costruzione di un bilancio di esercizio

@@ -29,7 +29,7 @@ In ogni base di dati esistono:
 	-  rappresentazione dello schema logico per mezzo di strutture memorizzazione, ad esempio record con puntatori, ordinati in un certo modo
 
 # Linguaggi per Basi di Dati
-i linguaggi usati sono linguaggi testuali interattivi ([[MySQL]]) ovvero comandi in linguaggi testuali immersi in un linguaggio ospite ([[C++]], [[Java]], ecc) con interfacce amichevoli.
+i linguaggi usati sono linguaggi testuali interattivi ([[SQL]]) ovvero comandi in linguaggi testuali immersi in un linguaggio ospite ([[C++]], [[Java]], ecc) con interfacce amichevoli.
 
 Distinzione terminologica:
 	- ___data definition language___ (DDL) per la definizione di schemi (logici o fisici)

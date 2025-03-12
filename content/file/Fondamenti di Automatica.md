@@ -3,6 +3,9 @@
 Argomenti
 [[Introduzione all'Automatica]] 
 [[Modellistica]] 
-[[Equilibri e Stabilità]] 
+[[Equilibrio e Linearizzazione]] 
 [[Stabilità secondo Lyapunov]] 
 [[Formula di Lagrange]] 
+[[Sistemi LTI]] 
+[[Proprietà Strutturali]]
+[[Funzione di Trasferimento]] 

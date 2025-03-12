@@ -134,4 +134,4 @@ y=g(x)
 $$
 questa prende il nome di ==forma standard bilineare==.
 Per ora non sappiamo come trattarla, a meno di fare ipotesi semplificative.
-Cominciamo quindi a parlare di [[Equilibri e Stabilità]].
+Cominciamo quindi a parlare di [[Equilibrio e Linearizzazione]].
