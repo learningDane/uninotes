@@ -15,6 +15,31 @@ I soci possono quindi ottenere il soddisfacimento di un preesistente bisogno eco
 - maggiore retribuzione (cooperazione di produzione)
 Le società cooperative hanno scopo prevalentemente mutualistico.
 ### Scopo Consortile
-Vantaggio patrimoniale diretto.
+Vantaggio patrimoniale diretto, riguarda i consorzi di imprese.
 - minori costi supportati
 - maggiori ricavi conseguiti
+# Modelli Societari
+
+| scopo istituzionale | tipi di società     | natura attività                                |
+| ------------------- | ------------------- | ---------------------------------------------- |
+| lucrativo           | società di persone  | società semplice<br>società in nome collettivo |
+|                     | società di capitali |                                                |
+![[controlloinfeedback.svg]]
+- S.s. : società semplice
+- S.n.C. : società nome collettivo
+- S.a.S. : societ bho
+- S.a.p.a. : bho
+- S.p.A. : società per azioni
+- S.r.l. : società responsabilità limitata
+### Personalità Giuridica
+>Questa proprietà appartiene solo alle Società di Capitali.
+
+Lo scopo della personalità giuridica e dell'autonomia patrimoniale:
+- tutelare i creditori: il patrimonio della società è aggredibile solo dai creditori sociali e non dai creditori personali.
+- creare incentivi giuridici verso il modello societario: sottrazione del patrimonio personale dei soci all'aggressione (diretta) dei creditori sociali.
+
+Tra il capitale della società e il capitale personale dei singoli soci c'è un muro invalicabile.
+### Autonomia Patrimoniale imperfetta
+Nelle società di persone i creditori personali dei soci non possono aggredire il patrimonio della società per soddisfarsi, possono tuttavia ottenere la liquidazione della quota del debitore, quando gli altri beni non sono sufficienti.
+
+I creditori della società non possono aggredire direttamente il patrimonio personale dei soci illimitatamente responsabili.
