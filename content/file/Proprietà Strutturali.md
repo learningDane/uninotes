@@ -109,7 +109,7 @@ Troviamo quindi:
 - $\hat{x}_c$: non raggiungibile e non osservabile
 - $\hat{x}_d$: non raggiungibile e osservabile
 
-![[controlloinfeedback.svg]]
+![[formacanonica1.svg]]
 # Forma Minima
 Un sistema completamente osservabile e raggiungibile è detto in ___forma minima___.
 
