@@ -10,4 +10,5 @@ Argomenti
 [[Sistema LTI]] 
 [[Proprietà Strutturali]]
 [[Funzione di Trasferimento]] 
-[[Controllo di Feedback]] 
+[[Controllo in Feedback]] 
+[[Trasformata di Laplace]] 

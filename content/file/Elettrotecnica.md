@@ -10,7 +10,7 @@ Argomenti
 [[Seconda Legge di Kirchkoff]] 
 [[Circuito a Parametri Concentrati (Lumped Circuits)]] 
 [[Resistore]] 
-[[Induttore]] ---
+[[Induttore]] 
 [[Condensatore]] 
 [[Metodo delle Correnti di Ramo (o Tableau)]] 
 [[Metodo delle Correnti di Maglia]]
@@ -19,7 +19,8 @@ Argomenti
 [[Partitore di Corrente]] 
 [[Partitore di Tensione]] 
 [[Principio di Sovrapposizione degli Effetti]] 
-parte 2:
+
 [[Circuito a Regime Periodico Sinusoidale]] 
 [[Fasore]] 
 [[Impedenza]] 
+[[Trasformata di Laplace]] 

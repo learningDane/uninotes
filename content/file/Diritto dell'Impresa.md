@@ -42,9 +42,9 @@ Quanto segue è quanto richiesto sia scritto:
 e tutto deve essere conservato per 10 anni.
 ### Personaggi
 - Ausiliari subordinati: legati all'imprenditore da un rapporto di laboro subordinato
-	- institore: chi ha la responsabilità legale
-	- procuratore: responsabile della filiale, può fare sconti
-	- commesso: non può dare sconti, ha potere di rappresentanza solamente all'interno del perimetro del negozio(= perimetro di procura)
+	1. institore: chi ha la responsabilità legale
+	2. procuratore: responsabile della filiale, può fare sconti
+	3. commesso: non può dare sconti, ha potere di rappresentanza solamente all'interno del perimetro del negozio(= perimetro di procura)
 - Ausiliari Autonomi: sono legati all'imprenditore da un rapporto di prestazione d'opera
 
 ___Rappresentanza___: il potere di agire in nome di.

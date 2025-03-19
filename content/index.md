@@ -27,7 +27,7 @@ in corso d'opera
 - [ ] [[Fondamenti di Automatica]] †9 
 - [ ] [[Economia ed Organizzazione Aziendale]] †6 
 - [ ] [[Calcolo Numerico]] †6 
-- [ ] [[Calcolatori Elettronici]] †9 
+- [x] [[Calcolatori Elettronici]] †9 
 ---
 # Anno III
 calma, sono classe 2004

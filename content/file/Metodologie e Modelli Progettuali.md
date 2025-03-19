@@ -1,11 +1,16 @@
 #uni 
-Se per modellare un'applicazione cerchiamo di definire subito lo schema logico ci perdiamo nei dettagli e risulta molto difficile poiché il modello relazionale è rigido. 
-Partiamo quindi con la progettazione del [[Database]], che è una delle attività del processo di sviluppo dei sistemi informativi, inquadriamola quindi in un contesto più generale:
-Il ___ciclo di vita___ di un [[Sistema Informativo]]:
+Se per modellare un'applicazione cerchiamo di definire subito lo schema logico ci perdiamo nei dettagli e risulta molto difficile poiché il [[Modello Logico Relazionale]] è rigido. 
+Partiamo quindi con la progettazione del [[Database]], che è una delle attività del processo di sviluppo del [[Sistema Informativo]], inquadriamola quindi in un contesto più generale:
+Il ___ciclo di vita___ di un [[Sistema Informativo]] è:
 1. insieme e organizzazione temporale delle attività svolte dalle diverse figure durante sviluppo ed uso dei sistemi informativi.
-2. attività iterativa.
+2. attività iterativa (ciclo).
+# Buona Preogettazione
+Una buona progettazione deve essere basata su:
+- modelli efficaci per rappresentare i dati
+- decomposizione delle attività in fasi
+- strategie e criteri di scelta nei vari passi
 # Waterfall Model
-Questo è il primo modello da scegliere, e ne esistono di vari, il più vecchio è il __waterfall model__: in questo modello le fasi sono ordinate e _non ripetibili_:
+Esistono vari modelli, il più vecchio è il __waterfall model__: in questo modello le fasi sono ordinate e ___non ripetibili___:
 1. ___Studio di fattibilità___
 2. ___raccolta ed analisi dei requisiti___
    1. ___acquisizione dei requisiti___
@@ -18,13 +23,14 @@ Questo è il primo modello da scegliere, e ne esistono di vari, il più vecchio 
           - individuare sinonimi
           - rendere esplicito il riferimento fra termini
 	  - riorganizzare le frasi per concetti
-   1. analisi dei requisiti
+	  - frequenti verifiche di comprensione ("ho capito bene?")
+   2. analisi dei requisiti
       coadiuvata da linguaggi specifici per definire i requisiti, ad esempio [[UML]] 
 3. ___progettazione___
 	   divisa in progettazione dei dati (e quindi scelta del [[Modello dei dati]] e delle applicazioni. Si Progetta per diversi livelli di astrazione: [[Progettazione Concettuale]], [[Progettazione Logica]] e fisica che lavorano rispettivamente su schema concettuale, logico e fisico.
-1. ___realizzazione___
-2. ___validazione e collaudo___
-3. ___funzionamento o shipping___ 
+4. ___realizzazione___
+5. ___validazione e collaudo___
+6. ___funzionamento o shipping___ 
 # Altro
 ![[Pasted image 20240815235035.png]]
 # Esempi documentazione

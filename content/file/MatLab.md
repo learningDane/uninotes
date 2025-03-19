@@ -33,6 +33,19 @@ if raggio < 0
 area = pi*raggio^2;
 end
 ```
+# Sintassi
+- `help comando` per ottenere info sul comando
+### Matrici e Vettori
+- `a:t:b` crea una matrice con componenti che partono da $a$ ed arrivano a $b$ ad incrementi di $t$. Se $t=1$ si può anche solo usare `a:b`.
+- `v = linspace(a,b,n)` restituisce un vettore composto dagli `n` numeri tra `a` e `b` equidistanziati
+- `A(x,y,z)=k` per assegnare il singolo elemento della matrice di coordinate `x,y,k`, se cerco di scrivere un elemento che non esiste, la matrice viene ingrandita
+- `lenght(A)` : length of vector
+- `size(A)` : size of matrix
+- `A'` : trasposta
+- `A=diag(v,k)` crea una matrice con elementi del vettore v sulla k-esima diagonale e 0 altrove.
+- `A( x1:y1 ; x2:y2 )` seleziona la sottomatrice di $A$ con estremi i punti delle coordinate specificate.
+### Grafici
+`plot(x,y)` con x, y vettori della stessa lunghezza
 # Optimization ToolBox
 ### Linprog
 Per risolvere un [[Problema di Programmazione Lineare (PL)]], [[MatLab]] offre ___linprog___.

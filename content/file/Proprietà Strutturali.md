@@ -1,7 +1,7 @@
 #uni 
 Le 3 proprietà strutturali di un sistema sono: la stabilità, la raggiungibilità e l'osservabilità, e sono determinate dalle matrici di struttura del sistema.
 # Stabilità
-Questa proprietà dipende unicamente dal movimento libero del sistema[^1], che possiamo comunque evitare di calcolare ([[Stabilità secondo Lyapunov]]).
+Questa proprietà dipende unicamente dal movimento libero del sistema [^3], che possiamo comunque evitare di calcolare ([[Stabilità secondo Lyapunov]]).
 Dipende solamente dalla matrice $A$.
 
 Il movimento $\tilde{x}$ è stabile se $\forall \epsilon>0, \exists \delta >0 : \forall \delta_{x_0} \text{ per cui } ||\delta_{x_0}|| \leq 0 \text{ risulti } ||\delta_x(t)|| \leq \epsilon, t \geq 0$ 
@@ -14,7 +14,6 @@ ___Teorema___: Un sistema lineare stazionario:
 - è stabile se e solo se tutti i movimenti liberi dello stato sono limitati;
 - è asintoticamente stabile se e solo se tutti i movimenti liberi dello stato tendono a zero per $t \to \infty$;
 - è instabile se e solo se almeno un movimento libero dello stato non è limitato.
-[^1]: [[Sistema LTI#Formula di Lagrange]]
 ### Stabilità e Autovalori
 ___Teorema___: un sistema LTI è asintoticamente stabile se e solo se tutti i suoi autovalori hanno parte reale negativa.
 
@@ -46,7 +45,7 @@ Se il sistema non è completamente raggiungibile scompongo e isolo la parte non 
 1. costruisco la matrice di trasformazione $T_R$:
 	1. scegliamo $n_r$ colonne linearmente indipendenti in $M_R$(ogni stato raggiungibile è combinazione lineare di queste colonne).
 	2. ci aggiungo poi $n-n_r$ colonne linearmente indipendenti dalle precedenti.
-2. Trasformo[^1] ora il sistema tramite la matrice $T_R$ 
+2. Trasformo[^2] ora il sistema tramite la matrice $T_R$ 
 3. Ottengo una $\hat{A}$ che è sempre della forma: $\hat{A}=\begin{bmatrix}\hat{A}_a & \hat{A}_{ab}  \\ 0 &  \hat{ A}_b\end{bmatrix}$ dove:
 	- $\hat{A}_a$ è sempre raggiungibile
 	- $\hat{A}_b$ è sempre non raggiungibile
@@ -78,11 +77,11 @@ Posso isolare la parte non osservabile:
 1. costruisco la matrice $T_O$:
 	1. seleziono $n-n_o$ vettori $\xi_i$ linearmente indipendenti, tali che $M_O \xi_i=0 \text{ ovvero } span({\xi_i})=x_{NO}$, quindi compongo una base del kernel di $M_O$. Sono non osservabili tutti e solo i vettori ottenibili come combinazione lineare dei vettori $\xi_i$.
 	2. seleziono $n_o$ vettori linearmente indipendenti per completare la matrice, tali che: $det(T_o^{-1}) \neq 0$ e quindi la matrice risulti invertibile.
-2. eseguo un cambio di variabile[^1] attraverso la matrice di trasformazione $T_O$.
+2. eseguo un cambio di variabile[^2] attraverso la matrice di trasformazione $T_O$.
 3. ottengo una matrice $\hat{A}$ sempre della forma: $\hat{A}=\begin{bmatrix}\hat{A}_a & 0 \\ \hat{A}_{ab} & \hat{A}_b\end{bmatrix}$ e $\hat{C}=\begin{bmatrix}\hat{C}_a  & 0\end{bmatrix}$ con $\hat{A}_a$ parte osservabile e $\hat{A}_b$ parte non osservabile.
    Ed infine vale: $aut(\hat{A})=aut(A)=aut(\hat{A}_a)+aut(\hat{A}_b)$ 
 
-[^1]: [[Sistema LTI#Trasformazioni Equivalenti]]
+[^2]: [[Sistema LTI#Trasformazioni Equivalenti]]
 # Forma Canonica
 È possibile dimostrare che si può portare ogni sistema in una forma che evidenzia le parti osservabili e raggiungibili, che prende il nome di ___forma canonica___.
 La matrice di trasformazione $T_K$ utilizzata in questo procedimento prende il nome dall'ingegnere Ungherese [[Kalman]].
@@ -141,3 +140,5 @@ $$
 Anche in questo caso basta analizzare i soli autovalori di $A$.
 
 Tutte le colonne $C_{i,1}$ dei corrispondenti blocchi di Jordan devono essere linearmente indipendenti.
+
+[^3]: [[Sistema LTI#Formula di Lagrange]]
