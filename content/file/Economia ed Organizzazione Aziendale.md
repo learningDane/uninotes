@@ -1,13 +1,22 @@
 #uni 6cfu - Antonella Martini, Vito Giordano
 [[Informazioni sul Corso di Economia ed Organizzazione Aziendale]]
 [codice civile online](https://www.codice-civile-online.it) 
+IGNORANTIA LEGIS NON EXCUSAT
+
 Argomenti:
 [[PIL]] 
 [[Economia]] 
 [[Economia Aziendale]] 
+Modulo I:
+Modulo II:
 [[Modello di Business]] 
+Modulo III:
 [[Diritto dell'Impresa]] 
 [[Diritto delle Società]] 
+[[Titoli di credito]] 
+[[Società e scopi di Lucro]] 
+[[Strutture Organizzative]] 
+Modulo IV:
 
 Modulo I, Bilancio, Analisi, Costi:
 - Costruzione di un bilancio di esercizio

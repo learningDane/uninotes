@@ -13,11 +13,24 @@ Indichiamo con $M_{n\times m}$ l'insieme delle matrici con $n$ righe e $m$ colon
 Se $A \in M_{n\times m}$ allora l'elemento che sta nella riga $i$ e colonna $j$ si indica con $A_{i \times j}$.
 Se $n=1$ allora la matrice prende il nome di ___Vettore Riga___.
 Se $m=1$ allora la matrice prende il nome di ___Vettore Colonna___.
-Se $n=m=1$ allora la ma trice è un solo numero.
+Se $n=m=1$ allora la matrice è un solo numero.
 # Matrici Speciali
-1. Matrice Nulla = matrice con tutti $0$.
-2. Matrice Identità $I_{n \times n}$= matrice quadrata con tutti $1$ sulla diagonale principale e $0$ altrove: $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 
+1. __Matrice Nulla__ = matrice con tutti $0$.
+2. __Matrice Identità__ $I_{n \times n}$= matrice quadrata con tutti $1$ sulla diagonale principale e $0$ altrove: $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 
 	   tutte le volte che moltiplico una matrice per una matrice identità, ottengo la matrice stessa.
+3. Distinguiamo 2 situazioni:
+	1. $A\in \mathbb{C}^{n\times n}\quad \begin{cases} Hermitiana\ A=A^H\\ AntiHermitiana\ A=-A^H \\ Unitaria\ A^H\cdot A=A\cdot A^H=I\ e\ A^{-1}=A^H\\ Normale\ A^H\cdot A=A\cdot A^H\end{cases}$
+	2.  $A\in \mathbb{R}^{n\times n} \quad \begin{cases} Simmetrica\ A=A^T\\ AntiSimmetrica\ A=-A^T \\ Ortogonale\ A^T\cdot A=A\cdot A^T=I\ e\ A^{-1}=A^T\end{cases}$
+## Sottomatrice
+Una sottomatrice è una porzione della matrice di partenza, quindi una matrice che ha __rango__ minore rispetto alla matrice genitrice.
+Il suo determinante è detto __minore__.
+## Matrice di Permutazione 
+Data $P\in \mathbb{R}^{n\times n}$ si dice __matrice di permutazione__ se $A$ si ottiene da $I$ permutandone (cambiandone l'ordine) le righe o le colonne.
+### Proprietà
+1. le matrici di permutazioni sono __ortogonali__
+2. il prodotto di $A$ con $P$ mi restituisce $A$ permutata:
+   - sulle __righe__ se $P$ a __sinistra__
+   - sulle __colonne__ se $P$ a __destra__
 # Operazioni
 ### Somma / Differenza
 
@@ -63,7 +76,7 @@ $$
 M_{i,j}=\det(A-i-j)
 $$
 
-###### Complemento Algebrico
+###### Complemento Algebrico (o Sviluppo di Laplace)
 
 $$
 A_{i,j}=(-1)^{i+j}M_{i,j}
@@ -88,3 +101,27 @@ Il Determinante di una generica matrice quadrata è la somma degli elementi di u
 $$
 \det(A_{n \times n})=\sum_{i=1}^na_{k,i}A_{k,i}
 $$
+# Rango 
+Il __rango__ di una matrice è definito come il massimo numero di colonne linearmente indipendenti (che coincide con il max numero di righe linearmente indipendenti) ed è uguale all'__ordine massimo dei minori__ $\neq$ 0 nella matrice
+## Proprietà
+se $rango(A)=dim(Im(A)),\quad A\in \mathbb{C}^{m\times n}\quad \Rightarrow \quad Im(A)=\{y\in \mathbb{C}^{m}:y=Ax,\quad x\in\mathbb{C}^{n}\}$  
+se $A\in \mathbb{C}^{n\times n}\quad rango(A)<n\quad \Longleftrightarrow \quad det(A)=0$ 
+# Kernel (nucleo)
+Kernel risponde alla definizione di insieme delle soluzioni di $Ax=0$, più formalmente:$$Ker(A)=\{x\in \mathbb{R}^{m\times n} :Ax=0\} $$
+ecco che tramite [[Teorema di Rouché-Capelli]] vediamo che $dim(Ker(A))=n-rango(A)$ 
+# Autovalori e Autovettori
+Data $A\in \mathbb{C}^{n\times n}, \quad \lambda \in \mathbb{C}$ si dice __autovalore__ se $\exists \ vettore \ v\in \mathbb{C}^n,\quad v\neq 0 \ t.c. \quad Av=\lambda v$ .
+In questo caso v si dice __autovettore destro__ di $A$ rispetto a $\lambda$ .
+Similmente si dice __autovettore sinistro__ se vale $w^HA=\lambda w^H$.
+__Osservazione__:
+$w$ è autovettore sx rispetta a $\lambda \ se \ e \ solo \ se \ w$ autovalore dx per $A^H$ rispetto a $\overline{\lambda}$ :$$(w^HA)^H=A^Hw\longrightarrow (\lambda w^H)^H=\overline{\lambda}w$$ Domanda: ma $\exists$ autovalori e autovettori di una matrice?$$Av=\lambda v \longrightarrow Av-\lambda v=0 \Longleftrightarrow (A-\lambda I)v=0$$
+Per [[Teorema di Rouché-Capelli]] il sistema ha soluzioni diverse dal vettore nullo $se\ e\ solo\ se\ det(A-\lambda I)=0 \Rightarrow$ __Equazione Caratteristica__ .
+Ne segue che gli __autovalori sono le radici di questa equazione!!__ $$det(A-\lambda I)=\overbrace{c_0+c_1\lambda + \cdots+c_n\lambda^n}^{\Large{Polinomio}  \ Caratteristico}$$
+se prendiamo in considerazione il Polinomio Caratteristico troviamo che:$$p_x(A)=det(A-\lambda I) = (-1)^n\lambda^n+ (-1)^{n-1}\sigma_1\lambda^{n-1}+\cdots-\sigma_{n-1}\lambda+\sigma_n$$
+dove:
+- $\sigma_j$ è la somma dei minori delle sottomatrici principali di ordine j
+- considerando l'affermazione di sopra $\sigma_1=\sum^n_{j=1}a_{jj}=$ traccia di $A$
+- di conseguenza $\sigma_n=det(A)=\prod^n_{j=1}\lambda_j$ , se $det(A)=0 \Longleftrightarrow \exists\lambda=0$ 
+## Molteplicità
+Un autovalore ha molteplicità algebrica $\alpha(\lambda)=k$  se $k$ è la sua
+---------finire

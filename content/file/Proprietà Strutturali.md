@@ -25,6 +25,12 @@ Se $Re(\lambda) \leq 0 \forall \lambda$ (la parte reale di almeno un autovalore 
 È instabile se e solo se tra i $\lambda_i \text{ con } Re(\lambda_i)=0$, ne esiste almeno uno cui corrisponda un miniblocco di Jordan di dimensione maggiore di uno, poiché in questo caso nel movimento libero comparrebbe un modo del tipo $t^k$ eventualmente moltiplicato per un seno, con $k>0$, che tende a più infinito per $t \to \infty$.
 
 Se non vi sono autovalori multipli sull'asse immaginario (un solo $Re(\lambda)=0$) allora il sistema risulta stabile se e solo tutti i suoi autovalori hanno parte reale negativa o nulla.
+### Tabella Riepilogativa
+
+| stabilità  | Modi          | Autovalori                                                                                                                          |
+| ---------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Asintotica | tendono a $0$ | $Re(\lambda) <0$                                                                                                                    |
+| Marginale  | limitati      | $Re(\lambda) \leq 0$ e per i $\lambda$ per cui $Re(\lambda)=0$, $q$ (dimensione del blocco di jordan relativo) $=1$, ovvero $mg=ma$ |
 # Raggiungibilità
 Questa proprietà riguarda la possibilità di far assumere allo stato di un sistema dinamico un valore prefissato, agendo sull'ingresso, ed è legata alle matrici $A,B$.
 

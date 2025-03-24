@@ -44,8 +44,14 @@ end
 - `A'` : trasposta
 - `A=diag(v,k)` crea una matrice con elementi del vettore v sulla k-esima diagonale e 0 altrove.
 - `A( x1:y1 ; x2:y2 )` seleziona la sottomatrice di $A$ con estremi i punti delle coordinate specificate.
+- `:` da solo è un'abbreviazione per `1:end` 
+- `[L,U,P]=LU(A)` rende fattorizzazione LU di A con pivoting
 ### Grafici
-`plot(x,y)` con x, y vettori della stessa lunghezza
+- plot(x,y)` con x, y vettori della stessa lunghezza
+- loglog(x,y) rappresenta la stessa cosa ma su scala logaritmica su entrambi gli assi
+### Misurazione del Tempo
+- tic; istruzione toc; misura il tempo di istruzione
+- misurazione più precisa: `timeit`, fa la media di molte esecuzioni
 # Optimization ToolBox
 ### Linprog
 Per risolvere un [[Problema di Programmazione Lineare (PL)]], [[MatLab]] offre ___linprog___.

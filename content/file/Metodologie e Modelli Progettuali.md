@@ -27,7 +27,14 @@ Esistono vari modelli, il più vecchio è il __waterfall model__: in questo mode
    2. analisi dei requisiti
       coadiuvata da linguaggi specifici per definire i requisiti, ad esempio [[UML]] 
 3. ___progettazione___
-	   divisa in progettazione dei dati (e quindi scelta del [[Modello dei dati]] e delle applicazioni. Si Progetta per diversi livelli di astrazione: [[Progettazione Concettuale]], [[Progettazione Logica]] e fisica che lavorano rispettivamente su schema concettuale, logico e fisico.
+	   divisa in: 
+	   - progettazione dei dati (e quindi scelta del [[Modello dei dati]]
+	   - progettazione delle applicazioni. 
+	 Si progetta per diversi livelli di astrazione:
+	 - [[Progettazione Concettuale]]: esprime i requisiti di un sistema. CHE COSA.
+	 - [[Progettazione Logica]]: descrive la struttura di ciascun record e i collegamenti tra essi. COME.
+	 - Progettazione fisica: modalità di allocazione dei dati e partizionamento. COME.
+   che lavorano rispettivamente su schema concettuale, logico e fisico.
 4. ___realizzazione___
 5. ___validazione e collaudo___
 6. ___funzionamento o shipping___ 

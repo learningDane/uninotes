@@ -11,9 +11,9 @@ Algebra Relazionale:
 [[Grafo]] 
 [[Calcolo Relazionale]] 
 [[Metodologie e Modelli Progettuali]] 
-
 [[Modello Entity-Relationship]] 
 [[Progettazione Concettuale]] 
+
 [[Progettazione Logica]] 
 [[Dipendenza Funzionale]] 
 [[Normalizzazione]] 

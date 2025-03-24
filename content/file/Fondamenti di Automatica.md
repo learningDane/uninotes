@@ -12,3 +12,6 @@ Argomenti
 [[Funzione di Trasferimento]] 
 [[Controllo in Feedback]] 
 [[Trasformata di Laplace]] 
+
+Esercizi
+[[Analisi Strutturale di Un Sistema]] 

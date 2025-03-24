@@ -94,7 +94,7 @@ $$
 2. $\lim_{x \to \infty} \sqrt[n]{n} = 1$
    Poniamo $1 < a_n = \sqrt[n]{n}$, quindi $n = (a_n)^n$ e $a_n = 1 + b_n$ 
    Quindi $n= (a_n)^n=(1+b_n)^n \geq 1 + nb_n$ Per la [[Disuguaglianza Bernoulli]] 
-   $(1+ b_n)^n = 1 + nb_n + ...$ ma la somma è maggiore degli addendi quindi sicuramente $(1+b_n)^n > \begin{pmatrix} n \\ k \end{pmatrix} (b_n)^2 = \frac{n(n-1)}{2} b_n ^2$  
+   $(1+ b_n)^n = 1 + nb_n + ...$ ma la somma è maggiore degli addendi quindi sicuramente $(1+b_n)^n > \begin{pmatrix} n \\ k \end{pmatrix} (b_n)^2 = \frac{n(n-1)}{2} b_n ^2$
    Siccome $b_n > 0$ Allora: $0 \leq b_n ^2 \leq \frac{2}{n - 1}$ 
    Ma $\frac{2}{n-1} \to 0$ Allora $b_n \to 0$ per il [[Teorema del Confronto]].
    Ma $n = (1 + b_n ) ^n$ Quindi $\sqrt[n]{n} \to 1$ C.V.D. 

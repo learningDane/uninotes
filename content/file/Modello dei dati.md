@@ -1,7 +1,10 @@
 #uni
 Il modello dei dati è l'insieme di costrutti utilizzati per organizzare i dati di interesse e descriverne la dinamica.
 
+La componente fondamentale di ogni modello dei dati sono i suoi meccanismi di strutturazione, anche detti ___costruttori di tipo___.
+
 Questo modello dei dati fornisce ai programmi applicativi una ___vista astratta dei dati___, così facendo possiamo modificare la struttura dei dati senza dover cambiare i programmi.
+# Principali tipi di Modelli
 
 - ==Modelli Concettuali==:
 	- permettono di rappresentare i dati in modo indipendente da ogni sistema

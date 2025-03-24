@@ -19,7 +19,7 @@
 - ___sistema lineare___ è un sistema composto da tante equazioni quante incognite e si può abbreviare con $Ax=b$ dove $A$ è la matrice dei coefficienti, $x,b$ sono vettori colonna, $x$ delle incognite e $b$ dei termini noti (___forma matriciale___) e il ___sistema lineare omogeneo___ ad esso associato è $Ax=0$ .
 - Def ___Applicazione Lineare___: 
 	siano $V$ e $W$ S.V. , una app. lin. è una $f : V \to W$ t.c. $f(v_1+v_2) = f(v_1) + f(v_2)$ e $f(λV)=λf(v)$ 
-- $ker(f)$ è l'insieme $ker(f)=\{v \in V : f(v)=0\}$ ed è sottospazio V. di $V$ .
+- ==$ker(f)$ è l'insieme $ker(f)=\{v \in V : f(v)=0\}$ ed è sottospazio V. di $V$== .
 - $Im(f)$ è l'insieme $Im(f)=\{ f(v) : v \in V \}$ ed è sottospazio V. di $V$ .
 - se $ker(f) = \{ \emptyset \}$  allora $f$ è iniettiva
 - se $v_1,...,v_n$ sono una base di $V$ allora $f(v_1),...,f(v_n)$ sono generatori di $Im(f)$, ma non è detto che siano linearmente indipendenti, lo sono solo se $f$ è iniettiva e quindi se $ker(f)$ è vuoto.
@@ -72,9 +72,10 @@
      per trovare gli autovalori di $A$: $det(A-λ\cdot Id)=0$
      otteniamo un polinomio in λ di grado $n$ se $A$ è una matrice $n\times n$, che chiamiamo ___polinomio caratteristico di $A$___. Le radici (gli autovalori) appartengono a $C$, possono essere quindi complessi o reali, e possono avere molteplicità. $P(λ)=det(A-λId)$ 
      Il **prodotto** degli autovalori è uguale al termine noto del polinomio caratteristico ed è uguale al determinante della matrice (quindi se un $λ=0$ allora $det(A)=0$. La **somma** degli autovalori è uguale alla traccia della matrice. Si dice ___molteplicità algebrica di una λ___ ($m_a(λ)$) quante volte λ è radice del pol, caratteristico. Si dice ___molteplicità geometrica di una λ___ ($m_g(λ)$) la dimensione dell'autospazio di λ e quindi $m_g(λ)=dim(ker(A-λ \cdot Id))=n-rango(A_λ\cdot λId)$ .
-  1. dato un _Autovalore_ λ, si dice _Autospazio_ di λ l'insieme di tutti gli autovettori, compreso lo zero, relativi a λ.
+  2. dato un _Autovalore_ λ, si dice _Autospazio_ di λ l'insieme di tutti gli autovettori, compreso lo zero, relativi a λ.
   Quando si diagonalizza una matrice, gli autovalori diventano gli elementi sulla diagonale e gli autovettori diventano le colonne della matrice $M$.
-  ___TH di Diagonalizzazione___: una matrice $A$ $n\times n$ è diagonalizzabile se e solo se $m_g(λ)=m_a(λ) \ , \ \forall λ$ quindi se $1\leq m_g(λ) \leq m_a(λ)$ e quindi se tutti gli autovalori hanno $m_g(λ)=1$ .
+ -  ___TH di Diagonalizzazione___: 
+	 una matrice $A$ $n\times n$ è diagonalizzabile se e solo se $m_g(λ)=m_a(λ) \ , \ \forall λ$ quindi se $1\leq m_g(λ) \leq m_a(λ)$ e quindi se tutti gli autovalori hanno $m_g(λ)=1$ .
   Posso dare queste stesse esatte definizioni per applicazioni lineari $f:V\to V$ 
 - Due matrici $A,B$ sono ___simili___ se $\exists M \ invertibile \ t.c. \ B=M^{-1}AM$, allora hanno:
   1. stesso polinomio caratteristico
@@ -91,7 +92,7 @@
 - ___Dischi di Gershgorin___:
   In un unione di $n$ dischi ci sono $n$ autovalori, quindi in ogni disco isolato c'è un autovalore _Reale_ (se fosse Complesso nello stesso cerchio ci dovrebbe essere anche il suo coniugato). 
 - ___Matrice Riducibile___: una matrice $A$ si dice riducibile se esiste una matrice di permutazione $P$ tale che $PAP^T=\begin{pmatrix} A_{11}&A_{12}\\ 0&A_{22} \end{pmatrix}$ con $A_{11},A_{22}$ matrici quadrate.
-Geometria:
+__Geometria__:
 - angolo tra retta e piano: $\cos β=\frac{|<(a,b,c piano),(direzione retta)>|}{||(a,b,c piano)|| \cdot ||(direz retta)||}$ 
 - distanza punto-retta nel piano: $dist(P,retta)=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}$ 
 - distanza punto-piano: $dist(P,piano)=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}$ 

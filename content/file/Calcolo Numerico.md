@@ -8,3 +8,4 @@ Argomenti:
 [[Numeri di Macchina]] 
 [[Errori nelle Funzioni Razionali]] 
 [[Errori nelle Funzioni Non Razionali]]
+[[Teorema di Hirsch]]
