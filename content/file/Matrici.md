@@ -25,7 +25,7 @@ Se $n=m=1$ allora la matrice è un solo numero.
 Una sottomatrice è una porzione della matrice di partenza, quindi una matrice che ha __rango__ minore rispetto alla matrice genitrice.
 Il suo determinante è detto __minore__.
 ## Matrice di Permutazione 
-Data $P\in \mathbb{R}^{n\times n}$ si dice __matrice di permutazione__ se $A$ si ottiene da $I$ permutandone (cambiandone l'ordine) le righe o le colonne.
+Data $P\in \mathbb{R}^{n\times n}$ si dice __matrice di permutazione__ se $P$ si ottiene da $I$ permutandone (cambiandone l'ordine) le righe o le colonne.
 ### Proprietà
 1. le matrici di permutazioni sono __ortogonali__
 2. il prodotto di $A$ con $P$ mi restituisce $A$ permutata:

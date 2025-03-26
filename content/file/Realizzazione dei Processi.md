@@ -36,3 +36,24 @@ Predisponiamo inoltre una coda diversa per ogni tipo di evento atteso dai proces
 Tutte queste code saranno mantenute in ordine di priorità, in modo tale da dover semplicemente estrarre il `des_proc` in testa alla coda `pronti`.
 
 Per gestire il caso in cui tutti i processi siano bloccati, realizziamo un processo ___dummy___ a priorità minima, sempre pronto, che esegue un ciclo infinito in cui controlla il numero di processi attualmente esistenti nel sistema, se scopre che tutti i processi sono terminati, il processo dummy esegue lo ___shutdown___.
+# Cambio di Processo
+Il cambio di Processo può accadere solo quando il processo attuale si porta a livello di sistema, che può accadere solo in questi 3 casi:
+- il processo esegue una istruzione `int`
+- il processore genera una eccezione
+- il processore accetta una interruzione esterna
+
+Il processore fa quanto segue:
+1. consulta l'entrata della IDT per prelevare l'indirizzo a cui saltare
+2. salva in pila l'indirizzo a cui tornare
+3. esegue altre azioni in base ai flag contenuti nel cancello
+	- se deve innalzare il livello di privilegio, esegue il cambio di Pila, prelevando il puntatore alla nuova pila dal campo `punt_nucleo` del descrittore di processo puntato dal registro %tr
+	  Tutti i Cancelli nel nostro sistema prevedono innalzamento di privilegio e la disabilitazione delle interrupt.
+4. in pila (nuova o vecchia) salva il puntatore alla vecchia pila, il contenuto di %rflags, il livello di privilegio precedente l'innalzamento e l'indirizzo della prossima istruzione da eseguire
+
+Faremo attenzione a mantenere il seguente schema per ogni codice a cui salta:
+```assembly
+call salva_stato
+...
+call carica_stato
+iretq
+```
