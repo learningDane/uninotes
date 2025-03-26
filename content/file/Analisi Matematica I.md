@@ -8,7 +8,7 @@
 [[Limiti]] 
 [[Continuità]] 
 [[Derivata]] 
-[[Integrali]] 
+[[Integrale]] 
 [[Formula di Taylor]] 
 [[Studio di Funzioni]] 
 [[Equazioni Differenziali]] 

@@ -43,16 +43,17 @@ Si fa per rendere più efficienti le operazioni, lo scopo è ridurre gli accessi
 - raggruppando attributi di concetti diversi acceduti insieme
 Nota bene: ad ogni accesso si legge sempre l'intera informazione.
 I casi principali sono:
-- partizionamento verticale di entità
-  separare gli attributi in gruppi e separare la entity iniziale nelle due realtà indicate dai gruppi.
-- partizionamento orizzontale di relationship
+- ___partizionamento verticale di entità___
+  separare gli attributi in gruppi e separare la entity iniziale nelle due realtà indicate dai gruppi (ad esempio dividere i dati su un impiegato in dati anagrafici e dati lavorativi).
+- ___partizionamento orizzontale di relationship___
   duplicare un attributo di relationship e dividere la relationship in modo che siano entrambe legate alle stesse entity e abbiano quell'attributo uguale.
-- eliminazione di attributi multivalore
-  dividere un attributo in una entity con attributo e legarla alla entity originale tramite relationship.
-- accorpamento di entity e relationship
-  il contrario di partizionamento verticale e orizzontale
+- ___eliminazione di attributi multivalore___
+  dividere un attributo multivalore in una entity con attributi e legarla alla entity originale tramite relationship.
+- ___accorpamento di entity e relationship___
+  il contrario di partizionamento verticale e orizzontale (ho una relationship uno ad uno che lega due entity, accorpiamo tutto in una entity sola).
 #### Scelta degli identificatori primari
-Questa è un'operazione indispensabile per la traduzione nel modello relazionale. La scelta viene eseguita secondo i seguenti criteri:
+Questa è un'operazione indispensabile per la traduzione nel modello relazionale. 
+La scelta viene eseguita secondo i seguenti criteri:
 - assenza di opzionalità
 - semplicità
 - utilizzo nelle operazioni più frequenti ed importanti

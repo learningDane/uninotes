@@ -36,6 +36,43 @@ $$
 f(t)= L^{-1}\{ F(s)\} = \frac{1}{2 \pi j} \int_{\gamma- \infty}^{\gamma+\infty} F(s)e^{st}ds
 $$
 Assumendo $f(t)=0, \forall t<0$ 
+# Proprietà della Trasformata di Laplace
+### Proprietà di Linearità
+$$
+L\{ c_1 \cdot f_1(t)+c_2 \cdot f_2(t) \}=c_1 \cdot F_1(s) + c_2 \cdot F_2(s)
+$$
+Ed inoltre l'ascissa di convergenza è il massimo tra le ascisse di convergenza dei termini originari.
+### Proprietà della Traslazione di t
+$$
+L\{f(t-t_0)\}=e^{-st_o}F(s)
+$$
+### Proprietà di Scala
+$$
+L\{f(a \cdot t)\}=\frac{1}{a}\cdot F\Big(\frac{s}{a}\Big)
+$$
+### Proprietà di Derivazione in s
+$$
+L\{t \cdot f(t)\}=-\frac{dF(s)}{ds}
+$$
+### Proprietà di Traslazione in s
+$$
+F(s-a)=L\{ e^{at}ft)\}
+$$
+### Proprietà di Derivazione in t
+$$
+L\Big\{\frac{df}{dt}\Big\}=s\cdot F(s)-f(0)
+$$
+### Proprietà di Integrazione in t
+$$
+L \Big\{
+\int_0^t f(t)dt
+\Big\}=\frac{1}{s}F(s)
+$$
+### Proprietà di Convoluzione
+$$
+L\{f_1(t)*f_2(t)\}=F_1(s) \cdot F_2(s)
+$$
+convoluzione: $f_1 * f_2=\int_0^tf_1(\tau) \cdot f_2(t-\tau)d\tau$ 
 # Tabella delle Trasformate di Laplace
 $$
 \begin{array} {|c|c|} \hline   \text{nome}  & f(t) & F(s)  \\

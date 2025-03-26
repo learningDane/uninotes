@@ -1,2 +1,2 @@
 #kope 
-Il flusso di un campo vettoriale attraverso una superficie orientata, in matematica e fisica, è l'[[integrale]] di superficie del prodotto scalare tra il campo vettoriale ed il versore normale alla superficie, esteso su tutta la superficie stessa.
+Il flusso di un campo vettoriale attraverso una superficie orientata, in matematica e fisica, è l'[[Integrale]] di superficie del prodotto scalare tra il campo vettoriale ed il versore normale alla superficie, esteso su tutta la superficie stessa.
