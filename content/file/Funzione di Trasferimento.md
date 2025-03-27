@@ -6,3 +6,18 @@ ___Definizione___: la ___funzione di trasferimento___ di un sistema dinamico nel
 
 ![[funzioneditrasferimento1.svg]]
 
+# Risposta all'impulso
+I sistemi LTI possono essere caratterizzati attraverso la loro risposta all'impulso (ovvero supponiamo $u(t)=\delta(t)$:
+$$
+y(t)=g(t)*r(t)=\int_0^tg(t-\tau)\cdot r(\tau)d\tau=\int_0^tg(\tau) \cdot r(t-\tau)d\tau \quad ; \quad \geq 0
+$$
+con $r(t)$ il segnale di riferimento (input), $y(t)$ l'uscita e $g(t)$ la ___risposta all'impulso___.
+In [Laplace](Trasformata%20di%20Laplace.md) per via della [proprietà di convoluzione](Trasformata%20di%20Laplace.md#Proprietà%20di%20Convoluzione) invece abbiamo semplicemente:
+$$
+Y(s)=G(s) \cdot U(s)
+$$
+
+>L'antitrasformata di una funzione di trasferimento rappresenta la risposta all'impulso unitario.
+
+>L'integrale della risposta all'impulso unitario rappresenta la risposta al gradino unitario.
+

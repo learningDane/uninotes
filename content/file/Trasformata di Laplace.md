@@ -35,7 +35,26 @@ Data $F(s)=\frac{N(s)}{D(s)}$:
 $$
 f(t)= L^{-1}\{ F(s)\} = \frac{1}{2 \pi j} \int_{\gamma- \infty}^{\gamma+\infty} F(s)e^{st}ds
 $$
-Assumendo $f(t)=0, \forall t<0$ 
+Assumendo $f(t)=0, \forall t<0$.
+### Procedimento attraverso la decomposizione in Fratti Semplici
+1. Decompongo la funzione in fratti semplici:
+$$
+G(s)=\frac{n(s)}{d(s)}=\frac{n(s)}{\prod_i(s-s_i)^{h_i}}
+$$
+	dove $s_i$ è un ___polo___, con molteplicità $h_i$.
+2. Scrivo $G(s)$ come somma di Residui Polari:
+$$
+G(s)=\sum_{i=1}\sum_{j=1}^{h_i}\frac{K_{ij}}{(s-s_i)^{h-j}}
+$$
+	dove $i$ è l'indice dei poli distinti e $j$ si riferisce alla molteplicità.
+3. Calcolo i Residui:
+$$
+K_{ij}=\frac{1}{(j-1)!}\lim_{s \to s_i}\frac{d^{j-1}}{ds^{j-1}}(s-s_i)^h \cdot G(s)
+$$
+4. Finalmente antitrasformiamo: 
+$$
+g(t)=\sum_{i=1}\sum_{j=1}^{h_i}K_{ij}\cdot t^{j-1}\cdot e^{p_i\cdot t}
+$$
 # Proprietà della Trasformata di Laplace
 ### Proprietà di Linearità
 $$
@@ -72,7 +91,16 @@ $$
 $$
 L\{f_1(t)*f_2(t)\}=F_1(s) \cdot F_2(s)
 $$
-convoluzione: $f_1 * f_2=\int_0^tf_1(\tau) \cdot f_2(t-\tau)d\tau$ 
+Vedi [[Convoluzione]].
+### Teorema Valore Iniziale
+$$
+\lim_{t \to 0}f(t)=\lim _{s \to \infty}s \cdot F(s)
+$$
+### Teorema Valore Finale
+$$
+\lim _{t \to \infty}f(t) = \lim_{s \to 0}s \cdot F(s)
+$$
+Condizione: $\lim_{t \to \infty} f(t)$ deve esistere ed essere finito (ovvero il sistema deve essere stabile, ma non marginalmente).
 # Tabella delle Trasformate di Laplace
 $$
 \begin{array} {|c|c|} \hline   \text{nome}  & f(t) & F(s)  \\
@@ -80,6 +108,8 @@ $$
 \hline \text{Funzione gradino} & 1(t) & \frac{1}{s}  \\
 \hline \text{Gradino Traslato} & 1(t-t_0) & \frac{e^{-st_0}}{s}  \\
 \hline \text{Funzione Esponenziale}  & e^{at} & \frac{1}{s-a}  \\
+\hline \text{seno} & \sin(wt+\phi) & \frac{w\cdot \cos \phi+s\cdot\sin \phi}{s^2+w^2} \\
+\hline \text{coseno} & \cos(wt+\phi) & \frac{s \cdot\cos \phi+w\cdot \sin \phi}{s^2+w^2} \\
 \hline
-\end{array}
+\end{array} 
 $$

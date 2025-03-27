@@ -12,6 +12,7 @@ Argomenti
 [[Funzione di Trasferimento]] 
 [[Controllo in Feedback]] 
 [[Trasformata di Laplace]] 
+[[Algebra dei Blocchi]] 
 
 Esercizi
 [[Analisi Strutturale di Un Sistema]] 
