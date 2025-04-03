@@ -14,6 +14,7 @@ Laboratorio:
 [[Comandi Utili Calcolatori Elettronici]] 
 [[Programmazione mista assembly, c++]] 
 [[mangling]] 
+[[Creazione di Primitiva]] 
 
 link utili:
 [eccezioni](https://wiki.osdev.org/Exceptions) 

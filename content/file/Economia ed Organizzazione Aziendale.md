@@ -1,5 +1,6 @@
 #uni 6cfu - Antonella Martini, Vito Giordano
 [[Informazioni sul Corso di Economia ed Organizzazione Aziendale]]
+[[Glossario Economia]] 
 [codice civile online](https://www.codice-civile-online.it) 
 IGNORANTIA LEGIS NON EXCUSAT
 
@@ -17,6 +18,9 @@ Modulo III:
 [[Società e scopi di Lucro]] 
 [[Strutture Organizzative]] 
 Modulo IV:
+
+PW:
+[[Project Work]] 
 
 Modulo I, Bilancio, Analisi, Costi:
 - Costruzione di un bilancio di esercizio

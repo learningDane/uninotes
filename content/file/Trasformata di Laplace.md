@@ -49,7 +49,8 @@ $$
 	dove $i$ è l'indice dei poli distinti e $j$ si riferisce alla molteplicità.
 3. Calcolo i Residui:
 $$
-K_{ij}=\frac{1}{(j-1)!}\lim_{s \to s_i}\frac{d^{j-1}}{ds^{j-1}}(s-s_i)^h \cdot G(s)
+K_{ij}=\frac{1}{(h-j
+)!}\lim_{s \to s_i}\frac{d^{h-j}}{ds^{h-j}}\Big[(s-s_i)^h \cdot G(s)\Big]
 $$
 4. Finalmente antitrasformiamo: 
 $$

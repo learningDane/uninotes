@@ -62,12 +62,16 @@ Nel caso in cui nessuno degli identificatori soddisfa questi requisiti si introd
 L'idea di base per tradurre nel [[Modello Logico Relazionale]] è:
 - le entity diventano relazioni sugli stessi attributi
 - le relationship diventano relazioni sugli identificatori delle entity coinvolte (più gli attributi propri).
-Dobbiamo misurare formalmente la qualità di un raggruppamento di attributi in uno schema di relazione. Per farlo utilizziamo la [[Normalizzazione]] e un approccio ___Top-Down___:
+
+Dobbiamo misurare formalmente la qualità di un raggruppamento di attributi in uno schema di relazione.
+Per farlo utilizziamo la [[Normalizzazione]] e un approccio ___Top-Down___:
 1. individuiamo alcuni raggruppamenti di attributi con i quali formiamo relazioni che sussistono come tali nel mondo reale
 2. analizziamo poi queste relazioni e portiamo eventualmente a decomposizioni successive
+
 Gli obiettivi della progettazione logica sono:
 - conservazione dell'informazione contenuti nel modello concettuale
 - minimizzazione della ridondanza
+
 Da questi obiettivi possiamo derivare alcune linee guida per il progetto:
 1. _Semplice è bello_:
    - uno schema di relazione deve essere tale che sia semplice spiegarne il significato

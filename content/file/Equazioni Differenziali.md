@@ -1,5 +1,5 @@
 #uni 
-Una equazioni in cui l'incognita è una funzione e vi sono presenti una o più derivate.
+Equazioni in cui l'incognita è una funzione e vi sono presenti una o più derivate.
 L'__ordine__ (o grado) di una equazione differenziale è il massimo grado di derivazione presente in essa.
 Non esista un metodo di risoluzione generale, esso varia in base al tipo di equazione differenziale.
 # Equazioni differenziali del $I^o$ ordine

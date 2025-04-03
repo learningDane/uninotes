@@ -1,0 +1,11 @@
+#uni 
+- ___mutuo adattamento___: quando ci sono poche persone e non c'è una struttura definita.
+- ___standardizzazione dell'input___: arruolare persone già formate.
+- ___standardizzazione dei processi___: definire il tempo e le risorse necessarie per svolgere un compito, ovvero trovare un tempo standard per ogni operazione.
+- ___diversificazione___: aumento delle linee di prodotto
+- ___profondità di linea di prodotto = differenziazione___: il numero di varianti di prodotto in quella linea.
+- ___mansione___: insieme di compiti che vengono assegnati ad una posizione.
+- ___compito___: insieme di attività o operazioni necessariamente collegate.
+- ___specializzazione orizzontale___: indice di specializzazione di una certa mansione: più compiti una certa mansione ha e meno la specializzazione orizzontale è alta.
+- ___Ruolo___: insieme delle aspettative di comportamento nei confronti di una persona in riferimento agli obiettivi dell'organizzazione che devono informare il suo agire ed interagire.
+- ___specializzazione verticale___ di una mansione: indice del grado di autonomia nello svolgimento della mansione: più c'è autonomia e più è basso il livello di specializzazione verticale.
