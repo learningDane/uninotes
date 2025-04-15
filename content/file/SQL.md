@@ -80,17 +80,19 @@ Altre funzioni:
 # Operatori
 ### Operatori di aggregazione
 Permettono di eseguire calcoli i cui operandi sono i valori assunti da un attributo, in un insieme di record -> collassa in un solo record formato da un solo attributo numerico.
+
 Accanto ad una aggregazione posso solo mettere un'altro aggregazione e non altro perchè la tabella scompare. 
+
 1. conteggio: conta le righe slide che rientrano nella ricerca, conta i risultati.
 	   `SELECT  count(*) AS VisitePrimoMarzo` restituisce il risultato con il nome VisitePrimoMarzo, quindi AS si chiama ___ridenominazione___, `COUNT(*)` non fa distinzione tra risultati e conta anche i duplicati. Se non voglio contare i duplicati devo usare `COUNT(DISTINCT Attributo)`
-1. somma
+2. somma
 	   `SELECT SUM(Reddito) AS RedditoTotale` 
-1. minimo/massimo
+3. minimo/massimo
 	```SQL
 	SELECT MAX(Reddito)
 	FROM paziente;
 	```
-1. media
+4. media
 	   `SELECT AVG(Reddito) AS RedditoTotale`
 5. Deviazione Standard
 	`SELECT STDDEV(Reddito) AS DeviazioneStandard` 
@@ -172,11 +174,27 @@ FROM
 WHERE
 ```
 # Ridenominazione
-È possibile ridenominare una colonna del result set tramite l'oepratore ` AS ` , mentre per combinare più colonne è possibile utilizzare l'operatore `+` 
+È possibile ridenominare una colonna del result set tramite l'operatore ` AS ` , mentre per combinare più colonne è possibile utilizzare l'operatore `+` 
 ```MySQL
 SELECT nomevecchio AS nomenuovo
 SELECT Citta + ', ' + via + ', ' + cap AS indirizzo
 ```
+
+# Raggruppamento/Group by
+Suddivide un insieme di record in gruppi di record e in ogni ogni gruppo il valore di un (o più) attributo è costante in tutti i record.
+
+>OGNI GRUPPO GENERA UN SOLO RECORD NEL RESULT SET.
+
+La cardinalità minima per ogni gruppo è 1, altrimenti il record per quale gruppo non si genera.
+```MySQL
+Indicare la parcella media dei medici di ciascuna specializzazione
+select specializzazione, avg(parcella) as parcellamedia
+from medico
+group by specializzazione;
+l´operatore avg() è applicato gruppo per gruppo (calcola un valore riepilogativo per il gruppo)
+specializzazione invece assume lo stesso valore in un gruppo
+```
+
 # Derived Table
 Sono tabelle volatili (vengono cancellate alla fine dell'esecuzione) che possono essere incapsulate nel FROM, sono utili per costruire risultati intermedi. Per costruire una derived table è sufficiente eseguire una ridenominazione con AS di una query, esempio: 
 ```MySQL
@@ -191,17 +209,6 @@ FROM Visita V1 LEFT OUTER JOIN
 	AS D                              |-> alias (obbligatorio) della Derived Table
 	ON V1.Medico = D.Medico |oppure| USING(Medico)
 WHERE D.Medico IS NULL;
-```
-# Raggruppamento/Group by
-Suddivide un insieme di record in gruppi di record e in ogni ogni gruppo il valore di un (o più) attributo è costante in tutti i record.
-OGNI GRUPPO GENERA UN SOLO RECORD NEL RESULT SET
-```MySQL
-Indicare la parcella media dei medici di ciascuna specializzazione
-select specializzazione, avg(parcella) as parcellamedia
-from medico
-group by specializzazione;
-l´operatore avg() è applicato gruppo per gruppo (calcola un valore riepilogativo per il gruppo)
-specializzazione invece assume lo stesso valore in un gruppo
 ```
 # Riordinamento Valori
 Per ordinare i risultati in base ai valori in una colonna posso usare `ORDER BY`

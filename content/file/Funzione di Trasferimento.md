@@ -94,7 +94,8 @@ x_1 \\x_2\\...\\x_n
 \end{matrix}
 $$
 Quella che ho ottenuto è la forma canonica di controllo.
-Notiamo che i parametri $a_i$ sono i coefficienti del denominatore di $G(s)$
+
+>Notiamo che i parametri $a_i$ sono i coefficienti del denominatore di $G(s)$
 # Algebra dei Blocchi 
 ## Connessione in Serie
 ![[connessioneinserie.svg]]

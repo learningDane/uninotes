@@ -13,7 +13,10 @@ e garantisce:
 - __efficacia__:
   migliorare la produttività dell'utilizzatore
 
+ >Regole ___ACID___: Atomicità, Coerenza, Isolamento, Durabilità
+
 Nei DBMS esiste una porzione della base di dati che contiene una descrizione centralizzata dei dati. Viene introdotto il concetto di [[Modello dei dati]].
+
 Un DBMS può essere ___monoutente___ o ___multiutente___ a seconda del numero di utenti che possono usufruirne simultaneamente.
 # Schema ed Istanza
 In ogni base di dati esistono:

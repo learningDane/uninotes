@@ -1,7 +1,8 @@
 #uni 
-Francesco Pistolesi e Nicola Tonellotto, 9cfu
+Nicola Tonellotto e Francesco Pistolesi, 9cfu
 [[Informazioni sul Corso di Basi di Dati]] 
-Algebra Relazionale:
+
+Progettazione:
 [[Sistema Informativo]] 
 [[Database]] 
 [[DBMS]] 
@@ -23,7 +24,6 @@ Algebra Relazionale:
 [[Gestione dell'Affidabilità]] 
 
 [[Cheatsheet creazione Database]] 
-[[Esercizi Algebra Relazionale]] 
 
 SQL:
 [[SQL]] 

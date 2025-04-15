@@ -89,3 +89,6 @@ Da questi obiettivi possiamo derivare alcune linee guida per il progetto:
 3. _Meno NULL possibili_:
    - non inserire in una relazione attributi i cui valori possono essere frequentamente NULL
    - se i valori NULL non possono essere evitati, ci si assicuri che siano casi eccezionali
+# Cheat-sheet
+![[Pasted image 20250409084327.png|500]]
+![[Pasted image 20250409084427.png|500]]

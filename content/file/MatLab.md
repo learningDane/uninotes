@@ -168,3 +168,58 @@ RicOp.pSimplex(f,A,b,base,iter)
             % b = [4; -6; 5; 22; 6; 16]
             % base = [4 5]
 ```
+# Esempi
+## Plot di Grafico, funzione definita a tratti, ascissa in scala logaritmica, ordinata in radianti
+```Octave
+function funzione3;
+
+w = logspace(-3, 3, 1000); % w on log scale from 10^
+T = 1;                   % TAU constant
+y = -atan(T*w);       % arctan
+
+hold on %appende tutti i grafici nella stessa finestra
+
+% ------------------- Grafico Asintotico
+w1 = w(w < 1e-1);
+y1 = zeros(size(w1));
+w2 = w((w >= 1e-1) & (w <= 1e1));
+y2 = -pi/4 * log10(w2) - pi/4;
+w3 = w(w > 1e1);
+y3 = -pi/2 * ones(size(w3));
+plot(w1, y1, 'r', 'linewidth', 2);
+plot(w2, y2, 'r', 'linewidth', 2);
+plot(w3, y3, 'r', 'linewidth', 2);
+% -------------------
+
+% ------------------- arcotangente con diversi valori di tau
+plot(w, -atan(0.1*w), 'g--', 'linewidth', 1);
+plot(w, -atan(10*w), 'y--', 'linewidth', 1);
+plot(w, y, 'b', 'linewidth', 2); % grafico arcotangente
+% -------------------
+
+ylim([-2,0.5]) % limiti ordinata
+
+plot([min(w), max(w)], [-pi/4,-pi/4], '--k'); %linea tratteggiata su fase=pi/4
+plot([1,1],ylim,'--k'); %linea tratteggiata su w=1
+
+
+% ------------------- etichette in radianti
+yticks = [-pi/2, -pi/4, 0];
+yticklabel = {'-\pi/2', '-\pi/4', '0'};
+% -------------------
+
+
+set(gca,'ytick', yticks, 'yticklabel', yticklabel ,'XScale', 'log');
+
+xlabel('\omega rad/s');
+ylabel('\phi G  rad')
+title('Fase della Risposta in Frequenza di un Polo Semplice')
+legend('','Grafico Asintotico','', '\tau=0.1','\tau=10' ,'\phi G = atan(\omega*(\tau=1))')
+
+
+% ------------ salvataggio come svg
+print -dsvg "exponential_plot.svg"
+
+endfunction
+```
+![[rispostaarmonicafasepolosemplice.svg]]
