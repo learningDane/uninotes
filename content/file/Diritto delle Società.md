@@ -27,8 +27,8 @@ Vantaggio patrimoniale diretto, riguarda i consorzi di imprese.
 ![[societa1.svg]]
 - S.s. : società semplice
 - S.n.C. : società nome collettivo
-- S.a.S. : societ bho
-- S.a.p.a. : bho
+- S.a.S. : società in accomandita semplice
+- S.a.p.a. : società in accomandita per azioni
 - S.p.A. : società per azioni
 - S.r.l. : società responsabilità limitata
 ### Responsabilità delle Società
