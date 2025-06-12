@@ -1,4 +1,4 @@
-[[]]#uni 
+#uni 
 Un diagramma di Bode è una rappresentazione grafica della [[Risposta in Frequenza]] di un [[Sistema LTI]] e che consiste in due grafici che rappresentano rispettivamente l'ampiezza (o modulo) e la fase della funzione complessa di risposta in frequenza.
 Questo diagramma può anche essere usato su sistemi instabili, dei quali quindi non ha senso studiare una risposta in frequenza.
 - il modulo $|G(jw)|$ viene espresso in deciBel: $|G(jw)|_{dB}=20\log_{10}(|G(jw)|$.
@@ -92,3 +92,23 @@ $$
 ![[rispostaarmonicapolocomplessoFase.gif|500]]
 ## Zero Complesso
 ## Ritardo Puro
+$$
+\begin{matrix}
+G(s)=e^{-\tau s} \to G(jw)=e^{-\tau j w} \\
+|G(jw)|=1 \to |G(jw)|_{dB}=0 \\
+\phi G=- w \tau
+\end{matrix}
+$$
+![[rispostarmonicaritardopuro.svg]]
+# Tabella Riassuntiva
+
+|                      | Modulo                       | punto di rottura |     | Fase                                              | inclinazione         | intervallo                            |
+| -------------------- | ---------------------------- | ---------------- | --- | ------------------------------------------------- | -------------------- | ------------------------------------- |
+| Guadagno Statico $K$ | $20 \log(\|K\|)$             | ---              |     | $0 \text{ se } K\geq0$<br>$-\pi \text{ se } K <0$ | ---                  | ---                                   |
+| Zero in Origine      | $+20 \ dB/dec$               | ---              |     | $+\frac{\pi}{2}$                                  | ---                  | ---                                   |
+| Polo in Origine      | $-20 \ dB/dec$               | ---              |     | $-\frac{\pi}{2}$                                  | ---                  | ---                                   |
+| Zero Semplice        | $+20 \ dB/dec$               | $\frac{1}{\tau}$ |     | da $0$ a $\frac{\pi}{2}$                          | $\frac{\pi}{4}/dec$  | $[\frac{1}{10 \tau};\frac{10}{\tau}]$ |
+| Polo Semplice        | $-20 \ dB/dec$               | $\frac{1}{\tau}$ |     | da $0$ a $-\frac{\pi}{2}$                         | $-\frac{\pi}{4}/dec$ | $[\frac{1}{10 \tau};\frac{10}{\tau}]$ |
+| Zero Complesso       | $-40\log(w_0)+40 \ dB / dec$ | $w_0$            |     | da $0$ a $\pi$                                    | $\frac{\pi}{2}/dec$  | $[\frac{1}{10 \tau};\frac{10}{\tau}]$ |
+| Polo Complesso       | $40\log(w_0)-40 \ dB / dec$  | $w_0$            |     | da $0$ a $-\pi$                                   | $-\frac{\pi}{2}/dec$ | $[\frac{1}{10 \tau};\frac{10}{\tau}]$ |
+| Ritardo Puro         | ---                          | ---              |     |                                                   |                      | ---                                   |

@@ -440,6 +440,9 @@ $$
 
 DELIMITER;
 ```
+
+![[Pasted image 20250518181136.png]]
+# Struttura Database
 ![[Pasted image 20240909094826.png]]
 ![[Pasted image 20240909094840.png]]
 ![[Pasted image 20240909094857.png]]

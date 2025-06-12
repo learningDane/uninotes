@@ -60,6 +60,8 @@ Il centro degli asintoti è il baricentro delle singolarità e si calcola come s
 $$
 \sigma=\frac{\sum^np_i-\sum^mz_i}{n-m}
 $$
+# Regola 10
+L’angolo di partenza di un dato polo è la somma degli angoli del polo rispetto agli altri poli.
 # Poli Multipli
 In un punto multiplo la radice multipla $s_i$ è soluzione di: $\frac{d'(s)}{d(s)}=\frac{n'(s)}{n(s)}$, e nel caso di $m$ zeri e $n$ poli si verifica che:
 $$

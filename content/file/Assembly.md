@@ -1,5 +1,17 @@
 #uni 
+NOTA PER L'AMBIENTE DI ESAME
+QUESTA È LA STRUTTURA MOSTRATA DA GDB PER I REGISTRI:
+```
+	-----------------
+	|%AH|%AL|   |   |
+	-----------------
+	|  %AX  |
+	-----------------
+	      %EAX
+```
+
 link utili: [[ascii]], [[Schema del Calcolatore]], [[Note sull'Architettura Intel-AMD a 64bit]] 
+
 Si può dire anche Assembler.
 Questo è il linguaggio in cui si scrivono direttamente le istruzioni eseguite dal processore.
 Il processore ciclicamente:
@@ -207,11 +219,11 @@ Nel nostro ambiente devi includere il file utility con la direttiva:
 `.INCLUDE "./files/utility.s"`
 1. inline: consente di portare una stringa di max 80 caratteri in un buffer di memoria digitando da tastiera con eco su video
    - parametri di ingresso: EBX: indirizzo di memoria del buffer, CX: numero di caratteri da leggere (max 80)
-    la lettura da tastiera termina dopo 78 caratteri o se premete invio, vengono aggiunti in coda al buffer i caratteri LF 0x0A e CR 0x0D
-    il sottoprogramma interpreta backspace come ordine di cancellare dal buffer e dal video l'ultimo carattere digitato
-2. outline: stampa a video max 80 caratteri, si ferma prima se trova un carattere di ritorno carrello, stampando anche i caratteri necessari ad andare a capo.
+    la lettura da tastiera termina dopo 78 caratteri o se premete invio, vengono aggiunti in coda al buffer i caratteri CR 0x0D e LF 0x0A.
+    Il sottoprogramma interpreta backspace come ordine di cancellare dal buffer e dal video l'ultimo carattere digitato
+1. outline: stampa a video max 80 caratteri, si ferma prima se trova un carattere di ritorno carrello, stampando anche i caratteri necessari ad andare a capo.
    parametri di ingresso: EBX indirizzo di memoria del buffer.
-3. outmess: parametri di ingresso EBX indirizzo memoria buffer, CX numero di caratteri da stampare a video.
+2. outmess: parametri di ingresso EBX indirizzo memoria buffer, CX numero di caratteri da stampare a video.
 ### Ingresso/Uscita di caratteri esadecimali
 - inbyte, inword, inlong:
   prelevano da tastiera con eco a video 2,4 o 8 caratteri da tastiera e mettono in AL, AX, EAX il numero esadecimale digitato, ignorano qualunque altro carattere che viene premuto.
@@ -238,7 +250,7 @@ Solo per operando sorgente
 `OPCODE %0x564B43E3, %ECX` 32bit
 ### Indirizzamento di Memoria 
 Sorgente oppure Destinatario (non entrambi), è necessario specificare un indirizzo di memoria a 32bit e quindi per muovere memoria deve passare dal processore.
-Caso generale: $indirizzo = |base+indice\cdot scala \pm displacement | modulo2^{32}$ ovvero si prende solo i 32bit più bassi e il resto si butta.
+Caso generale: `displacement(base, indice, scala)` $indirizzo = |base+indice\cdot scala \pm displacement | modulo2^{32}$ ovvero si prende solo i 32bit più bassi e il resto si butta.
 base = registro generale a 32bit
 displacement = costante intera
 scala = 1 di default, 2, 4, 8
@@ -734,7 +746,7 @@ OI registri usati come puntatore implicito sono differenti: ESI come sorgente ed
 ## COMPARE STRING
 `CMPSsuf` confronta il contenuto delle (1,2,4) locazioni indirizzate da ESI (sorgente) ed EDI (destinatario). A seconda di DF incrementa/decrementa ESI e EDI di 1,2,4.
 ## SCAN STRING
-`SCASsuf` confronta il contenuto del registro AL,AX, EAX (suffisso) con la locazione (sing, doppia, quad) di memoria indirizzata da EDI, con lo stesso algoritmo della CMP. A seconda di DF incrementa/decrementa EDI di 1,2,4.
+`SCASsuf` confronta il contenuto del registro AL,AX, EAX (suffisso) con la locazione (singola, doppia, quad) di memoria indirizzata da EDI, con lo stesso algoritmo della CMP. A seconda di DF incrementa/decrementa EDI di 1,2,4.
 # Prefissi di Ripetizione
 `REP` può essere usato con MOVS, STOS, INS, OUTS e LODS(non ha senso).
-`REPE`/`REPNE` può essere usato con CMPS e SCAS, si fanno al massimo EcX ripetizioni finché la condizione specificata è vera. 
+`REPE`/`REPNE` può essere usato con CMPS e SCAS, si fanno al massimo %ecx ripetizioni finché la condizione specificata è vera. Prima di ogni esecuzione dell'istruzione decrementa quindi %ecx.

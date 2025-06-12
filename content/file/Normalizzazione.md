@@ -1,46 +1,46 @@
 #uni 
 Una ___forma normale___ è una proprietà di un [[Database]] relazionale ([[Modello Logico Relazionale]]) che ne garantisce la qualità, ovvero l'assenza di determinati difetti, tra cui le anomalie.
+
 Una relazione non normalizzata:
 - presenta ridondanze
 - durante gli aggiornamenti incontra errori
 Le forme normali sono di solito definite sul [[Modello Logico Relazionale]] ma hanno senso anche in altri contesti, per esempio nel [[Modello Entity-Relationship]].
-La _normalizzazione_ è una procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una determinata forma normale. Questa procedura viene utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, non è una metodologia di progettazione.
+
+La ___normalizzazione___ è una procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una determinata forma normale.
+Questa procedura viene utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, non è una metodologia di progettazione.
 # Decomposizione di Schemi
 _Teorema_:
 	Dato uno schema $R(T)$, l'insieme di schemi $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una ___decomposizione___ di $R$ se e solo se $\cup_iT_i=T$
+
 Nota bene: la precedente definizione non richiede che gli schemi $R_i$ siano disgiunti.
+
 Affinché uno schema e la sua decomposizione siano equivalenti quest'ultima deve _preservare i dati_ e _preservare le dipendenze_.
-##### Teorema della perdita dei dati
-Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, allora per ogni istanza di $r$ di $R(T)$ si ha 
+
+>___Teorema della perdita dei dati___
+Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, allora per ogni istanza di $r$ di $R(T)$ si ha:
 $$
-r \in π_{T_1}(r) \bowtie ... \bowtie π_{T_k}
+r \in π_{T_1}(r) \bowtie ... \bowtie π_{T_k}(r)
 $$
 
 Questo teorema ci dice che perdiamo informazione quando, ricostruendo una relazione, otteniamo più tuple che nella relazione originaria.
 ### Decomposizione che preserva dati
 Se $\rho = \{R_1(T_1),...,R_k(T_k)\}$ è una decomposizione di $R(T,F)$, $\rho$ è una decomposizione che __preserva i dati__ se e solo se, per ogni relazione $r$ che soddisfa $R(T,F)$, si ha: 
 $$
-r = π_{T_1}(r) \bowtie ... \bowtie π_{T_k}
+r = π_{T_1}(r) \bowtie ... \bowtie π_{T_k}(r)
 $$
 
 Questa definizione ci dice che in una decomposizione che preserva dati, ogni istanza valida $r$ della relazione di partenza deve essere uguale al join naturale delle sue proiezioni sui vari $T_i$.
-##### Teorema di preservazione dei dati
+
+>___Teorema di preservazione dei dati___:
 Sia $\rho = \{R_1(T_1),R_2(T_2)\}$ una decomposizione di $R(T,F)$, essa preserva i dati se e solo se $T_1 \cap T_2 \to T_1 \in F^+$ oppure $T_1 \cap T_2 \to T_2 \in F^+$.
+
 In altre parole gli attributi comuni alle due relazioni devono essere chiave in una delle due tabelle.
-### Decomposizione che preserva le dipendenze
-Dato uno schema $R(T,F)$ e una decomposizione $\rho = \{R_1(T_1),...,R_k(T_k)\}$, $\rho$ è una decomposizione di $R(T,F)$ che preserva le FD se e solo se: $\cup_iπ_{T_i}(F)\equiv F$, cioè se $(\cup_iπ_{T_i}(F))^+= F^+$ 
-###### Verificare una decomposizione che preserva le FD
-Per verificare se una decomposizione di $R(T,F)$ in due relazioni con attributi $X,Y$ preserva le dipendenze bisogna verificare che $(π_X(F) \cup π_Y(F))^+ = F^+$ 
-Per fare ciò è necessario:
-- saper calcolare la proiezione di un insieme di FD su un insieme di attributi: _algoritmo con complessità esponenziale_ 
-- saper determinare l'equivalenza di due insiemi di FD: _algoritmo con complessità polinomiale_:
-	- per ogni $X \to Y \in F$ calcoliamo $X_G^+$ e verifichiamo se $Y \in X_F^+$ 
-	- di nuovo invertendo $F$ e $G$.
 # Proiezione di un insieme di dipendenze
-Dato $R(T,F)$ e $T_i \in T$, la proiezione dell'insieme di FD $F$ sull'insieme di attributi $T_i$ è 
+Dato $R(T,F)$ e $T_i \in T$, la proiezione dell'insieme di FD $F$ sull'insieme di attributi $T_i$ è:
 $$
 π_{T_i}(F)=\{ X \to Y \in F^+ | X,Y \in T_i\}
 $$
+Significa selezionare solo le dipendenze nella chiusura di $F$ che coinvolgono solo gli attributi in $T_i$.
 
 ### Algoritmo per il calcolo di $π_{T_i}(F)$ 
 _Input_: $R(T,F)$ e $T_i \in T$ 
@@ -50,13 +50,25 @@ __for each__ $Y \in T_i$ __do__
 	$W \gets Y^+ - Y$ 
 	$Z \gets Z \cup \{ Y \to (W \cap T_i)\}$ 
 __return__ $Z$ 
-Complessità Esponenziale nel caso peggiore.
+Complessità Esponenziale rispetto al numero di attributi e di dipendenze funzionali, nel caso peggiore.
+### Decomposizione che preserva le dipendenze
+Dato uno schema $R(T,F)$ e una decomposizione $\rho = \{R_1(T_1),...,R_k(T_k)\}$, $\rho$ è una decomposizione di $R(T,F)$ che preserva le FD se e solo se: $\cup_iπ_{T_i}(F)\equiv F$, cioè se $(\cup_iπ_{T_i}(F))^+= F^+$ 
+###### Verificare una decomposizione che preserva le FD
+Per verificare se una decomposizione di $R(T,F)$ in due relazioni con attributi $X,Y$ preserva le dipendenze bisogna verificare che $(π_X(F) \cup π_Y(F))^+ = F^+$ 
+Per fare ciò è necessario:
+- saper calcolare la proiezione di un insieme di FD su un insieme di attributi: _algoritmo con complessità esponenziale_ 
+- saper determinare l'equivalenza di due insiemi di FD: _algoritmo con complessità polinomiale_:
+	- per ogni $X \to Y \in F$ calcoliamo $X_G^+$ e verifichiamo se $Y \in X_F^+$
+	- di nuovo invertendo $F$ e $G$.
 # Forma Normale di Boyce-Codd (BCNF)
 _Teorema_:
 	Uno schema $R(T,F)$ è in forma normale Boyce-Codd (___BCNF___) se e solo se per ogni dipendenza funzionale non banale $X \to Y \in F^+$, $X$ è una superchiave di $R$. 
+
 _Corollario_:
 	Uno schema $R(T,F)$ con $F$ copertura minimale è in BCNF se e solo se per ogni FD elementare $X \to A \in F$, $X$ è una superchiave.
+
 Questa forma normale si basa sull'idea che una dipendenza funzionale $X \to A$, in cui $X$ non contiene attributi estranei ([[Dipendenza Funzionale#Ridondanza]]), indica che nella realtà che modella esiste una collezione di entità omogenee univocamente identificate da $X$.
+
 Da questa definizione, il fatto che uno schema sia in BCNF dipende dalla chiusura $F^+$ e non dalla copertura $F$, purtroppo per calcolare $F^+$ abbiamo solo algoritmi esponenziali. Possiamo però facilmente stabilire se uno schema è in BCNF con un algoritmo di complessità polinomiale.
 ### Algoritmo di verifica BCNF
 _Input_: schema $R(T,F)$ 
@@ -86,10 +98,12 @@ _Teorema_:
 	- $X$ è una superchiave di $R$ 
 	- $A$ è contenuto in almeno una chiave di $R$ (in questo caso si dice che $A$ è un ___attributo primo___)
 	Quindi se $R$ è in BCNF allora è anche in 3NF: $BCNF \implies 3NF$ 
-La verifica di 3NF è un problema ___NP-completo___ e il miglior algoritmo deterministico noto ja complessità esponenziale nel caso peggiore. Occorre sapere le chiavi e l'algoritmo per farlo ha complessità esponenziale.
+La verifica di 3NF è un problema ___NP-completo___ e il miglior algoritmo deterministico noto ha complessità esponenziale nel caso peggiore. Occorre conoscere gli attributi primi (ovvero le chiavi) e l'algoritmo per farlo ha complessità esponenziale.
 ___Si può però sempre ottenere una decomposizione in 3NF che preserva dati e FD.___ 
+La Forma Normale Boyce-Codd implica la terza forma normale: $BCNF \implies 3NF$.
 ### Algoritmo per decomposizione in 3NF
-Dividiamo una copertura minimale $G$ in gruppi $G_i$ tale che tutte le le FD in un gruppo abbiano la stessa parte sinistra. Da ogni gruppo $G_i$ si definisce uno schema di relazione composto da tutti gli attributi che appaiono in $G_i$, la cui chiave, detta ___chiave sintetizzata___, è la parte sinistra comune:
+Dividiamo una copertura minimale $G$ in gruppi $G_i$ tale che tutte le le FD in un gruppo abbiano la stessa parte sinistra. Da ogni gruppo $G_i$ si definisce uno schema di relazione composto da tutti gli attributi che appaiono in $G_i$, la cui chiave, detta ___chiave sintetizzata___, è la parte sinistra comune.
+
 _Input_: $R(T, F)$  
 _Output:_ $\rho$ che preserva i dati e le dipendenze e con ogni elemento in 3NF
 1. **Trovare una copertura minimale** $G$ di $F$ e porre $\rho \gets \{\}$

@@ -7,6 +7,7 @@ gtkwave.exe ./waveform sim &
 
 
 //in mac: 
+~/cartellaProgetto> iverilog -o sim ./descrizione.v ./testbench.v 
 vvp sim #senza ./
 gtkwave waveform.vcd
 ```

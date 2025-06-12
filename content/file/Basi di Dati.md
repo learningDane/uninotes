@@ -15,11 +15,11 @@ Progettazione:
 [[Modello Entity-Relationship]] 
 [[Progettazione Concettuale]] 
 [[Progettazione Logica]] 
-
 [[Dipendenza Funzionale]] 
 [[Normalizzazione]] 
 [[Gestione delle Transazioni]] 
 [[Gestione della Concorrenza]] 
+
 [[Ottimizzazione delle Interrogazioni]] 
 [[Gestione dell'Affidabilità]] 
 

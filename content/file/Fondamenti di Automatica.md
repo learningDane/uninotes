@@ -23,6 +23,8 @@ Risposta in Frequenza:
 [[Risposta in Frequenza]] 
 [[Diagramma di Bode]] 
 [[Luogo delle Radici]] 
+[[Diagramma di Nyquist]]
+[[Progettazione di un Controllore]] 
 
 Esercizi
 [[Analisi Strutturale di Un Sistema]] 

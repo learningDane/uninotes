@@ -2,6 +2,7 @@
 Giovanni Stea, Raffaele Zippo, 9cfu
 [[Informazioni sul Corso di Reti Logiche]] 
 [[Cosa saper fare all'esame di Reti Logiche]] 
+[[note ambiente assembler Zippo.pdf]] 
 Argomenti
 [[Introduzione alle Reti Logiche]] 
 [[Assembly]] 
@@ -9,6 +10,8 @@ Argomenti
 [[Ottimizzazione di Assembly]] 
 [[Note sull'Architettura Intel-AMD a 64bit]] 
 [[Aritmetica dei Calcolatori]] 
+
+[[Mappa di Karnaugh]] 
 [[Rete Logica]] 
 [[Rete Combinatoria]] 
 [[Algebra di Boole]] 

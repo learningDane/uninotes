@@ -28,8 +28,25 @@ Tutte queste variabili di handshake necessitano di un registro di supporto, ognu
 - soc: _start of computation_: soc=0 consumatore non ha bisogno di nuovo byte, soc=1 indica al produttore di fornire un nuovo byte.
 - eoc: _end of computation_: eoc=0 produttore ha iniziato la preparazione di un nuovo byte, eoc=1 il produttore è pronto a preparare un nuovo byte.
 Funzionamento:
+SOC ha bisogno di un registro.
 0. S0: $soc,eoc = 0,1$ : consumatore non è pronto a nuovo byte e produttore è disponibile ad iniziarne una nuova
 1. S1: $soc,eoc=1,1$ : consumatore è pronto
 2. S2: $soc,eoc=1,0$ : produttore inizia produzione
 3. S3: $soc,eoc=0,0$ : consumatore notifica di aver capito e non chiede più altri dati
 4. S0: $soc,eoc=0,1$ : il produttore ha finito e il consumatore preleva il dato
+```Verilog
+S0R: begin
+	SOC = 1;
+	STAR <= (eoc == 1'b0) ? S1R : S0R;
+end
+
+S1R: begin
+	SOC = 2;
+	STAR <= (eoc == 1'b1) ? S2R : S1R;
+end
+
+S2R: begin
+	X0 <= x;
+	STAR <= MJR;
+end
+```

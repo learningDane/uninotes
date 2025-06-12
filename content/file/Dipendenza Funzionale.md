@@ -1,26 +1,32 @@
 #uni 
-Una dipendenza funzionale (___FD___) esprime un legame semantico tra due gruppi di attributi di uno schema di relazione $R$. Una FD è una proprietà di $R$ non di una $r$ di $R$ e perciò non può essere dedotta da una $R$ ma deve essere dedotta da qualcuno che conosce la semantica degli attributi di $R$.
+Una dipendenza funzionale (___FD___) esprime un legame semantico tra due gruppi di attributi di uno schema di relazione $R$.
+Una FD è una proprietà di $R$ non di una $r$ di $R$ e perciò non può essere dedotta da una $r$ ma deve essere dedotta da qualcuno che conosce la semantica degli attributi di $R$.
 
-Vengono anche usate per verificare la presenza di anomalie e per la [[Normalizzazione]]. Con $R(X,F)$ intendiamo uno schema di relazione $R(X)$ che verifica un insieme di dipendenza funzionali $F$.
+Vengono anche usate per verificare la presenza di anomalie e per la [[Normalizzazione]].
+
+Con $R(X,F)$ intendiamo uno schema di relazione $R(X)$ che verifica un insieme di dipendenza funzionali $F$.
+
+Si dice $F \vDash X \to Y$ se, per ogni possibile istanza di $r \in R$ che verifica tutte le FD in $F$, risulta verificata anche la FD $X\to Y$, si dice anche che $X \to Y$ è implicata (logicamente) da $F$.
 
 ### Definizione formale
 Esiste in $r$ su $R(X)$ una FD da due sottoinsiemi non vuoti di $X$, da $Y$ a $Z$ se per ogni coppia di tuple $t_1$ e $t_2$ di $r$ con gli stessi valori su $Y$, risulta che $t_1$ e $t_2$ hanno gli stessi valori anche su $Z$, e si scrive $Y \to Z$ (che NON implica $Z \to Y$).
 
-In breve: Dati due insiemi di attributi $X$ e $Y$, si dice che $X$ determina $Y$ ($X \to Y$) se e solo se date due tuple distinte $t_1$ e $t_2$, se $t_1[X]=t_2[X]$ allora $t_1[Y]=t_2[Y]$.
-Se $A \to B$: se due tuple hanno un valore uguale in $A$, lo hanno anche in $B$.
+In breve: Dati due insiemi di attributi $X$ e $Y$, si dice che $X$ determina $Y$ ($X \to Y$) se e solo se date due tuple distinte $t_1$ e $t_2$, se $t_1[X]=t_2[X]$ allora $t_1[Y]=t_2[Y]$ ovvero: se $A \to B$, se due tuple hanno un valore uguale in $A$, lo hanno anche in $B$.
 
 Questa definizione non è direttamente utilizzabile nella pratica perché prevede una quantificazione universale sulle istanze del [[Database]].
 Non abbiamo un algoritmo capace di calcolare tutte le FD implicate da un insieme $F$.
-
----
+# Insieme di Dipendenze Funzionali
+Un insieme di dipendenze funzionali è considerato minimale quando non è possibile rimuovere alcuna dipendenza funzionale dall'insieme senza alterare la sua capacità di definire le stesse dipendenze funzionali.
 # Dipendenze Funzionali Particolari
-- Una FD è ___completa___ quando $Y \to Z$ e, per ogni $W \in Y$, non vale $W \to Z$ 
+- Una FD è ___completa___ quando $Y \to Z$ e, per ogni $W \in Y$, non vale $W \to Z$.
+  Ovvero è completa se nessun sottoinsieme di $Y$ implica $Z$.
 - se $Y$ è una superchiave ([[Modello Logico Relazionale#Chiave e Superchiave]]) di $R(X)$, allora $Y$ determina ogni altro attributo della relazione, quindi $Y\to X$.
-- se $Y$ è una chiave, allora $Y \to X$ è una dipendenza funzionale completa
+- se $Y$ è una chiave, allora $Y \to X$ è una dipendenza funzionale completa.
 - una FD è ___banale___ se è sempre soddisfatta, eg:
   1. $Y \to Y$ è banale
   2. $Y \to A$ è non banale se $A \notin Y$ 
-  3. $Y \to Z$ è non banale se nessun attributo di $Z$ appartiene a $Y$ 
+  3. $Y \to Z$ è non banale se almeno un attributo di $Z$ NON appartiene a $Y$.
+
 Esempio: relazione (_Impiegato_, stipendio, _progetto_, bilancio, funzione)
 ogni impiegato ha un solo stipendio: $Impiegato \to Stipendio$, impiegato non è chiave quindi ci sono ripetizioni
 ogni impiegato ha una sola funzione per progetto: $impiegato, progetto \to funzione$, imp e prog sono chiave quindi niente ripetizioni.
@@ -32,26 +38,13 @@ Armstrong ha fornito delle regole di inferenza che permettono di derivare costru
    Se $X \to Y$ allora $XZ \to YZ$ per qualunque $Z$
 3. ___Transitività___:
    Se $X \to Y$ e $Y \to Z$ allora $X \to Z$ 
-# Calcolo delle chiavi con dipendenze funzionali
-Definizione di chiave e superchiave tramite il concentto di [[Dipendenza Funzionale]]:
-
-Dato uno schema $R(T,F)$, un insieme di attributi $k \in T$ si dice __superchiave__ di $R$ se $K \to T \in F^+$.
-Un insieme di attributi $K \in T$ si dice __chiave__ di $R$ se $K$ è una superchiave di $R$ e se non esiste alcun sottoinsieme proprio di $K$ che sia superchiave di $R$.
-
-Trovare tutte le chiavi di $R(Z)$ ha complessità esponenziale nel caso peggiore:
-- Gli attributi che stanno solo a sinistra stanno in tutte le chiavi, chiamiamo $N$ questo insieme
-- quelli che stanno solo a destra non stanno in nessuna chiave
-- si aggiunge a $N$ un attributo ala volta tra quelli che non stanno solo a destra, poi una coppia di attributi e così via... Chiamiamo $X_i$ questo sottoinsieme di attributi, ogni volta si controlla se la FD $N \cup X_i \to Z$ esiste
-### Verificare una chiave
-Per verificare se un insieme di attributi è chiave o superchiave possiamo usare l'algoritmo per il calcolo della chiusura di un insieme di attributi ([[Dipendenza Funzionale#Calcolo di $X +$]]).
-- $X \in T$ è superchiave di $R(T,F)$  se e solo se $X \to T \in F^+$, ovvero se e solo se $T \in X^+$ 
-- $X \in T$ è chiave di $R(T,F)$ se e solo se $T \in X^+$, e non esiste $Y \in X$ tale che $T \in Y^+$ 
 # Derivazione
 Una derivazione di $f$ (FD) da $F$ (insieme di FD) secondo $RI$ (regole di inferenza) è una sequenza finita $f_1,...,f_m$ dove:
 - $f_m = f$ 
 - ogni $f_i$ è un elemento di $F$ oppure è ottenuta dalle precedenti FD $f_1,...,f_{i-1}$ della derivazione usando una delle $RI$ 
 E indichiamo con $F \vdash X \to Y$ il fatto che la FD $X \to Y$ sia derivabile da $F$ usando $RI$.
 #### Regole di derivazione comuni
+Queste sono facilmente derivabili dalle [[#Regole di inferenza d Armstrong]]:
 - ___Unione___:
   $\{X \to Y, X \to Z \} \vdash X \to YZ$ 
 - ___Decomposizione___:
@@ -70,14 +63,17 @@ Se non vi sono ambiguità per semplicità scriviamo $X^+$.
 ### Teorema della chiusura degli attributi
 
 $$
-F \vdash X \to Y \iff Y \in X^+
+F \vdash X \to Y \iff Y \subset X^+
 $$
 
 # Correttezza e Completezza
 $RI$ è corretto se $F \vdash X \to Y \implies F \vDash X \to Y$ : applicando $RI$ ad un insieme di $F$ di FD si ottengono solo dipendenze logicamente implicate da $F$.
+
 $RI$ è completo se $F \vDash X \to Y \implies X \to Y$ : applicando $RI$ ad un insieme $F$ di FD si ottengono tutte le dipendenze logicamente implicate da $F$.
-#### Teorema
+
+>___Teorema___:
 _Le regole di inferenza di Armstrong sono corrette e complete_.
+
 Questo teorema ci permette di scambiare $\vDash$ (soddisfa) con $\vdash$ (implica) ovunque, in particolare nella definizione di chiusura degli attributi.
 Si può dimostrare che le regole di inferenza di Armstrong sono __minimali__, cioè ignorandone anche solo una di esse, l'insieme di regole che rimane non è più completo.
 # Chiusura di un insieme di dipendenza funzionali
@@ -88,18 +84,19 @@ $$
 
 Dato un insieme $F$ definite su $R(Z)$, un'istanza $r$ di $R$ che soddisfa $F$ soddisfa anche le FD di $F^+$.
 # Calcolo di $F^+$ 
-per calcolare $F^+$ possiamo usare le regole di inferenza di Armstrong:
+Per calcolare $F^+$ possiamo usare le regole di inferenza di Armstrong:
 _Input_: $R(T,F)$ 
 _Output_: $F^+$ 
 $F^+ \gets F$ 
 __while__ ($F^+$ non cambia) __do__
 	__for each__ $f \in F^+$ __do__
 		applicare riflessività ed additività a $f$ e aggiungere a $F^+$ le dipendenze ottenute
-	__for each__ £f_1,f_2 \in F^+$ __do__ 
+	__for each__ $f_1,f_2 \in F^+$ __do__ 
 		se possibile, applicare transitività a $f_1$ e $f_2$ e aggiungere a $F^+$ la dipendenza ottenuta.
 __return__ $F^+$ 
 ### Calcolo di $X^+$ 
 Il calcolo di $F^+$ è molto costoso poiché ha una complessità esponenziale. Spesso però invece ci interessa verificare se $F^+$ contiene una certa FD, non generare l'intera chiusura, per fare ciò basta calcolare $X^+$ per il teorema di chiusura degli attributi:
+
 _Input_: $R(T,F), X \in T$ 
 _Output_: $X^+$ 
 $X^+ \gets X$ 
@@ -110,24 +107,30 @@ __while__ ($X^+$ non cambia) __do__
 __return__ $X^+$ 
 # Equivalenza
 Due insiemi $F$ e $G$ di FD sugli attributi $T$ di una relazione $R(T)$ sono ___equivalenti___, in simboli $F \equiv G$, se e solo se $F^+ = G^+$. A quel punto si dice che $F$ è una ___copertura___ di $G$ e viceversa.
+
 L'equivalenza ci permette di stabilire se due schemi di relazione rappresentano gli stessi fatti: basta che abbiano gli stessi attributi e FD equivalenti.
+
 Per verificare l'equivalenza è sufficiente che:
 - tutte le FD di $F$ appartengano a $G^+$ 
 - tutte le FD di $G$ appartengano a $F^+$ 
 # Ridondanza
-Sia $F$ un insieme di FD, data $X \to Y \in F$, $X$ contiene un ___attributo estraneo___ se e solo se $X- \{ A \} \to Y \in F^+$.
-$X \to Y$ è una FD ___ridondante___ se e solo se $X \to Y \in (F- \{ X \to Y \})^+$ 
+Sia $F$ un insieme di FD, data $X \to Y \in F$, $X$ contiene un ___attributo estraneo___ $A$ se e solo se $X- \{ A \} \to Y \in F^+$, quindi è estraneo se averlo o non averlo non cambia nulla.
+
+$X \to Y$ è una FD ___ridondante___ se e solo se $X \to Y \in (F- \{ X \to Y \})^+$.
+
 Le FD che NON contengono attributi __estranei__ e la cui parte destra è un unico attributo, sono dette FD ___elementari___.
 # Copertura Minimale
 Sia $F$ un insieme di FD, $F$ è una ___copertura minimale___ se e solo se:
 - ogni parte destra di una FD ha un unico attributo
-- le FD non contengono attributi estranei
-- non esistono dipendenze ridondanti
-quindi se e solo sono tutte FD elementari non ridondanti.
+- le FD non contengono attributi estranei.
+- non esistono dipendenze ridondanti.
+
+>Quindi se e solo se sono tutte FD elementari non ridondanti.
+
 Ogni tanto una copertura minimale viene chiamata _insieme minimale_ oppure _copertura canonica_.
 Per trovare la copertura minimale di un $F$ basta scomporre le FD: da $(A\to BC)$ passi a $(A \to B, A\to C)$ 
-### Teorema
-Per ogni insieme di FD esiste una copertura minimale (il teorema non dice nulla sull'unicità della cop. min.).
+
+>___Teorema___: per ogni insieme di FD esiste una copertura minimale (il teorema non dice nulla sull'unicità della copertura minimale).
 ### Calcolo della copertura minimale
 _input_: insieme $F$ di FD
 _output_: copertura minimale $G$ di $F$ 
@@ -141,3 +144,17 @@ __for each__ $X \to Y$ __do__
 __for each__ $f \in (G- \{f \} )^+$ __then__
 	$G \gets G- \{f\}$ 
 __return__ $G$ 
+# Calcolo e definizione delle chiavi con dipendenze funzionali
+Definizione di chiave e superchiave tramite il concetto di [[Dipendenza Funzionale]]:
+
+>Dato uno schema $R(T,F)$, un insieme di attributi $k \in T$ si dice __superchiave__ di $R$ se $K \to T \in F^+$.
+Un insieme di attributi $K \in T$ si dice __chiave__ di $R$ se $K$ è una superchiave di $R$ e se non esiste alcun sottoinsieme proprio di $K$ che sia superchiave di $R$.
+
+Trovare tutte le chiavi di $R(Z)$ ha complessità esponenziale nel caso peggiore:
+- Gli attributi che stanno solo a sinistra stanno in tutte le chiavi, chiamiamo $N$ questo insieme
+- quelli che stanno solo a destra non stanno in nessuna chiave
+- si aggiunge a $N$ un attributo alla volta tra quelli che non stanno solo a destra, poi una coppia di attributi e così via... Chiamiamo $X_i$ questo sottoinsieme di attributi, ogni volta si controlla se la FD $N \cup X_i \to Z$ esiste
+### Verificare una chiave
+Per verificare se un insieme di attributi è chiave o superchiave possiamo usare l'algoritmo per il calcolo della chiusura di un insieme di attributi ([[Dipendenza Funzionale#Calcolo di $X +$]]).
+- $X \in T$ è superchiave di $R(T,F)$  se e solo se $X \to T \in F^+$, ovvero se e solo se $T \in X^+$ 
+- $X \in T$ è chiave di $R(T,F)$ se e solo se $T \in X^+$, e non esiste $Y \in X$ tale che $T \in Y^+$ 
