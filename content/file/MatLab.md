@@ -52,6 +52,14 @@ end
 ### Misurazione del Tempo
 - tic; istruzione toc; misura il tempo di istruzione
 - misurazione più precisa: `timeit`, fa la media di molte esecuzioni
+# Control System Toolbox
+### Bode
+```Matlab
+bode(tf(num,den));
+bode(spk([],[],[]))
+```
+### Nyquist
+
 # Optimization ToolBox
 ### Linprog
 Per risolvere un [[Problema di Programmazione Lineare (PL)]], [[MatLab]] offre ___linprog___.

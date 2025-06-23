@@ -20,7 +20,7 @@ Altri criteri di stabilità:
 
 Questa definizione si applica a sistemi lineari o sistemi comunque vicini ad un punto di linearizzazione.
 
->Per sistemi lineari, si ha stabilitá a BIBO se e solo se i poli della FdT hanno tutti parte reale minore di $zero$.
+>Per sistemi lineari, si ha stabilitá a BIBO se e solo se i poli della FdT hanno tutti parte reale strettamente minore di $zero$.
 
 Concludiamo quindi che la stabilitá BIBO dipende solo dalla risposta forzata.
 Se un polo ha parte reale nulla il sistema presenta oscillazioni permanenti.

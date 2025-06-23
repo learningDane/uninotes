@@ -39,20 +39,20 @@ Assumendo $f(t)=0, \forall t<0$.
 ### Procedimento attraverso la decomposizione in Fratti Semplici
 1. Decompongo la funzione in fratti semplici:
 $$
-G(s)=\frac{n(s)}{d(s)}=\frac{n(s)}{\prod_i(s-s_i)^{h_i}}
+G(s)=\frac{n(s)}{d(s)}=\frac{n(s)}{\prod_i(s-p_i)^{h_i}}
 $$
 	dove $s_i$ è un ___polo___, con molteplicità $h_i$.
 2. Scrivo $G(s)$ come somma di Residui Polari:
 $$
-G(s)=\sum_{i=1}\sum_{j=1}^{h_i}\frac{K_{ij}}{(s-s_i)^{h-j}}
+G(s)=\sum_{i=1}\sum_{j=1}^{h_i}\frac{K_{ij}}{(s-p_i)^j}
 $$
 	dove $i$ è l'indice dei poli distinti e $j$ si riferisce alla molteplicità.
 3. Calcolo i Residui:
 $$
 K_{ij}=\frac{1}{(h-j
-)!}\lim_{s \to s_i}\frac{d^{h-j}}{ds^{h-j}}\Big[(s-s_i)^h \cdot G(s)\Big]
+)!}\lim_{s \to p_i}\frac{d^{h-j}}{ds^{h-j}}\Big[(s-p_i)^h \cdot G(s)\Big]
 $$
-4. Finalmente antitrasformiamo: 
+4. Finalmente antitrasformiamo utilizzando la tabelle delle antitrasformate: 
 $$
 g(t)=\sum_{i=1}\sum_{j=1}^{h_i}K_{ij}\cdot t^{j-1}\cdot e^{p_i\cdot t}
 $$
@@ -107,8 +107,11 @@ $$
 \begin{array} {|c|c|} \hline   \text{nome}  & f(t) & F(s)  \\
 \hline \text{Delta di Dirac} & \delta(t_0) & e^{-st_0}  \\
 \hline \text{Funzione gradino} & 1(t) & \frac{1}{s}  \\
+\hline \text{Rampa} & t & \frac{1}{s^2}\\ 
 \hline \text{Gradino Traslato} & 1(t-t_0) & \frac{e^{-st_0}}{s}  \\
-\hline \text{Funzione Esponenziale}  & e^{at} & \frac{1}{s-a}  \\
+\hline \text{Funzione Esponenziale}  & k \cdot e^{at} & \frac{k}{s-a}  \\
+\hline & k \cdot te^{at} & \frac{k}{(s-a)^2}\\
+\hline \text{Esponenziale Irriducibile} & \frac{a \sqrt{d}\cos(\frac{\sqrt{d}}{\sqrt{c}}\cdot t)+b\sqrt{c}\sin(\frac{\sqrt{d}}{\sqrt{c}} \cdot t)} {c \sqrt{d}}  & \frac{s\cdot a+b}{c\cdot s^2+d} \\
 \hline \text{seno} & \sin(wt+\phi) & \frac{w\cdot \cos \phi+s\cdot\sin \phi}{s^2+w^2} \\
 \hline \text{coseno} & \cos(wt+\phi) & \frac{s \cdot\cos \phi+w\cdot \sin \phi}{s^2+w^2} \\
 \hline

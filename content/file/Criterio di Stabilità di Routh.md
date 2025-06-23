@@ -7,6 +7,7 @@ a_n \cdot s^n+a_{n-1} \cdot s^{n-1}+...+a_1 \cdot s^1+a_0=0
 $$
 - con $a_n>0$ (basta cambiare di segno)
 - senza ritardi di tempo $e^{-\pi \tau}$, in caso contrario approssimiamo a polinomio: $\frac{1-\frac{\tau}{2}s}{1+\frac{\tau}{2}s}$
+
 >Il sistema associato è stabile se tutti gli $n+1$ elementi della prima colonna della tabella di Routh hanno lo stesso segno.
 
 Per $n \leq 2$ questo si riduce alla ___regola di cartesio___: gli tutti gli $n+1$ coefficienti $a_i$ hanno lo stesso segno.

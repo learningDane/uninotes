@@ -41,7 +41,7 @@ Questa è una proprietà che dipende dalla risposta forzata.
 
 >Nei sistemi LTI la raggiungibilità coincide con la controllabilità.
 
-In base a questa proprietà possiamo divide gli stati in:
+In base a questa proprietà possiamo dividere gli stati in:
 - raggiungibili: $x_R$
 - non raggiungibili: $x_{NR}$ 
 
@@ -51,7 +51,7 @@ Se il sistema non è completamente raggiungibile scompongo e isolo la parte non 
 1. costruisco la matrice di trasformazione $T_R$:
 	1. scegliamo $n_r$ colonne linearmente indipendenti in $M_R$(ogni stato raggiungibile è combinazione lineare di queste colonne).
 	2. ci aggiungo poi $n-n_r$ colonne linearmente indipendenti dalle precedenti.
-2. Trasformo[^2] ora il sistema tramite la matrice $T_R$ 
+2. Trasformo[^2] ora il sistema tramite la matrice $T_R$: $\hat{A}=T_R^{-1} \cdot A \cdot T_R, \quad \hat{B}=T_R^{-1} \cdot B, \quad \hat{C}=C \cdot T_R$ 
 3. Ottengo una $\hat{A}$ che è sempre della forma: $\hat{A}=\begin{bmatrix}\hat{A}_a & \hat{A}_{ab}  \\ 0 &  \hat{ A}_b\end{bmatrix}$ dove:
 	- $\hat{A}_a$ è sempre raggiungibile
 	- $\hat{A}_b$ è sempre non raggiungibile
@@ -83,7 +83,7 @@ Posso isolare la parte non osservabile:
 1. costruisco la matrice $T_O$:
 	1. seleziono $n-n_o$ vettori $\xi_i$ linearmente indipendenti, tali che $M_O \xi_i=0 \text{ ovvero } span({\xi_i})=x_{NO}$, quindi compongo una base del kernel di $M_O$. Sono non osservabili tutti e solo i vettori ottenibili come combinazione lineare dei vettori $\xi_i$.
 	2. seleziono $n_o$ vettori linearmente indipendenti per completare la matrice, tali che: $det(T_o^{-1}) \neq 0$ e quindi la matrice risulti invertibile.
-2. eseguo un cambio di variabile[^2] attraverso la matrice di trasformazione $T_O$.
+2. eseguo un cambio di variabile[^2] attraverso la matrice di trasformazione $T_O$: $\hat{A}=T_O^{-1} \cdot A \cdot T_O, \quad \hat{B}=T_O^{-1} \cdot B, \quad \hat{C}=C \cdot T_O$ 
 3. ottengo una matrice $\hat{A}$ sempre della forma: $\hat{A}=\begin{bmatrix}\hat{A}_a & 0 \\ \hat{A}_{ab} & \hat{A}_b\end{bmatrix}$ e $\hat{C}=\begin{bmatrix}\hat{C}_a  & 0\end{bmatrix}$ con $\hat{A}_a$ parte osservabile e $\hat{A}_b$ parte non osservabile.
    Ed infine vale: $aut(\hat{A})=aut(A)=aut(\hat{A}_a)+aut(\hat{A}_b)$ 
 

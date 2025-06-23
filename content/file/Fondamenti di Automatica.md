@@ -1,6 +1,15 @@
 #uni 9cfu - Andrea Munafo'
 [[Informazioni sul Corso di Fondamenti di Automatica]] 
 [[Ripasso di Algebra Lineare per FdA]] 
+[[Tabella di Laplace.pdf]]
+
+COSA STUDIARE PER ESAME:
+- [ ] Forma di osservabilità
+- [ ] forma di controllabilità
+- [ ] forma canonica
+- [ ] forma canonica di controllo
+- [ ] progettazione controllore
+- [ ] determinazione stabilità interna (autovalori)
 
 Argomenti:
 Forma in Variabili di Stato:
@@ -13,6 +22,7 @@ Forma in Variabili di Stato:
 [[Proprietà Strutturali]]
 FdT:
 [[Funzione di Trasferimento]] 
+[[Algebra dei Blocchi]] 
 [[Controllo in Feedback]] 
 [[Trasformata di Laplace]] 
 [[Sistemi del Primo Ordine con Laplace]] 
@@ -24,6 +34,7 @@ Risposta in Frequenza:
 [[Diagramma di Bode]] 
 [[Luogo delle Radici]] 
 [[Diagramma di Nyquist]]
+
 [[Progettazione di un Controllore]] 
 
 Esercizi
