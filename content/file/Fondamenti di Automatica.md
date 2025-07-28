@@ -3,14 +3,6 @@
 [[Ripasso di Algebra Lineare per FdA]] 
 [[Tabella di Laplace.pdf]]
 
-COSA STUDIARE PER ESAME:
-- [ ] Forma di osservabilità
-- [ ] forma di controllabilità
-- [ ] forma canonica
-- [ ] forma canonica di controllo
-- [ ] progettazione controllore
-- [ ] determinazione stabilità interna (autovalori)
-
 Argomenti:
 Forma in Variabili di Stato:
 [[Introduzione all'Automatica]] 

@@ -1,6 +1,12 @@
 #uni 
-# Sintesi SP
-//inserire metodo di sintesi
+# Sintesi SP a costo minimo
+1. Disegno la Mappa di Karnaugh
+2. Individuo La lista degli implicanti principali
+3. Individuo Gli implicanti essenziali
+4. Individuo gli implicanti assolutamente eliminabili
+5. Individuo gli implicanti semplicemente eliminabili
+6. Valuto le possibili liste di copertura in base al criterio di costo
+7. Scelgo la lista di copertura a costo minimo
 # Sintesi PS
 Data $F$ da sintetizzare PS:
 1. sintetizzo $\overline{F}$ in forma SP di costo minimo

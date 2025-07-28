@@ -13,6 +13,9 @@ Viene normalmente tracciato a partire dalla conoscenza del [[Diagramma di Bode]]
 7. Partendo da $0^-$, compio una mezza rotazione all'infinito in senso orario per ogni polo nell'origine. 
 # Criterio di Nyquist
 Il criterio di Nyquist è un criterio per giudicare la stabilità di un sistema in catena chiusa a partire dalla conoscenza del sistema in catena aperta.
+
+>Un sistema a retroazione unitaria è **stabile** se il **numero di avvolgimenti** in senso antiorario del diagramma di Nyquist attorno al punto $(-1 \ ; \ 0)$ è **uguale al numero di poli a parte reale positiva del sistema in anello aperto** $L(s)=C(s) \cdot G(s)$.
+
 Una volta tracciato il diagramma di Nyquist per il sistema in catena aperta $G(s)$, definiamo:
 - $N_{ao}$: il numero di rotazioni in senso antiorario attorno al punto $\left( \frac{-1}{k},0 \right)$.
 - $P^+$: il numero in catena aperta ($G(s)$) di poli a parte reale positiva.

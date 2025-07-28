@@ -62,9 +62,9 @@ $$
 $$
 # Regola 10
 L’angolo di partenza di un dato polo è la somma degli angoli del polo rispetto agli altri poli.
-# Poli Multipli
+# Punto Multiplo
 In un punto multiplo la radice multipla $s_i$ è soluzione di: $\frac{d'(s)}{d(s)}=\frac{n'(s)}{n(s)}$, e nel caso di $m$ zeri e $n$ poli si verifica che:
 $$
 \sum_{i=1}^n\frac{1}{s-p_i}=\sum_{i=1}^m\frac{1}{s-z_i}
 $$
-Risolvendo questa equazione quindi otteniamo i poli multipli.
+Risolvendo in $s$ questa equazione quindi otteniamo i poli multipli.

@@ -23,6 +23,42 @@ G(jw)=
 {\prod_{i=1}^{r}( \underbrace{1\pm jw\frac{2\xi_{pi}}{w_{0pi}}-\frac{w^2}{w_{0pi}^2}}_\text{Poli complessi coniugati} )}
 $$
 Costruisco ora il diagramma di Bode come somma delle singole [[#Funzioni Elementari]].
+# Valori Comuni di Guadagno in Decibel
+
+| $G(0)$ | $\|G(0)\|_{dB}$ |
+| ------ | --------------- |
+| 1      | 0               |
+| 2      | 6               |
+| 3      | 9.5             |
+| 5      | 14              |
+| 6      | 15.5            |
+| 7      | 17              |
+| 8      | 18              |
+| 9      | 19              |
+| 10     | 20              |
+
+# Margini di Fase e di Guadagno
+Dall'osservazione del diagramma di Bode è possibile osservare la stabilità del sistema.
+
+>==L'osservazione di questi margini ha senso solo se il sistema è ___stabile in catena aperta___, e solo se il sistema è Regolare[^1].== 
+
+1. ___Margine di Guadagno___: $m_G=0-|G(s_0)|_{dB}$ con $s : \phi G(s_0)=-180 \deg$. Ovvero il margine di guadagno è quanto sotto a $0dB$ è il modulo quando la fase tocca i $180$ gradi.
+   Un sistema in catena aperta è stabile in catena chiusa se $m_G >0dB$ 
+2. ___Margine di Fase___: $m_\phi=180+\phi G(s_0)$ con $s_0 : |G(s_0)|=0dB$. Ovvero il margine di fase è quanto sopra a $-180$ gradi è la fase quando il modulo tocca i $0dB$.
+   Un sistema in catena aperta è stabile in catena chiusa se $m_\phi >0\deg$ 
+   
+Essenzialmente quello che facciamo quando valutiamo questi margini è valutare la distanza del nostro sistema in catena aperta dal punto $-1$, perché il sistema in catena chiusa è $G_{cl}(s)=\frac{G(s)}{1+G(s)}$ e dobbiamo quindi evitare che il nostro denominatore vada a $0$.
+
+Sono considerati "buoni" margini i seguenti valori:
+- $m_G > 4dB / 6dB$ 
+- $m_\phi > 35 deg$ 
+
+Se i margini di fase e di guadagno non esistono possiamo avere questi due casi:
+- $|G(s)|dB>0dB \forall w$: il sistema è potenzialmente instabile e non puoi garantire la stabilità in ciclo chiuso
+- $|G(s)|dB < 0dB \forall w$: il sistema è stabile, ma lento. Il sistema in ciclo chiuso è molto robusto ma lento. Sistema probabilmente sovraconservativo.
+
+>Esempio di Sistema Stabile in Catena chiusa:
+>![[margini.svg|500]]
 # Funzioni Elementari
 ## Guadagno Costante
 $$
@@ -112,23 +148,6 @@ $$
 | Zero Complesso       | $-40\log(w_0)+40 \ dB / dec$ | $w_0$            |     | da $0$ a $\pi$                                    | $\frac{\pi}{2}/dec$  | $[\frac{1}{10 \tau};\frac{10}{\tau}]$ |
 | Polo Complesso       | $40\log(w_0)-40 \ dB / dec$  | $w_0$            |     | da $0$ a $-\pi$                                   | $-\frac{\pi}{2}/dec$ | $[\frac{1}{10 \tau};\frac{10}{\tau}]$ |
 | Ritardo Puro         | ---                          | ---              |     |                                                   |                      | ---                                   |
-# Margini di Fase e di Guadagno
-Dall'osservazione del diagramma di Bode è possibile osservare la stabilità del sistema.
 
->==L'osservazione di questi margini ha senso solo se il sistema è ___stabile in catena aperta___, e solo se il sistema è Regolare[^1].== 
-
-1. ___Margine di Guadagno___: $m_G=0-|G(s_0)|_{dB}$ con $s : \phi G(s_0)=-180 \deg$. Ovvero il margine di guadagno è quanto sotto a $0dB$ è il modulo quando la fase tocca i $180$ gradi.
-   Un sistema in catena aperta è stabile in catena chiusa se $m_G >0dB$ 
-2. ___Margine di Fase___: $m_\phi=180+\phi G(s_0)$ con $s_0 : |G(s_0)|=0dB$. Ovvero il margine di fase è quanto sopra a $-180$ gradi è la fase quando il modulo tocca i $0dB$.
-   Un sistema in catena aperta è stabile in catena chiusa se $m_\phi >0\deg$ 
-   
-Essenzialmente quello che facciamo quando valutiamo questi margini è valutare la distanza del nostro sistema in catena aperta dal punto $-1$, perché il sistema in catena chiusa è $G_{cl}(s)=\frac{G(s)}{1+G(s)}$ e dobbiamo quindi evitare che il nostro denominatore vada a $0$.
-
-Sono considerati "buoni" margini i seguenti valori:
-- $m_G > 4dB / 6dB$ 
-- $m_\phi > 35 deg$ 
-
->Esempio di Sistema Stabile in Catena chiusa:
->![[margini.svg|500]]
 
 [^1]: Un sistema in retroazione è regolare se l'ampiezza della FdT a ciclo aperto è funzione monotona decrescente della pulsazione.

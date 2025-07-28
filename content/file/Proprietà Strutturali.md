@@ -81,7 +81,7 @@ Anche questa proprietà divide gli stati in due insiemi:
 ### Scomposizione
 Posso isolare la parte non osservabile:
 1. costruisco la matrice $T_O$:
-	1. seleziono $n-n_o$ vettori $\xi_i$ linearmente indipendenti, tali che $M_O \xi_i=0 \text{ ovvero } span({\xi_i})=x_{NO}$, quindi compongo una base del kernel di $M_O$. Sono non osservabili tutti e solo i vettori ottenibili come combinazione lineare dei vettori $\xi_i$.
+	1. seleziono $n-n_O$ vettori $\xi_i$ linearmente indipendenti, tali che $M_O^T \xi_i=0 \text{ ovvero } span({\xi_i})=x_{NO}$, quindi compongo una base del kernel di $M_O$. Sono non osservabili tutti e solo i vettori ottenibili come combinazione lineare dei vettori $\xi_i$.
 	2. seleziono $n_o$ vettori linearmente indipendenti per completare la matrice, tali che: $det(T_o^{-1}) \neq 0$ e quindi la matrice risulti invertibile.
 2. eseguo un cambio di variabile[^2] attraverso la matrice di trasformazione $T_O$: $\hat{A}=T_O^{-1} \cdot A \cdot T_O, \quad \hat{B}=T_O^{-1} \cdot B, \quad \hat{C}=C \cdot T_O$ 
 3. ottengo una matrice $\hat{A}$ sempre della forma: $\hat{A}=\begin{bmatrix}\hat{A}_a & 0 \\ \hat{A}_{ab} & \hat{A}_b\end{bmatrix}$ e $\hat{C}=\begin{bmatrix}\hat{C}_a  & 0\end{bmatrix}$ con $\hat{A}_a$ parte osservabile e $\hat{A}_b$ parte non osservabile.

@@ -23,7 +23,7 @@ Essenzialmente a partire dalla conoscenza di come un sistema risponde all'impuls
 >L'antitrasformata di una funzione di trasferimento rappresenta la risposta all'impulso unitario.
 
 >L'integrale della risposta all'impulso unitario rappresenta la risposta al gradino unitario.
-# Dalla forma in Variabili di Stato alla Funzione di Stato
+# Dalla forma in Variabili di Stato alla Funzione di Trasferimento
 Risolviamo il sistema con l'uso delle [[Equazioni Differenziali]] e otteniamo la Forma in Variabili di Stato:
 $$
 \begin{cases}
@@ -53,11 +53,15 @@ m\text{ ingressi}, \ p \text{ uscite} \\
 g_{ij}(s): \text{ da una entrata } u_j \text{ porta ad una uscita } y_i
 \end{matrix}
 $$
-### Forma Canonica di Controllo (per sistemi SISO)
+# Dalla Funzione di Trasferimento alla forma in Variabili di Stato: La Forma Canonica di Controllo (per sistemi SISO)
 Attraverso una particolare scelta delle variabili di stato posso portarmi nella ___forma canonica di controllo___:
-1. risolvo un sistema fisico e ottengo una equazione differenziale monica:
+1. risolvo un sistema fisico e ottengo una equazione differenziale ___monica___:
 $$
-x^{(n)}+a_{n-1}\cdot x^{(n-1)}+...+a_1\cdot x^{(1)}+a_0\cdot x + c\cdot b=0
+x^{(n)}+a_{n-1}\cdot x^{(n-1)}+...+a_1\cdot x^{(1)}+a_0\cdot x + a=b_m \cdot u ^{(m)}+...+b_0 \cdot u + b
+$$
+oppure una [[Funzione di Trasferimento]]:
+$$
+G(s) = \frac{b_m s^m + b_{m-1} s^{m-1} + \dots + b_0}{s^n + a_{n-1}s^{n-1} + \dots + a_0}
 $$
 2. Ridefinisco le variabili di stato come segue:
 $$
@@ -67,7 +71,7 @@ x_1=x \\ x_2=x^{(1)} \\ ... \\ x_n=x^{(n-1)}
 $$
 e risulta quindi:
 $$
-x_n^{(1)}=x^{(n)}=-a_{n-1} \cdot x^{(n-1)}-...-a_0 \cdot x - b \cdot u
+x_n^{(1)}=x^{(n)}=-a_{n-1} \cdot x_n-...-a_0 \cdot x_1 - b \cdot u
 $$
 3. Calcolo il vettore $\dot{ x}$ e lo porto in forma $\dot x = Ax + B u$:
 $$
@@ -80,19 +84,19 @@ x_2\\x_3\\...\\ \small {-a_{n-1} \cdot x_n-...-a_0 \cdot x_1-b \cdot u}
 \text{Forma Canonica di Controllo:} \\
 
 \dot{x}=\begin{bmatrix}
-0 & 1 & ... & 0 \\0 & 0 & ... & 0 \\0 & 0 & ... & 1\\-a_0 & ... & ... & -a_{n-1}
+0 & 1 & ... & 0 \\0 & 0 & ... & 0 \\0 & 0 & ... & 1\\-a_0 & -a_1 & ... & -a_{n-1}
 \end{bmatrix} \cdot \begin{bmatrix}
 x_1\\x_2\\...\\x_n
 \end{bmatrix} + \begin{bmatrix}
-0\\...\\0\\-b
+0\\...\\0\\1
 \end{bmatrix} \cdot u \\
 y=\begin{bmatrix}
-b_n-a_n b & b_{n-1}-a_{n-1}b & ... & b_1-a_1b
+b_0- a_0b & b_1-a_1b & ... & b_{n-1}-a_{n-1}b
 \end{bmatrix}\cdot \begin{bmatrix}
 x_1 \\x_2\\...\\x_n
 \end{bmatrix}+b \cdot u
 \end{matrix}
-$$
+$$      
 Quella che ho ottenuto è la forma canonica di controllo.
 
 >Notiamo che i parametri $a_i$ sono i coefficienti del denominatore di $G(s)$
