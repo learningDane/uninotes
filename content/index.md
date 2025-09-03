@@ -23,7 +23,6 @@ ___Davide Squeri___
 - [ ] [[Reti Logiche]] †9 
 - [ ] [[Ricerca Operativa]] †9
 ---
-in corso d'opera
 - [ ] [[Fondamenti di Automatica]] †9 
 - [ ] [[Economia ed Organizzazione Aziendale]] †6 
 - [ ] [[Calcolo Numerico]] †6 

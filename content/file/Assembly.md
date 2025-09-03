@@ -111,7 +111,7 @@ Dichiara numero variabili di lunghezza dim e le inizializza ad espressione (defa
 Viene anche usato per NON inizializzare una variabile
 ##### Codifiche ASCII
 `var5: .BYTE 'carattere'`
-`var6: .ASCII "messaggio"` vettore, 9componenti da 1 byte
+`var6: .ASCII "messaggio"` vettore, 9 componenti da 1 byte
 `var7: .ASCIZ "messaggio"` vettore, 10 componenti da 1 byte, termina con \0 (NUL)
 ### Altre Direttive
 `.INCLUDE "path"`
@@ -321,7 +321,10 @@ NON ESISTE memoria <-> memoria
 | registro generale, registro generale | MOV %AX, %DX         |
 | immediato, memoria                   | MOVB $0X5B, (%EDI)   |
 | Immediato, registro generale         | MOV $0X54A3, %AX     |
-
+### MOVE CON ESTENSIONE
+`MOVZWL address, %eax` muove un word a partire da address in TUTTO %eax, quindi mette ZERO nella parte alta di %eax. Praticamente estende il word (COME INTERO) su 32 bit e lo mette in %eax
+`MOVSWL address, %eax` muove il word come prima ma invece di mettere ZERO nella parte alta, copia il MSB, quindi estende il word su 32 bit (COME INTERO)
+Stessa cosa con `MOVZBL` e `MOVSBL`
 # Estensione di campo, CBW-CBWE
 - `CBW` estende un intero in %AL su %AX
 - `CBWE` estende un intero in %AX su %EAX
@@ -749,4 +752,5 @@ OI registri usati come puntatore implicito sono differenti: ESI come sorgente ed
 `SCASsuf` confronta il contenuto del registro AL,AX, EAX (suffisso) con la locazione (singola, doppia, quad) di memoria indirizzata da EDI, con lo stesso algoritmo della CMP. A seconda di DF incrementa/decrementa EDI di 1,2,4.
 # Prefissi di Ripetizione
 `REP` può essere usato con MOVS, STOS, INS, OUTS e LODS(non ha senso).
-`REPE`/`REPNE` può essere usato con CMPS e SCAS, si fanno al massimo %ecx ripetizioni finché la condizione specificata è vera. Prima di ogni esecuzione dell'istruzione decrementa quindi %ecx.
+`REPE`/`REPNE` può essere usato con CMPS e SCAS, si fanno al massimo %ecx ripetizioni finché la condizione specificata è vera.
+Prima di ogni esecuzione dell'istruzione decrementa quindi %ecx.

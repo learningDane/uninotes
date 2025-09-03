@@ -21,7 +21,8 @@ Argomenti
 [[Modello di Moore]] 
 [[Modello di Mealy]] 
 [[Modello di Mealy Ritardato]] 
-[[Scomposizione in parte operativa - parte controllo (PO-PC)]] 
+[[Scomposizione in parte operativa - parte controllo (PO-PC), microindirizzi e ROM]] 
+[[Interfaccia Seriale Asincrona Start-Stop]] 
 Verilog
 [[Verilog]] 
 [[Comuni Reti in Verilog]] 

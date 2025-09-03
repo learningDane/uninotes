@@ -41,7 +41,7 @@ S0R: begin
 end
 
 S1R: begin
-	SOC = 2;
+	SOC = 0;
 	STAR <= (eoc == 1'b1) ? S2R : S1R;
 end
 
