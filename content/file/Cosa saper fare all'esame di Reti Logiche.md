@@ -11,3 +11,10 @@ messIN: .FILL 80, 1, 0
 
 _main: NOP
 ``` 
+# Orale
+- [x] [[Struttura di un Semplice Calcolatore]]
+- [ ] Ram
+- [ ] Interfacce
+- [ ] interfaccia analogico-digitale
+- [ ] circuiti con memoria, d-latch etc
+- [x] rappresentazione dei numeri
