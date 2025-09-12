@@ -1,6 +1,6 @@
 #uni 
 Queste comunicano con dispositivi esterni in accordo ad un vecchio standard del 1969, il **EIA-RS232**.
-Si utilizza una unica linea di collegamento, sulla quale vengono trasmessi l'uno dopo l'altro i bit, questi bit vengono inviati a gruppi, detti __Trame__. 
+Si utilizza una unica linea di collegamento (normalmente chiamata __RXD__ o __TXD__), sulla quale vengono trasmessi l'uno dopo l'altro i bit, questi bit vengono inviati a gruppi, detti __Trame__. 
 Non ci sono specifiche sul tempo che può trascorrere tra una trama e l'altra, i bit invece all'interno di una trama devono essere inviati con una cadenza regolare, intervallati di un tempo __T__, detto __tempo di bit__.
 Il numero di bit inviati nell'unità di tempo, all'interno di una trama, è detto __bit-rate__, e vale $\frac{1}{t}$.
 Le trame sono costituite da un numero di bit che va da 7 a 12.
@@ -22,3 +22,8 @@ marking: ---         ---         ---                --- ----------
 spacing:       ---         ---            --- ---
 			<- LSB                         -> MSB
 ```
+# Ricevitore Seriale
+Per poter seguire con precisione l'evoluzione della linea di trasmissione __RXD__, il ricevitore viene pilotato con un clock _clock_ric_ che ha un periodo molto minore del tempo di clock __T__, per semplicità supponiamo che sia $\frac{T}{16}$.
+1. Il ricevitore attende $\frac{T}{2}$: la __centratura del bit__
+2. Preleva i bit uno alla volta, inserendoli in un registro _BUFFER_ tramite una operazione di shift destro.
+3. Quando gli 8 bit utili sono nel buffer, l'informazione è completa.

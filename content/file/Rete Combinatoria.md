@@ -72,5 +72,5 @@ generica uscita: $z_0=\begin{cases} x \ \ \ \  (b_{N-1}...b_1b_0) \\ 0 \ \ \ \ a
 Un demultiplexer è essenzialmente un [[#Decoder con Enabler]], sono la stessa cosa.
 ## Multiplexer
 Questo ha $N+2^N$ ingressi e $1$ uscita.
-Fa il contrario del demultipllexer.
+Fa il contrario del demultiplexer.
 Ha al massimo 2 livelli di logica e utilizza solo AND, OR, NOT.

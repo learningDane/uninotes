@@ -123,6 +123,11 @@ Viene anche usato per NON inizializzare una variabile
   `.SET occupazione, (foo-dato1)`
   `...`
   `MOV $occupazione, %ECX`
+# Modifica Manuale del Direction Flag
+```assembly
+	STD // set direction flag
+	CLD // clear direction flag
+```
 # Costanti Numeriche
 - naturali: non hanno segno e vengono convertire nella loro rappresentazione in base 2 [[Rappresentazione in Complemento a 2]].
 - intere: hanno un segno davanti e vengono convertire in 2C
