@@ -11,17 +11,19 @@ Argomenti
 [[Note sull'Architettura Intel-AMD a 64bit]] 
 [[Aritmetica dei Calcolatori]] 
 
-[[Mappa di Karnaugh]] 
 [[Rete Logica]] 
 [[Rete Combinatoria]] 
 [[Algebra di Boole]] 
-[[Sintesi SP - PS]] 
+[[Sintesi SdP, PdS, NAND, NOR]] 
 [[Rete Sequenziale Asincrona]] 
 [[Rete Sequenziale Sincronizzata (RSS)]] 
 [[Scomposizione in parte operativa - parte controllo (PO-PC), microindirizzi e ROM]] 
 [[Interfaccia Seriale Asincrona Start-Stop]] 
+[[Interfaccia di Conversione Analogico-Digitale]] 
 [[Struttura di un Semplice Calcolatore]] 
 Verilog
 [[Verilog]] 
 [[Comuni Reti in Verilog]] 
 [[Modello di una RSS Mealy R in Verilog]] 
+Esercizi
+[[Esercizi Orale Reti Logiche]] 

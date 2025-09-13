@@ -17,4 +17,5 @@ _main: NOP
 - [ ] Interfacce
 - [ ] interfaccia analogico-digitale
 - [ ] circuiti con memoria, d-latch etc
+- [ ] algebra booleana
 - [x] rappresentazione dei numeri
