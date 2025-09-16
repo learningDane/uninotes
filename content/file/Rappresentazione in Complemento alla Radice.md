@@ -1,6 +1,10 @@
 #uni 
 In questa rappresentazione lo zero viene rappresentato una volta sola. Questa è la rappresentazione usata dai calcolatori, perché basta sommare i valori binari per fare la somma tra due numeri, si può quindi utilizzare la stessa circuiteria dei numeri naturali.
-# Come
+# Sunto per generica base Beta
+$$
+x=\left( x_{{n-1}}==\frac{\beta}{2} \right) ? X :-(\overline X +1) \quad \quad X=|x|_{{\beta^n}}
+$$
+# Come (base 2)
 Se $X$ comincia con $0$ (quindi $MSB = 0$) allora $x$ è positivo e sale al crescere di $X$.
 Se $X$ comincia con $1$ (quindi $MSB = 1$) allora $x$ è negativo e sale al crescere di $X$.
 $X=00...00 \implies x = 0$ 

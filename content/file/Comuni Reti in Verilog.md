@@ -209,7 +209,3 @@ module RSScomplessa(x, z, clock, reset_);
 		endcase
 	endmodule
 ```
-# Rete parte operativa-parte controllo
-```Verilog
-
-```

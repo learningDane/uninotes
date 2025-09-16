@@ -9,6 +9,9 @@ Argomenti
 [[Schema del Calcolatore]] 
 [[Ottimizzazione di Assembly]] 
 [[Note sull'Architettura Intel-AMD a 64bit]] 
+
+Aritmetica dei Calcolatori:
+[[Rappresentazione in Complemento alla Radice]] 
 [[Aritmetica dei Calcolatori]] 
 
 [[Rete Logica]] 

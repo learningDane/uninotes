@@ -10,7 +10,7 @@ graph TD
 # Processore
 Il processore contiene i seguenti due blocchi: 
 ___ALU___
-La _Arithmetic Logic Unit_ esegue operazioni logiche (AND, OR, NOT) e lavora con numeri naturali in base 2 oppure con numeri interi in [[Rappresentazione in Complemento a 2]].
+La _Arithmetic Logic Unit_ esegue operazioni logiche (AND, OR, NOT) e lavora con numeri naturali in base 2 oppure con numeri interi in [[Rappresentazione in Complemento alla Radice]].
 ___FPU___
 _Floating Point Unit_.
 Il processore ciclicamente:

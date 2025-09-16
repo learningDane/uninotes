@@ -129,7 +129,7 @@ Viene anche usato per NON inizializzare una variabile
 	CLD // clear direction flag
 ```
 # Costanti Numeriche
-- naturali: non hanno segno e vengono convertire nella loro rappresentazione in base 2 [[Rappresentazione in Complemento a 2]].
+- naturali: non hanno segno e vengono convertire nella loro rappresentazione in base 2 [[Rappresentazione in Complemento alla Radice]].
 - intere: hanno un segno davanti e vengono convertire in 2C
 - i numeri possono essere scritti in base 2,8,10,16
 	- 2: preceduti da 0b

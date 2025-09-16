@@ -14,8 +14,8 @@ _main: NOP
 # Orale
 - [x] [[Struttura di un Semplice Calcolatore]]
 - [ ] Ram
-- [ ] Interfacce
-- [ ] interfaccia analogico-digitale
-- [ ] circuiti con memoria, d-latch etc
-- [ ] algebra booleana
+- [x] Interfacce
+- [x] interfaccia analogico-digitale
+- [x] circuiti con memoria, d-latch etc
+- [x] algebra booleana
 - [x] rappresentazione dei numeri

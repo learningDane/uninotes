@@ -51,7 +51,7 @@ $$
 
 ## Numeri Interi
 [[Rappresentazione in Modulo e Segno]] 
-[[Rappresentazione in Complemento a 2]] 
+[[Rappresentazione in Complemento alla Radice]] 
 [[Rappresentazione con Bias dei Numeri Naturali]] 
 ## Numeri Reali
 [[Rappresentazione in Virgola Fissa]] 

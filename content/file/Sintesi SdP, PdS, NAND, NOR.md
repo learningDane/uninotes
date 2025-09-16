@@ -10,10 +10,10 @@
 # Sintesi PS
 Data $F$ da sintetizzare PS:
 1. sintetizzo $\overline{F}$ in forma SP
-2. Applico NOT ai termini di operatori AND
+2. Applico NOT alle variabili indipendenti
 3. Sostituisco le AND con OR e le OR con AND
 4. Ho ottenuto la PdS di $F$.
-___Se la sintesi SP di  è a costo minimo, lo è anche la sintesi PS di .___
+___Se la sintesi SP di $\overline z$ è a costo minimo, lo è anche la sintesi PS di $z$.___
 $$
 \overline z = (\overline a \cdot \overline b \cdot \overline c)+ (\overline a \cdot \overline b \cdot c) \dots \implies z = (a+b+c) \cdot (a+b+ \overline c )\dots
 $$
