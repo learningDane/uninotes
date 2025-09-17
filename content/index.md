@@ -29,4 +29,12 @@ ___Davide Squeri___
 - [x] [[Calcolatori Elettronici]] †9 
 ---
 # Anno III
-calma, sono classe 2004
+- [ ] [[Reti Informatiche]] †9 bloccato da Calcolatori
+- [ ] [[Sistemi Operativi]] †9 bloccato da Calcolatori
+- [ ] [[Ingegneria del Software]] †6
+---
+- [ ] [[Elettronica Digitale]] †9
+- [ ] [[Comunicazione Numeriche]] †9
+
+esami a scelta:
+- [ ] [[Crittografia]] 
