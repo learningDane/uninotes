@@ -16,10 +16,10 @@ da qui in poi trattiamo della materia [[Calcolatori elettronici]] del secondo an
 
 ---
 La CPU intel x86 può accedere a singoli byte, word, long (double word) e qadruple word.
-Immaginiamo la memoria come una colonna di righe da 8 byte.
+==Immaginiamo la memoria come una colonna di righe da 8 byte==.
 `movq 8byte` sposta l'intera riga di 8 byte.
-La memoria può essere costruita tale che il MSB finisca all'indirizzo più grande (BIG ENDIAN), oppure in modo che sia il LSB a finire nell'indirizzo più grande (LITTLE ENDIAN). Questa differenza non ci interessa, al massimo riguarda il [[Compilatore]].
-L'architettura intel è Little Endian, come la maggior parte delle altre architetture.
+La memoria può essere costruita tale che il MSB finisca all'indirizzo più piccolo (BIG ENDIAN), oppure in modo che sia il LSB a finire nell'indirizzo più piccolo (LITTLE ENDIAN). Questa differenza non ci interessa, al massimo riguarda il [[Compilatore]].
+L'architettura intel è Little Endian, come la maggior parte delle altre architetture, compresa quella del nostro calcolatore.
 ![[memoria1.svg|400]]
 # L'offset
 L'offset è la distanza tra due indirizzi, ovvero la differenza tra i due: conta quanti byte devo saltare per arrivare al secondo. L'offset da 1 a 7 è 6.

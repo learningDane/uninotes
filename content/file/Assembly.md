@@ -73,7 +73,7 @@ nome: KEYWORD operandi #commento [\CR]
 ```
 	può mancare tutto tranne il ritorno carrello
 ESEMPIO:
-```assembly
+```gas
 .GLOBAL _main
 .DATA
 dato: .LONG 0x0F..
