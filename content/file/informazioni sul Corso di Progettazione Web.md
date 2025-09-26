@@ -8,10 +8,12 @@ Argomenti:
 4. PHP
 5. Protocollo HTTP
 6. Laboratorio di sviluppo applicazioni client-side e server-side
+
 Mercoledì sono lezioni di laboratorio.
 Materiale didattico condiviso sul TEAMS 24-25
 Libro: Fundamentals of Web Development di R. Connolly e R. Hoar, Pearson, ma va bene qualsiasi libro su html, css e js.
 Documentazione ufficiale degli standard html, css, ecmascript e php.
+
 Esame si compone di prova pratica, orale-progetto:
 1. Pratica: si svolge su computer di aula informatica, sviluppo di un'applicazione web client-side (html, css, js), dura 2h, si possono usare le slide e i manuali inclusi nel pacchetto software del corso, nella cartella docs. Voto minimo per accedere a orale: 15. Vale 3 appelli.
    Le soluzioni sono pubblicate su https://github.com/alessiovecchio/PWEB 
