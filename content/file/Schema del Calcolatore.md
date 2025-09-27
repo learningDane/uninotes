@@ -62,7 +62,7 @@ I registri generali non sono rilevanti
 
 # Spazio di Memoria
 Rappresentato da $2^{32}$ celle contigue, dalla capacità di un byte ciascuna, ogni cella è identificata da un numero a 32 bit ([[Informazione]]), detto ___indirizzo___.
-In [[Assembly]] gli indirizzi sono simbolici e vengono tradotti in parte dall'assemblatore, in parte a _runtime_, non è quindi cura del programmatore.
+In [[Assembly AT&T]] gli indirizzi sono simbolici e vengono tradotti in parte dall'assemblatore, in parte a _runtime_, non è quindi cura del programmatore.
 Questo spazio di memoria viene implementato nella [[Memoria]], per cui il contenuto è casuale dopo un reset. Solo una parte, la ___ROM___, conserva le informazioni dopo un reset, e possiede le istruzioni per il processore da eseguire dopo appunto un reset.
 Il Processore accede, nel senso di leggere/scrivere, a locazioni che possono essere:
 1. singola (byte), a 8 bit

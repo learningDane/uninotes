@@ -4,6 +4,7 @@
 [[Comandi esami Calcolatori Elettronici]] 
 
 Argomenti:
+[[Assembly x86]] 
 [[Struttura del Calcolatore]] 
 [[Memoria]] 
 [[Macchina Virtuale del corso di Calcolatori Elettronici]] 

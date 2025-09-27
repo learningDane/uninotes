@@ -10,7 +10,7 @@ In teoria sono indirizzabili $2^{64}$ byte, in pratica invece le architetture re
 I bit in eccesso devono avere lo stesso valore all'ultimo bit.
 Se si viola questa regola il processore da errore.
 # Modifiche all'assembly
-[[Assembly]]
+[[Assembly AT&T]]
 I suffissi sono: 
 - B per 8bit
 - W per 16bit
