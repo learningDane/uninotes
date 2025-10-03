@@ -1,5 +1,5 @@
 #uni 
-La macchian virtuale che useremo durante il corso di [[Calcolatori Elettronici]] è una macchina "nuda" (senza altro software) che useremo per emulare un computer PC AT della IBM, il personal computer d'eccellenza.
+La macchian virtuale che useremo durante il corso di [[Calcolatori Elettronici]] è una macchina "nuda" (senza altro software) che useremo per emulare un computer PC AT della IBM (processore [[Intel 80286]]), il personal computer d'eccellenza.
 
 Questa macchina diventò così famosa perché venne clonata per intero in numero spropositati, poiché IBM (come tutti gli altri manufacturer all'epoca) rilasciò tutta la documentazione sulla costruzione del PC AT, che rese facile la realizzazione di perfetti cloni a costi minimi rispetto all'originale.
 

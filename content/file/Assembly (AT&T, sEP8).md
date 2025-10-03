@@ -25,7 +25,7 @@ L'assembly è processor-specific, noi vedremo quello per Intel x86 a 32bit (faci
 # Codifica Macchina e Codifica Mnemonica
 La codifica macchina è una serie di 0 e 1 che codificano le istruzioni per il processore
 La codifica Mnemonica è un modo simbolico di scrivere quella serie di 0 e 1
-L'[[Assembly AT&T]] usa codifica Mnemonica delle istruzioni, e dispone di una serie di sovrastrutture sintattiche.
+L'[[Assembly (AT&T, sEP8)]] usa codifica Mnemonica delle istruzioni, e dispone di una serie di sovrastrutture sintattiche.
 Questo è il formato macchina:
 
 | I prefix |     | Opcode | Mode | SIB | Displacement | Immediate |
@@ -213,7 +213,7 @@ Alcuni sottoprogrammi di I/O
 3. newline: va a capo, stampa i caratteri 0x0D (ritorno carrello) e 0x0A (line feed), servono entrambi
 4. pauseN: mette in pausa il programma e stampa sul video:
    `Checkpoint number N. Press any key to continue`, dove $N$ deve essere una cifra decimale.
-In [[Assembly AT&T]] non esistono istruzioni di ingresso/uscita, esistono solo IN e OUT su interfacce, ma sono privilegiate.
+In [[Assembly (AT&T, sEP8)]] non esistono istruzioni di ingresso/uscita, esistono solo IN e OUT su interfacce, ma sono privilegiate.
 I/O tastiera/video si usano servizi del Sistema ([[DOS]]), che sono sottoprogrammi scritti da altri che girano in modalità sistema. Sono primitivi, ingresso/uscita di UN solo carattere.
 Per fare ingresso da tastiera di un numero naturale a 2 cifre in base 10:
 1. leggo e memorizzo due codifiche ASCII: $C_1, C_0$
@@ -734,7 +734,7 @@ Tra le istruzioni privilegiate troviamo:
 se ne cerchiamo di utilizzare uno in modalità utente va in esecuzione una eccezione di protezione, diversa da sistema a sistema.
 # Istruzioni sulle stringhe
 ## Manipolazione
-In [[Assembly AT&T]] non esistono tipi dato ne strutture dati, esistono solo byte, word, long.
+In [[Assembly (AT&T, sEP8)]] non esistono tipi dato ne strutture dati, esistono solo byte, word, long.
 Supporta però il concetto di vettore:
 dichiarazione di vettore di variabile di una certa dimensione:
 - indirizzamento con displacement + registri base/indice

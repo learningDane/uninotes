@@ -1,8 +1,11 @@
 #uni 
 HTML (___HyperText Markup Language___) is a _markup_ language. Markup is a way of specifing information about the content.
+
 In the last decade a strong consensus has grown around the belief that HTML documents should only focus on structure and content of the document, and not how this document is visualized, which is left to [[CSS]]. 
+
 This way of operating ensures: maintainability, speed, accessibility, better instructions for search engines -> SEO.
-An HTML docuement is split into Head and Body, the head contains descriptive elements about the document, the body instead contains what should be displayed.
+
+An HTML docuement is split into **Head** and **Body**, the head contains descriptive elements about the document, the body instead contains what should be displayed.
 # Simplest HTML document
 ```HTML
 <!DOCTYPE html>

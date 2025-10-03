@@ -3,8 +3,11 @@
 [[Installazione Ambiente Calcolatori Elettronici su Mac]] 
 [[Comandi esami Calcolatori Elettronici]] 
 
+> Utilizziamo una macchina QEMU con ==processore Intel/AMD a 64 bit==, ==bus PCI a 32 bit== e ==periferiche ISA==.
+
+
 Argomenti:
-[[Assembly x86]] 
+[[Assembly x86-64]] 
 [[Struttura del Calcolatore]] 
 [[Memoria]] 
 [[Macchina Virtuale del corso di Calcolatori Elettronici]] 
@@ -15,6 +18,8 @@ Argomenti:
 Laboratorio:
 [[Comandi Utili Calcolatori Elettronici]] 
 [[Programmazione mista assembly, c++]] 
+[[note c++ per CE]] 
+[[LIBCE]] 
 [[mangling]] 
 [[Creazione di Primitiva]] 
 

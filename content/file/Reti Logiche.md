@@ -5,7 +5,7 @@ Giovanni Stea, Raffaele Zippo, 9cfu
 [[note ambiente assembler Zippo.pdf]] 
 Argomenti
 [[Introduzione alle Reti Logiche]] 
-[[Assembly AT&T]] 
+[[Assembly (AT&T, sEP8)]] 
 [[Schema del Calcolatore]] 
 [[Ottimizzazione di Assembly]] 
 [[Note sull'Architettura Intel-AMD a 64bit]] 
