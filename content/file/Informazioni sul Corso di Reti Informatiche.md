@@ -1,6 +1,6 @@
 #uni 
 Prerequisiti:
-- linguaggio ad alto livello: [[C]]/[[C++]]/[[Java]]
+- linguaggio ad alto livello: [[Header file]]/[[C++]]/[[Java]]
 - [[Calcolatori Elettronici]]
 
 Consigliato seguire [[Reti Informatiche]] in parallelo con [[Sistemi Operativi]].
@@ -71,6 +71,6 @@ Esame da 10 punti con Righetti, di cui 4 punti sono la discussione del progetto.
 Condizione necessaria per accedere all'esame è la consegna del progetto e una sua valutazione positiva.
 Progetto va conseganto 5 giorni prima della data dell'appello di esame.
 
-Il progetto consiste nello sviluppo di un'applicazione in [[C]].
+Il progetto consiste nello sviluppo di un'applicazione in [[Header file]].
 
 ==Alla consegna del progetto specificare che il progetto è stato testato su macchina virtuale ARM (se usi mac con apple silicon)==.

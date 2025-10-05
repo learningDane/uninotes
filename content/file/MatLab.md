@@ -1,5 +1,5 @@
 #uni 
-MATLAB è un ambiente per il [[Calcolo Numerico]] e l'analisi statistica scritto in [[C]], che comprende anche l'omonimo linguaggio di programmazione creato dalla [[MathWorks]].
+MATLAB è un ambiente per il [[Calcolo Numerico]] e l'analisi statistica scritto in [[Header file]], che comprende anche l'omonimo linguaggio di programmazione creato dalla [[MathWorks]].
 
 Se si incontra una funzione di cui non si conosce/ricorda l'utilizzo è possibile invocare la guida: `help nomefunzione`.
 # Funzioni

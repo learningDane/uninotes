@@ -43,7 +43,7 @@ Il simbolo `|` collega l'output di un comando all'input del successivo
 	- `man man` è il manuale di man, che è diviso in sezioni
 	- `man comando` è il manuale del comando
 	- `man 3 comando` va alla al manuale della funzione c di comando
-	- non solo per comandi: anche funzioni del kernel, funzioni delle librerie [[C]], file di configurazione..
+	- non solo per comandi: anche funzioni del kernel, funzioni delle librerie [[Header file]], file di configurazione..
 - `whatis` informazioni di base su argomento
 - `apropos` serve per ricercare una parola in nomi e descrizioni, che comandi ho per fare una determinata cosa
 - `mkdir nome` fa cartella

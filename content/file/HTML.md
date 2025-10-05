@@ -68,8 +68,7 @@ Links are split in two main parts: the **destination**(link) and the **label**.
 Links can be **global** (`http:/external link`) or **relative** (`/internal link`).
 
 >The `target="_blank"` attribute opens the link in a new page
-
-### Types of link:
+##### Types of link:
 - to external sites (or individual external resources)
 - to other pages or resources within the current site
 - to particular locations on this (or another) page
@@ -79,6 +78,14 @@ Links can be **global** (`http:/external link`) or **relative** (`/internal link
 	- mail: `<a href="mailto:EMAILADDRESS"> send the email! </a>`
 	- javascript: `<a href="javascript: JSFUNCTION();"> call function </a>`
 	- phone: `<a href="tel:NUMBER"> call this number </a>`
+### Images
+If the image is "content", the semantically appropriate approach is to include it in the HTML. If it instead is purely for decoration, it belongs in the [[CSS]].
+```HTML
+<img src="linkToImage" alt="altText" title="title" width="80" height="40" />
+```
+- the text in the **alt** field provides a brief description for people that are unable to see.
+- the text in **title** will be displayed in a pop-up tool tip when the user hovers over the image.
+- **width** and **height** specify the dimensions in pixels.
 # Formattazione
 `<b> </b>` __bold__.
 `<strong> </strong>` __bold__.
@@ -117,14 +124,18 @@ Links can be **global** (`http:/external link`) or **relative** (`/internal link
 	<tr> ecc
 </table>
 ```
-# Liste
-`<ul>` se lista deve essere non-ordinata
-`<ol>`se lista deve essere ordinata
-`<dl>`se la lista deve avere descrizioni aggiuntive
-```
+# Lists
+`<ul>` *unordered list*: se lista deve essere non-ordinata
+`<ol>` *ordered list*: se lista deve essere ordinata
+`<dl>` *definition list*: collection of name and definition pairs.
+```HTML
 <ul>
 	<li> sfwf </li>
-	<li> ecc
+	<li> 
+		<ul>
+			<li> first item, first subitem </li>
+		</ul>
+	</li>
 </ul>
 
 <dl>
@@ -139,11 +150,16 @@ Un elemento in blocco aggiunge spazi prima e dopo di se
 `<hr>` 
 `<pre>` 
 `<tutte le liste>` 
-## Altri Elementi
-`<div>` 
-`<iframe src="il link"> //serve per includere una pagina` 
-## Sintassi per i Simboli
-`&il segno;` oppure con Unicode : `&#numero;` [tabella unicode](https://www.brescianet.com/appunti/vari/unicode.htm)
+# Character Entities
+
+| entity    | description                  |
+| --------- | ---------------------------- |
+| `&nbsp;`  | nonbreakable space           |
+| `&lt;`    | <                            |
+| `&gt;`    | >                            |
+| `&copy;`  | &copy                        |
+| `&trade;` | trade mark registered symbol |
+
 ## I Form
 ```
 <form>

@@ -12,7 +12,7 @@ Ogni oggetto ha un __tipo__, dal quale si rileva automaticamente il range di val
 Un oggetto può essere __dichiarato__ e __definito__, una dichiarazione noon associa locazioni di memoria o azioni eseguibili, una definizione invece associa una locazione di memoria o un'azione eseguibile.
 
 ---
-da qui in poi trattiamo della materia [[Calcolatori elettronici]] del secondo anno.
+da qui in poi trattiamo della materia [[Calcolatori Elettronici]] del secondo anno.
 
 ---
 La CPU intel x86 può accedere a singoli byte, word, long (double word) e qadruple word.

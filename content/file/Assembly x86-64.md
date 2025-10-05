@@ -78,3 +78,24 @@ Nota che GAS può utilizzare anche sintassi Intel.
 # Istruzioni
 - inb %dx, %al/%ax
   prende un byte dalla porta di I/O all'offset in %dx e lo mette in dest
+# x86_64 Standalone Assembly compiling with GCC
+File must be **file.s** extension.
+```asm
+.global _start
+
+.data
+# data declared here
+
+.section .text
+_start:
+    ; your instructions here
+    
+	mov $60, %rax     # sys_exit
+    mov $0, %rdi      # exit code 0
+    syscall
+```
+
+compiling:
+```bash
+gcc -nostdlib -o myprog file.s
+```

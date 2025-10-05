@@ -7,16 +7,16 @@
 
 
 Argomenti:
-[[Assembly x86-64]] 
 [[Struttura del Calcolatore]] 
 [[Memoria]] 
-[[Macchina Virtuale del corso di Calcolatori Elettronici]] 
 [[Eccezioni]] 
 [[Protezione e Interruzione]] 
 [[Realizzazione dei Processi]] 
 
 Laboratorio:
-[[Comandi Utili Calcolatori Elettronici]] 
+[[Macchina Virtuale del corso di Calcolatori Elettronici]] 
+[[Comandi Utili Calcolatori Elettronici]] (+info sull'uso di nucleo,libce ed esempiIO)
+[[Assembly x86-64]] 
 [[Programmazione mista assembly, c++]] 
 [[note c++ per CE]] 
 [[LIBCE]] 
