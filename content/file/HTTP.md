@@ -1,6 +1,7 @@
 #uni 
-It stands for (HyperText Transfer Protocol)
-two type of http messages:
+It stands for (HyperText Transfer Protocol).
+This protocol is based on the [[Client-Server]] paradigm.
+Two type of http messages:
 - *request*
 - *response*
 the message format is **ASCII**
@@ -49,9 +50,32 @@ The question is *How do we keep the state?*
 The Cookies permits the sistes to learn about you on their site
 Third party persistent cookie allow common identity to be tracked across multiple web sites
 
-# Web Caches
+# Web Caches (proxy servers)
 *Goal*: satisfy client request without involving origin server
-*Why*: servers under load may be very slow, or in general to alleviate the load on said servers.
+*Why*: to alleviate the load on origin servers. Caches are closer to clients so it reduces response time. Caches also alleviate the load on internet as a whole.
 The user configures the browser to point to a **web cache**.
 - if the objects is in the cache: the cache return object to client
 - if the object isn't in cache: the cache ask and receives the object from the origin server, caches it and sends it to client
+
+Proxy servers act both as a client and as a server. They are typically installed by ISP.
+### Problem of recency of cached objects
+What do we do if the object is updated on the remote servers and the proxy server isn't aware?
+**Conditional GET**:
+goal: don't send object if cache has up-to-date version
+- Cache: the cache when sending the GET statement includes the version of the cached copy:
+  `if-modified-since:<date>`
+- Server: response contains no object if the cached copy is up to date:
+  `http/1.0 304 Not Modified`
+# Important updates
+### HTTP 1.1
+In this versione the scheduling algorithm for GET requests is **FCFS**: first come first served.
+Issue: small objects may wait for bigger (slower) objects (requests) (==HOL blocking==: **Head of line blocking**). Also loss recovery (retransmitting lost TCP segments) stalls object transmission.
+### HTTP 2
+RFC 7540, 2015: The key goal for this version was decreasing delay in multi-object HTTP requests.
+Increased the flexibility for servers when sending objects to clients:
+Objects are divided into frames and the frame transmission is interleaved.
+Problems: recovery still stalls transmission, also no extra security over vanilla TCP connections.
+### HTTP 3
+Adds
+- security
+- per object error (and congestion) control (more pipelining) over UDP

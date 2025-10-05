@@ -6,3 +6,5 @@ Argomenti
 [[IPv4]] 
 [[Configurazione dell'interfaccia di rete]] 
 [[HTTP]] 
+[[E-mail]] 
+[[DNS]] 

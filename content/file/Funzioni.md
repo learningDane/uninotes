@@ -73,18 +73,18 @@ Sono indicate con $f_n$ dove $n\in N$.
 Una successione si dice limitata se: $\exists M > 0 \ t.c. \ |a_n| < M, \ \forall n \ in N$
 Il [[Limiti]] della successione è dato da: 
 $$
-\forall \epsilon > 0 \exists n_0 \ in N \ con \ n_0 > 0 \ t.c. \ \forall n>n_0 \ risulta \ |a_n - a | < \epsilon
+\forall \epsilon > 0 \exists n_0 \ in N \ \text{con} \ n_0 > 0 \ t.c. \ \forall n>n_0 \ \text{risulta} \ |a_n - a | < \epsilon
 $$
 
 $$
-lim_{n \to \infty} a_n = a
+\lim_{n \to \infty} a_n = a
 $$
 
 ### Successioni monotone
 Una Successione è detta _monotona crescente_ se $\forall n \in N \ : \ a_n < a_{n+1}$
 Una Successione è invece detta _monotona non decrescente (o crescente in senso lato)_ se $\forall n \in N \ : \ a_n \leq a_{n+1}$ 
 ### Sottosuccessioni
-$b_n$ è detta sottosuccessione di $a_n$ se $\exists k: N \to N \ strettamente \ crescente \ t.c. \ b_n = a_{k_n}$ 
+$b_n$ è detta sottosuccessione di $a_n$ se $\exists k: N \to N \ \text{strettamente crescente} \ t.c. \ b_n = a_{k_n}$ 
 ##### Teorema di Regolarità per Sottosuccesioni
 Se il [[Limiti]] $\lim_{n \to \infty} a_n = L (+ \infty) \ allora \ \forall a_{n_k} \ sottosuccessione \ di \ a_n \ : \ \lim_{k \to \infty} a-{n_k} = L (+ \infty)$ 
 In parole povere la sottosuccessione di una successione ha lo stesso limite della successione.

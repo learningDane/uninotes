@@ -5,44 +5,81 @@ In the last decade a strong consensus has grown around the belief that HTML docu
 
 This way of operating ensures: maintainability, speed, accessibility, better instructions for search engines -> SEO.
 
-An HTML docuement is split into **Head** and **Body**, the head contains descriptive elements about the document, the body instead contains what should be displayed.
+An HTML document is split into **Head** and **Body**, the head contains descriptive elements about the document, the body instead contains what should be displayed.
+# HTML Syntax
+HTML documents are composed of textual content and HTML elements.
+HTML elements contain:
+- the element name, within angle brackets, aka the **tag**
+- attributes
+- the content within the tag
+An empty elements doesn't display anything, it just tells the browser to do something.
+### Nesting HTML elements
+In HTML is is possible to put elements inside of other elements, in such a case, the containing element is said to be the *parent* of the contained (*child*) element.
+Any elements contained in the child are said to be *descendants* of the parent element, which to the descendants is *ancestor*.
 # Simplest HTML document
 ```HTML
 <!DOCTYPE html>
 <title>titolo</title>
 <p>paragraph</p>
 ```
+where:
+- *doctype* tells the browser what kind of document it is about to process
+- the *title* element is used to provide a broad description of the content; the title is not displayed in the rendered page, it is instead displayed in the browsers tabs.
 # Complete HTML document
 ```HTML
-<meta charset = "utf-8">
-<script src="js/html5shiv.js"></script> specifies the Javascript documents needed
-<link rel="stylesheet" href="css/main.css"> specifies the style (CSS) document
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset = "utf-8">
+	<title> titolo </title>
+	<script src="fileJS.js"></script>
+	<link rel="stylesheet" href="fileCSS.css">
+</head>
+<body>
+	<h1> Main heading </h1>
+</body>
+</html>
 ```
+where:
+- `script` specifies the [[JavaScript]] file
+- `link rel="stylesheet href="..."` specifies the [[CSS]] file
+- the `<html>` elements is called the **root** element since it contains all the other HTML elements in the document
+- `<head>` contains descriptive elements about the document
+- `<body>` contains content that will be displayed by the browser
 # Elements
-`<h></h>` heading
-`<p><p/>` paragraph
-`<div>` not displayed by the browser, does nothing
-`<a>` anchor, has attribute `href="link/image"></a>`
-links can be to external sites, resources within the current site, resources within the same page, particular locations on other page, instructions for user's email program, instructions to execute javascript function.
+- `<h></h>` heading
+- `<p><p/>` paragraph, **notice:** the `<p>` tag is a container and as such it can contains HTML and other inline HTML elements.
+- `<div>` is a container, not displayed by the browser, does nothing, used to separate the code
+- `<a>` anchor, has attribute `href="link/image"></a>` used for [[#Link]].
+- `<!-- commentooo -->` comment
+### Inline HTML elements
+Inline HTML elements do not cause a paragraph break but are part of the "regular" flow of the text.
+### Elementi a chiusura autonoma
+`<br>` serve per andare a capo
+`<hr>` una linea separatrice
+### Links
+Links can be to external sites, resources within the current site, resources within the same page, particular locations on other page, instructions for user's email program, instructions to execute javascript function.
+Links are split in two main parts: the **destination**(link) and the **label**.
+```HTML
+<a href="link"> Label </a>
+<!-- or -->
+<a href="link"> <img src="link"/> </>
+```
+Links can be **global** (`http:/external link`) or **relative** (`/internal link`).
 
+>The `target="_blank"` attribute opens the link in a new page
 
-
-
----
-HTML (___HyperText Markup Language___) è un linguaggio di _markup_ nato per la formattazione e impaginazione di documenti ipertestuali.
-L'HTML è un linguaggio di pubblico dominio, la cui sintassi è stabilita dal [[World Wide Web Consortium]] (W3C).
-# Codice
-## Basi
-`<!DOCTYPE html>` stabilisce il tipo di documento da formattare e la versione di HTML.
-`<html> xxx </html>` indica l'inizio e la fine dell'HTML.
-`<head> xxx </head>` contiene la metadata del documento, titolo della pagina, il tipo di encoding e link a risorse esterne.
-1. `<title> </title>` il titolo della pagina.
-2. `<link rel="icon" href="link dell'immagine">` icona del sito.
-`<body> xxx </body>` questo elemento è una delle componenti fondamentali dell'HTML, il contenuto di questo elemento è tutto ciò che viene mostrato sulla pagina web.
-`<hn> xxx </hn>` dove $n$ è l'indice di priorità è un heading.
-`<p> xxx </p>` è un paragrafo non formattato.
-`<pre> xxx </pre>` è invece un paragrafo preformattato.
-## Formattazione
+### Types of link:
+- to external sites (or individual external resources)
+- to other pages or resources within the current site
+- to particular locations on this (or another) page
+	- location on same page: `<a href=#top> to top </a>`
+	- location on another page: `<a href="link#PLACE> to PLACE </a>`
+- instructions to the browser (execute [[JavaScript]] or open the user's email program etc)
+	- mail: `<a href="mailto:EMAILADDRESS"> send the email! </a>`
+	- javascript: `<a href="javascript: JSFUNCTION();"> call function </a>`
+	- phone: `<a href="tel:NUMBER"> call this number </a>`
+# Formattazione
 `<b> </b>` __bold__.
 `<strong> </strong>` __bold__.
 `<em> </em>` $\sim$ _italic_.
@@ -53,9 +90,6 @@ L'HTML è un linguaggio di pubblico dominio, la cui sintassi è stabilita dal [[
 `<small> </small>` small
 `<sub> </sub>` $aaa_{this is sub}$ 
 `<sup> </sup>` $a^{lol}$ 
-## Elementi a chiusura autonoma
-`<br>` serve per andare a capo
-`<hr>` una linea separatrice
 ## Attributi
 `<p style="attributo; altro attributo"> </p>` 
 `style="Color: colore"` 
@@ -63,12 +97,11 @@ L'HTML è un linguaggio di pubblico dominio, la cui sintassi è stabilita dal [[
 `background-color` 
 `height="pixel di altezza"` 
 `width="pixel di larghezza"` 
-## Link
-Se non metti il `https://` (che rende il link assoluto), il browser lo prende come link relativo.
-`<a href="il link"> blah blah </a>` apre il link nella stessa pagina.
-`<a href="il link" target="_blank"> blah blah </a>` con questo attributo _target="_blank"_ apre il link in una nuova pagina.
-`<a href="mailto:indirizzoemail"> send me an email </a>`
-## Tabelle
+
+
+
+
+# Tabelle
 ```
 <table>
 	<tr> //tr sono le righe
@@ -84,7 +117,7 @@ Se non metti il `https://` (che rende il link assoluto), il browser lo prende co
 	<tr> ecc
 </table>
 ```
-## Liste
+# Liste
 `<ul>` se lista deve essere non-ordinata
 `<ol>`se lista deve essere ordinata
 `<dl>`se la lista deve avere descrizioni aggiuntive
@@ -119,5 +152,3 @@ Un elemento in blocco aggiunge spazi prima e dopo di se
 	<input type="tipo ti input (eg: text, number, checkbox)" name="il nome" id="l'id">
 </form>
 ```
-## Commenti
-`<!-- commentooo -->` 
