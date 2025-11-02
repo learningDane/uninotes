@@ -26,12 +26,12 @@ ___Davide Squeri___
 - [ ] [[Fondamenti di Automatica]] †9 
 - [ ] [[Economia ed Organizzazione Aziendale]] †6 
 - [ ] [[Calcolo Numerico]] †6 
-- [x] [[Calcolatori Elettronici]] †9 
+- [ ] [[Calcolatori Elettronici]] †9 
 ---
 # Anno III
 - [ ] [[Reti Informatiche]] †9 bloccato da Calcolatori
 - [ ] [[Sistemi Operativi]] †9 bloccato da Calcolatori
-- [ ] [[Ingegneria del Software]] †6
+- [x] [[Ingegneria del Software]] †6
 ---
 - [ ] [[Elettronica Digitale]] †9
 - [ ] [[Comunicazione Numeriche]] †9
