@@ -153,12 +153,14 @@ We will use finite state machines (FSM) to descrive the sender and the receiver.
 su Ipad o slide.
 #### 3.1.1.1 RDT3.0 "Stop and Go" Performance evaluation
 "Stop and Go": sending one packet and waiting for ACK.
-$$\begin{matrix}
+$$
+\begin{matrix}
 D_{trans}= \frac{L}{R} \\
 RTT= D_{trans}+ping \\
 t=RTT+D_{trans} \\ 
 U=\frac{D_{trans}}{t}
-\end{matrix}$$
+\end{matrix}
+$$
 But since $D_{trans} << ping$ we get that $U$ is extremely low.
 ## 3.2 Pipelining
 The answer to the RDT3.0 Performance problem is sending multiple packets back to back, without waiting for an ACK for every packet.
