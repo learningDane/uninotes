@@ -1,5 +1,14 @@
 #uni 
+```
+x86_64-elf-gcc -c -x assembler-with-cpp
+```
 # Esercizi Assembler
+Contenuto di ogni appello:
+- cc.h: contiene la dichiarazione di una o piu' strutture dati, usate nel resto del testo
+- es1.cpp: file C++ da tradurre in assembler (primo esercizio)
+- prova1.cpp: file C++ contenente il main del primo esercizio
+- es1.out: file contenente l'output corretto del primo esercizio
+
 Scrivete il file **es1.s** con il vostro editor preferito. Il comando per assemblare e collegare il primo esercizio è:
 ```bash
 g++ -o es1 -fno-elide-constructors es1.s prova1.cpp
@@ -8,12 +17,26 @@ Per confrontare output:
 ```shell
 ./es1 | diff - es1.out
 ```
+Per abilitare la produzione dei file core:
+```shell
+ulimit -c unlimited
+```
+Visualizzazione del file **core** tramite gdb:
+```shell
+gdb es1 core
+```
 ### Debug
 Aggiungendo l'opzione **-g** al comando **g++** verranno aggiunte le informazioni di debug negli eseguibili.
 # Assembly and C related
 Open the shell in x86_64 emulation mode.
 ```bash
 arch -x86_64 bash
+```
+
+stampare nomi mangled:
+```shell
+g++ -c prova.cpp -o tmp.o
+nm tmp.o | grep cl
 ```
 
 stampare traduzione non ottimizzata da C a assembly

@@ -1,15 +1,27 @@
-#uni 
+#uni
 **CIMINO** MARIO "GIOVANNI COSIMO ANTONIO", **ALFEO** ANTONIO LUCA, 6cfu
 mario.g.cimino@unipi.it
 [Sito del Corso](https://docenti.ing.unipi.it/m.cimino/isw/)
 [Feedback Anonimi](https://docenti.ing.unipi.it/m.cimino/note/)
 ore Cimino: 20h, ore Alfeo: 30h, progetto@home: 70h
-ogni settimana fare 7h a casa x progetto
-ORE: 29/09/2025: 13:49
-[[Informazioni sul Corso di Ingegneria del Software]] 
-[[Temp IdS]] 
+
+R: 10h
+A: 15h
+D: 20h
+I: 30h
+T: 10h
+
+ORE: 
+DES:
+
+[[Informazioni sul Corso di Ingegneria del Software]]
+[[Temp IdS]]
 Argomenti
-[[UML]] 
+[[UML]]
 [[Unified Process]]
+[[JSON]]
+[[Conoscenza e Cognizione]] 
 Progetto
 [[Progetto per Ingegneria del Software]]
+[[Visual Paradigm]]
+[[Progetto per Ingegneria del Software Mike]]

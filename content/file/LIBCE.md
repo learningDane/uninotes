@@ -224,7 +224,7 @@ enum log_sev {
 	LOG_USR		//!< messaggio proveniente da livello utente
 };
 
-/*! @brief Invio di un messaggio formattato sul log.
+/*! @brief Invio di un messaggio formattato sul log (porta seriale).
  *
  * Si possono usare gli stessi operatori di @ref printf.
  *
@@ -233,8 +233,8 @@ enum log_sev {
  * che lo ha inviato (se disponibile) e da una stringa di tre lettere che identifica
  * la severità del messaggio.
  *
- * @param sev	severità del messaggio
- * @param fmt	stringa di formato
+ * @param sev	severità del messaggio: LOG_DEBUG, INFO, WARN,ERR
+ * @param fmt	stringa di formato = (%p,d,x,s,ld,lx)
  * @param ...   argomenti richiesti da _fmt_
  *
  * @note si veda @ref printf per il significato di `__attribute__`

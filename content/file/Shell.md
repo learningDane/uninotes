@@ -24,3 +24,4 @@ Si usano per indicare insiemi di file o cartelle
 - `*` sostituisce zero o più caratteri
 - `?` sostituisce un singolo carattere
 `ls *.c` mostra tutti i file .c
+- `[]` per indicare insiemi di possibili caratteri

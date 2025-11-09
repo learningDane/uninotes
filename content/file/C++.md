@@ -212,7 +212,7 @@ Queste sono le componenti della ___libreria std___.
 6. `strcat(char dest, const char sorg)` concatena due stringhe in una sola.
 7. `strchr(const char str, char c)` restituisce un puntatore alla prima occorrenza di `c` in `str` oppure `0` se non ne trova.
 # Typecasting
-The ****casting operators**** is the modern C++ solution for converting one type of data safely to another type. This process is called ****typecasting**** where the type of the data is changed to another type either implicitly (by the compiler) or explicitly (by the programmer).
+The ****casting operators**** is the modern C++ solution for converting one type of data safely to another type. This process is called ****typecasting**** where the type of the data is changed to another type either implicitly (by the [[compiler]]) or explicitly (by the programmer).
 ### static_cast
 The [**static_cast***](https://www.geeksforgeeks.org/cpp/static_cast-in-cpp/) operator is the most commonly used casting operator in C++. It performs compile-time type conversion and is mainly used for explicit conversions that are considered safe by the compiler.
 The static_cast can be used to convert between related types, such as numeric types or pointers in the same inheritance hierarchy.
@@ -221,12 +221,12 @@ static_cast <new_type> (exp);
 ```
 ### dynamic_cast
 The [dynamic_cast](https://www.geeksforgeeks.org/cpp/dynamic-_cast-in-cpp/) operator is mainly used to perform **downcasting** (converting a pointer/reference of a base class to a derived class) in polymorphisms and inheritance. It ensures type safety by performing a runtime check to verify the validity of the conversion.
-If the conversion is not possible, ***dynamic_cast** returns a **null pointer** (for pointer conversions) or throws a **bad_cast exception** (for reference conversions).
+If the conversion is not possible, ***dynamic_cast*** returns a **null pointer** (for pointer conversions) or throws a **bad_cast exception** (for reference conversions).
 ```c++
 dynamic_cast<new_type>(exp);
 ```
 ### const_cast
-The [****const_cast****](https://www.geeksforgeeks.org/cpp/const_cast-in-c-type-casting-operators/) operator is used to modify the const or volatile qualifier of a variable. It allows programmers to temporarily remove the constancy of an object and make modifications. Caution must be exercised when using const_cast, as modifying a const object can lead to undefined behavior.
+The [const_cast](https://www.geeksforgeeks.org/cpp/const_cast-in-c-type-casting-operators/) operator is used to modify the const or volatile qualifier of a variable. It allows programmers to temporarily remove the constancy of an object and make modifications. Caution must be exercised when using const_cast, as modifying a const object can lead to undefined behavior.
 ```c++
 const_cast<new_type>(exp);
 
@@ -256,7 +256,7 @@ char* charptr = reinterpret_cast<char*>(nptr);
 volatile int x;
 ```
 It tells the compiler that the value of said variable may change in ways the compiler may not see, so it should not try to optimize it.
-The compiler will **always read from memory** every time you use x, instead of caching its value in a register and reusing it.
+The [[compiler]] will **always read from memory** every time you use x, instead of caching its value in a register and reusing it.
 ### Const
 ```c++
 const int x;

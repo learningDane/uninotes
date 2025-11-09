@@ -1,7 +1,7 @@
 #uni 
 [[Assembly x86-64]], [[C++]] 
 In [[C]], `extern` is sufficient for telling a [[C]] program that the function is defined in another file.
-In [[C++]] though function names will get mangled ([[mangling]]), so the linker will fail to link the mangled symbol to the [[Assembly x86-64]] function.
+In [[C++]] though function names will get mangled ([[C++ Name Mangling]]), so the linker will fail to link the mangled symbol to the [[Assembly x86-64]] function.
 This leads us to also need the `"C"` option tells the compiler to use [[C]] style calling conventions, so the function name will not be mangled.
 ```c++
 extern "C" void func();

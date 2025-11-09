@@ -99,3 +99,6 @@ compiling:
 ```bash
 gcc -nostdlib -o myprog file.s
 ```
+- nostdlib: Don’t link libc or any standard libraries
+- nostartfiles: Don’t link C runtime startup code (crt0, etc.)
+- m64|Assemble and link for 64-bit x86_64

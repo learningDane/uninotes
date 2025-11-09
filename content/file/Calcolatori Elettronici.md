@@ -7,21 +7,24 @@
 
 
 Argomenti:
-[[Struttura del Calcolatore]] 
+[[Struttura del Calcolatore]] aggiusta
+[[Periferiche]] aggiusta
 [[Memoria]] 
-[[Eccezioni]] 
-[[Protezione e Interruzione]] 
+[[Interruzioni ed Eccezioni]] 
+[[Protezione]] 
 [[Realizzazione dei Processi]] 
+[[Primitiva]] 
+[[Semafori]] 
+[[Memoria Virtuale]] 
 
 Laboratorio:
-[[Macchina Virtuale del corso di Calcolatori Elettronici]] 
-[[Comandi Utili Calcolatori Elettronici]] (+info sull'uso di nucleo,libce ed esempiIO)
-[[Assembly x86-64]] 
-[[Programmazione mista assembly, c++]] 
-[[note c++ per CE]] 
+[[Comandi Utili Calcolatori Elettronici]] (+info sull'uso di nucleo, libce ed esempiIO)
+[[Programmazione mista assembly, C-C++]] 
+[[Traduzione C++ - ASM]] 
 [[LIBCE]] 
-[[mangling]] 
-[[Creazione di Primitiva]] 
+[[C++ Name Mangling]] 
+[[Assembly x86-64]] 
 
+[[Lezioni registrate CE]] 
 link utili:
 [eccezioni](https://wiki.osdev.org/Exceptions) 

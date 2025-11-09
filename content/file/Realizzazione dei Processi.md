@@ -27,7 +27,7 @@ Dal punto di vista del sistema ogni processo ha:
 
 Ogni registro ha il suo posto assegnato all'interno di Contesto, per facilità definiamo le costanti `I_RAX`, `I_RBX` ecc, che stanno per i relativi indirizzi.
 
-Ricordo che nel nostro sistema didattico utilizziamo un solo [TSS](Protezione%20e%20Interruzione#Registro%20TR%20e%20Tast%20State%20Segment), identificato dal registro %tr, che inizializziamo solo una volta all'avvio del sistema. Per fare in modo che il meccanismo delle interruzioni utilizzi la pila sistema del processo corrente, sovrascriviamo il segmento TSS ogni volta che cambiamo processo.
+Ricordo che nel nostro sistema didattico utilizziamo un solo [TSS](Protezione.md#Registro%20TR%20e%20Tast%20State%20Segment), identificato dal registro %tr, che inizializziamo solo una volta all'avvio del sistema. Per fare in modo che il meccanismo delle interruzioni utilizzi la pila sistema del processo corrente, sovrascriviamo il segmento TSS ogni volta che cambiamo processo.
 
 - La variabile globale `puntatore` di tipo puntatore a `des_proc` punta al processo attualmente in esecuzione
 - La variabile globale `pronti` di tipo puntatore a `des_proc` punta alla testa della coda dei processe pronti

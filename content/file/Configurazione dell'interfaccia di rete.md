@@ -14,3 +14,14 @@ In [[Ubuntu]] la configurazione di rete è gestita da due tool:
 - [[Netplan]]
   fornisce un'interfaccia di configurazione per le interfacce basata su file [[YAML]].
 - [[Network Manager]] (o systemd-networkd, consigliato per distribuzioni server, per configurazioni di rete meno dinamiche)
+# Legacy
+```bash
+# abilita l'interfaccia con la configurazione descritta in /etc/network/interface
+ifup interfaccia
+
+# disabilita l'interfaccia
+ifdown interfaccia
+
+# abilita tutte le interfacce specificate nella sezione auto del file di configurazione, nello stesso ordine; viene eseguito all'avvio
+ifup -a
+```
