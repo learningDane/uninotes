@@ -370,6 +370,66 @@ execve()
 execvp()
 ```
 Queste syscall sono senza ritorno se hanno successo
+### Gerarchia dei Processi
+I sistemi Unix prevedono un **init** system, un processo mandato in esecuzione dal kernel durante il boot.
+Questo è il primo processo ad andare in esecuzione, infatti ha PID = 1.
+Tutti gli altri processi discendono da `init`.
+
+> In [[Debian]]/[[Ubuntu]] viene utilizzato [[systemd]] come gestore dei processi.
+
+Possiamo visualizzare l'albero dei processi con `pstree`.
+#### Identificatori di un processo
+- PID: ID univoco del processo
+- PPID: ID del processo padre
+- PGID: ID del process group a cui il processo appartiene
+- RUID, RGID: Real User/Group ID
+- EUID, EGID: effective User/Group ID: possono 
+
+Gli identificatori che determinano i permessi del processo si dividono in *real* e *effective*:
+- RUID : real user ID: ID dell'utente che ha mandato in esecuzione il processo
+- RGID: real group ID: ID del gruppo primario dell'utente che ha mandato in esecuzione il processo
+- EUID: effective user ID
+- EGID: effective group ID
+
+EUID e EGID possono differire da RUID e RGID se il comando eseguito ha il bit SUID o SGID attivo.
+Vengono utilizzati per definire i privilegi di accesso alle risorse e di invocazione di system call del processo.
+
+> Un processo utente può inviare segnali ad un altro processo solo se il suo EUID o RUID coincide con il RUID del processo destinatario.
+
+#### Funzioni get per identificatori
+```c
+• pid_t getpid()
+• pid_t getppid()
+• pid_t getpgrp()
+• uid_t getuid()
+• uid_t getgid()
+• uid_t geteuid()
+• uid_t getegid()
+```
+### Gruppi di Processi
+I processi sono organizzati in gruppi: quando un nuovo processo viene mandato in esecuzione da terminale, al processo viene associato un nuovo process group, se questo genera figli, questi appartengono allo stesso gruppo del padre.
+Nota che il gruppo viene preservato anche dalla syscall `exec`.
+
+I gruppi permettono di mandare segnali ad una gerarchia di processi e sono alla base del **job-control** offerto dalla [[shell]].
+### Priorità dei processi - nice
+Lo scheduler Unix assegna la [[CPU]] ai processi tenendo conto di un livello di priorità assegnato a ciascun processo, questa priorità dipende principalmente dalla classe di scheduling del processo: real time (interattivi) vs batch (normale).
+
+La priorità dei processi normali può essere in parte controllata mediante il concetto di ***niceness*** e la relativa syscall `nice`.
+Ad ogni processo è associato un valore di niceness nell'intervallo `[-20.19]`.
+Un valore di niceness alto porta a bassa priorità di esecuzione. 
+
+> Solo root può ridurre la niceness di un processo, un utente può solo aumentare la niceness dei suoi processi.
+
+#### Comandi nice e renice
+```shell
+nice -n valore_nice comando
+```
+Il comando `nice` permette di mandare in esecuzione un processo con un valore di niceness specificato.
+
+```shell
+renice valore_nice PID
+```
+Il comando renice permette di modificare la niceness di un processo già in esecuzione.
 ## Sincronizzazione basata sui segnali
 I processi Unix aderiscono al modello ad ambiente locale: hanno uno spazio di indirizzamento privato e non hanno condivisione di variabili.
 I processi possono solo sincronizzarsi (imposizione di vincoli temporali) e scambiare messaggi, mediante system calls.
@@ -483,6 +543,54 @@ Z # zombie
 
 man ps # per vedere tutti i possibili stati
 ```
+## Job control
+Un job in esecuzione in **foreground** ha il controllo di standard input, output e standard error: il processo "prende il controllo del terminale" e lo restituisce alla shell alla sua terminazione.
+
+È possibile eseguire job in background:
+```shell
+comando &
+```
+### Operazioni sui processi fermati
+Un processo in foreground può essere fermato inviando il segnale SIGTSTP (ovvero ctrl+z).
+
+È possibile intervenire sui job che sono stati fermati in questo modo:
+- si utilizza `jobs` per ottenere l'identificatore del job (JOB_ID)
+- `fg JOB_ID` fa ripartire il job in foreground
+- `fg JOB_ID` fa ripartire il job in background
+### kill
+È possibile usare il comando kill anche con i job:
+```shell
+kill %JOB_ID # invia SIGTERM al job specificato
+kill -n SIG %JOB_ID # invia SIG
+```
+### disown e nohup
+Se il terminale viene chiuso i job in esecuzione ricevono il segnale SIGHUP, che di default termina il processo.
+
+```shell
+nohup comando
+```
+Il job eseguito in questo modo è immune a SIGHUP.
+Il job non ha più accesso allo stdin: in caso di lettura ottiene EOF, lo stdout viene rediretto su un file chiamato nohup.out.
+
+```shell
+disown %JOB_ID
+```
+Rende immune a SIGHUP un job già in esecuzione.
+Il job viene rimosso dalla tabella dei job, quindi la shell non invierà più il segnale SIGHUP quando viene chiusa.
+È opportuno fare in modo che il job non legga più dallo stdin e che un eventuale output venga rediretto su un file per evitare errori durante l'esecuzione.
+### Monitorare il sistema - top
+Permette di visualizzare i processi e di effettuare operazioni su di essi in modo interattivo:
+- i processi sono ordinati in ordine di utilizzo decrescente della CPU
+- è possibile inviare segnali ai processi e cambiarne il valore di niceness
+- vengono visualizzate anche informazioni complessive sul sistema (carico CPU, utilizzo della memoria)
+#### comandi interattivi
+- h: help
+- d: intervallo di aggiornamento (delay)
+- k: invio di segnale
+- n: numero di processi da visualizzare
+- r: renice
+- u: utente da visualizzare
+- q: quit
 # Gestione File
 ## find
 Questo comando è uno strumento molto potente per trovare file, permette di effettuare la ricerca combinando dei testi sulle proprietà dei file:

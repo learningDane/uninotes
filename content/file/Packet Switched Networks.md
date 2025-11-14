@@ -147,7 +147,7 @@ Structure of a forwarding table in a switch.
 
 | Incoming interface | incoming VC # | outgoing interface | outgoing VC # |
 | ------------------ | ------------- | ------------------ | ------------- |
-|                    |               |                    |               |
+| ...                | ..            | ..                 | ..            |
 The switches maintain the information on the connection state.
 # 6 Link Virtualization
 The path from the source to destination is regarded as a point to point virtual link, thus the service type ([[#5.1 Types of Service]]) is not relevant from the Internet point of view.

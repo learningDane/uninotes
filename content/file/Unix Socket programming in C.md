@@ -6,43 +6,6 @@ librerie:
 #include <sys/socket.h>
 #include <netinet/in.h>
 ```
-# Introduzione a C
-Viene ancora usato sopratutto per programmazione embedded.
-- le variabili possono essere usate ovunque
-- no overloading
-- strutture
-	- per una variabile di tipo struttura si deve sempre specificare `struct` (in c++ solo quando la struttura viene definita)
-	- le strutture non possono avere funzioni membro (quindi anche no costruttori o distruttori) (si in c++)
-	- tutti i membri sono `public`
-	- non supporta ereditarietà (si in C++)
-- memoria dinamica:
-	- allocata a runtime con funzioni della libreria `<stdlib.h>`
-		- `void* malloc(size_type size)`
-		- `void free(void*ptr)`
-	- rimane allocata fino a quando non viene liberata con `free()`
-- operazioni di I/O
-	- si basano sulla libreria standard `<stdio.h>` 
-		- `stdin(tastiera)->int scanf(char* formato, indirizzi)`
-			- `scanf` è rischiosa con stringhe perché non controlla la lunghezza e può causare buffer overflow
-		- `fgets(str, sizeof(str), stdin)` 
-		- `stdout(schermo)->int printf(char* formato, argomenti)`
-		- `File -> fprintf(FILE*f,...) , fscanf(FILE *f,...)`
-- stringe
-	- in C non esiste la stringa, sono array di caratteri, terminate da `\0`
-	- `int strcmp(char*,char*)`: ret=0 se stringhe sono identiche, ret<0 se str1 è alfabeticamente minore di str2, ret>0 il contrario
-	- `int strlen(char*)` 
-	- `strncpy(char* dest,char* src, int size)`
-	- `strcat(char* dest, char* src, int size)`
-- gestione file
-	- `#include <stdio.h>`
-		- `fopen("path","mod")`
-	- si specifica un percorso assoluto (o assoluto relativo) e una modalità di apertura:
-		- r read
-		- w write
-		- r+ read and write
-		- a append
-		- a+ read and append
-		- se il file non esiste e si specifica scrittura o append, il file viene creato
 
 compilazione
 - usiamo [[GCC]] 
@@ -487,7 +450,7 @@ int main(int argc, char *argv[]){
 ```
 # Socket UDP
 Vedi [[Transport Layer]].
-La bind() può anche essere opzionale. È necessaria se si vuole usare una porta specifica (per superare restrizioni di firewall o NAT)
+La bind() per il client può anche essere opzionale. È necessaria se si vuole usare una porta specifica (per superare restrizioni di firewall o NAT)
 Non c'è connessione, quindi non si fanno listen(), connect() o accept(), si utilizza solo socket(), bind() e sendto() e recvfrom().
 ## sendto()
 Invia un messaggio attraverso un socket all'indirizzo specificato.
@@ -500,6 +463,20 @@ ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,const struct s
 - dest_addr: puntatore alla struttura in cui è salvato l'indirizzo del destinatario
 - addrlen: lunghezza di dest_addr
 - la funzione *restituisce il numero di byte inviati*, -1 su errore
-- la funzione è **bloccante** 
+- la funzione è **bloccante**, si ferma finché non ha scritto tutto il messaggio
 ## recvfrom()
-Riceve un messaggio attraverso un socket
+Riceve un messaggio attraverso un socket.
+```c
+ssize_t recvfrom(int sockfd, const void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t addrlen);
+```
+- sockfd: descrittore del socket
+- buf: puntatore al buffer per ricevere il messaggio
+- len: dimensione in byte del messaggio
+- src_addr: puntatore dove salvare l'indirizzo del mittente
+- addrlen: lunghezza di src_addr
+- la funzione restituisce il numero di byte ricevuti, -1 su errore, 0 se il socket remoto si è chiuso
+- funzione **bloccante** 
+## Connessione socket UDP
+Usando `connect()` si può associare ad un socket UDP un indirizzo remoto.
+Il socket riceverà/invierà pacchetti solo da/a quell'indirizzo, ma attenzione, *non è una connessione*. 
+Con un socket connesso si possono usare `send()` e `recv()`, evitando di specificare ogni volta l'indirizzo.

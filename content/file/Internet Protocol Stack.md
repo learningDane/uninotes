@@ -1,5 +1,5 @@
 #uni 
->internet protocol stack: ![[internetProtocolStack.svg|180]]
+>internet protocol stack: ![[internetProtocolStack.svg|580]]
 
 - **application layer**: supports the [[Network Applications]] (http, imap, smtp)
 - **transport layer**: process to process data transfer (TCP, UDP)

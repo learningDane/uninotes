@@ -13,7 +13,7 @@ Il file `/etc/hosts` contiene un elenco di associazioni indirizzo/nome risolti s
 
 Il file `/etc/resolv.conf` contiene l'indirizzo delle macchine dedicate alla risoluzione dei nomi nella rete attuale. Contiene quindi gli indirizzi IP dei server DNS che l'host può contattare
 
-Il comando `nslookup www.apple.com` contatta il server DNS che restituisce le informazioni necessarie alla risoluzione del nome, in particolare l'indirizzo (gli indirizzi,[[IPv4]] e IPv6) è nel campo "Address".
+Il comando `nslookup www.apple.com` contatta il server DNS che restituisce le informazioni necessarie alla risoluzione del nome, in particolare l'indirizzo (gli indirizzi,[[IP]] e IPv6) è nel campo "Address".
 # Name service switch (NSS)
 Questo meccanismo consente ai sistemi [[Unix]] di ricavare nomi di "cose" da diverse fonti.
 Il file `/etc/nsswitch.conf` specifica le fonti da usare e l'ordine in cui usarle.

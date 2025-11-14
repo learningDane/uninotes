@@ -73,8 +73,10 @@ So if a processe's resource needs cannot be immediately met, this process waits 
 Single instance of a resource type: use a resource-allocation graph.
 
 Multiple instances of a resource type: use the **banker's algorithm**.
-#### Resource-Allocation Graph Scheme
-- **Claim edge** $P_i \to R_j$ indicated that process $P_j$ may request resource $R_j$; represented by a *dashed* line
+#### Resource-Allocation
+This algorithm is used when working with resource types with a single instance.
+##### Graph Scheme
+- **Claim edge** $P_i \to R_j$ indicates that process $P_j$ may request resource $R_j$; represented by a *dashed* line
 - Claim edge converts to **request edge** when a process requests a resource
 - Request edge converted to an **assignment edge** when the is allocated to the process resource
 - When a resource is released by a process, assignment edge reconverts to a claim edge
@@ -84,7 +86,7 @@ If a process has an outgoing request edge, it is *bloccato*.
 ##### Algorithm
 Suppose that process $P_i$ requests a resource $R_j$: the request can be granted only if converting the request edge to an assignment edge does not result in the formation of a cycle in the resource allocation graph.
 #### Banker's Algorithm
-This algorithm is used when having multiple instances of a resource type.
+This algorithm is used when having *multiple instances* of a resource type.
 
 - Each process must *a priori* claim its maximum resource use
 - when a process request a resource it may have to wait
@@ -129,4 +131,59 @@ resource type $R_j$
 	- If safe $\implies$ the resources are allocated to $P_i$
 	- If unsafe $\implies$ $P_i$ must wait, and the old resource-allocation state is restored
 ## Deadlock Detection
+This strategy allows the system to enter deadlock state, detects it and tries to recover from it.
+### Single instance of each resource type
+The system maintains a **wait-for graph**:
+- nodes are processes
+- $P_i \to P_j$ if $P_i$ is waiting for $P_j$ 
+
+The system periodically invokes an algorithm that detects cycles in the wait-for graph, if one is found, a deadlock is detected.
+
+Note that an algorithm of cycle detection on a graph of $n$ vertices (nodes) requires an order of $n^2$ operations.
+### Multiple instances of a resource type
+We keep:
+- `available`: a vector of length $m$ that indicates the number of available resources of each type
+- `allocation`: a $n\times n$ matrix that defines the number of resources of each type currently allocated to each process
+- `request`: a $n \times m$ matrix that indicates the current requests of each process.
+  If $Request[i][j]=k$, the process $P_i$ is requesting $k$ more instances of resource type $R_j$ 
+### Detection algorithm
+This algorithm requires an order of $O(m \times n^2)$ operations to detect a deadlock state.
+
+1. Let `Work` and `Finish` be vectors of length $m$ and $n$, respectively initialize:
+	- `Work = Available`
+	- For `i = 1,2, …, n`, if $\text{Allocation}_i \neq 0$, then `Finish[i] = false`; otherwise, `Finish[i] = true`
+2. Find an index $i$ such that both:
+	- `Finish[i] == false`
+	- $\text{Request}_i \leq \text{Work}$
+	If no such $i$ exists, go to step `4`
+3. $\text{Work} = \text{Work} + \text{Allocation}_i$
+	- `Finish[i] = true`
+	- go to step `2`
+4. If `Finish[i] == false`, for some $i$, $1 \leq i \leq n$, then the system is in deadlock state.
+   Moreover, if `Finish[i] == false`, then $P_i$ is deadlocked
+### When to invoke the detection algorithm
+When and how often to invoke this algorithm depends on:
+- how often can a deadlock occur
+- how many processes will need to be rolled back for recovery: one for each disjoint cycle
+
+Possibilities:
+- every time a request cannot be satisfied
+- every hour
+- when CPU usage goes below 40%
 # Recovery from Deadlock
+Possibilities of recovery are:
+- abort *all* deadlocked processes
+- abort *one* process at a time until the deadlock cycle is eliminated
+
+
+Order of abortion of process:
+- priority of processes
+- how long processes have computed, and how much time is needed until completion
+- number of resources processes have used
+- number of resources processes need until completion
+- how many processes will need to be aborted
+- wether a process is interactive or batch
+## Resource Preemption
+Instead of aborting processes we can select a "victim" process and roll it back to a safe state. 
+
+**Starvation**: there is the possibility of always the same processes being picked as victim. We solve this by including the number of rollbacks executed on every process when computing the cost of rolling back.

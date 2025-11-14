@@ -8,3 +8,5 @@ Nella prima parte vengono messi ad 1 tanti bit quanti se ne vogliono dedicare al
 Il numero di host
 
 Per ricavare l'indirizzo di rete si usa l'operazione **AND** bit a bit tra maschera ed indirizzo IP.
+# IP protocol
+![[Internetworking#3 IP the internet protocol]]

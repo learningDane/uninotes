@@ -184,9 +184,9 @@ The IP protocol uses as support the [[#3.7 ICMP protocol]]: this handles error r
 ![[Pasted image 20251028152916.png]]
 - ver: the still most used version is the IP protocol version 4. In this field we always have to write 4.
 - header length in bytes
-- type of service
+- type of service (**ToS**)
 	- bits 0 to 5 represent diffserv: the priority
-	- bits 6 and 7 are used for ECN (not used)
+	- bits 6 and 7 are used for **ECN** (not really used) (see [[Transport Layer#4.6.5 ECN explicit congestion notification]])
 	- TTL: time to live, maximum number of forwards in routers before being dropped. It is decremented at each router.
 - length (16 bit: totale length of the datagram
 - upper layer protocol (the upper layer is the transport layer)

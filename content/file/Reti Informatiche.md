@@ -2,22 +2,24 @@
 Giuseppe Anastasi, Francesca Righetti, 9cfu
 [[Informazioni sul Corso di Reti Informatiche]]
 
-17-18/11/2025 presenta progetto
+Il numero di capitolo, quando indicato, fa riferimento al libro "Computer Networking, Kurose, Ross, 7th edition".
 
 Argomenti
-[[Network Applications]]:
-	[[IPv4]] 
-	[[Client-Server]]:
-		[[HTTP]] 
-		[[E-mail]] 
-		[[DNS]] 
-	[[Peer to peer]] 
-	[[Multimedia Streaming and Content Distribution Networks]] 
-[[Internet Protocol Stack]] 
-[[Direct Connection Networks]] 
-[[Packet Switched Networks]] Data link?
-[[Internetworking]] Network Layer
-[[Transport Layer]] Transport Layer
+1. Computer Networks and the Internet:
+	[[Internet Protocol Stack]] 
+2. Network Applications:
+	[[Network Applications]]
+3. Transport Layer
+	[[Transport Layer]] 
+4. The Network Layer: the Data Plane
+5. The Network Layer: the Control Plane
+[[Internetworking]] 
+6. The Link Layer and LANs:
+	[[Direct Connection Networks]] 
+	[[Packet Switched Networks]] 
+7. Wireless and Mobile networks:
+8. Security in computer networks:
+9. Multimedia networking
 
 Laboratorio:
 [[Configurazione dell'interfaccia di rete]] 
@@ -29,4 +31,9 @@ Laboratorio:
 [[Analisi dei Pacchetti]] 
 [[Esercitazione 1 RI]] 
 [[Unix Socket programming in C]] 
-[[Creazione Server in C]] 
+
+Link utili:
+[[DNS]] (file reference)
+[[E-Mail]] (file reference)
+[[IP]] (file reference)
+[[Network Neutrality]] 

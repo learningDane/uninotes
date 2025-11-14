@@ -398,11 +398,11 @@ See [[#5.2.2.4 CSMA/CD]].
 5. After aborting, the NIC enters **exponential backoff**:
 	   after the $i$-th collision:
 	   1. the NIC chooses $K$ at random from $\{ 0,1,2,...,2^{m}-1\}$, where $m=\max(i,10)$.
-	   2. the NIC sets a backoff timer at $k\cdot 512 \ bit-times$
+	   2. the NIC sets a backoff timer at $k\cdot 512 \ \text{bit times}$
 	   3. the NIC waits until the backoff timer expires
 	   4. NIC returns to step 2
 - After 17 trials the frame is dropped.
-- $bit=time$: 0,1 µ-sec for 10 Mbps ethernet
+- $\text{bit time} =  0,1 \mu \text{sec}$ for 10 Mbps ethernet
 ## 6.7 Ethernet Standards
 There are many different ethernet standards, all with the same MAC protocol and frame format.
 These different standards have different speeds and use different physical layer media (fiber, cable ...).

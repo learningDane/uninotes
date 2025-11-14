@@ -1,0 +1,41 @@
+#self-taught 
+# Introduzione a C
+Viene ancora usato sopratutto per programmazione embedded.
+- le variabili possono essere usate ovunque
+- no overloading
+- strutture
+	- per una variabile di tipo struttura si deve sempre specificare `struct` (in c++ solo quando la struttura viene definita)
+	- le strutture non possono avere funzioni membro (quindi anche no costruttori o distruttori) (si in c++)
+	- tutti i membri sono `public`
+	- non supporta ereditarietà (si in C++)
+- memoria dinamica:
+	- allocata a runtime con funzioni della libreria `<stdlib.h>`
+		- `void* malloc(size_type size)`
+		- `void free(void*ptr)`
+	- rimane allocata fino a quando non viene liberata con `free()`
+- operazioni di I/O
+	- si basano sulla libreria standard `<stdio.h>` 
+		- `stdin(tastiera)->int scanf(char* formato, indirizzi)`
+			- `scanf` è rischiosa con stringhe perché non controlla la lunghezza e può causare buffer overflow
+		- `fgets(str, sizeof(str), stdin)` 
+		- `stdout(schermo)->int printf(char* formato, argomenti)`
+		- `File -> fprintf(FILE*f,...) , fscanf(FILE *f,...)`
+- stringe
+	- in C non esiste la stringa, sono array di caratteri, terminate da `\0`
+	- `int strcmp(char*,char*)`: ret=0 se stringhe sono identiche, ret<0 se str1 è alfabeticamente minore di str2, ret>0 il contrario
+	- `int strlen(char*)` 
+	- `strncpy(char* dest,char* src, int size)`
+	- `strcat(char* dest, char* src, int size)`
+- gestione file
+	- `#include <stdio.h>`
+		- `fopen("path","mod")`
+	- si specifica un percorso assoluto (o assoluto relativo) e una modalità di apertura:
+		- r read
+		- w write
+		- r+ read and write
+		- a append
+		- a+ read and append
+		- se il file non esiste e si specifica scrittura o append, il file viene creato
+# links
+- [[Unix Socket programming in C]] 
+- [[C standard library]] 

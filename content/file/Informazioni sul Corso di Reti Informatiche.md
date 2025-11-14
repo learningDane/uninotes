@@ -60,17 +60,18 @@ Sviluppiamo una sottoparte di sistemi operativi, quella di networking.
 - Da discutere in sede di esame
 ---
 # Esame
-- discussione del progetto (è praticamente un pretest, conta poco il voto)
+- discussione del progetto (è praticamente un pretest, conta poco il voto): 4 punti
 - prova orale a cui si accede dopo una valutazione sufficiente al progetto
-	su argomenti svolti durante il corso
+	- domande su parte teorica: 20 punti
+	- domande su parte di laboratorio: 6 punti
 
 Orale da 20 punti con Anastasi.
 Esame da 10 punti con Righetti, di cui 4 punti sono la discussione del progetto.
 	Esame Righetti: parte di laboratorio+routing
 
 Condizione necessaria per accedere all'esame è la consegna del progetto e una sua valutazione positiva.
-Progetto va conseganto 5 giorni prima della data dell'appello di esame.
+Progetto va consegnato 5 giorni prima della data dell'appello di esame.
 
-Il progetto consiste nello sviluppo di un'applicazione in [[Header file]].
+Il progetto consiste nello sviluppo di un'applicazione in [[C]].
 
 ==Alla consegna del progetto specificare che il progetto è stato testato su macchina virtuale ARM (se usi mac con apple silicon)==.
