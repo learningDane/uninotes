@@ -2,7 +2,6 @@
 number headings: auto, first-level 1, max 3, 1.1
 ---
 #uni 
-Chapter (2)
 # 1 Principles of network apps (2.1)
 Creating a network app means writing a program that runs on different end systems and communicates over a network.
 

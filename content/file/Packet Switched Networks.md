@@ -142,7 +142,7 @@ A virtual circuit consists of:
 A packet belonging to a VC carries the VC number, rather than the destination address.
 The VC number can be changed on each link and the new VC number comes from the forwarding table
 
-###### VC Forwarding table
+###### Forwarding table
 Structure of a forwarding table in a switch.
 
 | Incoming interface | incoming VC # | outgoing interface | outgoing VC # |

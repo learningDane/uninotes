@@ -1,52 +1,6 @@
 ---
-number headings: auto, first-level 1, max 4, 1.1
+number headings: auto, first-level 1, max 3, 1.1
 ---
-- [[#1 Physical Link|1 Physical Link]]
-- [[#2 Data Layer (link layer)|2 Data Layer (link layer)]]
-		- [[#2.1.1 Framing|2.1.1 Framing]]
-		- [[#2.1.2 Flow control|2.1.2 Flow control]]
-	- [[#2 Data Layer (link layer)#2.2 Error Detection|2.2 Error Detection]]
-		- [[#2.2 Error Detection#2.2.1 Parity Checking|2.2.1 Parity Checking]]
-		- [[#2.2 Error Detection#2.2.2 Internet Checksum (review)|2.2.2 Internet Checksum (review)]]
-		- [[#2.2 Error Detection#2.2.3 Cyclic Redundancy Check (CRC)|2.2.3 Cyclic Redundancy Check (CRC)]]
-		- [[#2.2 Error Detection#2.2.4 Error Correction|2.2.4 Error Correction]]
-			- [[#2.2.4 Error Correction#2.2.4.1 Two-Dimension Parity checking|2.2.4.1 Two-Dimension Parity checking]]
-- [[#3 Reliable Data transfer (RDT) protocol|3 Reliable Data transfer (RDT) protocol]]
-	- [[#3 Reliable Data transfer (RDT) protocol#3.1 RDT3.0|3.1 RDT3.0]]
-			- [[#2.2.4 Error Correction#3.1.1.1 RDT3.0 "Stop and Go" Performance evaluation|3.1.1.1 RDT3.0 "Stop and Go" Performance evaluation]]
-	- [[#3 Reliable Data transfer (RDT) protocol#3.2 Pipelining|3.2 Pipelining]]
-		- [[#3.2 Pipelining#3.2.1 Error recovering strategies|3.2.1 Error recovering strategies]]
-			- [[#3.2.1 Error recovering strategies#3.2.1.1 Go-back-N|3.2.1.1 Go-back-N]]
-			- [[#3.2.1 Error recovering strategies#3.2.1.2 Selective repeat|3.2.1.2 Selective repeat]]
-- [[#4 Point-to-Point Protocol (PPP)|4 Point-to-Point Protocol (PPP)]]
-	- [[#4 Point-to-Point Protocol (PPP)#4.1 Frame|4.1 Frame]]
-		- [[#4.1 Frame#4.1.1 Byte stuffing/unstufing|4.1.1 Byte stuffing/unstufing]]
-			- [[#4.1.1 Byte stuffing/unstufing#4.1.1.1 Sender (byte stuffing)|4.1.1.1 Sender (byte stuffing)]]
-			- [[#4.1.1 Byte stuffing/unstufing#4.1.1.2 Receiver (byte unstuffing)|4.1.1.2 Receiver (byte unstuffing)]]
-- [[#5 Multiple Access Protocols|5 Multiple Access Protocols]]
-	- [[#5 Multiple Access Protocols#5.1 Ideal Protocol|5.1 Ideal Protocol]]
-	- [[#5 Multiple Access Protocols#5.2 MAC protocols taxonomy|5.2 MAC protocols taxonomy]]
-		- [[#5.2 MAC protocols taxonomy#5.2.1 Channel partitioning|5.2.1 Channel partitioning]]
-			- [[#5.2.1 Channel partitioning#5.2.1.1 TDMA: time division multiple access|5.2.1.1 TDMA: time division multiple access]]
-			- [[#5.2.1 Channel partitioning#5.2.1.2 FDMA: frequency division multiple access|5.2.1.2 FDMA: frequency division multiple access]]
-		- [[#5.2 MAC protocols taxonomy#5.2.2 Random Access Protocols|5.2.2 Random Access Protocols]]
-			- [[#5.2.2 Random Access Protocols#5.2.2.1 Slotted ALOHA|5.2.2.1 Slotted ALOHA]]
-			- [[#5.2.2 Random Access Protocols#5.2.2.2 (unslotted) ALOHA|5.2.2.2 (unslotted) ALOHA]]
-			- [[#5.2.2 Random Access Protocols#5.2.2.3 CSMA|5.2.2.3 CSMA]]
-			- [[#5.2.2 Random Access Protocols#5.2.2.4 CSMA/CD|5.2.2.4 CSMA/CD]]
-			- [[#5.2.2 Random Access Protocols#5.2.2.5 CSMA/CS|5.2.2.5 CSMA/CS]]
-		- [[#5.2 MAC protocols taxonomy#5.2.3 "Taking Turns"|5.2.3 "Taking Turns"]]
-			- [[#5.2.3 "Taking Turns"#5.2.3.1 Polling|5.2.3.1 Polling]]
-			- [[#5.2.3 "Taking Turns"#5.2.3.2 Token Passing|5.2.3.2 Token Passing]]
-- [[#6 LANs|6 LANs]]
-	- [[#6 LANs#6.1 MAC and IP addresses|6.1 MAC and IP addresses]]
-		- [[#6.1 MAC and IP addresses#6.1.1 Portability|6.1.1 Portability]]
-	- [[#6 LANs#6.2 Ethernet|6.2 Ethernet]]
-	- [[#6 LANs#6.3 Physical topology|6.3 Physical topology]]
-	- [[#6 LANs#6.4 Ethernet frame structure|6.4 Ethernet frame structure]]
-	- [[#6 LANs#6.5 Problems|6.5 Problems]]
-	- [[#6 LANs#6.6 Ethernet CSMA/CD protocol|6.6 Ethernet CSMA/CD protocol]]
-	- [[#6 LANs#6.7 Ethernet Standards|6.7 Ethernet Standards]]
 #uni 
 Let's now analyze how two connected Nodes transfer data.
 The simplest case is having two computers connected by the same network
@@ -143,7 +97,7 @@ Used in the data link.
 We now want to not only detect that an error occurred, but also want to localize the wrong bits.
 - **EDC**: error detection and correction bits
 - **D**: data
-#### 2.2.4.1 Two-Dimension Parity checking
+#### Two-Dimension Parity checking
 Works the same as [[#Parity Checking]] but we divide the message in a matrix where every line and also every column has its parity bit. This helps us localize the wrong bits.
 # 3 Reliable Data transfer (RDT) protocol
 Sender utilizes rdt_send(), receiver uses rdt_receive.
@@ -151,7 +105,7 @@ We will incrementally develop the sender and the receiver sides of the reliable 
 We will use finite state machines (FSM) to descrive the sender and the receiver.
 ## 3.1 RDT3.0
 su Ipad o slide.
-#### 3.1.1.1 RDT3.0 "Stop and Go" Performance evaluation
+#### RDT3.0 "Stop and Go" Performance evaluation
 "Stop and Go": sending one packet and waiting for ACK.
 $$
 \begin{matrix}
@@ -170,7 +124,7 @@ This leads to:
 - buffering at both receiver and sender side
 - how do we recover lost/corrupted packages?
 ### 3.2.1 Error recovering strategies
-#### 3.2.1.1 Go-back-N
+#### Go-back-N
 The sender sends maximum $N$ unACKed packets in the pipeline, the receiver *only sends cumulative ACKs* and doesn't ACK a packet it there's a gap: all the packets following a corrupted or not received packet are discarded by the receiver and resent.
 The sender implements a timer for the oldest unacked packet: if the timer expires it retransmits all unacked packets.
 
@@ -181,7 +135,7 @@ A $k$-bit sequence number is included in the packet header.
 ##### Receiver
 The receiver always sends an ACK for the highest (in sequence number) correctly received packet: this may generate duplicate ACKs; it only needs to remember the `rcv_base`. 
 On receipt of out of order packets it re-sends the ACK for the highest corretly received packet, as for the out-of-order arrived packet it may discarded or buffered, this is an implementation detail.
-#### 3.2.1.2 Selective repeat
+#### Selective repeat
 The sender sends maximum $N$ unACKed packets in the pipeline, the receivers *ACKs individual packets*.
 The sender implements a timer for every unacked packet: if the timer expires it retransmits all unacked packets.
 
@@ -240,10 +194,10 @@ We use an escape sequence:
 to transmit `01111110` the transmitter sends `01111101 01111110`.
 
 So the sequence `01111101` followed by either `01111110` or `01111101` tells the receiver to not interpret these last two as escape or flag, just data.
-#### 4.1.1.1 Sender (byte stuffing)
+#### Sender (byte stuffing)
 - 01111110 -> 01111101 01111110
 - 01111101 -> 01111101 01111101
-#### 4.1.1.2 Receiver (byte unstuffing)
+#### Receiver (byte unstuffing)
 - 01111101 01111110 -> 01111110
 - 01111101 01111101 -> 01111101
 # 5 Multiple Access Protocols
@@ -270,12 +224,12 @@ Criteria:
 There are 3 broad classes:
 ### 5.2.1 Channel partitioning
 Divide the channel into smaller pieces (time slots, frequency, code), then allocate each piece for exclusive use of a node.
-#### 5.2.1.1 TDMA: time division multiple access
+#### TDMA: time division multiple access
 The channel is accessed in "rounds": each station gets a fixed lenght slot in each round (lenght = packet transmission time).
 Unused slots go idle :( .
 
 This protocol doesn't meet criteria 1,2 and 3 ([[#Ideal Protocol]]).
-#### 5.2.1.2 FDMA: frequency division multiple access
+#### FDMA: frequency division multiple access
 NON IMPORTA
 ### 5.2.2 Random Access Protocols
 The channel is not divided and collisions are allowed, but it is needed to "recover" from them.
@@ -285,7 +239,7 @@ The channel is not divided and collisions are allowed, but it is needed to "reco
 A random Access MAC protocol specifies:
 1. how to detect collisions
 2. how to recover from collisions
-#### 5.2.2.1 Slotted ALOHA
+#### Slotted ALOHA
 Assumptions:
 - all frames are of the same size
 - time is divided into equal size slots (the time it takes to transmit 1 frame)
@@ -304,7 +258,7 @@ Suppose: $N$ nodes with many frames to send, each transmits in a slot with proba
 - so to find the $\overline p$ that maximizes ($\to 1$) $Np(1-p)^{N-1}$
 	- $\lim_{N \to \infty} N \overline p (1-\overline p)^{N-1}$
 	- max efficiency: $\overline p = 1/e=0,37$ 
-#### 5.2.2.2 (unslotted) ALOHA
+#### (unslotted) ALOHA
 Designed by professor Abrahamson. Aloha means "hello" in Hawaian.
 - no synchronization
 
@@ -313,12 +267,12 @@ Designed by professor Abrahamson. Aloha means "hello" in Hawaian.
 		- a frame sent at $t_0$ collides with another frame sent in $[t_0 -1 ,t_0+1]$ 
 ##### p
 Redoing the math we find that the optimal $p$ is $\overline p = 0,18$, much worse than [[#Slotted ALOHA]].
-#### 5.2.2.3 CSMA
+#### CSMA
 **Carrier sense multiple access**.
 The underlying idea is to listen to the channel before transmitting, so as to not interrupt others.
 
 Collision can still occur with carrier sensing: the propagation delay means two nodes may not hear each other's just started transmission.
-#### 5.2.2.4 CSMA/CD
+#### CSMA/CD
 This is CSMA with **collision detection**.
 The colliding transmissions are aborted.
 Collision detection is easy with a wired channel, difficult in wireless.
@@ -334,10 +288,10 @@ Collision detection is easy with a wired channel, difficult in wireless.
 	- more collisions: longer backoff interval
 
 > in ethernet the maximum dimension of a window is 10
-#### 5.2.2.5 CSMA/CS
+#### CSMA/CS
 ### 5.2.3 "Taking Turns"
 The nodes take turns, but nodes with more to send can take longer turns.
-#### 5.2.3.1 Polling
+#### Polling
 A master node invites other nodes to transmit in turn.
 This is typically used with "dumb" devices.
 
@@ -345,7 +299,7 @@ Concerns:
 - polling overhead
 - latency
 - SPF (master)
-#### 5.2.3.2 Token Passing
+#### Token Passing
 The control **token** is passed from one node to the next sequentially. This resolves a few issues with [[#5.2.1.1 TDMA time division multiple access]]: no idle slots are wasted for example.
 
 Concerns:

@@ -1,6 +1,6 @@
 #uni 
-Ogni scheda di rete di un computer è identificata all'interno della rete tramite un indirizzo IP.
-Un indirizzo IP è una sequenza di 32 bit, viene rappresentanto con 4 numeri decimali (notazione decimale puntata).
+Ogni scheda di rete di un computer (NIC: network internet card) è identificata all'interno della rete tramite un indirizzo IP.
+Un indirizzo IP è una sequenza di 32 bit, viene rappresentato con 4 numeri decimali (notazione decimale puntata).
 IPv6 è a 128bit.
 # Maschera di Rete
 Una maschera di rete è una sequenza di 32 bit.

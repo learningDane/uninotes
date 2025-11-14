@@ -320,7 +320,7 @@ This transition has been going on for ~25 years: we cannot upgrade every router 
 The real answer is **tunneling**: the IPv6 datagram gets carried as a payload in a IPv4 datagram among IPv4 routers ("packet within a packet").
 Tunneling is also extensively used in other contexts (4G, 5G).
 
-#### 3.5.2 Encapsulation
+#### Encapsulation
 There are special routers that are split in 2, on side receives IPv6 packets, one side send IPv4 packets.
 The IPv6 part receives a packet, extrapolates the data needed for building the IPv4 header, and passes the entire packet as the payload and the data for routing to the IPv4 part, which then builds the IPv4 packet and sends it forward.
 ### 3.5.2 IPv6 Adoption
