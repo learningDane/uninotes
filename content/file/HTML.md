@@ -92,27 +92,23 @@ If the image is "content", the semantically appropriate approach is to include i
 `<em> </em>` $\sim$ _italic_.
 `<i> </i>` _italic_.
 `<mark> </mark>` highlights text.
-`<del> </del>` delete
+`<del> </del>` delete, strike through
 `<ins> </ins>` underline
 `<small> </small>` small
-`<sub> </sub>` $aaa_{this is sub}$ 
+`<sub> </sub>` aaa<sub>thisissub</sub> 
 `<sup> </sup>` $a^{lol}$ 
 ## Attributi
 `<p style="attributo; altro attributo"> </p>` 
-`style="Color: colore"` 
-`style="border: il bordo che vuoi (oppure none)"` 
-`background-color` 
-`height="pixel di altezza"` 
-`width="pixel di larghezza"` 
-
-
-
-
+- style=
+	- "color:colore"
+	- "background-color:colore"
+	- `height="pixel di altezza"` 
+	- `width="pixel di larghezza"` 
 # Tabelle
-```
+```html
 <table>
 	<tr> //tr sono le righe
-		<th> </th>
+		<th> </th> // table heading
 		<th> ecc //th  sono le colonne (table-heading)
 	</tr>
 	
@@ -138,9 +134,10 @@ If the image is "content", the semantically appropriate approach is to include i
 	</li>
 </ul>
 
-<dl>
-	<dt> blah blah </dt>
-	<dd> descrizione </dd>
+<dl> <!-- define list -->
+	<dt> primo elem </dt> <!-- define title -->
+	<dd> subelemento </dd> <!-- defined data -->
+	<dd> altro subelemento </dd>
 	<dt> ecc
 </dl>
 ```
@@ -152,19 +149,38 @@ Un elemento in blocco aggiunge spazi prima e dopo di se
 `<tutte le liste>` 
 # Character Entities
 
-| entity    | description                  |
-| --------- | ---------------------------- |
-| `&nbsp;`  | nonbreakable space           |
-| `&lt;`    | <                            |
-| `&gt;`    | >                            |
-| `&copy;`  | &copy                        |
-| `&trade;` | trade mark registered symbol |
-
-## I Form
-```
-<form>
-	<label for="per cosa è l'imput"> La label </label>
+| entity    | description        |
+| --------- | ------------------ |
+| `&nbsp;`  | nonbreakable space |
+| `&lt;`    | <                  |
+| `&gt;`    | >                  |
+| `&copy;`  | &copy;             |
+| `&trade;` | <p>&trade;</p>     |
+| `&#8482;` | &#8482;            |
+`&#xxxx;` specifies the unicode code point xxxx.
+## Form
+```HTML
+<form action="pagina.html" method="GET or POST"> <!-- where the value gets sent -->
+<!-- when using GET all the values get displayed in the address bar, with POST no -->
+<!-- GET is the default if not specified -->
+	<label for="IDofINPUT"> La label </label>
 	<br>
-	<input type="tipo ti input (eg: text, number, checkbox)" name="il nome" id="l'id">
+	<input type="tipo di input (eg: text, number, checkbox)" name="il nome" id="IDofINPUT">
+	<input type="checkbox" name="nome" id="idcheck" value="valore">
+	<br>
+	
+	<input type="submit" value="Send"> <!-- the value gets displayed on the button -->
 </form>
+```
+Form type can be text, number, checkbox, radio, submit
+For checkboxes (and radio), the value sent is the value specified in the value attributed, if checked.
+# Iframe
+```HTML
+<iframe src="https://google.com" style="border:none" height="400" width="500"> </iframe>
+```
+Iframe shows the linked page in your page.
+# Class attribute
+```html
+<div class="nomeClasse"> ... </div>
+<h1 class="nomeClasse"> ... </div>
 ```

@@ -8,7 +8,7 @@ Argomenti
 1. Computer Networks and the Internet:
 	[[Internet Protocol Stack]] 
 2. Network Applications:
-	[[Network Applications]]
+	[[Network Applications]] (√)
 3. Transport Layer
 	[[Transport Layer]] 
 4. The Network Layer: the Data Plane
@@ -19,6 +19,7 @@ Argomenti
 	[[Packet Switched Networks]] 
 7. Wireless and Mobile networks:
 8. Security in computer networks:
+	[[Network Security]] 
 9. Multimedia networking
 
 Laboratorio:
@@ -31,9 +32,18 @@ Laboratorio:
 [[Analisi dei Pacchetti]] 
 [[Esercitazione 1 RI]] 
 [[Unix Socket programming in C]] 
+[[Apache Web Server]] 
+Progetto:
+[[Specifiche Progetto RI]] 
+[[Progetto RI]] 
 
-Link utili:
+# Link utili
 [[DNS]] (file reference)
+[[DHCP]] 
 [[E-Mail]] (file reference)
 [[IP]] (file reference)
 [[Network Neutrality]] 
+[[BitTorrent]] 
+
+# Vocabolario
+- **best effort**: means a service or delivery is performed without any guarantee of success, speed, or reliability

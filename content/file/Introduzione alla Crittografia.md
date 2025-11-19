@@ -38,7 +38,7 @@ Il crittoanalista può avere:
 Attacchi:
 - Cipher text attack: solo testo noto, rileva sul canale una serie di crittogrammi
 - Known Plain-Text Attack: testo in chiaro noto, conosce una serie di coppie $(m_{i},c_{i})$.
-- Chosen Plain-Text Attack: testo in chiaro scelto, il crittoanalista si procura una serie di coppue relative a messaggi in chiaro da lui scelti (oracolo per cifratura).
+- Chosen Plain-Text Attack: testo in chiaro scelto, il crittoanalista si procura una serie di coppie relative a messaggi in chiaro da lui scelti (oracolo per cifratura).
 - Chosen Cipher-Text Attack: testo cifrato scelto, il crittoanalista si procura una serie di coppie relative a crittogrammi da lui scelti (oracolo per decifrazione).
 - Bruteforce Attack
 - Man in-the-Middle (Attivo): il crittoanalista si installa sul canale di comunicazione e si finge Bob agli occhi di Alice e Alice agli occhi di Bob.

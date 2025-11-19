@@ -45,11 +45,11 @@ W01) Il Sistema vorrebbe consentire all'unità  didattica di ricevere una email 
 W02) Il Sistema vorrebbe consentire all'unità  didattica di generare un prospetto con le statistiche dell'appello di laurea
 ## Requisiti non Funzionali 
 - Serve una pagina per poter configurare il software, si seleziona quale CdL modificare e poi selezionare quale sezione modificare (reportistica, filtri ecc).
-- GDPR il sistema deve coservare i dati non oltre il necessario
+- GDPR: il sistema deve conservare i dati non oltre il necessario
 - il sistema deve essere sviluppato su IDE Phpstorm
 - Il sistema deve essere protetto da accessi non autenticati
 - il sistema deve essere messo in produzione su ambiente wordpress
-- il sistema non deve contenere credenziali personali enl codice o nei file di configurazione
+- il sistema non deve contenere credenziali personali nel codice o nei file di configurazione
 - il sistema deve essere portabile su altri computer con il medesimo ambiente di sviluppo
 - il sistema deve avere un manuale di uso ed installazione
 # Attori

@@ -11,8 +11,11 @@ D: 20h
 I: 30h
 T: 10h
 
-ORE: 
+ORE: 17/11 : 13:37 - 15:29
 DES:
+Rimozione del requisito MUST "Il sistema deve registrare in un LOG tutte le operazioni...", in quanto non è nelle specifiche, e per ora non sono in grado di determinare se sia necessario dal punto di vista inplementativo. Aggiunta inoltre del requisito MUST "l'interfaccia grafica fornita dal sistema deve rispecchiare il mockup di interfaccia fornito", in quanto è una specifica del progetto. Aggiunta del requisito MUST "le formule per il calcolo devono essere quelle mostrate nel file fornito"
+
+10/20/2025 15:26:04 è FINE
 
 [[Informazioni sul Corso di Ingegneria del Software]]
 [[Temp IdS]]
@@ -22,6 +25,7 @@ Argomenti
 [[JSON]]
 [[Conoscenza e Cognizione]] 
 Progetto
+[[Checkpoint IdS]] 
 [[Progetto per Ingegneria del Software]]
 [[Visual Paradigm]]
 [[Progetto per Ingegneria del Software Mike]]

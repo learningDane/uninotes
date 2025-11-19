@@ -325,57 +325,88 @@ or just one part of a multipart MIME message. This is useful in low-bandwidth si
 Note that an IMAP server holds state between sessions.
 ## 2.3 The Domain Name System (DNS) (2.4)
 *Problem*: internet hosts and routers have both
-- a IP address ([[IP]]), used for addressing datagrams
+- an IP address ([[IP]]), used for addressing datagrams
 - a "name", used by humans (like www.google.com)
 How do we map between IP address and name, and vice versa?
 *solution*: the DNS
 
-The ***Domain Name System*** (DNS) is a *distributed database* implemented in hierarchy of many *name servers*.
-Application-layer protocol: hosts and name servers communicate to *resolve* names (addres-name translation).
+The ***Domain Name System*** (DNS) is a *distributed database* implemented in a hierarchy of many *name servers*.
+It is an application-layer protocol: hosts and name servers communicate to *resolve* names (address-name translation), this keeps the complexity at the network's edge.
 
-***Registering*** a subdomain means linking it univocally to a IP address, registering it in the DNS database.
-### 2.3.1 DNS services (2.4.1)
-- hostname to IP address **translation**
-- host *aliasing*
-- mail server aliasing
-- *load distribution*
-	- replicated web servers: many IP addresses correspond to one name
-### 2.3.2 DNS structure
-The DNS is a distributed, hierarchical database:
-- **ROOT**: root DNS servers
-- **TOP LEVEL DOMAIN**: .com DNS servers, .org DNS servers ecc
-- **AUTHORITATIVE**: yahoo.com DNS servers, google.com DNS servers, pbs.org DNS servers ecc
-### 2.3.3 ICANN
+***Registering*** a subdomain means linking it univocally to an IP address, registering it in the DNS database.
+### 2.3.1 ICANN
 The distributed DNS server is managed by  ***Internet Corporation for Assigned Names and Numbers*** (***ICANN***), which also defines what the **top layer domains*** are.
-### 2.3.4 Local DNS name servers
-Also called *default name server*, these are installed into each ISP and they act as a sort of proxy DNS server, they have a local cache of recent name-to-address translations pairs, BUT it may be out of date!
+### 2.3.2 DNS services (2.4.1)
+- hostname to IP address **translation**
+- host **aliasing**:
+	- alias names for the **canonical hostname**
+- mail server aliasing
+- **load distribution**: replicated web servers: many IP addresses correspond to one name. When a client ask for the resolution for a hostname, the DNS server answers with the whole list of associated IP addresses, but each time in a different order, since the client normally goes for the first in the list.
+### 2.3.3 DNS structure
+The DNS is a distributed, hierarchical database:
+- **ROOT**: the client queries the root DNS server to find the IP address of the Top level domain's DNS server
+- **TOP LEVEL DOMAIN**: the client queries the top level domain DNS server to find the address of the authoritative DNS server
+- **AUTHORITATIVE**: the client queries the authoritative DNS server to find the IP address for the desired link.
+
+A distributed structure was chosen because a centralized DNS:
+- doesn't scale
+- is a single point of failure (SPF)
+- cannot be near every host
+- cannot handle that much traffic volume (Comcast DNS servers serve 600B DNS queries per day)
+- cannot be easily maintained 
+#### ROOT name servers
+These servers are the official contact-of-last-resort for name servers that cannot resolve the queried name.
+These are extremely important internet function, internet couldn't function without it. DNSSEC provides security: authentication and service integrity.
+
+The are 13 logical root name servers worldwide, each server is replicated many times (there are more than 200 root name server in the US alone).
+#### TLD name servers
+These servers are the ones responsible for resolving every top level domain (.com, .org, ecc) and every **Country Code Top Level Domains** (**CCTLD**s) (.it, .uk, ecc).
+
+For example:
+- Network Solutions is the authoritative registry for .com and .net TLDs
+- Educause is the authoritative registry for the .edu TLS
+- Registro.it is the authoritative registry for the .it CCTLD
+#### Authoritative DNS servers
+These servers are the organizations' own DNS server(s), providing authoritative hostname-to-IP mappings for the organization's name hosts.
+These can be maintained by the organization or a service provider.
+#### Local DNS name servers
+Also called *default name server*s, these are installed into each ISP and they act as a sort of proxy DNS server, they have a local cache of recent name-to-address translations pairs, BUT it may be out of date!
+When a host makes a DNS query it is sent to its local DNS server.
 
 >Local DNS servers use the user-server paradigm, but use **UDP** connections.
-### 2.3.5 Name resolution Approaches
+### 2.3.4 Name resolution Approaches
 #### Iterated Query
-The contacted server replies with a list of servers to contact
+The host first asks the local DNS server, which in turn contacts every required DNS server until resolution, the contacted servers reply with the name of the server to contact and the local DNS server executes.
+When the local DNS server has resolved the name, it replies to the host with the answer.
+
 This approach is better.
 #### Recursive Query
-Every contacted server asks the next.
-More load on the servers.
-### 2.3.6 DNS records
+The host first asks the local DNS server, which in turn contacts the next server (the root), which then asks the next (TLD) eccetera, until resolution.
+Every contacted server asks the next, in a chain of queries and answers, until the authoritative server has the answer, at this point every server replies with the answer down the chain, until it arrives to the host.
+
+More load on the servers, apart from the local DNS servers.
+### 2.3.5 DNS records (2.4.3)
+Once a name server learns a mapping, it **caches** it. Caches entries timeout and disappear after some time (TTL).
+Typically local name servers cache TLD servers mapping, as to put less stress on root name servers.
+Cached entries may be out-of-date, this is a best-effort name-to-address translation: if a hostname changes IP address, it may not be know Internet-wide until all TTLs expire.
+
 The DNS is a distributed database storing **resource records** (**RR**):
 ```
 RR format: (name, value, type, ttl)
 ```
-- type=A (address)
+- **type=A** (address)
 	- name is a hostname
-	- value is IP addres
-- type=NS (name system)
+	- value is the associated IP address
+- **type=NS** (name system)
 	- name is domain (what you enter in the search bar)
-	- value is hostname of authoritative name server for this domain
-- type=CNAME ("canonical name")
-	- name is alias name for some "canonical" name (the real name)
-	- value is canonical name
-- type=MX
-	- value is name of mailserver associated with `name`
+	- value is the hostname of the authoritative name server for this domain
+- **type=CNAME** ("canonical name")
+	- name is an alias name for some "canonical" name (the real name)
+	- value is the canonical name for the alias
+- **type=MX**
+	- value is the name of the mailserver associated with `name`
 - there are even more types
-### 2.3.7 DNS protocol messages
+### 2.3.6 DNS protocol messages
 DNS *query* and *reply* messages use the same format:
 - message header:
 	- identification: 16 bit number (ID) for query, reply uses the same number
@@ -385,28 +416,39 @@ DNS *query* and *reply* messages use the same format:
 		- recursion available
 		- reply is authoritative
 
-| identification  | flags            |
-| --------------- | ---------------- |
-| # questions     | # answer RRs     |
-| # authority RRs | # additional RRs |
-| questions       |                  |
-| answers         |                  |
-| authority       |                  |
-| additional info |                  |
-nolookup command
-### 2.3.8 Inserting Records into DNS
-1. register name (name.topleveldomain) at **DNS registrar*** (e.g. Network Solutions)
-	- provide names and IP addresses of authoritative name server (both primary and secondary)
-	- registrar inserts NS and A records (RRs) into the TLD (top level domain) server
+| <- 2 bytes ->             | <- 2 bytes ->    |
+| ------------------------- | ---------------- |
+| identification            | flags            |
+| # questions               | # answer RRs     |
+| # authority RRs           | # additional RRs |
+| questions (4 bytes)       | ..               |
+| answers (4 bytes)         | ..               |
+| authority (4 bytes)       | ..               |
+| additional info (4 bytes) | ..               |
+`nslookup`: command-line tool to discover the IP address or DNS record of a specific domain name
+### 2.3.7 Inserting Records into DNS
+1. register the name (name.topleveldomain) at the **DNS registrar*** (e.g. Network Solutions)
+	- provide names and IP addresses of the authoritative name server (both primary and secondary)
+	- registrar inserts **NS** and **A** records (RRs) into the TLD (top level domain) server
 2. create the authoritative server locally with the IP address inserted into the TLD
-### 2.3.9 example of DNS resolution
+### 2.3.8 example of DNS resolution
 Requesting host (alice.iet.unipi.it) asks the local DNS server what the IP for www.networkutopia.com is.
 Local DNS server contacts the root DNS server, which replies with the IP of the .com DNS server.
 Local DNS server now contacts the .com DNS servers, which replies with the IP of the authoritative server for networkutopia.com.
 Now the local DNS server contacts the authoritative server, which replies with the information needed, which is now rooted back towards the initial client with finally a reply to the requesting host.
+### 2.3.9 DNS security
+DNS servers are susceptible to:
+- DDoS attacks
+	- not successful to date against root servers
+- Redirect attacks
+	- man-in-the-middle: intercepting DNS queries
+	- DNS poisoning: sending false replies to the DNS servers, which then get cached
+- exploit DNS for DDoS
+	- spoofing the source IP address of DNS requests so they appear to come from the victim’s IP. When DNS servers respond, they send the (much larger $\implies$ amplification) replies to the victim, overwhelming it with traffic.
+#### DNSSEC
+Redirect Attacks and Exploit DNS for DDoS are accounted for in **DNSSEC**: **domain name system security extensions** are a set of extension that add security to the DNS protocol. This works by signing with crypted signatures the DNS records. This guarantees the authenticity and integrity of the replies.
 # 3 P2P applications (2.5)
-Every peer looks more like a powerful client from the [[Client-Server]] paradigm.
-But technically every peer is on the same level.
+Every peer looks more like a powerful client from the [[Client-Server]] paradigm, technically every peer is on the same level.
 The availability of resources this way is not guaranteed from a powerful server, but from the sheer number of peers -> ***self scalability***.
 There isn't an always on server.
 End systems arbitrarily communicate with each other.
@@ -414,19 +456,15 @@ End systems arbitrarily communicate with each other.
 >Peers request service from other peers, providing service to other peers in return.
 
 **Indexes** are needed for mapping information to the right host locations.
-## 3.1 Example applications
-### 3.1.1 P2P File sharing
-Peers make files they have available, asking other peers for files they need.
-### 3.1.2 Instant Messaging
-Usernames have to be mapped to IP address.
-## 3.2 Indexes
+## 3.1 Content Indexes
 **Indexes** are needed for mapping information to the right host locations.
+
 A content index is a [[Database]] with `(key,value)` **pairs**.
-- key is the content type
-- value is the IP address
+- *key* is the content type
+- *value* is the IP address
 The peers query the database with the key and the database replies with values that match the key.
 Peers can also insert pairs.
-### 3.2.1 Centralized Index
+### 3.1.1 Centralized Index
 This is a service provided by a server (or a server farm).
 When a user becomes active, the application notifies the index with its IP address and a list of available files.
 
@@ -436,23 +474,36 @@ Drawbacks:
 - single point of failure
 - performance bottleneck
 - copyright problems
-### 3.2.2 Query Flooding
+
+This is the system used by [[Napster]], a P2P system for music sharing.
+### 3.1.2 Query Flooding
 This is a completely decentralized approach.
-When searching for one item, a peers starts querying other peers, which in turn contact other "neighbors" (**flooding**), until one sends the item to the original peer searching for it.
-**Limited-scope query flooding**:
-- it reduces the query traffic.
+When searching for one item, a peer starts querying other peers, which in turn contact other "neighbors" (**flooding**), until one sends the item to the original peer searching for it.
+The file download is done from a single peer.
+
+**Limited-scope query flooding**: query flooding with a predetermined, limited number of *hops* (scope).
+- it reduces the query traffic and therefore congestion.
 - but decreases the probability to locate the content.
 - *limited-scope*: the query flooding stop at a certain "level" of subquery (for example each query starts with $x$, the peers receiving it decrement it and sends it over and again, until $x=0$)
-### 3.2.3 Hierarchical Overlay
+
+It is possible to plot a Overlay Network: a graph formed of all active peers as nodes and the TCP connection among them as edges.
+
+This system was used in the original [[Gnutella]] version (LimeWire).
+### 3.1.3 Hierarchical Overlay
 This approach is a middle ground between centralized and completely decentralized.
 Not all peers are equal, ***Super Nodes*** (***SN***) exist, these are peers with high bandwidth and high availability.
 SN have **local indexes**: peers inform their SN about content they have available, and SNs form an **SN overlay net**.
 Peers ask their local SN where they can find an item, SN responds with the IP of the peer with the item, or, if the item is not in the local index, the SN asks other SNs, until the item is found.
-### 3.2.4 Distributed Hash Table (DHT)
-This is a distributed P2P database.
+Again the file download is done from a single peer.
+
+Used in modern [[Gnutella]].
+### 3.1.4 Distributed Hash Table (DHT)
 > non serve saperlo per l'esame
 
-## 3.3 How much time does it take to distribute one file to N peers?
+This is a distributed P2P database.
+
+Used in [[BitTorrent]].
+## 3.2 How much time does it take to distribute one file to N peers?
 - Server upload capacity: $u_s$
 - Peer upload capacity: $u_i$ 
 	- max upload rate (limiting max download rate) is $u_s + \sum u_i$
@@ -467,15 +518,19 @@ time to distribute in peer-to-peer approach:$$D_{P2P} > \max \left\{  \frac{F}{u
 if we suppose $\sum u_i = N * \overline u$, we have $\lim{N \to \infty} \quad N*F / (u_s + \sum u_i= \frac{F}{u}$.
 
 So client-server scales linearly with $N$, and instead peer-to-peer tends to a limited number.
-## 3.4 BitTorrent
-The file that needs to be transferred gets divide into 256Kb chunks, and the peers in the torrent send and receive these chunks.
+## 3.3 BitTorrent
+The file that needs to be transferred gets divide into 256Kb chunks, and the peers in the **torrent** send and receive these chunks.
 
 >**Torrent**: group of peers exchanging chunks of a file.
- **tracker**: tracks peers participating in the torrent.
+ **tracker**: node that tracks peers participating in the torrent.
  **Torrent Server:** server that knows the IPs of the trackers.
 
+Peers may discover other peers by trackers, DHT (distributed hash table), or PEX (peer exchange).
+
 Chunks don't even get transferred sequentially, every chunk has an ID so the entire file gets rebuilt by the asking peer once every chunk has arrived.
-### 3.4.1 Entering a Torrent
+
+While a peer is download chunks it also upload already downloaded chunks then, when it has every chunk, it may leave or remain in the torrent.
+### 3.3.1 Entering a Torrent
 1. Alice contacts the torrent Server and gets the IP of the tracker.
 2. Alice contacts the tracker and asks to be included in the torrent.
 3. The tracker adds Alice to the list of peers participating to the torrent and then sends the list to Alice.
@@ -495,17 +550,36 @@ Two challenges:
 - how do we scale to ~1 billion users?
 - heterogeneity: different users have different capabilities
 The solution is **distributed, application-level infrastructure**.
-## 4.1 Coding
-We can use redundancy within and between frames to decrease the number of bits used to encode the image.
+## 4.1 Images
+An image is an array of pixels, where each pixel is represented by bits.
+## 4.2 Video
+A video is a sequence of images displayed at a constant rate (*framerate*), normally 24,25 or 30 images per second.
+## 4.3 Coding
+We can use redundancy *within* and *between* frames to decrease the number of bits used to encode the image.
 - **spatial coding**: instead of sending $N$ values of the same color, just send the color and the number if times it repeats ($N$).
 - **temporal coding**: instead of sending the complete $i+1$ frame, just send the differences from the $i$ frame
-## 4.2 Challenges of streaming
+
+Also **video encoding rate** can be:
+- **CRB** (constant bit rate)
+- **VRB** (variable bit rate): the video encoding rate changes as the amount of spatial and temporal coding changes
+
+Examples of compression standards:
+- MPEG1 (CD-ROM): 1.5 Mbps
+- MPEG2 (DVD): 3-6 Mbps
+- MPEG4 (often used in internet): 64Kbps - 12 Mbps
+  NOT to be confused with "MPEG4 part 14", aka "MP4", which is the container format
+**MPEG** stands for Moving Picture Experts Group, a collection of standards developed by SO/IEC for audio and video coding.
+
+Note: coding and encoding here are synonyms.
+## 4.4 Challenges of streaming
 - server-to-client bandwidth will vary over time.
-- packet loss will also vary over time #ricontrolla
+- packet loss and delay will also vary over time.
+- *continuous playout constraint*: once the client's playout begins, playback must match the original timing.
 
 In an ideal world the servers send one frame every 1/30th of a second, the user receives one frame at the same interval, with a fixed network delay, and displays the frames at the correct framerate.
-**Network delay though is variable**! Solution: clients stores the received frames and displays them at the correct framerate with a "video reproduction delay".
-## 4.3 Compression
+
+**Network delay though is variable**! Solution: clients stores the received frames (*client-side buffering*) and displays them at the correct framerate with a *client playout delay*.
+## 4.5 Compression
 An important characteristic of video is that it can be compressed, trading quality with lower file sizes.
 Today we have algorithms that can compress videos to any desired bit-rate, the higher the bitrate the higher the quality and the overall user viewing experience.
 
@@ -513,22 +587,31 @@ Compressed video typically ranges between 100 kbps to over 10 Mbps for 4k stream
 In order to provide continuous playout, the network must provide an avera end-to-end throughput to the streaming application that is at least as large as the desired bitrate for the video.
 
 We can use compression to create and store the same video at different bitrates, so that the streaming application (user) can choose which one to request based on the internet throughput it knows can achieve.
-## 4.4 HTTP streaming (2.6.2)
-The video is simply stored at an HTTP server as an ordinary file with its URL. When an user wants that video, it establishes a TCP connection with the server and issues an HTTP HGET request for that URL.
+## 4.6 HTTP streaming (2.6.2)
+The video is simply stored at an HTTP server as an ordinary file with its URL. When an user wants that video, it establishes a TCP connection with the server and issues an HTTP GET request for that URL.
 The server then sends the video file within an HTTP response message, as quickly as the network allows.
 On the client side the bytes are **buffered**, once the number of collected bytes achieve a predetermined threshold, the client application begins playback:
 the streaming application gets the bytes from the streaming buffer, decompresses them into frames, and plays them back at the right framerate on the user's screen, all while continuing to receive new information (the video) from the server.
 This way of streaming has worked well but it has a shortcoming: every user receives the same video, independently from its network capability.
-### 4.4.1 Dynamic Adaptive Streaming over HTTP (DASH)
+### 4.6.1 Dynamic Adaptive Streaming over HTTP (DASH) (2.6.2)
 In DASH the video gets stored on the server at different bitrates (every version is a different file so it has a different URL), the streaming application dynamically chooses chunks of a few seconds of the video in whatever bitrates it deems adequate.
+
 The HTTP server has a **manifest file**, which provides an URL for each version of the video along with its bitrate.
 1. The client requests the manifest file
 2. the client requests a chunk of the video at a desired bitrate
 3. while downloading the chunk the client measures the received bandwidth and runs a rate determination algorithm to select the chunk to request next.
-## 4.5 Content Distribution Networks (CDNs) (2.6.3)
-For a content provider the simplest approach would be to just build a single capable server, but has many drawbacks (single point of failure, popular media sent many times over the same network, congestion ecc), thereby the applied strategy is to build servers all around the world, that sort of act like proxies, in which they store the most requested files in their area of operation.
-The user ask the generale server where it can find the file and the server redirects it to a server near the client which has that piece of media stored. If there is no such server near the client CDNs utilize the *PULL* approach: the main server will quickly send the media to one of the servers accessible by the client, who will then download the file from the latter. When a server is full it removes the less frequently requested files.
+## 4.7 Content Distribution Networks (CDNs) (2.6.3)
+How do content providers offer content to millions of users?
+For a content provider the simplest approach would be to just build a single capable server, but this has many drawbacks (single point of failure, popular media sent many times over the same network, congestion ecc), thereby the applied strategy is to build servers all around the world, that sort of act like proxies, in which they store the most requested files in their area of operation.
+
+The user asks the generale server where it can find the file and the server redirects it to a server near the client which has that piece of media stored. If there is no such server near the client, CDNs utilize the *PULL* approach: the main server will quickly send the media to one of the servers accessible by the client, who will then download the file from the latter. When a server is full it removes the less frequently requested files.
 
 There are two different approaches:
 - **Enter deep**: building many servers and incorporate them near access ISPs, improving user perceived delay and overall user experience.
-- **Bring home**: building many servers but less than the previous approach and employing them near IXPs. This results in lower maintenance needed compared to "enter deep".
+- **Bring home**: building many servers but less than the previous approach and employing them near IXPs. This results in lower maintenance needed compared to "enter deep", but higher average latency and more congestion.
+### 4.7.1 Netflix Case Study
+1. Information regarding Netflix account is stored on the *Netflix registration and accounting servers*.
+2. The user browses the Netflix catalog, which is stored on *Amazon cloud*.
+3. These Amazon cloud servers upload copies of the multiple versions of these videos to the *DAHS CDN servers*
+4. When the user asks the Amazon cloud servers for a piece of content, the servers return the manifest file for it.
+5. The user's machine contacts the correct DASH CDN server and the streaming begins

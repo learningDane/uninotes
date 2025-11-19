@@ -300,4 +300,9 @@ In this time the functionality of these protocols has been expanded with applica
 This is an application-layer protocol on top of UDP.
 It increases performance of HTTP by avoiding the TCP three way handshake and is deployed on many Google servers and apps.
 
+QUIC employs:
+- error and congestion control
+- connection establishment: reliability, authentication, encryption
+- multiple application-level "streams" multiplexed over a single QUIC connection
+
 > TLS vs QUIC: ![[QUICvsTLS.svg]]
