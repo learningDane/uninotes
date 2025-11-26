@@ -13,7 +13,7 @@ T: 10h
 
 ORE: 17/11 : 13:37 - 15:29
 DES:
-Rimozione del requisito MUST "Il sistema deve registrare in un LOG tutte le operazioni...", in quanto non è nelle specifiche, e per ora non sono in grado di determinare se sia necessario dal punto di vista inplementativo. Aggiunta inoltre del requisito MUST "l'interfaccia grafica fornita dal sistema deve rispecchiare il mockup di interfaccia fornito", in quanto è una specifica del progetto. Aggiunta del requisito MUST "le formule per il calcolo devono essere quelle mostrate nel file fornito"
+Rimozione del requisito MUST "Il sistema deve registrare in un LOG tutte le operazioni...", in quanto non è nelle specifiche, e per ora non sono in grado di determinare se sia necessario dal punto di vista implementativo. Aggiunta inoltre del requisito MUST "l'interfaccia grafica fornita dal sistema deve rispecchiare il mockup di interfaccia fornito", in quanto è una specifica del progetto. Inserimento in differita causa mancanza connessione di rete.
 
 10/20/2025 15:26:04 è FINE
 

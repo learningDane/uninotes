@@ -26,4 +26,8 @@ _Data una grammatica $G$, si dice linguaggio $LG$ generato da $G$ l'insieme dell
 2. interpretazione
 	Analisi ed esecuzione del programma sorgente
 # Linguaggi di Programmazione
-[[C++]] 
+- [[C++]] 
+- [[Java]]
+- [[Javascript]]
+- [[C]]
+- [[Python]] 

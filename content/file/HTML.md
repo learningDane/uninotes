@@ -41,7 +41,7 @@ where:
 </html>
 ```
 where:
-- `script` specifies the [[JavaScript]] file
+- `script` specifies the [[Javascript]] file
 - `link rel="stylesheet href="..."` specifies the [[CSS]] file
 - the `<html>` elements is called the **root** element since it contains all the other HTML elements in the document
 - `<head>` contains descriptive elements about the document
@@ -74,7 +74,7 @@ Links can be **global** (`http:/external link`) or **relative** (`/internal link
 - to particular locations on this (or another) page
 	- location on same page: `<a href=#top> to top </a>`
 	- location on another page: `<a href="link#PLACE> to PLACE </a>`
-- instructions to the browser (execute [[JavaScript]] or open the user's email program etc)
+- instructions to the browser (execute [[Javascript]] or open the user's email program etc)
 	- mail: `<a href="mailto:EMAILADDRESS"> send the email! </a>`
 	- javascript: `<a href="javascript: JSFUNCTION();"> call function </a>`
 	- phone: `<a href="tel:NUMBER"> call this number </a>`

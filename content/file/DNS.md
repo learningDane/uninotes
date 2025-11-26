@@ -1,2 +1,2 @@
 #uni 
-![[Network Applications#The Domain Name System (DNS) (2.4)]]
+![[Network Applications#2.3 The Domain Name System (DNS) (2.4)]]

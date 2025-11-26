@@ -26,7 +26,7 @@ These only consist of HTML, they only visualize information.
 # Dynamic Web Sites
 A user requests to see a certain application, the server runs it and sends the HTML output to the client, being then displayed by the browser.
 # Web 2.0
-This refers to an interactive experience where users can contribute and consume web content. This requires JavaScript, a programming language used to code client-side applications, run on the client browser.
+This refers to an interactive experience where users can contribute and consume web content. This requires [[JavaScript]], a programming language used to code client-side applications, run on the client browser.
 # The four layer Network Model
 1. application layer: http, ftp, pop, etc
 2. transport layer: tcp, udp

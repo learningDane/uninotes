@@ -20,6 +20,32 @@ Selector ~ Selector (Subsequent sibling) /* every thing after the other one */
 selector:action
 * /* means everything*/
 ```
+## Select By Attribute
+```css
+[attribute]  /* elemento con attributo di nome attribute [attribute = value] elemento con attributo di nome attribute con un valore esattamente uguale a value */
+[attribute $= value]  /* elemento con attributo di nome attribute con un valore che termina con value */
+[attribute ^= value]  /* elemento con attributo di nome attribute con un valore che comincia con value */
+[attribute ~= value]  /* elemento con attributo di nome attribute con un valore che che contiene  la parola value */
+[attribute *= value]  /* elemento con attributo di nome attribute con un valore che contiene la sottostringa value */
+```
+## Pseudo Classes
+```CSS
+Selector:hover
+Selector:active
+Selector:visited
+Selector:link
+Selector:checked
+```
+### Pseudo Classes for Tables and Lists
+```CSS
+selector:nth-child(n) /* seleziona l’ennesimo figlio, indipendentemente dal tipo */
+selectr:nth-of-type(n) /* indica l’ennesimo elemento dello stesso tipo */
+/*
+n può essere un numero, una formula o una keyword 
+   Esempi: 3n+1, odd, even, 5, ...
+Il primo elemento ha indice 1, n parte da 0
+*/
+```
 # Attributes
 ```css
 background-
@@ -82,6 +108,7 @@ text-decoration: none;
 text-transform: lowercase/uppercase/capitalize;
 
 text-indent: 30px;
+text-line-height: 150%;
 
 letter-spacing: 30px;
 ```
@@ -214,4 +241,85 @@ outset
 inset
 none
 hidden /* present but hidden */
+```
+# Animations
+The `animation` property applies an animation between styles.
+```css
+button{ 
+	transition: 150ms ease;
+}
+button:hover {
+	scale:2;
+}
+```
+## Animation with Keyframes
+```css
+.element{
+	animation-duration: 3s;
+	animation-name: spin;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: reverse/alternate/normal;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+.element:hover{
+	animation-play-state: pause;
+}
+@keyframes spin{
+	0%{
+	
+	}
+	50%{
+		scale: 2;
+	}
+	100%{
+		transform: rotate(360deg);
+		border-radius: 50%
+	}
+}
+```
+# CSS Animation examples
+## Loading animation
+```css
+<!DOCTYPE html>
+<head>
+    <title>loading</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        .animation {
+            height: 100px;
+            width: 100px;
+            border: solid red 6px;
+
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            box-shadow: 0 0 16px red, 0 0 16px red inset;
+            z-index: 10;
+            animation: rotation 2.5s ease infinite;
+        }
+        @keyframes rotation{
+            0%{
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            33%{
+                transform: rotateX(180deg) rotateY(0) rotateZ(0);
+            }
+            67%{
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(0);
+            }
+            100%{
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation"></div>
+</body>
 ```
