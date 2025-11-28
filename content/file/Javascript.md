@@ -281,7 +281,116 @@ document.body.innerHTML = document.body.innerHTML + "<h1>Hi everyone </h1>";
 
 document.body.style.backGroundColor = "lightblue";
 ```
-# Event Driven
+## Document Methods
+Document Methods can be:
+- selection methods
+- family manipulation methods
+- event methods
+### Selection Methods
+```javascript
+get.ElementById("id");
+ecc
+```
+#### Query selection methods
+`querySelector` and `querySelectorAll` methods allow to query for DOM elements the same way we use selectors in [[CSS]].
+```javascript
+querySelector('CSS selector');
+// example:
+querySelector('div#idDelTag h1>time');
+```
+### Family manipulation methods
+```javascript
+createAttribute
+removeAttribute
+
+createElement
+createTextNode
+insertAdjacentElement
+insertAdjacentText
+insertBefore
+
+appendChild
+removeChild
+replaceChild
+```
+### Dom event methods
+```javascript
+window.load // fires when the entire page is loaded (including images and stylesheets)
+document.DOMContentLoaded // fires when the HTML document has been completely downloaded and parsed
+
+// how? 
+document.addEventListener('DOMContentLoaded', function () {
+	// JS
+});
+```
+#### Event Objects
+When an event is triggered, the browser will construct an **event object** that contains information about the event.
+The event handler can access this object simply by including it as an argument to the callback function (conventionally the event object parameter is name `e`).
+```javascript
+item.addEventListener("click",menuHandler);
+function menuHandler(e) {
+	performMenuAction(e.target.innerHTML); // e.target is the object that triggered the event
+} 
+
+// e.currentTarget is the element whose event handler is currently being executed.
+```
+#### Event Propagation
+There are two distinct phases of propagation.
+
+In the **event capturing phase**, the browser checks the outermost ancestor (the `<html>` tag) to see if that element has an event handler registered for the triggered event, if so t executes it. It then proceeds to the next ancestor and performs the same steps; this continues until it reaches the element that triggered the event, the **event.target**.
+
+In the **event bubbling phase**,  the opposite occurs, the browser checks if the event.target has an event handler registered for that event, if so it is executed: events bubble up from the target to all of the ancestors.
+##### Stopping propagation
+The bubbling can cause problems, we stop it like this:
+```javascript
+stopPropagation();
+```
+##### Event Delegation
+We can use the bubbling for using one same event handler for many different objects, we just assign the handler to the parent object.
+
+We can then execute the right code by using e.target and e.target.nodeName (this always returns uppercase!!!).
+## Dataset property
+Often there is a difference between what variables are available to a function handler when its being defined and what variables are available to the function handler when it is being executed.
+
+The solution is to make use of the **dataset** property of the DOM element, which provides read/write accesso to custom data attributes (`data-*`) set on the element.
+We can make use of these both via markup or via javascript:
+```html
+<img src="file" id="a" data-num="5" data-country="Peru"/>
+```
+or
+```javascript
+const img = document.querySelector("img#a");
+img.dataset.num = "5";
+img.dataset.country = "Peru";
+```
+# JavaScript Event Handling
+1. define *event handler*
+2. event handler is registered
+3. event is triggered
+4. event handler executes
+## Event Types
+- mouse events
+	- click
+	- dblclick
+	- mousedown
+	- mouseup
+	- mouseover
+	- mouseout
+	- mousemove
+- keyboard events
+	- keydown
+	- keyup
+- touch events
+- form events
+- frame events
+### Examples
+#### keyboard
+```javascript
+document.addEventListener("keydown", function(E) {
+	let KeyPressed = e.keyCode;
+	let char = String.fromCharCode(KeyPressed);
+});
+```
 # Random
 ```javascript
 alert("ciao");
@@ -297,6 +406,12 @@ try {
 catch(err) {
 	alert("An exception was caught: " + err);
 }
+```
+# Regular Expression Syntax in JS
+Regular expression here are case sensitive and contained within forward slashes.
+```javascript
+/^[a-zA-Z]{3,5}$/
+// matches only with strings composed only of letters and between 3 and 5 characters long
 ```
 # Including JS in HTML
 ```HTML

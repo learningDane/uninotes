@@ -323,3 +323,40 @@ button:hover {
     <div class="animation"></div>
 </body>
 ```
+# Flexbox
+Every element that can include other elements can be a flexbox
+```html
+<body>
+	<div>1</div>
+	<div>1</div>
+</body>
+```
+
+```css
+body {
+	display: flex;
+	justify-content: flex-start / flex-end / center / space-between / space-around / stretch / spcae-evenly; /* x axis */
+	align-items: flex-start / flex-end / center / space-between / space-around / stretch; /* y axis */
+	flex-direction: row / row-reverse / column / column-reverse;
+	flex-wrap: wrap / nowrap;
+}
+
+div {
+	flex-basis: auto / 200px;
+	flex-grow: 2;
+	flex-shrink: 2; /* by what factor grow or shrink relative to other items*/
+}
+```
+# Grid
+```css
+.container {
+	display: grid;
+	gap: 10px; /* gap between items */
+	grid-template-columns: 1fr 1fr 1fr; /* every column is one equal fraction */
+	grid-template-rows: 80px auto 50px / 10% 40% 50%;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 20px 50px) 60px;
+	grid-template-columns: repeat(auto-fill , minmax(40px, 1fr));
+	grid-template-columns: repeat(auto-fit , minmax(40px, 1fr)); /* stretches columns to fit*/
+}
+```

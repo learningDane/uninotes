@@ -194,5 +194,220 @@ Alice digitally signs the hash of her message with her private key, providing bo
 ## 5.3 E-Mail Authentication, Integrity and Confidentiality
 ![[Pasted image 20251126160543.png]]
 # 6 Securing TCP connections: TLS (8.6: SSL)
+**TLS** (**transport layer security**) is a widely deployed security protocol above the transport layer, and is supported by almost all browsers and web servers at https (port 443).
+
+This protocol provides:
+- confidentiality: via [symmetric cryptography](#2.3%20Symmetric%20Key%20cryptography%20(8.2.1))
+- integrity: via [cryptographic hashing](#3.1.2%20Hash%20function%20algorithms%20(8.3.1)) 
+- authentication: via [public key cryptography](Network%20Security#2.4%20Public%20Key%20Cryptography)
+## 6.1 Implementation
+1. handshake: Alice and Bob use their certificates and private keys to authenticate each other and exchange or create shared secrets
+2. key derivation: Alice and Bob use the shared secret to derive a set of keys
+3. data transfer: stream data transfer: data as a series of records
+4. connection closure: a special message to securely close the connection
+### 6.1.1 T-TLS: initial Handshake
+1. Bob establishes a [TCP connection](Transport%20Layer) with Alice
+2. Bob verifies that Alice is really Alice
+3. Bob sends Alice a master secret key (**MS**), used to generate all other keys for the TLS session
+Potential Issues: 3 RTTs before the client can start receiving data, including the TCP handshake
+
+In detail:
+client: TCP SYN
+server: SYNACK
+client: ACK + t-tls hello
+server: public key certificate
+client: $K_A^+(MS)=EMS$ + client request
+server: server reply
+### 6.1.2 T-TLS: cryptographic keys
+It is considered bad to use the same key for more than one cryptographic function, we use different keys for the MAC (message authentication code) and encryption.
+We have four keys:
+- $K_C$: encryption key for the data sent from client to server
+- $M_C$: MAC key for the data sent from client to server
+- $K_S$: encryption key for the data sent from server to client
+- $M_S$: MAC key for the data sent from server to client
+### 6.1.3 T-TLS: encrypting data
+The data stream gets broken into a series of "records", each record carries a MAC, created using $M_C$.
+A record is composed of {length , data , MAC}, and gets encrypted with the symmetric key $K_C$ and passed to TCP.
+
+What are the possible attacks on a data stream?
+- *re-ordering*: the man-in-the-middle intercepts the TCP segments and reorders them, by manipulating the sequence numbers in the unencrypted TCP header
+- *replay* 
+The solutions are:
+- use TLS sequence number (both the data and the TLS sequence number are incorporated in the MAC)
+- use a **nonce** 
+### 6.1.4 T-TLS: connection close
+A **truncation attack** is possible: the attacker forges a TCP connection close segment so that one or both sides think there is less data than there actually is.
+The solution is to have different record types:
+- type 0 for data
+- type 1 for close
+The MAC is now computed using *data, type and TLS sequence number*, and gets then encrypted with the symmetric key $K_C$.
+## 6.2 Transport-Layer Security (TLS)
+TLS provides an API that *any* application can use.
+
+> TLS vs QUIC: ![[QUICvsTLS.svg]]
+### 6.2.1 TLS Cipher suite
+TLS needs a cipher Suite, which include:
+- Algorithm for key generation
+- Public-key encryption algorithm
+- Symmetric-key encryption algorithm
+- MAC algorithm
+
+TLS 1.3 offers a more limited cipher suite choice than TLS 1.2 (5 rather than 37 choices).
+
+> This means client and server need to agree on the used cipher suite.
+
+### 6.2.2 TLS 1.3 initial handshake
+1. the client in the **TLS client hello** messages sends:
+	- the supported cipher suites
+	- the client nonce
+2. the **TLS server hello** message includes:
+	- the selected cipher suite
+	- the server certificate
+	- the server nonce
+3. the client:
+	- checks the server certificate
+	- generates the key
+	- can now make application requests (e.g. HTTPS GET)
+This handshake only needs one RTT.
 # 7 Network Layer Security: IPsec (8.7)
+IPsec provides datagram-level (so network layer level) encryption and integrity, for both user traffic and control traffic.
+IPsec has two modes:
+- **transport mode**: only the datagram's payload is encrypted and authenticated
+- **tunnel mode**: the entire datagram gets encrypted and authenticated, and the encrypted datagram is encapsulated in a new datagram, with a new IP header, tunneled to the destination.
+## 7.1 Virtual Private Networks (VPNs)
+Institutions often want private networks for security, but this is costly and needs separate routers, links and DNS infrastructure.
+
+The solution is a **VPN**: the institution's inter-office traffic is sent over public Internet instead, but encrypted before entering public internet.
+## 7.2 SAs: Security Associations (SAs) (8.7.3)
+Before sending the data, **security association** (**SA**) is established from the sending to the receiving entity (directional).
+Both sender and receiver maintain *state information* about the SA, but remember: IP is connectionless, IPsec is connection-oriented.
+
+The router implementing the security stores:
+- **Security Parameter Index (SPI)**: a 32 bit identifier
+- origin SA interface
+- destination SA interface
+- type of encryption used
+- encryption key
+- type of integrity check used
+- authentication key
+## 7.3 IPsec datagram (8.7.4)
+![[Pasted image 20251126173116.png]]
+## 7.4 IPsec protocols (8.7.2)
+There are two IPsec protocols:
+- **authentication header (AH) protocol**: provides source authentication and data integrity but *not* confidentiality
+- **encapsulation security protocol (ESP)**: provides source authentication, data integrity *and* confidentiality. It is more widely used than AH.
+### 7.4.1 ESP tunnel mode: actions
+Actions for the ESP tunnel mode at the router connected to the public internet:
+1. Appends the ESP trailer to the original datagram (which includes the original header fields)
+2. encrypts the result using the algorithm and the key specified by the SA
+3. appends the ESP header to the front of this encrypted quantity
+4. creates an authentication MAC using the algorithm and the key specified by the SA
+5. appends the MAC forming the *payload*
+6. creates a new IP header, new IP header fields and the addresses to the tunnel endpoint
+## 7.5 IPsec sequence Numbers
+For the new SA, the sender initializes the sequence number to 0, each time the datagram is sent to the SA:
+- the sender increments the sequence number
+- the senders places the value in the sequence number field
+The goal is to prevent the attacker from sniffing and replaying a packet, because the receipt of duplicate authenticated IP packets may disrupt the service.
+To solve this the receiver uses a windows (it doesn't keep track of *all* the packets) to check for duplicates.
+## 7.6 IPsec Security databases
+IPsec uses two databases:
+- **Security Policy Database** (**SPD**): "*what to do*"
+	- policy: for a given datagram the sender needs to know if it should use IPsec
+	- the policy is stored in the SPD
+	- the sender also needs to know which SA to use
+- **Security Association Database** (**SAD**): "*how to do it*"
+	- endpoints hold the SA state in the SAD
+	- when sending an IPsec datagram, the outgoing router $R1$ accessed the SAD to determine how to process the datagram
+	- when an IPsec datagram arrives to the ingoing router $R2$, it examines the SPI in the IPsec datagram, indexes the SAD using the SPI and processes the datagram accordingly
+## 7.7 IPsec Conclusions
+- IPsec is a protocol for datagram-level security
+	- AH provides integrity and source authentication
+	- the ESP protocol (using AH) adds also encryption
+- IPsec peers can be:
+	- two end systems
+	- two routers/firewalls
+	- a router/firewall and a end system
 # 8 Operational security: firewalls and IDS (8.9)
+## 8.1 Firewalls (8.9.1)
+A **firewall** isolates and organization's internal network from the larger internet, allowing some packets to pass and blocking others.
+
+We need firewalls to:
+- prevent DOS attacks
+	- SYN flooding: the attacker establishes many bogus TCP connections, leaving no resources for real connections
+- prevent illegal modification or access of internal data
+	- replacing an official website with something else
+- allow only authorized access to the inside network
+	- by defining a set of authenticated users/hosts
+
+There are three types of firewalls:
+- stateless packet filters
+- stateful packet filters
+- application gateways
+### 8.1.1 Stateless packet filtering
+The internal network gets connected to the Internet via a router **firewall**, which filters **packet-by-packet** and decides to forward/drop a packet based on information in the IP header:
+- source IP address, destination IP address
+- TCP/UDP source and destination port numbers
+- ICMP message type
+- TCP SYN and ACK bits
+#### ACL: access control list
+An **ACL** is a table of rules, applied top to bottom to incoming packets, that looks like the OpenFlowForwarding.
+<div> <table> <tr> <th>
+				action
+			</th> <th>
+				source address
+			</th> <th>
+				destination address
+			</th> <th>
+				protocol
+			</th> <th>
+				source port
+			</th> <th>
+				destination port
+			</th> <th>
+				flag bit
+			</th> </tr> </table> </div>
+### 8.1.2 Stateful packet filtering
+The problem with stateless packet filtering is that it admits packets that make no sense, for example TCP packets without a TCP connection established.
+
+Stateful packet filtering solves this by keeping track of every TCP connection, it in fact:
+- tracks connection setup (SYN), teardown (FIN) to determine wether or not a packet makes sense
+- timeouts inactive connections at the firewall: no longer admits these packets
+<div> <table> <tr> <th>
+				action
+			</th> <th>
+				source address
+			</th> <th>
+				destination address
+			</th> <th>
+				protocol
+			</th> <th>
+				source port
+			</th> <th>
+				destination port
+			</th> <th>
+				flag bit
+			</th> <th>
+			check connection
+			</th> </tr> </table> </div>
+
+### 8.1.2 Application Gateways
+An application gateway filters packets on application data as well as on IP/TCP/UDP fields.
+An application gateway is a separate host than the router/filter.
+
+A possible application is: the firewall blocks every telnet connection, except the ones incoming from the application gateway, for authorized users the gateway sets up a telnet connection to the destination host by relaying the data between these two connections.
+### 8.1.3 Limitations of firewalls and gateways
+- The router is susceptible to IP spoofing, it can't know if the data "really" comes from the claimed source.
+- If multiple applications need a special treatment, each need its own application gateway.
+- Client software must know how to contact the gateway, for example by setting the IP address of the proxy in the web server
+- filters often use a "all or nothing" policy for UDP
+- *tradeoff*: the degree of communication with the outside world in exchange for the level of security
+- many highly protected sites still suffer from attacks, even using firewalls
+### 8.1.4 IDS: Intrusion detection systems
+An intrusione detection system performs a deep packet inspection by also looking at the packet contents (for example checking character strings in the packet against a database of known virus and attack strings).
+And IDS also examines the correlation among multiple packets:
+- port scanning
+- network mapping
+- DoS attack
+
+An organization may use multiple IDSs, each with different types of checking at different locations.
