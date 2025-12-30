@@ -39,6 +39,9 @@ Laboratorio:
 Progetto:
 [[Specifiche Progetto RI]] 
 [[Progetto RI]] 
+Seminari:
+[[Le Origini di Internet - Lenzini]] 
+[[Quantum Computing and Quantum Internet - Lenzini]] 
 
 # Link utili
 [[DNS]] (file reference)

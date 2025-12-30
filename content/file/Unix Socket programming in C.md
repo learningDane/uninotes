@@ -145,6 +145,7 @@ int listen(int sockfd, int backlog);
 - sockfd: descrittore del socket
 - backlog: dimensione della coda, ovvero quante richieste da client possono rimanere in attesa
 - restituisce 0 se ha successo, -1 altrimenti
+- *non bloccante* 
 
 La richiesta (da parte di un client) di connessione al socket del server arriva al sistema operativo:
 - Il kernel la mette in attesa in una coda, finché il server non chiama accept() per prenderla in carico.
@@ -350,12 +351,12 @@ Controlla più socket contemporaneamente
 #include <unistd.h>
 int select(int nfds, fd_set *readfds, fd_set *writefds,fd_set *exceptfds, struct timeval *timeout);
 ```
-- nfds: numero del descrittore più alto tra quelli da controllare, +1
+- nfds: numero del descrittore più alto tra quelli da controllare, +1 (the descriptors from $0$ through $nfds-1$ in the descriptor sets are examined))
 - readfds: lista di descrittori da controllare per la lettura
 - writefds: lista di descrittori da controllare per la scrittura
 - exceptfds: lista di descrittori da controllare per le eccezioni (non ci interessa)
 - timeout: intervallo di timeout
-- la funzione *restituisce il numer odi descrittori pronti*, `-1` su errore
+- la funzione *restituisce il numero di descrittori pronti*, `-1` su errore
 - la funzione è **bloccante**, si blocca finché un descrittore tra quelli controllati diventa pronto, oppure finché il timeout non scade. *Se scade il timeout ritorna 0 e non errore!* 
 ## Descrittori pronti
 select() rileva i socket pronti.

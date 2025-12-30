@@ -8,11 +8,11 @@ Argomenti:
 [[Sincronizzazione dei Processi]] 
 [[Semafori]]
 [[Deadlock]] 
-[[29-10-2025]] 
+[[Filesystem]] 
 
 Laboratorio:
 [[Unix]] 
-[[Filesystem]]
+[[Filesystem Unix]]
 [[Shell]] 
 [[Thread]] 
 [[Virtual Filesystem e accesso ai file]] 

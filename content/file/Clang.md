@@ -43,6 +43,7 @@ no stage selection option # If no stage selection option is specified, all stage
 -flto=full
 -filto=thin
 -emit-llvm # when used with -S it outputs LLVM IR, with -c emits LLVM bitcode
+-I path # Add the specified directory to the search path for include files.
 ```
 # External Links
 - [[GCC]]

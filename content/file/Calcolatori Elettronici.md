@@ -10,12 +10,15 @@ Argomenti:
 [[Struttura del Calcolatore]] aggiusta
 [[Periferiche]] aggiusta
 [[Memoria]] 
+[[Cache]] 
 [[Interruzioni ed Eccezioni]] 
 [[Protezione]] 
 [[Realizzazione dei Processi]] 
 [[Primitiva]] 
 [[Semafori]] 
 [[Memoria Virtuale]] 
+
+[[Meltdown]] 
 
 Laboratorio:
 [[Comandi Utili Calcolatori Elettronici]] (+info sull'uso di nucleo, libce ed esempiIO)

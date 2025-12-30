@@ -113,3 +113,16 @@ Abbiamo detto che i descrittori di tabelle contengono il bit **PS**, questo bit 
 
 Quando in un descrittore di tabella di livello 2 settiamo il bit PS, al posto del puntatore alla tabella di livello 1 troviamo un campo **F** nei bit 21-51: la MMU utilizza ora come offset all'interno della pagina i primi **21** bit: otteniamo quindi una pagina di $2^{21}=2 \text{MiB}$ invece dei soliti $4 \text{KiB}$.
 In questo modo abbiamo eliminato la relative tabella di livello 1, risparmiando il relativo spazio.
+# Memoria Fisica in Memoria virtuale
+Decidiamo di mettere le tabelle del Trie nella memoria M2, poiché come le pagine utente, le tabelle sono grandi 4KiB e devono essere allineate naturalmente, ogni tabella occupa dunque esattamente un frame di M2, possiamo quindi utilizzare una stessa lista di frame liberi sia per l'allocazione delle tabelle che delle pagine.
+Il modulo sistema deve allora poter accedere a tutta M1 e a tutta M2, deve quindi poter accedere a tutta la memoria fisica, indipendentemente da quale sia il TRIE attivo.
+
+idealmente vorremmo avere una MMU che si disattiva ogni volta che il processore gira a livello sistema, ma non è possibile.
+Creiamo allora una serie di traduzioni "identità", che traducano ogni indirizzo in se stesso, inseriamo infine queste traduzioni nello spazio di indirizzamento di ogni processo.
+Questo insieme di traduzioni prende il nome di **finestra FM**, ovviamente questa finestra è accessibile solo da livello sistema (U/S = sistema).
+
+Questa finestra deve essere creata prima di attivare la memoria virtuale: all'avvio del sistema.
+# TLB
+Vorremmo evitare di dover fare fino a 4 accessi in memoria (table walk) per ogni operazione in memoria, introduciamo quindi il **TLB** (**translation lookaside buffer**), una cache specifica per la MMU.
+
+Questa cache "ricorda" le traduzioni più recenti (traduzioni contenute nei descrittori di livello 1)
