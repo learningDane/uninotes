@@ -87,6 +87,8 @@ Register %rsp is used as the _stack pointer_ , a pointer to the topmost element 
 
 Additionally, ==%rdi , %rsi , %rdx , %rcx , %r8 , and %r9 are used to pass the first six integer or pointer parameters to called functions==. 
 Additional parameters (or large parameters such as structs passed by value) are passed on the stack.
+
+> If a struct is 16 bytes or smaller, it is passed in registers
 # Prologo
 ```Assembly
 	pushq %rbp

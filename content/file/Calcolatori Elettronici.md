@@ -5,19 +5,36 @@
 
 > Utilizziamo una macchina QEMU con ==processore Intel/AMD a 64 bit==, ==bus PCI a 32 bit== e ==periferiche ISA==.
 
+Esame Orale:
+[[Domande Orale CE]] 
+Esame Scritto:
+[[Cheatsheet Nucleo CE]] 
+[[vm.h]] 
+[[libce.h]] 
 
+
+[[calcolatoreCE.svg]]
 Argomenti:
 [[Struttura del Calcolatore]] aggiusta
 [[Periferiche]] aggiusta
 [[Memoria]] 
 [[Cache]] 
-[[Interruzioni ed Eccezioni]] 
+[[Interruzioni]] 
+[[Eccezioni]] 
 [[Protezione]] 
 [[Realizzazione dei Processi]] 
 [[Primitiva]] 
 [[Semafori]] 
 [[Memoria Virtuale]] 
-
+[[Bus PCI]] 
+[[IO nel nucleo]] 
+[[Modulo IO]] 
+[[DMA]] 
+[[PCI Bus Mastering]]
+[[Pipeline]] 
+	[[Architettura RISC]] 
+	[[Decodifica Istruzioni Intel]] 
+[[Esecuzione Fuori Ordine]] [[Esecuzione Speculativa]] 
 [[Meltdown]] 
 
 Laboratorio:

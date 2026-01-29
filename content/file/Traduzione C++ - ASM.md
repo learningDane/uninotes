@@ -1,4 +1,8 @@
 #uni 
+# Allineamento e Dimensione delle strutture
+1. Una struttura ha per allineamento il *massimo* degli allineamenti dei suoi membri
+2. *Ogni* membro di una struttura deve rispettare il suo allineamento
+3. I membri di una struttura sono disposti in memoria nello stessi ordine in cui il programmatore li ha dichiarati
 # Variabili Globali
 ```c++
 int a =  10; // 4 byte

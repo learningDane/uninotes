@@ -1,9 +1,9 @@
 #uni 
 La memoria virtuale è un'astrazione che ci permette di ottenere:
-- Isolamento tra processi
-- semplicità nel collegamento dei programmi
-- semplicità nel caricamento/scaricamento dei processi
-- possibilità di condivisione di memoria
+- **Isolamento tra processi**
+- **semplicità nel collegamento dei programmi**
+- **semplicità nel caricamento/scaricamento dei processi**
+- **possibilità di condivisione di memoria**
 "Nascondiamo" la memoria fisica, effettiva, ai processi, e introduciamo la memoria virtuale in modo del tutto trasparente dal punto di vista di questi ultimi.
 # Paginazione
 Dividiamo la memoria virtuale, in *regioni naturali*, dette **pagine**, di dimensione $4 \ KiB$.
@@ -42,6 +42,8 @@ $$\begin{matrix} \text{Numero di pagine}=\frac{2^{48}}{2^{12}}=64\text{Gi pagine
 Ovviamente è una dimensione improponibile per anche solo una tabella.
 
 Introduciamo quindi la **Trie-MMU**, un dispositivo dotato di una memoria interna (atta a memorizzare una particolare struttura dati, la *trie*, che contenga in maniera non ridondante ogni tabella di corrispondenza) e di un registro **cr3**, che serve ad individuare la tabella di corrispondenza attiva ad ogni istante.
+
+> Il registro **cr2** contiene l’ultimo indirizzo virtuale che ha causato una eccezione di page fault e non è scrivibile da software.
 ## Trie
 La struttura dati utilizzati dalla Trie-MMU è una **bitwise trie**, una variante della trie.
 
@@ -57,34 +59,43 @@ L'inserimento di una nuova associazione chiave/valore nel trie comporta una rice
 # Paginazione Reale
 Quanto abbiamo visto fin'ora è una versione semplificata della paginazione, osserviamo ora l'implementazione della paginazione adottata nei processori reali [[AMD64]].
 
-La MMU non può essere un dispositivo con registro e memoria interna, sarebbe troppo complicato, offre invece semplicemente un modo in hardware di effettuare la ***table walk***.
+La MMU non può essere un dispositivo con registro e memoria interna, sarebbe troppo complicato, offre invece semplicemente un modo ==in hardware== di effettuare la ***table walk***.
+
+Nota:
+- massimo indirizzo virtuale: $2^{48} -1$
+- massimo indirizzo fisico: $2^{52}-1$
+- offset: su $2^{12}$ bit, quindi regioni di $4KiB$ 
+- numero di pagina quindi su $2^{36}$ bit
+- numero di frame quindi su $2^{40}$ bit
 
 Il numero di pagina viene diviso in 4 sezioni da 12 bit ognuna, ovvero 3 cifre in base 8. Ognuno dei 4 livelli del trie viene identificato da una di queste sezioni.
 Il registro **%cr3** (che è nel processore!) contiene l'indirizzo della tabella di livello 4, che contiene i 512 descrittori di tabelle di livello 3.
 
 Un descrittore di tabella, composto da 8 byte (64 bit), contiene in ordine:
-- il bit P
-- il bit R/W
-- il bit U/S
-- (bit 3-4 - al posto di PCD e PWT)
-- il bit A
+- **il bit P**
+- **il bit R/W**
+- **il bit U/S**
+- (bit 3 - al posto di PCD)
+- (bit 4 - al posto di PWT)
+- **il bit A**
 - (bit 6 - al posto di D)
-- un bit PS
+- **il bit PS**
 - (bit 8-11)
-- ==l'indirizzo della tabella di livello inferiore (su 40 bit)==
+- **l'indirizzo della tabella di livello inferiore** (su 40 bit con concatenazione di 12 bit a 0)
 - (i bit 63-52 che nella architettura [[AMD64]] non possiamo cambiare liberamente)
 Questa è la struttura dei record delle tabelle di livello 4,3 e 2.
 
 La struttura delle tabelle di livello 1 è leggermente diversa, in quanto *non contiene identificatori di tabelle ma identificatori di pagine*, che contengono in ordine:
-- bit P
-- bit R/W
-- bit U/S
-- bit PWT
-- bit PCD
-- bit A
-- bit D
-- (bit 11-7)
-- ==numero di frame (su 40 bit)==
+- **bit P**
+- **bit R/W**
+- **bit U/S**
+- **bit PWT**
+- **bit PCD**
+- **bit A**
+- **bit D**
+- (bit 8 - al posto di PS)
+- (bit 11-8)
+- **numero di frame** (su 40 bit con concatenazione di 12 bit a 0)
 - (bit 63-52)
 ## Traduzione
 > Traduzione da indirizzo virtuale a fisico, con pagine da 4 KiB: ![[traduzionevera4KiB.svg]]
@@ -125,4 +136,34 @@ Questa finestra deve essere creata prima di attivare la memoria virtuale: all'av
 # TLB
 Vorremmo evitare di dover fare fino a 4 accessi in memoria (table walk) per ogni operazione in memoria, introduciamo quindi il **TLB** (**translation lookaside buffer**), una cache specifica per la MMU.
 
-Questa cache "ricorda" le traduzioni più recenti (traduzioni contenute nei descrittori di livello 1)
+Questa cache "ricorda" le traduzioni più recenti (traduzioni contenute nei descrittori di livello 1).
+
+Tipicamente il TLB è una memoria associativa ad insiemi e il descrittore da rimpiazzare (se necessario) sarà scelto in base ad un algoritmo di pseudo-LRU.
+
+> Esempio di TLB a 2 vie: ![[TLBa2vie.svg]]
+
+La parte offset non viene utilizzata nella traduzione, andrà invece direttamente a contribuire alla traduzione.
+
+Un TLB moderno potrebbe avere 8 vie e contenere 1024 descrittori in totale, ovvero 128 indici.
+
+Le uniche istruzioni disponibili per interagire direttamente con il TLB servono per invalidarlo per intero o solamente in parte, necessarie se il software modifica qualcosa nelle tabelle del TRIE:
+```asm
+# questa istruzione causa l'invalidazione di tutto il TLB
+movq %rax, %cr3
+
+# questra istruzione dice al TLB di invalidare la traduzione relativa all'indirizzo dell'operando passato come argomento
+invlpg operando_in_memoria 
+```
+
+Ogni volta che si cambia processo ricordiamo che verrà eseguita una `movq %rax, %cr3`, per caricare il puntatore alla tabella di livello 4 del processo entrante.
+## Bit di controllo nel TLB
+Il TLB deve fornire alla MMU tutte le informazioni necessarie alla traduzione, ovvero anche i bit di controllo.
+Consideriamo i bit U/S: la MMU ne incontra fino a 4 durante la traduzione, ma non serve che il TLB li ricordi tutti, questa memorizza infatti solamente l'AND di questi bit, lo stesso vale per i bit R/W.
+
+I bit A e D vengono invece scritti dalla MMU durante la traduzione, e non vogliamo la MMU li debba aggiornare anche se la traduzione è presente nel TLB:
+- Per il bit A ci limitiamo ad aggiornalo solamente durante un *table-walk*, ovvero se la traduzione NON è presente nel TLB, questo è un problema solamente se il software azzera qualche bit senza invalidare il TLB.
+- Per il bit D invece il TLB causa una *miss* per gli accessi in scrittura con D uguale a 0. La miss costringe la MMU a svolgere la table walk ed aggiornare il bit D.
+## TLB e pagine grandi
+Per via del diverso numero di bit nell'offset di pagine di dimensioni diverse, non possiamo usare il TLB per pagine da 4KiB per traduzioni di pagine più grandi. La soluzione adottata originariamente è scomporre la traduzione di pagine di dimensioni maggiori nelle equivalenti traduzioni di pagine da 4KiB.
+
+I processori moderni hanno un diverso TLB per ogni dimensione di pagina supportata. Si noti che la MMU deve cercare la traduzione in ognuno di questi TLB, in parallelo per fortuna.

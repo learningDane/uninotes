@@ -1,7 +1,7 @@
 ---
 title: Indice Ingegneria Informatica
 ---
-Spero che quanto segue possa essere di aiuto al lettore, il quale invito a contribuire a sua volte quanto possibile alla facoltà, l'unione fa la forza!
+Spero che quanto segue possa essere di aiuto al lettore, buono studio!
 ___Davide Squeri___ 
 
 >___Le materie barrate sono in gran parte NON documentate!!!___ 
@@ -24,17 +24,17 @@ ___Davide Squeri___
 - [ ] [[Ricerca Operativa]] †9
 ---
 - [ ] [[Fondamenti di Automatica]] †9 
-- [ ] [[Economia ed Organizzazione Aziendale]] †6 
-- [ ] [[Calcolo Numerico]] †6 
+- [x] [[Economia ed Organizzazione Aziendale]] †6 
+- [x] [[Calcolo Numerico]] †6 
 - [ ] [[Calcolatori Elettronici]] †9 
 ---
 # Anno III
-- [ ] [[Reti Informatiche]] †9 bloccato da Calcolatori
-- [ ] [[Sistemi Operativi]] †9 bloccato da Calcolatori
+- [ ] [[Reti Informatiche]] †9
+- [x] [[Sistemi Operativi]] †9
 - [x] [[Ingegneria del Software]] †6
 ---
-- [ ] [[Elettronica Digitale]] †9
-- [ ] [[Comunicazione Numeriche]] †9
+- [x] [[Elettronica Digitale]] †9
+- [x] [[Comunicazione Numeriche]] †9
 
 esami a scelta:
-- [ ] [[Crittografia]] 
+- [x] [[Crittografia]] 

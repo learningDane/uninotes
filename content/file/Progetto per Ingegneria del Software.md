@@ -14,26 +14,18 @@ GestioneCarrieraStudente.restituisciCarrieraStudente(123456)
 # Requisiti
 ## Requisiti Funzionali
 ##### MUST HAVE (DEVE): REQUISITO FONDAMENTALE PER IL SISTEMA
-- M01) Il Sistema deve consentire all'unità  didattica di generare un prospetto di laurea con tutti laureandi per la commissione 
-- M02) Il Sistema deve fornire una interfaccia grafica all'unità  didattica
-- M03)
-- M04) Il Sistema deve consentire all'unità didattica di generare il prospetto di laurea del singolo laureando per il medesimo
-- M05) Il sistema deve consentire all'unità didattica di accedere ai prospetti di laurea dei laureandi.
-- M06) Il sistema deve consentire all'unità didattica di inviare a ciascun laureando il proprio prospetto di laurea
-- M07) Il Sistema deve fornire una interfaccia grafica all'unità didattica
-- M08) Il Sistema deve consentire all'amministratore di aggiungere un nuovo corso di laurea tramite file di configurazione
-- M09) Il Sistema deve consentire all'amministratore di passare parametri di calcolo e reportistica tramite file di configurazione (formato email per studenti)
-- M10) Il Sistema deve consentire all'amministratore di configurare il filtro esame tramite file di configurazione
-- M11) Il sistema deve consentire all'amministratore di configurare gli esami informatici tramite file di configurazione
-- M12) Il Sistema deve consentire la verifica automatica della completezza della carriera del laureando (es. tutti gli esami superati, nessun debito formativo).
-- M13) Il Sistema deve gestire eventuali errori di connessione con il sistema Gestione Carriera Studente e notificare l’unità didattica==.
-- M14) Il Sistema deve registrare in un log tutte le operazioni di generazione e invio prospetti==.
-
-1. Il sistema prende in ingresso: Corso di Laurea (menù a scelta), Data di Laurea (da Calendario), Elenco di Matricole dei Laureandi (inserimento libero) - Segreteria Centrale, Unità didattica (personale di Ateneo - Dottoressa D'Attilio)
-2. Il sistema preleva le carriere dei laureandi dal sistema di Gestione Carriera Studente
-3. Il sistema invia una email ad ogni laureando con il proprio ==prospetto==
-4. Il sistema fornisce una interfaccia grafica all'==unità didattica== per inserire: il corso di laurea, data di laurea, elenco matricole di laureandi.
-5. La ==carriera== è composta da: matricola, corso di laurea, anno di immatricolazione e, per ogni esame
+M01) Il Sistema deve consentire all'unità  didattica di generare un prospetto di laurea con tutti laureandi per la commissione 
+M02) Il Sistema deve fornire una interfaccia grafica all'unità  didattica
+M03) Il Sistema deve inviare il prospe=o di laurea anche al laureando in una mail
+M04) Il Sistema deve consentire all'unità didattica di generare il prospetto di laurea del singolo laureando per il medesimo
+M05) Il sistema deve consentire all'unità didattica di accedere ai prospetti di laurea dei laureandi.
+M06) Il sistema deve consentire all'unità didattica di inviare a ciascun laureando il proprio prospetto di laurea
+M07) Il Sistema deve fornire una interfaccia grafica all'unità didattica
+M08) Il Sistema deve consentire all'amministratore di aggiungere un nuovo corso di laurea tramite file di configurazione
+M09) Il Sistema deve consentire all'amministratore di passare parametri di calcolo e reportistica tramite file di configurazione (formato email per studenti)
+M10) Il Sistema deve consentire all'amministratore di configurare il filtro esame tramite file di configurazione
+M11) Il sistema deve consentire all'amministratore di configurare gli esami informatici tramite file di configurazione
+M12) Il Sistema deve consentire la verifica automatica della completezza della carriera del laureando (es. tutti gli esami superati, nessun debito formativo).
 ##### SHOULD HAVE (DOVREBBE): REQUISITO IMPORTANTE CHE PERO' PUO' ESSERE OMESSO
 S01) Il Sistema dovrebbe consentire all'amministratore di configurare il valore della lode
 S02) Il Sistema dovrebbe consentire la cancellazione di tutti i dati relativi all'appello di laurea
@@ -47,6 +39,7 @@ W02) Il Sistema vorrebbe consentire all'unità  didattica di generare un prospet
 - Serve una pagina per poter configurare il software, si seleziona quale CdL modificare e poi selezionare quale sezione modificare (reportistica, filtri ecc).
 - GDPR: il sistema deve conservare i dati non oltre il necessario
 - il sistema deve essere sviluppato su IDE Phpstorm
+- il sistema deve essere sviluppato in linguaggio PHP
 - Il sistema deve essere protetto da accessi non autenticati
 - il sistema deve essere messo in produzione su ambiente wordpress
 - il sistema non deve contenere credenziali personali nel codice o nei file di configurazione
