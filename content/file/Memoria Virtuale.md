@@ -36,9 +36,11 @@ Le entrate delle tabelle che si trovano nell'architettura AMD64 sono le seguenti
 	- l'idea è che quando carico una pagina in memoria, resetto ogni A e D, in questo modo posso tenere di conto di quali pagine vengono utilizzate di più con A (addirittura possiamo introdurre la paginazione su domanda, sfruttando l'[eccezione](Eccezioni.md) trap di tipo *page fault*), mentre con D riconosco, al momento di rifare una swap-out, quali pagine sono effettivamente state modificate e caricare solo quelle sul dispositivo di swap, siccome quelle non modificate sono già presenti, questo permette di risparmiare costosi (in termini di tempo) accessi al dispositivo di swap.
 # Trie-MMU
 Se calcoliamo quanto spazio occupa **una** singola tabella di corrispondenza otteniamo:
-$$\begin{matrix} \text{Numero di pagine}=\frac{2^{48}}{2^{12}}=64\text{Gi pagine}
+$$
+\begin{matrix} \text{Numero di pagine}=\frac{2^{48}}{2^{12}}=64\text{Gi pagine}
 \\
-\text{Dimensione di una tabella}=64\text{Gi} \times 8 \text{B}=512 \text{GiB} \end{matrix}$$
+\text{Dimensione di una tabella}=64\text{Gi} \times 8 \text{B}=512 \text{GiB} \end{matrix}
+$$
 Ovviamente è una dimensione improponibile per anche solo una tabella.
 
 Introduciamo quindi la **Trie-MMU**, un dispositivo dotato di una memoria interna (atta a memorizzare una particolare struttura dati, la *trie*, che contenga in maniera non ridondante ogni tabella di corrispondenza) e di un registro **cr3**, che serve ad individuare la tabella di corrispondenza attiva ad ogni istante.
