@@ -78,3 +78,14 @@ Possiamo però sfruttare il fatto che le `ret` sono normalmente ad una `call`, m
 > Branch Target Buffer: ![[BTB.svg]]
 # Architettura con Pipeline
 > Esempio di pipeline: ![[pipeline.svg]]
+
+# Pipeline nei primi processori Intel
+Intel finalmente introdusse una pipeline a 5 stadi nell'[[Intel]] 80486 del 1989. 
+
+Per gestire la complessità del set di istruzioni, lo stadio di fetch preleva sempre 16 byte allineati naturalmente, e mantiene sempre un buffer di due di questi blocchi da 16 byte, poiché una istruzione potrebbe trovarsi a cavallo tra due blocchi.
+
+Lo stadio di decodifica è composto in due fasi: D1 e D2, D1 decodifica al più 3 byte e comunica informazioni su come decodificare il resto a D2.
+
+Un'altra complicazione è che le istruzioni Intel richiedono tempi molto diversi fra loro e alcune istruzioni possono richiedere anche 3 cicli di clock solamente nella fase di esecuzione.
+
+Il 486 riuscì comunque ad andare a circa il doppio della velocità del suo predecessore anche a parità di frequenza di clock, competendo con i processori RISC ([[Architettura RISC]]) dell'epoca.

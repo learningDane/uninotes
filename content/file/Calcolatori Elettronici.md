@@ -34,7 +34,8 @@ Argomenti:
 [[Pipeline]] 
 	[[Architettura RISC]] 
 	[[Decodifica Istruzioni Intel]] 
-[[Esecuzione Fuori Ordine]] [[Esecuzione Speculativa]] 
+[[Esecuzione Fuori Ordine]] 
+[[Esecuzione Speculativa]] 
 [[Meltdown]] 
 
 Laboratorio:

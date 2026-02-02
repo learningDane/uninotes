@@ -6,6 +6,12 @@ Argomenti:
 [[Software Stack]] 
 [[URI]] 
 
+per esame:
+- classi javascript
+- local storage
+- object oriented
+- filtraggio e ricerca per testo
+
 [[HTML]] 
 [[CSS]] 
 [[Javascript]] 
