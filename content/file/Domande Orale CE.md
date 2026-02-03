@@ -29,3 +29,8 @@ voto: 24.
 ---
 - Torniamo al DMA e supponiamo di avere una cache write-back, cosa cambia rispetto alla write-through (r: )? Io ho una cache write-back, faccio una scrittura, quando è che questa cacheline verrà effettivamente trasferita in RAM (r: quando si rende necessaria una sostituzione della cacheline in cache, prima di sostituirla si aggiorna la RAM, altrimenti i cambiamenti andrebbero persi)? Che ottimizzazioni possiamo avere nel caso di bit dirty e scrittura DMA (r: se il DMA vuole scrivere una intera cacheline la invalidiamo nella cache e il DMA scrive nella RAM)?
 voto: 23.
+
+# 2026.02.03
+---
+- Cosa Contiene il TLB? Disegna lo schema (TLB associativo a 2 vie). Quali bit in più sono presenti nei descrittori di pagina virtuale (risp: A,P,PS)? Perché questi bit non sono presenti nel TLB? Oltre ad usare TLB diversi per pagine di diverse dimensioni, quale altra soluzione è possibile per il bit PS? Come si utilizza e aggiorna il bit D nel TLB? Perché va aggiornato subito in memoria attraverso una table-walk invece di lasciarlo in TLB e successivamente scriverlo in memoria (stile write-back)?
+voto: conferma voto dello scritto (30).

@@ -1,5 +1,5 @@
 #uni 
-Il Meltdown fu scoperto a Gennaio 2018, insieme a [[Spectre]], è una vulnerabilità dei processori [[Intel]] che sfrutta la l'Esecuzione Speculativa.
+Il Meltdown fu scoperto a Gennaio 2018, insieme a [[Spectre]], è una vulnerabilità dei processori [[Intel]] che sfrutta la l'Esecuzione Speculativa ([[Esecuzione Speculativa]]).
 # Idea
 L'idea è voler leggere la memoria di sistema dal livello utente, per esempio per accedere alla **finestra FM**, potendo quindi leggere la memoria di altri processi utente.
 Per fare ciò si sfrutta il fatto che una eventuale eccezione di protezione viene sollevata solamente nello stadio di ritiro, quindi alcune istruzioni che seguono immediatamente una istruzione di accesso non permesso, vengono eseguite, anche se poi ne vengono annullati gli effetti.

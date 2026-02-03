@@ -1,6 +1,38 @@
 ---
 number headings: auto, first-level 1, max 3, 1.1
 ---
+- [[#1 Physical Link|1 Physical Link]]
+- [[#2 Data Layer (link layer)|2 Data Layer (link layer)]]
+		- [[#2.1.1 Framing|2.1.1 Framing]]
+		- [[#2.1.2 Flow control|2.1.2 Flow control]]
+	- [[#2 Data Layer (link layer)#2.2 Error Detection|2.2 Error Detection]]
+		- [[#2.2 Error Detection#2.2.1 Parity Checking|2.2.1 Parity Checking]]
+		- [[#2.2 Error Detection#2.2.2 Internet Checksum (review)|2.2.2 Internet Checksum (review)]]
+		- [[#2.2 Error Detection#2.2.3 Cyclic Redundancy Check (CRC)|2.2.3 Cyclic Redundancy Check (CRC)]]
+		- [[#2.2 Error Detection#2.2.4 Error Correction|2.2.4 Error Correction]]
+- [[#3 Reliable Data transfer (RDT) protocol|3 Reliable Data transfer (RDT) protocol]]
+	- [[#3 Reliable Data transfer (RDT) protocol#3.1 RDT3.0|3.1 RDT3.0]]
+	- [[#3 Reliable Data transfer (RDT) protocol#3.2 Pipelining|3.2 Pipelining]]
+		- [[#3.2 Pipelining#3.2.1 Error recovering strategies|3.2.1 Error recovering strategies]]
+- [[#4 Point-to-Point Protocol (PPP)|4 Point-to-Point Protocol (PPP)]]
+	- [[#4 Point-to-Point Protocol (PPP)#4.1 Frame|4.1 Frame]]
+		- [[#4.1 Frame#4.1.1 Byte stuffing/unstufing|4.1.1 Byte stuffing/unstufing]]
+- [[#5 Multiple Access Protocols|5 Multiple Access Protocols]]
+	- [[#5 Multiple Access Protocols#5.1 Ideal Protocol|5.1 Ideal Protocol]]
+	- [[#5 Multiple Access Protocols#5.2 MAC protocols taxonomy|5.2 MAC protocols taxonomy]]
+		- [[#5.2 MAC protocols taxonomy#5.2.1 Channel partitioning|5.2.1 Channel partitioning]]
+		- [[#5.2 MAC protocols taxonomy#5.2.2 Random Access Protocols|5.2.2 Random Access Protocols]]
+		- [[#5.2 MAC protocols taxonomy#5.2.3 "Taking Turns"|5.2.3 "Taking Turns"]]
+- [[#6 LANs|6 LANs]]
+	- [[#6 LANs#6.1 MAC and IP addresses|6.1 MAC and IP addresses]]
+		- [[#6.1 MAC and IP addresses#6.1.1 Portability|6.1.1 Portability]]
+	- [[#6 LANs#6.2 Ethernet|6.2 Ethernet]]
+	- [[#6 LANs#6.3 Physical topology|6.3 Physical topology]]
+	- [[#6 LANs#6.4 Ethernet frame structure|6.4 Ethernet frame structure]]
+	- [[#6 LANs#6.5 Problems|6.5 Problems]]
+	- [[#6 LANs#6.6 Ethernet CSMA/CD protocol|6.6 Ethernet CSMA/CD protocol]]
+	- [[#6 LANs#6.7 Ethernet Standards|6.7 Ethernet Standards]]
+
 #uni 
 Let's now analyze how two connected Nodes transfer data.
 The simplest case is having two computers connected by the same network

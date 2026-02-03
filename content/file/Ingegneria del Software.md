@@ -6,12 +6,13 @@ mario.g.cimino@unipi.it
 ore Cimino: 20h, ore Alfeo: 30h, progetto@home: 70h
 
 [[cannalire]] 
-20/11
+15/02
 DES:
+Revisione del diagramma di analisi: modifica di di alcune dipendenze da `<<use>>` a `<<call>>`, rimozione degli operatori di visibilità poiché non consigliati in analisi. Per stesso motivo non trattata molteplicità. Ulteriori conferme su bontà di quanto svolto in seguito a confronto con collega. Iniziata realizzazione dei diagrammi di sequenza per apertura e invio dei prospetti. Necessario usare funzioni a questo livello? Confronti su aspetti teorici anche con workflow di progetto.
 
 
 
-Per ora sono a 32h
+Per ora sono a 40h
 R: 10h
 A: 15h (25h)
 D: 20h (45h)

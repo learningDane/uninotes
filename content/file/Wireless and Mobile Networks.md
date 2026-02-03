@@ -1,6 +1,36 @@
 ---
 number headings: auto, first-level 1, max 3, 1.1
 ---
+- [[#1 Context|1 Context]]
+- [[#2 Introduction|2 Introduction]]
+	- [[#2 Introduction#2.1 Elements of a wireless network|2.1 Elements of a wireless network]]
+	- [[#2 Introduction#2.2 Characteristics of different wireless links|2.2 Characteristics of different wireless links]]
+	- [[#2 Introduction#2.3 Classification of Wireless Networks|2.3 Classification of Wireless Networks]]
+		- [[#2.3 Classification of Wireless Networks#2.3.1 Wireless Network Taxonomy|2.3.1 Wireless Network Taxonomy]]
+- [[#3 Wireless|3 Wireless]]
+	- [[#3 Wireless#3.1 Wireless Links and network characteristics|3.1 Wireless Links and network characteristics]]
+	- [[#3 Wireless#3.2 Wireless LANs: 802.11: WiFi|3.2 Wireless LANs: 802.11: WiFi]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.1 WLAN Architecture (7.3.1)|3.2.1 WLAN Architecture (7.3.1)]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.2 802.11 AP association|3.2.2 802.11 AP association]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.3 Multiple Access|3.2.3 Multiple Access]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.4 Collisions|3.2.4 Collisions]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.5 the 802.11 Frame (7.3.3)|3.2.5 the 802.11 Frame (7.3.3)]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.6 Mobility within the same subnet|3.2.6 Mobility within the same subnet]]
+		- [[#3.2 Wireless LANs: 802.11: WiFi#3.2.7 Advanced Capabilities (7.3.5)|3.2.7 Advanced Capabilities (7.3.5)]]
+	- [[#3 Wireless#3.3 Wireless LANs: LiFi: Light Fidelity|3.3 Wireless LANs: LiFi: Light Fidelity]]
+	- [[#3 Wireless#3.4 Wireless PANs: Bluetooth (7.3.6)|3.4 Wireless PANs: Bluetooth (7.3.6)]]
+	- [[#3 Wireless#3.5 Cellular networks: 4G and 5G (7.4)|3.5 Cellular networks: 4G and 5G (7.4)]]
+		- [[#3.5 Cellular networks: 4G and 5G (7.4)#3.5.1 Elements of the 4G LTE architecture (7.4.1) GUARDA LIBRO|3.5.1 Elements of the 4G LTE architecture (7.4.1) GUARDA LIBRO]]
+		- [[#3.5 Cellular networks: 4G and 5G (7.4)#3.5.2 LTE mobiles: sleep modes|3.5.2 LTE mobiles: sleep modes]]
+		- [[#3.5 Cellular networks: 4G and 5G (7.4)#3.5.3 5G|3.5.3 5G]]
+- [[#4 Mobility (7.5)|4 Mobility (7.5)]]
+	- [[#4 Mobility (7.5)#4.1 Approaches to mobility|4.1 Approaches to mobility]]
+	- [[#4 Mobility (7.5)#4.2 Cellular Networks|4.2 Cellular Networks]]
+	- [[#4 Mobility (7.5)#4.3 ISP/WiFi Networks|4.3 ISP/WiFi Networks]]
+	- [[#4 Mobility (7.5)#4.4 Mobility management|4.4 Mobility management]]
+		- [[#4.4 Mobility management#4.4.1 Mobility with indirect routing|4.4.1 Mobility with indirect routing]]
+		- [[#4.4 Mobility management#4.4.2 Mobility with direct routing|4.4.2 Mobility with direct routing]]
+	- [[#4 Mobility (7.5)#4.5 Mobility: impact on higher-layer protocols|4.5 Mobility: impact on higher-layer protocols]]
 #uni 
 # 1 Context
 There are much more wireless phone subscribers than wired phone subscribers.

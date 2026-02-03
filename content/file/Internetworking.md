@@ -1,7 +1,6 @@
 ---
 number headings: auto, first-level 1, max 3, 1.1
 ---
-#uni
 - [[#1 Network Layer: overview|1 Network Layer: overview]]
 	- [[#1 Network Layer: overview#1.1 Router|1.1 Router]]
 	- [[#1 Network Layer: overview#1.2 Network layer functions|1.2 Network layer functions]]
@@ -14,7 +13,6 @@ number headings: auto, first-level 1, max 3, 1.1
 	- [[#2 Inside a Router#2.1 Ports and Switching|2.1 Ports and Switching]]
 		- [[#2.1 Ports and Switching#2.1.1 Input port functions|2.1.1 Input port functions]]
 		- [[#2.1 Ports and Switching#2.1.2 Destination-Based Forwarding|2.1.2 Destination-Based Forwarding]]
-			- [[#2.1.2 Destination-Based Forwarding#Longest Prefix Matching|Longest Prefix Matching]]
 	- [[#2 Inside a Router#2.2 Switching Fabrics|2.2 Switching Fabrics]]
 		- [[#2.2 Switching Fabrics#2.2.1 Switching via memory|2.2.1 Switching via memory]]
 		- [[#2.2 Switching Fabrics#2.2.2 Switching via bus|2.2.2 Switching via bus]]
@@ -32,11 +30,8 @@ number headings: auto, first-level 1, max 3, 1.1
 		- [[#3.1 IP Datagram format#3.1.1 Fragmentation|3.1.1 Fragmentation]]
 	- [[#3 IP: the internet protocol#3.2 Addressing|3.2 Addressing]]
 		- [[#3.2 Addressing#3.2.1 Subnets|3.2.1 Subnets]]
-			- [[#3.2.1 Subnets#IP address Classes (IPv4)|IP address Classes (IPv4)]]
 		- [[#3.2 Addressing#3.2.2 Classless InterDomain Routing (CIDR)|3.2.2 Classless InterDomain Routing (CIDR)]]
 		- [[#3.2 Addressing#3.2.3 How to obtain an IP address|3.2.3 How to obtain an IP address]]
-			- [[#3.2.3 How to obtain an IP address#How a Host gets an IP address|How a Host gets an IP address]]
-			- [[#3.2.3 How to obtain an IP address#How a network gets a subnet|How a network gets a subnet]]
 		- [[#3.2 Addressing#3.2.4 Reflection on IPv4|3.2.4 Reflection on IPv4]]
 	- [[#3 IP: the internet protocol#3.3 Network Address Translation|3.3 Network Address Translation]]
 		- [[#3.3 Network Address Translation#3.3.1 Implementation|3.3.1 Implementation]]
@@ -45,24 +40,21 @@ number headings: auto, first-level 1, max 3, 1.1
 		- [[#3.4 IPv6#3.4.1 IPv6 datagram format|3.4.1 IPv6 datagram format]]
 	- [[#3 IP: the internet protocol#3.5 Transition from IPv4 to IPv6|3.5 Transition from IPv4 to IPv6]]
 		- [[#3.5 Transition from IPv4 to IPv6#3.5.1 Tunneling|3.5.1 Tunneling]]
-			- [[#3.5.1 Tunneling#3.5.2 Encapsulation|3.5.2 Encapsulation]]
 		- [[#3.5 Transition from IPv4 to IPv6#3.5.2 IPv6 Adoption|3.5.2 IPv6 Adoption]]
 	- [[#3 IP: the internet protocol#3.6 ARP: Address Resolution Protocol|3.6 ARP: Address Resolution Protocol]]
 		- [[#3.6 ARP: Address Resolution Protocol#3.6.1 How to get a resolution pair|3.6.1 How to get a resolution pair]]
-			- [[#3.6.1 How to get a resolution pair#ARP: on the same LAN|ARP: on the same LAN]]
-			- [[#3.6.1 How to get a resolution pair#ARP: routing to another LAN|ARP: routing to another LAN]]
 	- [[#3 IP: the internet protocol#3.7 ICMP protocol|3.7 ICMP protocol]]
 		- [[#3.7 ICMP protocol#3.7.1 ICMP messages|3.7.1 ICMP messages]]
 - [[#4 Generalized Forwarding, SDN|4 Generalized Forwarding, SDN]]
 	- [[#4 Generalized Forwarding, SDN#4.1 Flow Table Abstraction|4.1 Flow Table Abstraction]]
 		- [[#4.1 Flow Table Abstraction#4.1.1 OpenFlow Protocol|4.1.1 OpenFlow Protocol]]
-			- [[#4.1.1 OpenFlow Protocol#OpenFlow examples|OpenFlow examples]]
 		- [[#4.1 Flow Table Abstraction#4.1.2 OpenFlow abstraction|4.1.2 OpenFlow abstraction]]
 - [[#5 Middleboxed|5 Middleboxed]]
 - [[#6 IP hourglass|6 IP hourglass]]
 	- [[#6 IP hourglass#6.1 Internet's middle age: ~55 years (since '69)|6.1 Internet's middle age: ~55 years (since '69)]]
 - [[#7 Where's the intelligence|7 Where's the intelligence]]
 
+#uni
 Let's now introduce the concept of Internetwork.
 Understand principles behind network layer services
 - service models

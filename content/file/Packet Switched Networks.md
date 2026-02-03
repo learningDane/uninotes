@@ -1,6 +1,29 @@
 ---
 number headings: auto, first-level 1, max 3, 1.1
 ---
+- [[#1 Ethernet Hubs|1 Ethernet Hubs]]
+- [[#2 Link Layer Switches|2 Link Layer Switches]]
+	- [[#2 Link Layer Switches#2.1 Ethernet Switch|2.1 Ethernet Switch]]
+		- [[#2.1 Ethernet Switch#2.1.1 Multiple Simultaneous Transmissions|2.1.1 Multiple Simultaneous Transmissions]]
+		- [[#2.1 Ethernet Switch#2.1.2 Switch Forwarding Table|2.1.2 Switch Forwarding Table]]
+		- [[#2.1 Ethernet Switch#2.1.3 Self-Learning|2.1.3 Self-Learning]]
+		- [[#2.1 Ethernet Switch#2.1.4 Frame filtering and forwarding|2.1.4 Frame filtering and forwarding]]
+- [[#3 Switched Networks|3 Switched Networks]]
+	- [[#3 Switched Networks#3.1 Interconnecting Switches|3.1 Interconnecting Switches]]
+	- [[#3 Switched Networks#3.2 Switches vs Routers|3.2 Switches vs Routers]]
+	- [[#3 Switched Networks#3.3 Example of a small institutional network|3.3 Example of a small institutional network]]
+	- [[#3 Switched Networks#3.4 Datacenter Networks|3.4 Datacenter Networks]]
+- [[#4 Virtual LANs (VLANs)|4 Virtual LANs (VLANs)]]
+	- [[#4 Virtual LANs (VLANs)#4.1 Port-based VLANs|4.1 Port-based VLANs]]
+	- [[#4 Virtual LANs (VLANs)#4.2 MAC address-based VLANs|4.2 MAC address-based VLANs]]
+	- [[#4 Virtual LANs (VLANs)#4.3 VLANs distributed on multiple switches|4.3 VLANs distributed on multiple switches]]
+		- [[#4.3 VLANs distributed on multiple switches#4.3.1 802.1Q VLAN frame format|4.3.1 802.1Q VLAN frame format]]
+- [[#5 Packet Switched Wire-Area  Networks (WANs)|5 Packet Switched Wire-Area  Networks (WANs)]]
+	- [[#5 Packet Switched Wire-Area  Networks (WANs)#5.1 Types of Service|5.1 Types of Service]]
+		- [[#5.1 Types of Service#5.1.1 Connectionless|5.1.1 Connectionless]]
+		- [[#5.1 Types of Service#5.1.2 Connection|5.1.2 Connection]]
+- [[#6 Link Virtualization|6 Link Virtualization]]
+
 #uni 
 As we have seen, broadcast networks have limited coverage, let's see how we can build an expansible network.
 # 1 Ethernet Hubs

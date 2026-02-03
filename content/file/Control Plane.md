@@ -1,13 +1,29 @@
+---
+number headings: auto, first-level 1, max 3, 1.1
+---
+- [[#1 Introduction|1 Introduction]]
+- [[#2 Routing Protocols|2 Routing Protocols]]
+	- [[#2 Routing Protocols#2.1 Link Cost|2.1 Link Cost]]
+	- [[#2 Routing Protocols#2.2 Routing protocols classification|2.2 Routing protocols classification]]
+	- [[#2 Routing Protocols#2.3 Link state Algorithms|2.3 Link state Algorithms]]
+		- [[#2.3 Link state Algorithms#2.3.1 Dijkstra|2.3.1 Dijkstra]]
+	- [[#2 Routing Protocols#2.4 Distance Vector Algorithms|2.4 Distance Vector Algorithms]]
+		- [[#2.4 Distance Vector Algorithms#2.4.1 Algorithm|2.4.1 Algorithm]]
+		- [[#2.4 Distance Vector Algorithms#2.4.2 Cost Update|2.4.2 Cost Update]]
+	- [[#2 Routing Protocols#2.5 LS vs DV algorithms|2.5 LS vs DV algorithms]]
+- [[#3 Intra-ISP routing: OSPF|3 Intra-ISP routing: OSPF]]
+- [[#4 Routing between ISPs: BGP|4 Routing between ISPs: BGP]]
+
 #uni 
-# Introduction
+# 1 Introduction
 There are two approaches for structuring the control plane:
 - per-router control (traditional method)
 - logically centralized control (SDN: Software Defined Networking)
-# Routing Protocols
+# 2 Routing Protocols
 Routing protocols must determine "good" paths from the sender host to the receiver, through network routers:
 - **path**: sequence of routers between sender and receiver
 - "**good**": the least expensive, the least congested, the fastest
-## Link Cost
+## 2.1 Link Cost
 $c_{a,b}$ cost of the *direct* link between $a$ and $b$.
 The cost is defined by the network provider: it can be based on bandwidth, congestion ecc.
 Today the most accurate way to determine the link's cost is based on the retransmission needed on said link.
@@ -17,10 +33,10 @@ N: \text{router nodes}=\{ u,v,w,x,y,z \}
 E: \text{links}=\{ (u,v),(u,x),(v,x), \text{ecc} \}
 \end{matrix}
 $$
-## Routing protocols classification
+## 2.2 Routing protocols classification
 > routing algorithms classification: ![[routingalgorithmsclassification.svg]]
-## Link state Algorithms
-### Dijkstra
+## 2.3 Link state Algorithms
+### 2.3.1 Dijkstra
 The Dijkstra algorithm is centralized: every node knows the network topology and every link's cost.
 This means we need a first phase for synchronizing information, where nodes exchange "link state broadcast" messages.
 This algorithm computes the least expensive route between a source node and every other, this means it returns the **forwarding table** for the source node.
@@ -36,7 +52,7 @@ Normally Dijkstra's algorithm has $O(n^2)$ complexity, but with the aid of the *
 We also need to take into account the broadcast phase, this has $O(n^2)$ complexity.
 #### Considerations
 When traffic soares in a network, the costs change and the routes need to get computed again: **routes' oscillation**.
-## Distance Vector Algorithms
+## 2.4 Distance Vector Algorithms
 These algorithm are based on the **Bellman-Ford** (**BF**) equation (dynamic programming): 
 $$
 \begin{matrix}
@@ -52,7 +68,7 @@ $$
 The idea is every once in a while, every node broadcasts the estimate of the distance vector to his neighbors $D_v$.
 When a node receives a new $D_v$ from a neighbor, it updates its $D_v$ using the BF equation.
 In normal conditions, the $D_x(y)$ estimate converges to the least-cost $d_x(y)$.
-### Algorithm
+### 2.4.1 Algorithm
 Every node:
 1. *wait* for local links' cost variation or message from neighbors
 2. *recompute* $D_v$ estimate
@@ -63,7 +79,7 @@ This algorithm is:
 - asynchronous
 - distributed
 - self-stopping
-### Cost Update
+### 2.4.2 Cost Update
 #### Poisoned inversion
 If $z$ passes through $y$ to get to $x$:
 1. $z$ notifies $y$ that the cost $z,y$ is $\infty$ 
@@ -72,7 +88,7 @@ If $z$ passes through $y$ to get to $x$:
 2. $y$ will think that $z$ doesn't have a path to $x$, therefore the cycle will not be created, and the costs will be communicated correctly
 
 N.B.: this technique works only for solving cycles creating between adjacent nodes.
-## LS vs DV algorithms
+## 2.5 LS vs DV algorithms
 Complexity:
 - LS: for $n$ nodes we have $O(n^2)$ sent messages
 - DV: exchanges between neighbors, time varies
@@ -84,5 +100,5 @@ Speed of convergence:
 Robustness:
 - LS: routers can notify other routers with incorrect data, every router has its table
 - DV: **black-holing**: routers can communicate incorrect path costs ("i have low cost paths to every node"), error gets propagated along the network
-# Intra-ISP routing: OSPF
-# Routing between ISPs: BGP
+# 3 Intra-ISP routing: OSPF
+# 4 Routing between ISPs: BGP

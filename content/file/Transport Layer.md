@@ -1,7 +1,40 @@
 ---
 number headings: auto, first-level 1, max 3, 1.1
 ---
+- [[#1 Transport-Layer services|1 Transport-Layer services]]
+- [[#2 Multiplexing and Demultiplexing|2 Multiplexing and Demultiplexing]]
+	- [[#2 Multiplexing and Demultiplexing#2.1 Multiplexing|2.1 Multiplexing]]
+	- [[#2 Multiplexing and Demultiplexing#2.2 Demultiplexing|2.2 Demultiplexing]]
+		- [[#2.2 Demultiplexing#2.2.1 Connectionless demultiplexing|2.2.1 Connectionless demultiplexing]]
+		- [[#2.2 Demultiplexing#2.2.2 Connection-Oriented demultiplexing|2.2.2 Connection-Oriented demultiplexing]]
+- [[#3 Connectionless transport: UDP|3 Connectionless transport: UDP]]
+	- [[#3 Connectionless transport: UDP#3.1 Benefits and Uses|3.1 Benefits and Uses]]
+	- [[#3 Connectionless transport: UDP#3.2 UDP segment header|3.2 UDP segment header]]
+	- [[#3 Connectionless transport: UDP#3.3 UDP checksum|3.3 UDP checksum]]
+- [[#4 Connection-Oriented transport: TCP (3.5)|4 Connection-Oriented transport: TCP (3.5)]]
+	- [[#4 Connection-Oriented transport: TCP (3.5)#4.1 TCP segment structure (3.5.2)|4.1 TCP segment structure (3.5.2)]]
+	- [[#4 Connection-Oriented transport: TCP (3.5)#4.2 Sequence Numbers and ACKs|4.2 Sequence Numbers and ACKs]]
+	- [[#4 Connection-Oriented transport: TCP (3.5)#4.3 TCP connection Management|4.3 TCP connection Management]]
+		- [[#4.3 TCP connection Management#4.3.1 the 3-way handshake|4.3.1 the 3-way handshake]]
+		- [[#4.3 TCP connection Management#4.3.2 Closing a TCP connection|4.3.2 Closing a TCP connection]]
+	- [[#4 Connection-Oriented transport: TCP (3.5)#4.4 TCP reliable data transfer (3.5.4)|4.4 TCP reliable data transfer (3.5.4)]]
+		- [[#4.4 TCP reliable data transfer (3.5.4)#4.4.1 TCP Timeout (3.5.3)|4.4.1 TCP Timeout (3.5.3)]]
+		- [[#4.4 TCP reliable data transfer (3.5.4)#4.4.2 TCP sender|4.4.2 TCP sender]]
+		- [[#4.4 TCP reliable data transfer (3.5.4)#4.4.3 TCP receiver|4.4.3 TCP receiver]]
+		- [[#4.4 TCP reliable data transfer (3.5.4)#4.4.4 TCP fast retransmit|4.4.4 TCP fast retransmit]]
+	- [[#4 Connection-Oriented transport: TCP (3.5)#4.5 TCP flow control (3.5.5)|4.5 TCP flow control (3.5.5)]]
+	- [[#4 Connection-Oriented transport: TCP (3.5)#4.6 TCP congestion control (3.6)|4.6 TCP congestion control (3.6)]]
+		- [[#4.6 TCP congestion control (3.6)#4.6.1 The causes of Congestion (3.6.1)|4.6.1 The causes of Congestion (3.6.1)]]
+		- [[#4.6 TCP congestion control (3.6)#4.6.2 Approaches to congestion control (3.6.2)|4.6.2 Approaches to congestion control (3.6.2)]]
+		- [[#4.6 TCP congestion control (3.6)#4.6.3 TCP congestion control details|4.6.3 TCP congestion control details]]
+		- [[#4.6 TCP congestion control (3.6)#4.6.4 TCP cubic|4.6.4 TCP cubic]]
+		- [[#4.6 TCP congestion control (3.6)#4.6.5 ECN: explicit congestion notification|4.6.5 ECN: explicit congestion notification]]
+		- [[#4.6 TCP congestion control (3.6)#4.6.6 TCP fairness|4.6.6 TCP fairness]]
+- [[#5 Evolution of transport-layer functionality|5 Evolution of transport-layer functionality]]
+	- [[#5 Evolution of transport-layer functionality#5.1 Quic: quick UDP internet connections|5.1 Quic: quick UDP internet connections]]
+
 #uni 
+
 > Internet Stack Protocol: ![[internetProtocolStack.svg|600]]
 # 1 Transport-Layer services
 The transport Layer manages the logical communication between application **processes** running on different hosts, whereas the network layer manages the logical communication between **host**.

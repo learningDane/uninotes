@@ -80,8 +80,8 @@ a_driver_i:
 	iretq
 ```
 
-La parte C++ del driver la facciamo generica (usiamo i per differenziare).
-Il driver usa le risorse del processo che ha interrotto, in particolare usa la sua pila sistema e la sua memoria virtuale (poiché non stiamo cambiando il valore di cr3).
+La parte C++ del driver la facciamo generica (usiamo `i` per differenziare).
+Il driver usa le risorse del processo che ha interrotto, in particolare usa la sua pila sistema e la sua memoria virtuale (poiché non stiamo cambiando il valore di %cr3). 
 ```c++
 /*! @brief Driver che viene eseguito a seguito di una richiesta di interruzione da parte di una interfaccia.
  * 
