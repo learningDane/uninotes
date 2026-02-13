@@ -19,10 +19,10 @@ I processi hanno tre canali di input/output standard:
 - stdout: output da schermo
 - stderr: messaggi di errore su schermo
 Possiamo reindirizzare l'output dei comandi dentro file o altro:
-- `>` invia stdout ad un file, se il file non esiste viene creato, se esiste viene sovrascritto
+- `>` invia stdout ad un file, se il file non esiste viene creato, se esiste viene *sovrascritto* 
 - `2>` invia stderr in un file
 - `&>` invia sia stdout sia stderr in un file
-- `>>, 2>>, &>>` stessa cosa ma non sovrascrive, concatena
+- `>>, 2>>, &>>` stessa cosa ma concatena
 - `comando > fileSTDOUT 2> fileSTDERR` scrive stdout in un file e stderr in un altro
 
 - `<` recupera l'input da un file
@@ -38,7 +38,7 @@ Il simbolo `|` collega l'output di un comando all'input del successivo
 - `pwd` print working directory, mostra il percorso assoluto attuale
 - `ls` elenca elementi cartella attuale
 	- `-l` long (più informazioni per ogni file)
-	- `-a` all (anche file nascosti)
+	- `-a` all (anche file nascosti, quelli che iniziano con `.`: `.nomefile`)
 - `man` mostra il manuale contenente la descrizione esaustiva del comando specificato, la sintassi, le opzioni, i messaggi di errore
 	- `man man` è il manuale di man, che è diviso in sezioni
 	- `man comando` è il manuale del comando
@@ -57,11 +57,11 @@ Il simbolo `|` collega l'output di un comando all'input del successivo
 	- `rm -r nome_cartella` cancella la cartella e tutto il suo contenuto
 	- `rm -d` rimuove cartelle vuote
 	- `rm -f` force: non prompta, ignora file non esistenti
-- `less` visualizza file interattivamente un po' alla volta
+- `less` visualizza un file interattivamente un po' alla volta
 - `head/tail` permetto di visualizzare solo la prima/ultima parte di uno o più file
 	- `-c` specifica numero di byte
 	- `-n` specifica numero di righe (di default 10)
-- `sort`
+- `sort` ordina il contenuto di un file e lo stampa a video (lascia il file inalterato), con `-o` è possibile indicare un output (un file)
 - `su` *switch user* serve per accedere al terminale di un altro utente, se non specifico argomento, si accede al terminale di root, chiede la password dell'utente con il quale si vuole accedere
 - `sudo comando` serve per lanciare un comando come un altro utente, se non specifico che utente, si intende root, l'utente attuale deve far parte del gruppo **sudoers**, viene chiesta la password dell'utente corrente
 - `chmod modalità target` modalità: 777=111111111 -> rwxrwxrwx, 600=110000000 -> rw-------
@@ -154,8 +154,8 @@ chmod -R # applica il cambiamento in modo recursivo a tutti i file e cartelle co
 ```
 Può essere eseguito solo dal proprietario del file (o con -R proprietario di tutti i file nella cartella).
 ##### Permessi aggiuntivi
-- **SUID** - durante l'esecuzione il processo acquisisce i privilegi del proprietario del file, non di chi lo esegue.
-- **SGID** - durante l'esecuzione il processo acquisisce i privilegi del gruppo proprietario del file, non di chi lo esegue.
+- **SUID** - durante l'esecuzione il processo acquisisce i privilegi del proprietario del file, non di chi lo esegue (*set user id*).
+- **SGID** - durante l'esecuzione il processo acquisisce i privilegi del gruppo proprietario del file, non di chi lo esegue (*set group id*).
 esempio: il comando `passwd` ha il permesso SUID.
 Per impostate SUID si mette `s` al posto della `x` nei permessi owner.
 Per impostare SGID si mette `s` al posto della `x` nei permessi group owner.
@@ -198,7 +198,7 @@ utente:$hashing algorithm$salt$hash(salt+password):ultimaModifica:etàMin:etàMa
 - età min e max: durata minima e massima della password
 - salt: caratteri casuali
 - periodo di avviso: quanti giorni prima della scadenza della password viene notificato l'utente
-- periodo di inattività: giorni dopo la scadenza della passwordd in cui questa è ancora accettata
+- periodo di inattività: giorni dopo la scadenza della password in cui questa è ancora accettata
 - scadenza: data scadenza dell'account
 - campo riservato: riservato per utilizzo futuro
 
@@ -267,7 +267,7 @@ Un processo può essere in diversi stati:
 - init
 - pronto
 - running
-- zombie
+- zombie: processo terminato ma la sua immagine è ancora necessaria
 - terminato
 - sleep/bloccato
 - swapped
@@ -278,23 +278,20 @@ Il descrittore di un processo (**PCB**: process control block) è suddiviso in d
 	- Stato
 	- Riferimento ad aree dati e stack
 	- Riferimento (indiretto) al codice
-• PID padre
-• Priorità
-• Riferimento al prossimo
-processo
-• Puntatore alla User
-Structure
-• ...
+	- PID padre
+	- Priorità
+	- Riferimento al prossimo processo
+	- Puntatore alla User Structure
+	- ...
 - **user structure**: informazioni utili solo quando il processo è in memoria
 	- Copia registri CPU
-• Info su risorse allocate
-• Info su gestione eventi
-asincroni (segnali)
-• Directory corrente
-• Utente proprietario
-• Gruppo proprietario
-• Argc, argv, path, …
-• ...
+	- Info su risorse allocate
+	- Info su gestione eventi (segnali)
+	- Directory corrente
+	- Utente proprietario
+	- Gruppo proprietario
+	- Argc, argv, path, …
+	- ...
 ## System Call per i processi
 - *fork*: creazione di processi
 - *exit*: terminazione
@@ -307,7 +304,7 @@ pid_t getppid() // restituisce il PID del processo padre
 ```
 ### fork
 Ogni processo è in grado di creare dinamicamente processi.
-Il processo creato (**figlio**) ha uno spazio dati separato, ma condivide con il processo **padre** il codice.
+Il processo creato (**figlio**) ha uno spazio dati separato (globali e stack/heap, ricopiati dal padre ma separati), ma condivide con il processo **padre** il codice.
 ```c++
 pid_t fork(void)
 /*
@@ -316,7 +313,7 @@ restituisce:
 - al padre: il PID del figlio, valore negativo se fallisce
 - al figlio: zero
 ```
-Il figlio condivide il codice del padre ed ==eredita dal padre una copia delle aree dati globali, stack, heap e user structure, ottiene anche lo stesso valore di PC (program counter - rip) e di tutti gli altri registri==. 
+Il figlio condivide il codice del padre ed ==eredita dal padre una copia delle aree dati globali, stack, heap e user structure, ottiene anche lo stesso valore di PC (program counter - rip) e di tutti gli altri registri== (inclusi nella user structure). 
 
 > Quindi dopo la fork, padre e figlio partono dalla stessa istruzione (la fork). Il loro comportamento viene differenziato sfruttando il valore di ritorno della fork.
 
@@ -344,12 +341,13 @@ status è l'indirizzo della variabile dove verrà salvato lo stato di terminazio
 
 wait sospende il padre se tutti i figli sono ancora in esecuzione
 ritorno immediato con informazioni di terminazione se almeno un figlio è terminato (zombie)
-ritorno con valore negativo se non ci sono figli
+ritorno con valore negativo se non ci sono figli o errori
 */
 ```
 ##### variabile status
 Contiene informazioni su come il figlio è terminato. 
 Se il byte meno significativo di `*status` è zero, allora la terminazione è stata volontaria, in questo caso il byte più significato contiene lo stato di terminazione.
+Se il byte meno significato di `*status` non è zero allora rappresenta lo stato di terminazione involontaria.
 ###### Macro per gestire status
 Sono definite in `<sys/wait.h>`
 - `WIFEXITED(status)` : ritorna vero se terminata volontariamente
@@ -369,13 +367,15 @@ execv()
 execve()
 execvp()
 ```
-Queste syscall sono senza ritorno se hanno successo
+Queste syscall sono senza ritorno se hanno successo.
+La sostituzione di codice implica nuovi spazi di indirizzamento dati, codice e nuovo stack/heap, mantiene l'immagine del processo ma cambia ogni valore che riguarda esecuzione di codice (contesto, informazioni sui segnali ecc).
 ### Gerarchia dei Processi
 I sistemi Unix prevedono un **init** system, un processo mandato in esecuzione dal kernel durante il boot.
 Questo è il primo processo ad andare in esecuzione, infatti ha PID = 1.
 Tutti gli altri processi discendono da `init`.
 
 > In [[Debian]]/[[Ubuntu]] viene utilizzato [[systemd]] come gestore dei processi.
+> In MacOS launchd.
 
 Possiamo visualizzare l'albero dei processi con `pstree`.
 #### Identificatori di un processo
