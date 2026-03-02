@@ -86,6 +86,18 @@ If a process has an outgoing request edge, it is *bloccato*.
 ##### Algorithm
 Suppose that process $P_i$ requests a resource $R_j$: the request can be granted only if converting the request edge to an assignment edge does not result in the formation of a cycle in the resource allocation graph.
 #### Banker's Algorithm
+> Algoritmo del Banchiere:
+> 
+> 	Algoritmo Richiesta Allocazione:
+> 		1. Non accetto la richiesta se il processo chiede più risorse di quelle che potrebbe ancora chiedere e non accetto la richiesta se non è disponibile il numero di risorse richiesto.
+> 		2. Assumiamo di accettare la richiesta: diminuiamo le risorse disponibili, aumentiamo le risorse allocate per quel processo e diminuiamo le risorse che potrebbero servire a quel processo.
+> 		3. Eseguiamo l'algoritmo di sicurezza, se otteniamo uno stato non sicuro annulliamo i cambiamenti e non accettiamo la richiesta, altrimenti accettiamo.
+> 
+> 	Algoritmo Sicurezza:
+> 		1. Ad ogni ciclo trovo un processo che non sia terminato e le quali richieste siano soddisfatte dalle risorse disponibili, lo termino e alle risorse disponibili aggiungo le risorse che possedeva.
+> 		2. Se non trovo un processo ancora in esecuzione le cui richieste possano essere soddisfatte allora siamo in un stato NON sicuro.
+
+
 This algorithm is used when having *multiple instances* of a resource type.
 
 - Each process must *a priori* claim its maximum resource use

@@ -6,7 +6,7 @@ Le operazioni usate appartengono ad una delle seguenti categorie:
 2. Operazioni Condizionali
 3. Operazioni iterative
 # Dominio
- L'algoritmo porta ad una soluzione a partire dai dati, deve essere applicabile ad un qualsiasi di dati in ingresso appartenenti al dominio di definizione dell''algoritmo.
+ L'algoritmo porta ad una soluzione a partire dai dati, deve essere applicabile ad un qualsiasi insieme di dati in ingresso appartenenti al dominio di definizione dell''algoritmo.
 # Proprietà
  Un Algoritmo ha le seguenti proprietà:
  1. __Eseguibilità__: ogni azione deve essere eseguibile in un tempo finito.

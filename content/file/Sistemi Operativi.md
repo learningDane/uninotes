@@ -3,6 +3,8 @@
 Libro: Sistemi Operativi seconda edizione, Ancilotti
 Distribuzione di riferimento per il corso: [[Ubuntu]] 24.04
 
+[[Domande Orale SO]] 
+
 Libro: p.57
 1. Concetti Introduttivi
 2. Gestione dei Processi

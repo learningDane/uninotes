@@ -384,6 +384,7 @@ Possiamo visualizzare l'albero dei processi con `pstree`.
 - PGID: ID del process group a cui il processo appartiene
 - RUID, RGID: Real User/Group ID
 - EUID, EGID: effective User/Group ID: possono 
+- TID: thread ID ?
 
 Gli identificatori che determinano i permessi del processo si dividono in *real* e *effective*:
 - RUID : real user ID: ID dell'utente che ha mandato in esecuzione il processo
@@ -394,7 +395,10 @@ Gli identificatori che determinano i permessi del processo si dividono in *real*
 EUID e EGID possono differire da RUID e RGID se il comando eseguito ha il bit SUID o SGID attivo.
 Vengono utilizzati per definire i privilegi di accesso alle risorse e di invocazione di system call del processo.
 
-> Un processo utente può inviare segnali ad un altro processo solo se il suo EUID o RUID coincide con il RUID del processo destinatario.
+> Un processo utente può inviare segnali ad un altro processo solo se:
+> - hanno stesso EUID
+> - hanno EUID mittente = RUID destinatario
+> - il mittente è root
 
 #### Funzioni get per identificatori
 ```c
@@ -408,9 +412,10 @@ Vengono utilizzati per definire i privilegi di accesso alle risorse e di invocaz
 ```
 ### Gruppi di Processi
 I processi sono organizzati in gruppi: quando un nuovo processo viene mandato in esecuzione da terminale, al processo viene associato un nuovo process group, se questo genera figli, questi appartengono allo stesso gruppo del padre.
-Nota che il gruppo viene preservato anche dalla syscall `exec`.
 
-I gruppi permettono di mandare segnali ad una gerarchia di processi e sono alla base del **job-control** offerto dalla [[shell]].
+> Nota che il gruppo viene preservato anche dalla syscall `exec`.
+
+I gruppi permettono di mandare segnali ad una gerarchia di processi e sono alla base del **job-control** offerto dalla [[shell]].qqq
 ### Priorità dei processi - nice
 Lo scheduler Unix assegna la [[CPU]] ai processi tenendo conto di un livello di priorità assegnato a ciascun processo, questa priorità dipende principalmente dalla classe di scheduling del processo: real time (interattivi) vs batch (normale).
 
@@ -556,12 +561,18 @@ Un processo in foreground può essere fermato inviando il segnale SIGTSTP (ovver
 È possibile intervenire sui job che sono stati fermati in questo modo:
 - si utilizza `jobs` per ottenere l'identificatore del job (JOB_ID)
 - `fg JOB_ID` fa ripartire il job in foreground
-- `fg JOB_ID` fa ripartire il job in background
+- `bg JOB_ID` fa ripartire il job in background
+```shell
+jobs
+fg %jobid
+bg %jobid
+```
 ### kill
 È possibile usare il comando kill anche con i job:
 ```shell
 kill %JOB_ID # invia SIGTERM al job specificato
 kill -n SIG %JOB_ID # invia SIG
+kill -s TERM %JOB_ID # invia SIGTERM al job, spcifica nomi in maniera simbolica
 ```
 ### disown e nohup
 Se il terminale viene chiuso i job in esecuzione ricevono il segnale SIGHUP, che di default termina il processo.
@@ -627,7 +638,7 @@ Gli elementi di una espressione sono collegati da **operatori**:
 -size [+-]n[ckMG] # n: quantità di spazio ckMG: unità di misura
 -user user # user specficiato come username o UID, cerca per proprietario
 -group group
--perm [-/]mode # -mode: almeno permessi indicati, /mode: almeno uno dei permessi, mode: tutti i permessi
+-perm [-/]mode # -mode: almeno permessi indicati, /mode: almeno uno dei permessi, mode: solo i permessi indicati
 ```
 #### azioni
 ```shell
@@ -635,12 +646,15 @@ Gli elementi di una espressione sono collegati da **operatori**:
 # SE SCRIVI -delete PRIMA DEI TEST VENGONO ELIMINATI TUTTI I FILE
 -exec command ; # tutti gli argomenti specificati dopo command vengono considerati come argomenti, fino a ; (\;)
 # la stringa {} è utilizzata per indicare il nome del file attualmente processato
-# il comando viene eseguito a partire dal percorso di partenza del comando find
+# se con {} termino con \; il comando viene eseguito una volta per ogni file
+# se con {} termino con + il comando viene eseguito una volta sola e {} viene sostituito con tutti i nomi dei file trovati
+# il comando viene eseguito a partire dalla cartella dalla quale si è lanciato il comando find
 -execdir # per eseguire il comando a partire del path del file trovato
 ```
 ### esempi
 ```shell
 find path -perm/u=w,g=w # cerca file che possono essere scritti da almeno uno fra owner e group owner
+find /bin -name ls -exec cat \;
 ```
 ## locate
 ```shell
@@ -701,23 +715,24 @@ Il formato del file creato dipende dalla compressione (eventualmente) utilizzata
 - .tar.bz2 compresso con algoritmo bzip2
 #### modalità
 
-| simbolo modalità | significato                                                                                  |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| A                | aggiungi file tar all'archivio (aggiungi i file presenti dentro un tar in un altro archivio) |
-| c                | crea un nuovo archivio                                                                       |
-| d                | trova le differenze fra l'archivio ed il file sysyem                                         |
-| --delete         | cancella file dall'archivio                                                                  |
-| r                | aggiungi file all'archivio                                                                   |
-| t                | elenca i file di un archivio                                                                 |
-| U                | aggiungi i file all'archivio, ma solo se differiscono dalla copia eventualmente già presente |
-| x                | estrai file dall'archivio                                                                    |
+| simbolo modalità              | significato                                                                                                |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| A                             | aggiungi file tar all'archivio (aggiungi i file presenti dentro un tar in un altro archivio)               |
+| c, --create                   | crea un nuovo archivio                                                                                     |
+| d                             | trova le differenze fra l'archivio ed il file sysyem                                                       |
+| --delete                      | cancella file dall'archivio                                                                                |
+| r                             | aggiungi file all'archivio                                                                                 |
+| t, --list                     | elenca i file di un archivio                                                                               |
+| U                             | aggiungi i file all'archivio, ma solo se differiscono dalla copia eventualmente già presente               |
+| x, --extract                  | estrai file dall'archivio                                                                                  |
+| -C, --cd dir, --directory dir | cambia cartella prima di eseguire il resto (quindi l'archivio creato li oppure i file vengono estratti li) |
 #### opzioni
 
 | simbolo modalità | significato                                   |
 | ---------------- | --------------------------------------------- |
 | v                | verbose                                       |
-| z                | compressione con `gzip`                       |
-| j                | compressione con `bzip2`                      |
+| z, --gzip        | compressione con `gzip`                       |
+| j, --bzip2       | compressione con `bzip2`                      |
 | f                | permette di specificare il nome dell'archivio |
 ### gzip/gunzip e bzip2/bunzip2
 Se si devono comprimere file o archivi creati precedentemente con tar, è possible utilizzare:

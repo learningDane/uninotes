@@ -49,12 +49,17 @@ ln -s target link_name
 ```
 ## Strutture dati per l'accesso ai file
 Il meccanismo adottato per l'accesso ai file è di tipo sequenziale:
-ad ogni file aperto è associato un I/O pointer *riferimento* per la lettura/scrittura sequenziale sul file.
+ad ogni file aperto è associato un *I/O pointer* riferimento per la lettura/scrittura sequenziale sul file.
 Le operazioni di lettura/scrittura provocano l'*avanzamento del riferimento*.
 
 Le strutture dati per l'accesso ai file sono gestite dal kernel e sono:
 - **tabella dei file aperti di processo**: è nella User structure del processo (descrittore del processo), ogni elemento (file descriptor) è un riferimento all'elemento corrispondente nella *tabella di file aperti di sistema*
-- **tabella dei file aperti di sistema**: contiene un elemento per ciascun file aperto di sistema. Se due processi aprono lo stesso file allora ci saranno due entry separate. Ogni elemento contiene un I/O pointer al file e un riferimento all'`i-node` del file (che viene tenuto in memoria principale, nella **tabella dei file attivi**)
+- **tabella dei file aperti di sistema**: contiene un elemento per ciascun file aperto nel sistema. Se due processi aprono lo stesso file allora ci saranno due entry separate. Ogni elemento contiene un I/O pointer al file e un riferimento all'`i-node` del file (che viene tenuto in memoria principale, nella **tabella dei file attivi**). Formalmente contiene:
+		- byte offset
+		- flags (O_RDONLY, O_RDWR ecc)
+		- puntatore a i-node (nella TFAT)
+		- contatore di riferimenti (per sapere quando rimuovere l'elemento)
+		- ...
 - **I/O pointer e i-node** permettono di trovare l'indirizzo fisico in cui effettuare la prossima lettura/scrittura sequenziale
 - **STDIN, STDOUT e STDERR** sono descrittori di default, generati automaticamente al momento dell'esecuzione del programma
 

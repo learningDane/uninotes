@@ -1,18 +1,42 @@
 #uni 
-librerie:
+# Nella Pratica
+Le informazioni possono essere inviate in due modi:
+1. modalità testuale
+2. modalità binaria: ovvero trattare il messaggio da inviare come una stream di byte.
+La modalità binaria può funzionare se i due processi vivono su due macchine con la stessa endianess e con la stessa dimensione dei tipi predefiniti.
+Altrimenti è necessario portare il dato in endianess di rete prima della send().
+## TCP
+A TCP non importa nulla dei tuoi "messaggi" o "array". Lui vede solo un flusso infinito di byte. Garantisce che i byte arrivino tutti e nell'ordine giusto, ma **non garantisce in quanti blocchi arriveranno**.
+Ovvero quando il ricevente fa `recv()` non è detto che legga tutto il messaggio che il mittente ha inviati, qualche blocco potrebbe essere ancora a giro per la rete.
+Per questo è necessario:
+- delimitare il messaggio inviato: in modalità testuale per esempio posso terminare il messaggio con `\0`, in modalità binaria questo non funziona poiché un byte a caso potrebbe essere erroneamente considerato come un `\0` 
+- oppure comunicare in anticipo al destinatario la dimensione del messaggio che stiamo inviando
+
+Buona pratica:
+```c
+size_t sent = 0, totale;
+while (sent < totale) {
+	ssize_t sent_now = send(fd, buf + sent, len - sent, FLAGS);
+	if (sent_now < 0)
+		/// errore
+	sent += sent_now;
+}
+```
+### Chiusura connessione
+Se l'altro processo esegue una `close()`, quando esegui una `ssize_t n = recv()` ottieni `FIN`, ovvero `n = 0` (EOF sul socket).
+
+Se l'altro processo abortisce senza `close()`, quando esegui una `ssize_t n = recv()` ottieni `RST`, ovvero `n = -1` e viene settata la variabile globale `errno` (NON a `EAGAIN` o `EWOULDBLOCK`).
+
+Se esegui una `ssize_t n = recv()` su un socket non bloccante quando non ci sono dati disponibili, `n=-1` e `errno` viene settata a `EAGAIN` o `EWOULDBLOCK`: questo **non** significa che la connessione è chiusa, solo che non ci sono dati pronti.
+## UDP
+Ragiona a "pacchetti chiusi". Se fai una `send()` di 100 byte, dall'altra parte la `recv()` leggerà esattamente 100 byte in un colpo solo, oppure fallirà. I confini del messaggio sono mantenuti.
+# librerie
 ```c
 #include <arpa/inet.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 ```
-
-compilazione
-- usiamo [[GCC]] 
-	- `gcc -Wall -c myfile1.c myfile2.c` compilazione no linking
-		- -Wall NON ignora i warning
-	- `gcc -o myprogram myfile1.c myfile2.c` linking
-
 # Cooperazione tra processi
 - Due processi possono cooperare attraverso:
 	- Sincronizzazione (Es. semafori)

@@ -10,10 +10,10 @@ Definiamo $O(f(n))$ l'insieme delle funzioni di ordine $O(f(n))$.
 $O(f(n))$ è quindi l'insieme delle funzioni della forma $g(n) = an$ 
 $O(f(n^2))$ è quindi l'insieme delle funzioni della forma $g(n) = an^2$ 
 ___Regole___:
-	se $f(n)$ è $O(g(n))$ e $g(n)$ è $O(h(n))$ allora -> $f(n)$ è $O(h(n))$
-	per ogni costante $k$, $k$ è $O(1)$ 
-	per $m<=p$, $n^m$ è $O(n^p)$ 
-	un polinomio di grado $m$ è $O(n^m)$ 
+	- se $f(n)$ è $O(g(n))$ e $g(n)$ è $O(h(n))$ allora -> $f(n)$ è $O(h(n))$
+	- per ogni costante $k$, $k$ è $O(1)$ 
+	- per $m<=p$, $n^m$ è $O(n^p)$ 
+	- un polinomio di grado $m$ è $O(n^m)$ 
 Quando valuto due algoritmi li valuto in maniera asintotica, quindi $T_{p2} = 2n = 4n = T_{p1}$ per esempio.
 # Notazioni
 In generale una funzione $f(n) = expr$ si indica con solo $expr$ 
@@ -28,11 +28,11 @@ $O(n)$ è l'insieme delle funzioni di ordine $O(f(n))$
 $f(n)$ è di ordine $O(g(n))$ se esistono un intero $n_0$ ed una costante $c>0$ tali che $\forall n \geq n_0 : f(n) \leq c g(n)$. Quindi oltre una certa $n_0$ $f(n)$ è minore di $g(n)$ 
 Classi di Complessità:
 	$O(1)$ = costante; $O(log(n))$ = logaritmica; $O(n)$ = lineare; $O(nlog(n))$ ; $O(n^2)$ = quadratica ; $O(n^3)$ = cubica; $O(n^p)$ = polinomiale ; $O(2^p)$ e $O(n^n)$ = esponenziale.
+### Notazione Omega Grande: Limite Asintotico Inferiore
+$f(n)$ è $\Omega(g(n))$ se esistono un intero $n_0$ ed una costante $c>0$ tali che $\forall n \geq n_0 : f(n) \geq c g(n)$ 
 ### Notazione theta grande: Limite Asintotico Stretto
 $f(n)$ è $\Theta(g(n))$ se $f(n)$ è $O(g(n))$ e $f(n)$  è $\Omega(g(n))$ 
 Quindi $f(n)$ è $\Theta g(n)$ quando $f$ e $g$ hanno lo stesso ordine di complessità.
-### Notazione Omega Grande: Limite Asintotico Inferiore
-$f(n)$ è $\Omega(g(n))$ se esistono un intero $n_0$ ed una costante $c>0$ tali che $\forall n \geq n_0 : f(n) \geq c g(n)$ 
 
 ### Regole
 1. Regola dei fattori costanti:

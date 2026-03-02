@@ -22,7 +22,7 @@ Pagina del manuale: `man pthreads`.
 ## Identificatori del thread
 Un thread ha un ID, di tipo `pthread_t`.
 ```c
-pthread_t pthread_self(void) // funzione per conosce ID del thread
+pthread_t pthread_self(void) // funzione per conoscere ID del thread
 ```
 `pthread_t` è un tipo "opaco".
 Per confrontare due thread è necessaria la seguente funzione:
@@ -53,7 +53,7 @@ void pthread_exit(void* retval);
 	- se ha chiamato questa funzione i figli continuano la propria esecuzione
 `void*retval` è il valore di ritorno del thread (exit status), consultabile da altri thread che utilizzano la `pthread_join`.
 ### pthread_join
-Un thread può bloccarsi in attesa della terminazione di u nthread specifico:
+Un thread può bloccarsi in attesa della terminazione di un thread specifico:
 ```c
 int pthread_join(pthread_t thread, void** retval)
 ```
