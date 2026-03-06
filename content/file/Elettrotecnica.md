@@ -1,5 +1,5 @@
 #uni 
-Prof Emanuele Crisostomi, 6cfu
+6cfu - Emanuele Crisostomi
 [[Informazioni sul Corso di Elettrotecnica]] 
 [[Struttura esami elettrotecnica]] 
 Argomenti

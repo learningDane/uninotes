@@ -4,7 +4,10 @@
 
 # Argomenti
 [[Introduzione all'Elettronica Digitale]]  
+[[Elettrotecnica]] 
 ### Dispositivi a semiconduttore
+[[Resistività]] 
+[[Modello di Drude]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)

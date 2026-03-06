@@ -32,6 +32,9 @@ In ordine di difficoltà (stessi argomenti):
 Non esiste una prova d'esame su LTSPICE.
 [sito](https://www.analog.com/en/design-center/design-tool-and-calculators/ltspice-smilator.html) 
 # Modalità d'esame
+
+> È possibile portare calcolatrice (penso anche programmabile)
+
 Prova scritta e prova Orale.
 Necessario 15/30 a entrambe.
 Il voto finale è la (circa) media aritmetica tra i due (±2 voti).

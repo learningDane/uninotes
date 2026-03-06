@@ -26,6 +26,3 @@ dove:
 - $x_i$ è una variabile libera
 - $A_1:x_1,...,A_n:x_n$ è chiamata ___target list___ e descrive il risultato
 Il risultato è una relazione sugli attributi $A_1,...,A_k$ che contiene tuple di valori per le variabili libere $x_1,...,x_k$ che rendono vera la formula $f$ rispetto ad una istanza di base di dati a cui l'espressione è applicata.
-
-# Esempio
-![[IMG_0075.png]]
