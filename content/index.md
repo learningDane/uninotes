@@ -30,16 +30,16 @@ ___Davide Squeri___
 ---
 # Anno III
 - [ ] [[Reti Informatiche]] †9
-- [x] [[Sistemi Operativi]] †9
+- [ ] [[Sistemi Operativi]] †9
 - [x] [[Ingegneria del Software]] †6
 ---
-- [x] [[Elettronica Digitale]] †9
+- [ ] [[Elettronica Digitale]] †9
 - [x] [[Comunicazione Numeriche]] †9
 # Esami a scelta
 - [x] Interazione Uomo Macchina †6
 - [x] [[Crittografia]] †6
 - [x] [[Progettazione di Reti Informatiche]] †6
-- [x] [[Laboratorio di Informatica Applicata]]  †6
+- [ ] [[Laboratorio di Informatica Applicata]]  †6
 
 esami a scelta:
 - [x] [[Crittografia]] 
