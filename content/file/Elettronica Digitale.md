@@ -8,6 +8,8 @@
 ### Dispositivi a semiconduttore
 [[Resistività]] 
 [[Modello di Drude]] 
+[[Legge di Azione di Massa]] 
+[[Drogaggio]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)

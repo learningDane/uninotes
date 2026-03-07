@@ -12,9 +12,9 @@ $L$ ed $S$ sono parametri geometrici.
 La **resistività** invece è un parametro che dipende dal materiale di cui è composto l'oggetto:
 $$
 \begin{matrix}
-\text{Resistività:} \quad \rho \quad[\ohm\cdot m] 
+\text{Resistività:} \quad \rho \quad[\Omega\cdot m] 
 \\
-\text{Conducibilità:}\quad \sigma \quad[\ohm\cdot m]^{-1} \quad= \large \frac{1}{\rho}
+\text{Conducibilità:}\quad \sigma \quad[\Omega\cdot m]^{-1} \quad= \large \frac{1}{\rho}
 \end{matrix}
 $$
 In base alla resistività (o conducibilità) possiamo distinguere i materiali in 3 categorie:
@@ -34,7 +34,7 @@ per un metallo abbiamo che:
 
 Otteniamo quindi:
 $$
-\sigma\sim 8 \times 10^4(\ohm\cdot \text{cm})^{-1}\quad =\frac{1}{\rho}
+\sigma\sim 8 \times 10^4(\Omega\cdot \text{cm})^{-1}\quad =\frac{1}{\rho}
 $$
 # Conducibilità di un Semiconduttore
 Il [[Silicio]] però non compie un legame metallico ma covalente, gli elettroni non possono spostarsi a causa della forza di legame, questo allo zero assoluto, a temperature maggiori invece alcuni legami si rompono.
@@ -54,4 +54,4 @@ Per la conducibilità otteniamo quindi:
 $$
 \sigma = n_i \cdot\mu_n \cdot q+p\cdot \mu_p \cdot q
 $$
-ma $n_i = n_p$.
+con $n=n_i = n_p$, rispettando la [[Legge di Azione di Massa]].
