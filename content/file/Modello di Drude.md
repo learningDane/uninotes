@@ -44,7 +44,8 @@ I=\large\frac{\Delta Q}{\Delta T}=\frac{N\cdot q}{\Delta T}=\frac{N\cdot v_d}{L}
 \end{matrix}
 $$
 
-Utilizziamo la **legge microscopica di Ohm**:$$
+Utilizziamo la **legge microscopica di Ohm**:
+$$
 J=\sigma \cdot E
 $$
 e otteniamo:

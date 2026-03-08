@@ -5,4 +5,5 @@
 >$$
 >\large n\cdot p =n_i^2
 >$$
+>dove $n_i$ è la *concentrazione intrinseca dei portatori di carica*, $n$ degli elettroni e $p$ delle lacune.
 

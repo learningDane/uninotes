@@ -55,3 +55,16 @@ $$
 \sigma = n_i \cdot\mu_n \cdot q+p\cdot \mu_p \cdot q
 $$
 con $n=n_i = n_p$, rispettando la [[Legge di Azione di Massa]].
+# Legame tra Conducibilità e Temperatura
+Abbiamo detto che la conducibilità si trova come:
+$$
+\sigma = nq\mu_n + pq\mu_p
+$$
+dove:
+- $q$ con varia con la temperatura $T$ ovviamente
+-  $\mu_n$ e $\mu_p$ invece: all'aumentare della temperatura aumentano le vibrazioni reticolari, causando più urti e di conseguenza diminuendo la mobilità proporzionalmente a $T^{\frac{3}{2}}$ ($T$ in Kelvin compresa tra $20$ e $600$ gradi)
+- per $n$ e $p$ invece bisogna differenziare tra silicio intrinseco e drogato:
+	- nel silicio intrinseco abbiamo $n=p=n_i$, che abbiamo detto ($n_i$) aumenta esponenzialmente con $T$. In definitiva *nel silicio intrinseco la conducibilità aumenta con la temperatura*
+	- nel silicio drogato: prendiamo per esempio il drogaggio di tipo P: $p \approx N_A^-$ e $n\approx \frac{n_i^2}{N_A^-}$, quindi all'aumentare della temperatura _$p$ resta fisso_ e $n_i$ aumenta, ma avendo $N_A^- \approx p >>n$, _$n$ sale di poco_ ed in definitiva prevale la diminuzione della mobilità, diminuendo la conducibilità. Per il drogaggio tipo N vale il duale, $p$ sale poco e $n$ resta fisso, arrivando allo stesso effetto finale. Quindi *nel silicio drogato la conducibilità diminuisce con la temperatura* 
+
+Il variare della conducibilità al variare della temperatura viene utilizzato nei sensori di temperatura integrati.

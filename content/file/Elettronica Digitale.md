@@ -10,6 +10,7 @@
 [[Modello di Drude]] 
 [[Legge di Azione di Massa]] 
 [[Drogaggio]] 
+[[Corrente di Diffusione]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)
