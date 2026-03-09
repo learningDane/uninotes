@@ -40,18 +40,18 @@ N: \text{numero totale di elettroni}
 \\
 I=\large\frac{\Delta Q}{\Delta T}=\frac{N\cdot q}{\Delta T}=\frac{N\cdot v_d}{L}\cdot q
 \\
-\text{Densità di Corrente:} \quad J=\frac{N}{Vol}\cdot q \cdot v_d=n\cdot q \cdot \mu_n \cdot E
+\text{Densità di Corrente di Drift:} \quad J_\text{drift}=\frac{N}{Vol}\cdot q \cdot v_d=n\cdot q \cdot \mu_n \cdot E
 \end{matrix}
 $$
 
 Utilizziamo la **legge microscopica di Ohm**:
 $$
-J=\sigma \cdot E
+J_\text{drift}=\sigma \cdot E
 $$
 e otteniamo:
 $$
 \begin{matrix}
-\vec J = \sigma \cdot \vec E
+\vec J_\text{drift} = \sigma \cdot \vec E
 \\
 \text{conducibilità:}\quad \sigma = n \cdot q \cdot \mu_n
 \end{matrix}
