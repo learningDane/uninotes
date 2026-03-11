@@ -9,9 +9,9 @@ ore Cimino: 20h, ore Alfeo: 30h, progetto@home: 70h
 20/02 usato
 DES:
 
-Ho risolto i dubbi sugli esami da rimuovere, sovrannumerari e che non fanno media. Realizzata quindi classe FileConfigurazione e bozze dei relativi file .json. Piccole modifiche nelle classi già realizzate e loro completamento. Dubbi su come procedere riguardo l'organizzazione dei dati in Gestione Carriera. Realizzata la classe ElencoEsamiInformatica. Gestione in CarrieraLaureando della differenza fra cfu curriculari e quelli che fanno media.
 
-Per ora sono a 50h
+
+Per ora sono a 54h
 R: 10h
 A: 15h (25h)
 D: 20h (45h)

@@ -12,6 +12,7 @@
 [[Drogaggio]] 
 [[Corrente di Diffusione]] 
 [[Giunzione PN]] 
+[[Legge di Shockley]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)
