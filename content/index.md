@@ -34,12 +34,9 @@ ___Davide Squeri___
 - [x] [[Ingegneria del Software]] †6
 ---
 - [ ] [[Elettronica Digitale]] †9
-- [x] [[Comunicazione Numeriche]] †9
+- [ ] [[Comunicazioni Numeriche]] †9
 # Esami a scelta
 - [x] Interazione Uomo Macchina †6
 - [x] [[Crittografia]] †6
-- [x] [[Progettazione di Reti Informatiche]] †6
+- [ ] [[Progettazione di Reti Informatiche]] †6
 - [ ] [[Laboratorio di Informatica Applicata]]  †6
-
-esami a scelta:
-- [x] [[Crittografia]] 
