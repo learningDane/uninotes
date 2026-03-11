@@ -1,4 +1,6 @@
 #uni 
+Virdis: ricevimento previa comunicazione via mail
+
 Questo corso nasce da una collaborazione con il Cisco.
 Network Engineer: ingegnere informatico he si occupa della progettazione messa in opera e amministrazione di una rete informatica allo scopo di garantirne il corretto e buon funzionamento.
 

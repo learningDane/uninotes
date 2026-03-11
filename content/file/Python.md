@@ -255,5 +255,373 @@ tupla = 'a', 3, 5
 >>>(a,b,c) = tupla
 >>>print(b)
 3
+
+>>>tupla = (1,2,3,4,5)
+a,b,*c = tupla
+print(c) = (3,4,5)
 ```
 Ci posso eseguire su le stesse operazioni che posso fare su liste, purché siano immutabili.
+# Set (insiemi)
+Gli insiemi sono strutture dati che contengono oggetti immutabili, senza ripetizione e senza ordine.
+Gli insiemi sono iterabili, ma in ordine casuale.
+Gli insiemi sono hashable, poiché sotto c'è una mappa hash.
+```python
+a = {1,2,'b',4.3}
+>>>type(a)
+<class 'set'>
+>>>print(a)
+{'b',1,2,4.3}
+
+>>>a[0]
+Traceback (most recente call last):
+	File ...
+	a[0]
+TypeError: 'set' objects does not support indexing
+```
+
+operazioni:
+```python
+s1.union(s2)
+s1.intersection(s2)
+s1.difference(s2)
+s1.symmetric_difference(s2) # equivale a (s1 UNITO s2) SOTTRATTO (S1 INTERSEZIONE S2)
+A|B # union
+A|=B # update
+A&B # intersezione
+A<=B # A.issubset(B)
+A>=B # A.issuperset(B)
+```
+
+Comprehension su insiemi:
+```python
+>>>{s for s in [1,2,1,0]}
+set([0,1,2])
+
+>>>{(m,n) for n in range(2) for m in range(3,5)}
+set([(3,0),(3,1),(4,0),(4,1)])
+```
+
+Castando a SET rimuovo i duplicati. Non posso castare a SET oggetti che contengono elementi mutabili (liste).
+# Dizionari
+I dizionari sono una estensione dei set dove per ogni elemento di un set viene associato un valore: {chiave, valore}.
+```python
+'key':value
+d = {'a':12, 'c':7, ecc}
+>>>type(d)
+<class 'dict'>
+>>>print(d['c'])
+7
+
+# se indicizzo un elemento che non esiste, da errore
+```
+I dizionari sono anche detti **array associativi**.
+
+Le chiavi devono essere uniche, i valori no.
+```python
+d.get('a')
+12
+
+# se l'elemento non esiste (la chiave non ha valore associato), get() restituisce None
+
+# è possibile istituire un valore di default:
+# Using get() with a default value for non-existing key:
+print(d.get('b',"non disponibile"))
+
+d.keys()
+# Restituisce tutte le chiavi disponibili
+# Da python 3.7 le chiavi sono in ordine di creazione
+# dict_keys()
+
+d.values()
+# restitusice tutti i valori (anche duplicati)
+# dict_values()
+
+d.items()
+# crea una lista di tuple <chiave,valore>
+# dict.items()
+
+d.pop('key')
+# restituisce il valore associato alla chiave, e rimuove <chiave,valore> dal dizionario
+```
+
+Comprehension sui dizionari:
+```python
+>>>{k: v for k,v in [(1,2),(3,4)]}
+{1: 2, 3:4}
+```
+# File
+```python
+f = open("file_name", mode) # 'w' 'r' 'a' 'x' 't' 'b' '+'
+f.write("ciao")
+f.close()
+
+f = open ("filename", 'r')
+contenuto = f.read()
+conte = f.readlines()
+for line in conte:
+	print(line)
+f.close()
+
+# questo permette di non fare chiusura
+# chiusura automatica alla fine del blocco:
+with open(..) as f:
+	content = f.readlines()
+	...
+# f è stato chiuso qua
+# chiama automaticamente __exit__() alla fine del blocco
+```
+# Funzioni
+Ci sono due tipi di funzioni:
+- built-in
+- user defined
+Le funzioni sono trattate come oggetti, possono essere assegnate ad oggetti, contenute in collezioni (come liste) e passate come argomenti ad altre funzioni.
+
+```python
+def funzione(param1,params..):
+	corpo..
+	return valore
+```
+
+Le variabili definite in una funzione sono dette variabili locali e appartengono alla funzione stessa.
+
+> In python tutti i passaggi di funzione sono fatti per reference.
+
+## Argomenti
+- argomenti posizionali: TUTTI gli argomenti vanno passati alla funzione in ordine
+- argomenti keyword: va esplicita l'associazione nome argomento=argomento: `funzione(param1=..., param2=...)`
+- argomenti di default: `def sum(param1=0, param2=0):...`
+- argomenti a lunghezza variabile: questi parametri devono essere passati dopo gli argomenti posizionali e sono packed in tupla, la tupla contenente questi argomenti può essere acceduta con `*nomeargomento`: `def funzione(*param):...` 
+- gli argomenti per nome vanno messi dopo quelli per posizione
+
+per passare un dizionario:
+```python
+def funzione(**diz):...
+
+# oppure
+
+def funzione(fargs, *args, **kwargs)
+```
+## Ricorsione
+Una funzione può chiamare se stessa.
+## Docstrings (PEP 257)
+```python
+def funzione():
+	"""
+	descrizione
+	"""
+	...
+	return ..
+
+# access docstring
+print(funzione.__doc__)
+help(funzione)
+```
+## Funzioni Anonime (LAMBDA)
+Sono funzioni definite senza nome:
+```python
+lambda arg1,arg2: expression
+
+>>>times_two = lambda x: x*2
+>>>print(times_two(4))
+8
+
+
+def times_n(n):
+	return lambda a : a*n
+```
+devono essere una sola riga.
+### map()
+Map prende come argomento una funzione e una lista di argomenti, poi applica la funzioni a tutti gli argomenti:
+```python
+lista = [1,5,4,6,8,11,3,12]
+nuova_lista = list(map(lambda x: x*2, lista))
+```
+### filter()
+Filter() prende come argomento una funzione e una lista di argomenti. Applica la funzione a tutti gli elementi: restituisce una nuova lista contente solo gli elementi per la quale la funzione restituisce `True`:
+```python
+lista = [1,5,4,6,8,11,3,12]
+nuova_lista = list(filter(lambda x: (x%2==0), lista))
+```
+### any()
+Questa funzione ritorna True se almeno uno degli elementi in un iterable è True. Se è vuoto ritorna false.
+```python
+nums = [2, 5, 8, 12, 7]
+print(any(num>10 for num in nums)) # stampa True
+```
+# Modules
+Un modulo è un file contenente codice python con definizioni di funzioni, classi e variabili.
+```python
+import nome_modulo
+nome_modulo.nome_funzione()
+```
+Python cerca i moduli in `PYTHONPATH` e nella cartella corrente.
+```python
+dir(module_name)
+# da una lista python di tutti gli oggetti in un modulo
+```
+Altri modi per importare roba:
+```python
+from nome_modulo import nome_funzione
+nome_funzione() # non serve nome_modulo.nome_funzione()
+
+
+from nome_modulo import *
+# stessa cosa ma importa tutte le funzioni
+
+import nome_modulo as m
+m.funzione()
+```
+
+Se cambi un modulo e lo vuoi reimportare nel codice usa `reload(nome_modulo)`.
+# Package
+Invece di avare moduli in file singoli possiamo avere cartelle, dette `package`:
+```python
+import package_name.module_name
+package_name.module_name.function_name()
+
+import package_name.module_name as m
+m.function_name()
+```
+
+Per segnare un package ci mettiamo dentro un file `__init__.py`, qui dentro possiamo metterci per esempio variabili a livello di package.
+```python
+# my_package/__init__.py
+print("initializing my_package")
+__all__ = ["module1"]
+
+
+# altro file
+import my_package 
+# oppure
+from my_package import *
+# entrambi stampano ed importano solo module1
+```
+
+```python
+# __init__.py
+from .module1 import *
+__all__ = ["public_func"]
+# oppure
+from .module1 import public_func
+
+# mypackage/module1.py
+def public_func():
+	...
+def _private_func():
+	...
+
+```
+# Librerie
+Praticamente collezioni di moduli.
+## Libreria Standard
+### os
+```python
+os.getcwd() # return current working directory
+os.chdir("/aesfasfe/asefaefs) # cambia cwd
+```
+### shutil
+```python
+shutil.copyfile("asfasef","asfe")
+shutil.move("asefasef","asf")
+```
+### glob
+```python
+>>>glob.glob("*.py")
+['myfile.py', 'script.py', 'exercise.py']
+```
+### math
+```python
+math.cos(math.pi/4)
+math.log(1024,2)
+```
+### random
+```python
+random.choice(['ss','ss','ss'..])
+random.sample(range(100),10) # sampling without replacenemt
+# sceglie 10 valori
+random.random() # random float
+random.randrange(6) #random int from range(6)
+```
+### statistics
+```python
+statistics.mean(data)
+mediam
+variance
+```
+### time
+```python
+t = time.time()
+print('{} seconds'.format(time.time()-t))
+```
+### sys
+```python
+sys.exit()
+```
+## PyPI
+Python package index serve ad installare librerie extra, si usa il comando `pip`.
+```bash
+python -m pip install package_name
+# oppure
+pip install package_name
+
+# questi prendono l'ultima versione compatibile con la vostra versione di python installata
+```
+# Eccezioni
+Le eccezioni sono oggetti che rappresentano errori, questi oggetti se non `handled`, causano la terminazione dell'errore con un traceback message.
+```python
+try:
+	# codice che può causare errore
+except nomeEccezione1:
+	# gestione
+except nomeEccezione2 as e:
+	print(f"Error details: {e}")
+	# gestione
+except nomeEccezione3 as b:
+	if ..:
+		raise ValureError("blah") from b
+except nomeEccezione4:
+	try:
+		...
+	except ValueError as c:
+		# e.__context__ contiene nomeEccezione4
+		print(f"Caused during handling of: {e.__context__}")
+except errore:
+	pass
+else:
+	# questo va solo se non ci sono eccezioni
+finally:
+	# questo va sempre
+# normale codice
+
+
+def funzioe():
+	...
+	if ...:
+		raise xxxError("errore")
+```
+## Eccezioni più comuni
+```python
+IndexError
+KeyError
+TypeError
+ValueError
+FileNotFoundError
+```
+# Oggetti
+In python tutto è un oggetto e ha un tipo, gli oggetti possono essere creati, manipolati e distrutti (con `del`).
+Il **garbage collector** tiene traccia delle reference fatte ad un oggetto e lo distrugge se non serve più.
+
+Possono essere definiti nuovi tipi di oggetto tramite `Class`:
+```python
+Class Cat:
+	def __init__(self,name):
+		self.name = name
+	def meow(self):
+		print("meow")
+
+mycat = Cat("bob")
+mycat.meow()
+
+
+print(dir(Cat)) # stampa tutti gli attributi e metodi di un oggetto
+```

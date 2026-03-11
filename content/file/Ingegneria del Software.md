@@ -6,13 +6,12 @@ mario.g.cimino@unipi.it
 ore Cimino: 20h, ore Alfeo: 30h, progetto@home: 70h
 
 [[cannalire]] 
-15/02
+20/02 usato
 DES:
-Revisione del diagramma di analisi: modifica di di alcune dipendenze da `<<use>>` a `<<call>>`, rimozione degli operatori di visibilità poiché non consigliati in analisi. Per stesso motivo non trattata molteplicità. Ulteriori conferme su bontà di quanto svolto in seguito a confronto con collega. Iniziata realizzazione dei diagrammi di sequenza per apertura e invio dei prospetti. Necessario usare funzioni a questo livello? Confronti su aspetti teorici anche con workflow di progetto.
 
+Ho risolto i dubbi sugli esami da rimuovere, sovrannumerari e che non fanno media. Realizzata quindi classe FileConfigurazione e bozze dei relativi file .json. Piccole modifiche nelle classi già realizzate e loro completamento. Dubbi su come procedere riguardo l'organizzazione dei dati in Gestione Carriera. Realizzata la classe ElencoEsamiInformatica. Gestione in CarrieraLaureando della differenza fra cfu curriculari e quelli che fanno media.
 
-
-Per ora sono a 40h
+Per ora sono a 50h
 R: 10h
 A: 15h (25h)
 D: 20h (45h)
@@ -22,7 +21,7 @@ T: 10h (85h)
 Checkpoint fatti:
 - [x] Registro
 - [x] Requisiti
-- [ ] Analisi
+- [x] Analisi
 - [ ] Implementazione
 
 [[Informazioni sul Corso di Ingegneria del Software]]

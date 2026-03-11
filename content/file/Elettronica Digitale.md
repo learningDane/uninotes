@@ -11,6 +11,7 @@
 [[Legge di Azione di Massa]] 
 [[Drogaggio]] 
 [[Corrente di Diffusione]] 
+[[Giunzione PN]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)

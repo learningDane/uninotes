@@ -19,3 +19,7 @@ Utilizzando la maschera confronto il mio IP e quello della destinazione, se siam
 5. DST riceve il ARP REPLY, si salva MAC+IP di DST
 6. DST può ora inviare i pacchetti a DST
 ## TCP
+# Cisco IOS
+Normalmente le password sono:
+- per exec unprivileged: `class`
+- per exec privileged: `cisco`
