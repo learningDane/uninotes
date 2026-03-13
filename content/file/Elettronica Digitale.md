@@ -13,6 +13,7 @@
 [[Corrente di Diffusione]] 
 [[Giunzione PN]] 
 [[Legge di Shockley]] 
+[[Diodo]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)
@@ -26,3 +27,4 @@
 - flip-flop
 - memorie a semiconduttore
 ### Esercitazioni
+[[SPICE]] 

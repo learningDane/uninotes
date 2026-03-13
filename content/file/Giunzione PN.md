@@ -50,10 +50,10 @@ Se invece collego il polo positivo del generatore al catodo e quello negativo al
 
 Notiamo però che il campo elettrico, seppur più potente, genera comunque una corrente di drift flebile, poiché essendo indirizzato da $N$ a $P$, dalla zona $N$ cerca di muovere le lacune verso $P$ e dalla zona $P$ cerca di muovere gli elettroni verso $N$, però le lacune sono minoritarie nella zona $N$, e gli elettroni sono minoritari nella zona $P$ (per via della [[Legge di Azione di Massa]]), questo significa che si la corrente di drift aumenta, ma di un valore che nella pratica è considerato $0$, quindi a livello macroscopico vi è una quasi impercettibile corrente totale da $N$ verso $P$.
 
-La corrente di drift, indipendente dalla tensione applicata e generata solamente dai portatori di carica minoritari, creati in generazione termica, prende il nome di **Corrente di Saturazione Inversa** e si indica con $I_S$:
-$$
-I_S= I_\text{p,drift} + I_\text{n,drift}
-$$
+> La corrente di drift, indipendente dalla tensione applicata e generata solamente dai portatori di carica minoritari, creati in generazione termica, prende il nome di **Corrente di Saturazione Inversa** e si indica con $I_S$:
+> $$
+> I_S= I_\text{p,drift} + I_\text{n,drift}
+> $$
 # Legge di Shockley
 La giunzione PN quindi funge da rubinetto ad una via sola, se vi applico una tensione in polarizzazione diretta aumenta esponenzialmente la corrente da $P$ a $N$, se invece applico una tensione in polarizzazione inversa ottengo una flebile corrente da $N$ a $P$, la corrente di saturazione inversa.
 
@@ -71,7 +71,7 @@ dove:
 # Valore di W: la dimensione della zona di svuotamento
 
 $$
-W=\sqrt{\frac{2\epsilon}{q}\left(\frac{1}{N_A}+\frac{1}{N_D} \right)\left( V_0-V \right)     }
+W=\sqrt{\frac{2\epsilon}{q}\left(\frac{1}{N_A}+\frac{1}{N_D} \right)\left( V_0-V \right)}
 $$
 dove:
 - $\epsilon$ è la permittività dielettrica del materiale

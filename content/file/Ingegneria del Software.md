@@ -6,12 +6,12 @@ mario.g.cimino@unipi.it
 ore Cimino: 20h, ore Alfeo: 30h, progetto@home: 70h
 
 [[cannalire]] 
-20/02 usato
+21/02 usato
 DES:
+Iniziato la realizzazione della classe GeneraProspetto, definendo la struttura e sperimentando le prime funzionalità per la generazione dei documenti. Parallelamente ho consultato la documentazione della libreria FPDF per comprendere meglio le modalità di creazione e gestione dei PDF, effettuando alcuni primi test pratici. Ho inoltre impostato le basi della componente InviaProspetti e avviato lo studio della libreria PHPMailer, con l’obiettivo di automatizzare l’invio dei prospetti ai laureandi
 
 
-
-Per ora sono a 54h
+Per ora sono a 59h
 R: 10h
 A: 15h (25h)
 D: 20h (45h)

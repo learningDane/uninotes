@@ -5,3 +5,4 @@
 Argomenti:
 [[Cisco Packet Tracer]] 
 [[Cisco IOS]] 
+[[Configuring interfaces in Cisco IOS]] 
