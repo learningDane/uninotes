@@ -14,6 +14,7 @@
 [[Giunzione PN]] 
 [[Legge di Shockley]] 
 [[Diodo]] 
+[[Rettificatore]] 
 - diodi
 - transistori bipolari (BJT)
 - transistori ad effetto di campo (MOSFET)

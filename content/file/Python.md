@@ -625,3 +625,381 @@ mycat.meow()
 
 print(dir(Cat)) # stampa tutti gli attributi e metodi di un oggetto
 ```
+# Classi
+PEP8 per le classi è PascalCase.
+
+È possible definire un attributo di una classe come **privato**: può essere acceduto e modificato solo da dentro la classe.
+
+Quando un attributo è privato dobbiamo definire delle funzioni per interagirci:
+- una funzione **getter** è usata per prendere il valore da un certo campo
+- una funzione **setter** è usata per cambiare il valore di un certo campo
+```python
+class Cat:
+	def __ini__(self,name,color):
+		self.public_name = name
+		self.__private_name = name
+		self.color = color
+	
+	print(bob.__private_name)
+	# da errore "non esiste attributo"
+```
+## Ereditarietà - Inheritance
+Una classe esistente può essere riusata. Parent-children.
+Child Class = subclass.
+Parent Class = superclass.
+```python
+class Animal:
+	def __init__(self, name, color):
+		self.name - name
+		self.color = color
+	...
+	
+class Cat(Animal):
+	def __init__(sex):
+		super().__init__(name,color)
+		self.sex = sex
+	...
+```
+### funzioni built-in
+```python
+isinstance(obj, __class__)
+# vero solo se obj.__class__ è int o qualche class derivata da int
+
+issubclass(__class__, __class__)
+# 
+```
+### Multiple inheritance
+```python
+class Derivata(classe1,classe2..):
+	...
+```
+## Custom Exceptions
+```python
+class NetworkError(Exception):
+	""Eccezione per errori di rete""
+	pass
+	
+class DatabaseError(Exception):
+	def __init__(self, message, error_code):
+		self.message = message
+		self.errpr_code = error_code
+		super().__init__(f"Error{error_code}:{message}")
+		
+try:
+	raise DatabaseError("Connection timeout",4004)
+except DatabaseError as e:
+	...
+```
+# Scope e namespace
+scope:
+- `local`
+- `nonlocal`: quello precedente alla funzione
+- `global`
+# Operator Overloading
+```python
+class Cat:
+	def __add__(self, other_cat):
+		print("a cat is born!")
+		...
+		
+	def __repr__(self):
+		...
+```
+# Type Hints
+Servono per specificare il tipo di variabile aspettato.
+Non influiscono sul comportamento a runtime, servono per:
+- better code documentation
+- enhanced IDE support
+- static type checking with tools like mypy
+- improved code maintainability
+```python
+# vuole una stringa e restituisce una stringa
+def greeting(name: str) -> str:
+```
+
+Ci sono:
+- int
+- float
+- bool
+- str
+- bytes
+- None
+
+```python
+# 3.10+
+number: list[int]
+user_info: dict[str,str]
+coordinates: tuple[float,float]
+record: tuple[str, int, float]
+unique_ids: set[int]
+
+# 3.9
+from typing import List, Dict, Tuple, Set
+numbers: List[int]
+ecc
+```
+## Union types
+```python
+from typing import Union, Optional
+user_id: Union[int,str]
+
+result: Optional[str]=get_result()
+
+# 3.12+
+int | str |range
+# equivale a Union[int,str,range]
+int | None
+```
+## Type Aliases
+```python
+# 3.10+
+Url = str
+def retry(url: Url, retry_count: int) -> None:
+	...
+	
+from typing import TypeAlias
+Url: TypeAlias = str
+...
+
+from typing import Dict, List, Tuple, Union, TypeAlias
+JSON = Union[Dictr[str, "JSON"], List["JSON"], str, int, float, bool, None]
+```
+## Match-case statement
+```python
+# 3.12+
+def process_data(data: int | str | list):
+	match data:
+		case int():
+			return data+1
+		case str():
+			...
+```
+## Callable types
+```python
+from typing import Callable
+OperationFunc = Callable[[int, int], float]
+
+def apply_operation(x: int, y: int, operation: OperationFunc) -> float:
+	return operationFunc(x,y)
+```
+## Generic Types
+```python
+from typing import TypeVar, Generic, List
+T = TypeVar('T') 
+class Stack(Generic[T]):
+	def __init__(self) -> None:
+		self.items: List[T] = []
+	
+	def push(self, item: T) -> None:
+		self.items.append(item)
+```
+# Decorators
+Sono una funzione in grado di manipolare altre funzioni, tipo wrapper
+```python
+def greet():
+	return "Hello!"
+
+def uppercase_decorator(func):
+	def wrapper():
+		original_result = func()
+		modified_result: original_result.upper()
+		return modified_result
+	return wrapper
+
+# applicazione manuale del decorator
+greet = uppercase_decorator(greet)
+```
+Un decorate può essere applicato usato `@`:
+```python
+def uppercase_decorator(func):
+	def wrapper():
+		original_result = func()
+		modified_result: original_result.upper()
+		return modified_result
+	return wrapper
+	
+@uppercase_decorator
+def greet():
+	return "Hello!"
+```
+
+Decoratori per funzioni con argomenti:
+```python
+def uppercase_decorator(func):
+	def wrapper(*args, **kwargs):
+		original_result = func(*args, **kwargs)
+		return original_result.upper()
+	return wrapper
+	
+@uppercase_decorator
+def greet(name):
+	return f"Hello, {name}!"
+	
+print(greet("Alice"))
+```
+
+## Preservare i metadati
+Quando applichi un decoratore si perdono i metadati originali e si applicano quelli del decoratore.
+
+Per preservarli:
+```python
+import functools
+
+def uppercase_decorator(func):
+	@functools.wraps(func) # preserva i metadati
+	def wrapper(*args, **kwargs):
+		...
+```
+## Parametri per decoratori
+```python
+def repeat(n=1):
+	def decorator(func):
+		@functools.wraps(func)
+		def wrapper(...):
+			result = None
+			for _ in range(n):
+				result = func(*args,
+			return result
+		return wrapper
+	return decorator
+
+	
+@repeat(n=3)
+def say_hello():
+	print("Hello!")
+	return "done"
+```
+## Decoratori per classi
+```python
+def add_greeting(cls): # oggetto Classe, non oggetto istanza
+	cls.greet = lambda self: f"Hello, I'm {self.name}"
+	return cls
+
+@add_greeting
+class Person:
+	def __init__(self, name):
+		self.name = name
+
+p = Person("Alice")
+print(p.greet()) # Output: Hello, I'm Alice
+```
+## Class-based decorators
+I decoratori possono essere implementati come classi con il metodo `__call__`
+```python
+class CountCalls:
+	def __init__(self, func):
+	functools.update_wrapper(self, func)
+	self.func = func
+	self.num_calls = 0
+
+	def __call__(self, *args,**kwargs):
+		self.num_calls += 1
+		print(f"Call {self.num_calls} of {self.func.__name__!r}")
+		return self.func(*args,**kwargs)
+
+@CountCalls
+def say_hi():
+	print("Hi!")
+
+say_hi() # Output: Call 1 of 'say_hi'
+	# Hi!
+
+say_hi() # Output: Call 2 of 'say_hi'
+	# Hi!
+```
+## Decoratori built-in
+- @property: converte un metodo in una proprietà
+	- @nomefunz.setter
+	- @nomefunz.deleter
+- @classmethod: crea un metodo che riceve la class come primo argomento, e si lega alla classe, non all'istanza
+	- utile per i Singleton e le Factory
+- @staticmethod: crea un metodo che non riceve il primo argomento implicito: non accede a self o a class
+- @abstractmethod: indica un metodo astratto in un classi astratte
+# Iterators
+Un iterator è un oggetto che rappresenta uno stream di dati, usato per accedere agli elementi dello stream uno alla volta.
+```python
+# Manual iteration using iterators
+my_list = [1, 2, 3]
+
+# Get iterator from the iterable
+iterator = iter(my_list)
+
+# Get elements one by one
+print(next(iterator)) # Output: 1
+print(next(iterator)) # Output: 2
+print(next(iterator)) # Output: 3
+
+# StopIteration exception is raised when no more items
+try:
+	print(next(iterator))
+except StopIteration:
+	print("No more elements!")
+```
+## Iterator Protocol
+Gli oggetti che implementano il protocollo iteratore devono avere:
+- `__iter__()` ritorna l'oggetto iteratore stesso
+- `__next__()` ritorna il prossimo item oppure fa eccezione `StopIteration` se non ci sono altri item
+```python
+class CountUp:
+	def __init__(self, start, stop):
+		self.current = start
+		self.stop = stop
+
+def __iter__(self):
+	return self
+
+def __next__(self):
+	if self.current > self.stop:
+		raise StopIteration
+	else:
+		self.current += 1
+		return self.current - 1
+
+# Using the iterator
+for num in CountUp(1, 5):
+	print(num) # Output: 1, 2, 3, 4, 5
+```
+## Creazione di iteratori custom
+Un iterable non deve essere per forza un iteratore, ma `__iter__()` deve restituirne l'iteratore.
+```python
+class EvenNumbers:
+	def __init__(self, max_num):
+		self.max_num = max_num
+	def __iter__(self):
+		return EvenNumbersIterator(self.max_num)
+
+class EvenNumbersIterator:
+	def __init__(self, max_num):
+		self.current = 0
+		self.max_num = max_num
+	def __iter__(self):
+		return self
+	def __next__(self):
+		if self.current > self.max_num:
+			raise StopIteration
+		else:
+			self.current += 2
+			return self.current - 2
+
+# Using the iterable
+for num in EvenNumbers(10):
+print(num) # Output: 0, 2, 4, 6, 8, 10
+```
+## Generators
+I generatori offrono un modo facile di creare iteratori senza implementare tutto il protocollo iteratore.
+Usano il `yield` statement per ritornare i valori uno alla volta: come return ma salva lo stato attuale (serve per `next`).
+```python
+# Generator function
+def count_up(start, stop):
+	current = start
+	while current <= stop:
+		yield current
+		current += 1
+
+# Using the generator
+for num in count_up(1, 5):
+	print(num) # Output: 1, 2, 3, 4, 5
+
+# Creating a list from a generator
+numbers = list(count_up(1, 5)) # [1, 2, 3, 4, 5]
+```

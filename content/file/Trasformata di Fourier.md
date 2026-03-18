@@ -91,11 +91,41 @@ $$
 $$
 # extra
 - segnali che cambiano velocemente hanno componenti frequenziali più significative
+- Le componenti frequenziali elevate sono responsabili dei cambiamenti più rapidi.
+# Teoremi della trasformata di Fourier
+## Linearità
+$$
+x(t)=ax_1(t)+bx_2(t)\iff  X(f)=aX_1(f)+bX_2(f)
+$$
+## Dualità
+$$
+x(t)\iff X(f) \leftrightarrow X(t) \iff x(-f)
+$$
+Se inverto le forme d'onda
+## Teorema del Ritardo
+$$
+\begin{matrix}
+y(t)=x(t-t_0) \iff Y(f)=X(f)e^{-j2 \pi f t_0}
+\\
+\to |Y(f)|=|X(f)|
+\\
+\to \angle Y(f)=\angle X(f)-2\pi f t_0
+\end{matrix}
+$$
+Un ritardo temporale:
+- modifica lo spettro di fase: introduce una fase che cresce linearmente con la frequenza
+- non cambia lo spettro di ampiezza
+## Teorema della Modulazione
+$$
+x(t)\cos (2\pi f_o t) \iff \frac{X(f-f_0)+ X(f+f_0)}{2}
+$$
 # Trasformate Notevoli
 
-| Nome                       | tempo                                      | frequenza                    |
-| -------------------------- | ------------------------------------------ | ---------------------------- |
-| f. esponenziale monolatera | $x(t)=e^{-t/T}u(t)$                        | $X(t)=\frac{T}{1+2j\pi f T}$ |
-| funzione rettangolare      | $x(t)=\text{rect}\left(\frac{1}{T}\right)$ | $X(t)=T\text{sinc}(fT)$      |
+| Nome                       | tempo                                      | frequenza                               |
+| -------------------------- | ------------------------------------------ | --------------------------------------- |
+| f. esponenziale monolatera | $x(t)=e^{-t/T}u(t)$                        | $X(t)=\frac{T}{1+2j\pi f T}$            |
+| funzione rettangolare      | $x(t)=\text{rect}\left(\frac{1}{T}\right)$ | $X(t)=T\text{sinc}(fT)$                 |
+| f. Seno Cardinale          | $x(t)=\text{sinc}(2Bt)$                    | $\frac{1}{2B}\text{rect}(\frac{f}{2B})$ |
+|                            |                                            |                                         |
 note:
 - seno cardinale: $\text{sinc}(\alpha)=\frac{\sin(\pi\alpha)}{\pi \alpha} \quad \forall \alpha \neq 0,\quad \text{sinc}(0)=1$ 

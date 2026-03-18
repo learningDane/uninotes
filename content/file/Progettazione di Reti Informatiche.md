@@ -6,3 +6,4 @@ Argomenti:
 [[Cisco Packet Tracer]] 
 [[Cisco IOS]] 
 [[Configuring interfaces in Cisco IOS]] 
+[[Static Route Configuration]] 
