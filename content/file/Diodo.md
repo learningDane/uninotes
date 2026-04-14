@@ -8,6 +8,10 @@ Un diodo è l'applicazione più semplice della [[Giunzione PN]]. È un dispositi
 ![[Legge di Shockley]]
 
 Va notato però che per correnti $I_D$ molto grandi si raggiunge una sorta di saturazione, noi però questo fenomeno non lo studiamo.
+
+Ad un diodo è anche possibile associare una Capacità, ma di solito è un valore trascurabile, sopratutto se utilizzato in bassa frequenza.
+
+Esempio di datasheet di un diodo: `1N4148 PHILIPS | Alldatasheet`.
 # Breakdown
 Se analizziamo il valore della corrente $I_D$ a tensioni $V_D$ che si aggirano attorno per esempio ai $-70\text V$ (quindi in polarizzazione inversa) notiamo il verificarsi di una rapida discesa della corrente (esponenziale):
 ![[breakdown.svg]]

@@ -6,8 +6,8 @@ Argomenti:
 [[Teoria dei Segnali]] 
 [[Teorema del Campionamento]] 
 [[Decibel]] 
-
 [[Trasformata di Fourier]] 
+
 Aleatoria:
 [[Probabilità Condizionata]] 
 [[Teorema della probabilità totale]] 
@@ -15,3 +15,5 @@ Aleatoria:
 [[Eventi Indipendenti]] 
 [[Calcolo Combinatorio]] 
 [[Esperimento Aleatorio Composto]] 
+[[Esperimenti non Indipendenti]] 
+[[Variabili Aleatorie]] 

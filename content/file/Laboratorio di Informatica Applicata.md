@@ -4,4 +4,11 @@
 
 Argomenti:
 [[Python]]
+[[UV]] 
+[[Numpy]] 
 [[Docker]] 
+[[Jupyter]] 
+[[Matplotlib]] 
+[[Pandas]]
+[[Seaborn]] 
+[[SciPy]] 

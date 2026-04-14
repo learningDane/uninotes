@@ -112,3 +112,38 @@ Best practices:
 - solo caratteri alfanumerici
 - abbastanza corto
 Il default per un router è `Router`.
+# Loopback
+Se fai ping su una interfaccia in particolare stai testando se quella interfaccia è UP, se fai ping sull'interfaccia di loopback stai controllando se il router funziona.
+# OSPF
+```cisco IOS
+router ospf 1
+router-id 1.1.1.1
+show ip protocols
+
+clear ip ospf process
+
+
+interface loopback 0
+ip address 1.1.1.1 255.255.255.255
+end
+```
+Setup completo:
+```bash
+router ospf 1
+# istanza 1
+# setta automaticamente router id
+# controlla con show ip protocols
+conf terminal
+interace loopback 0
+# interface tipo numero
+ip address 2.2.2.2 255.255.255.255
+# show ip interface brief, mostrerà la loopback0
+show ip route # mostra loopback0 direttamente connessa
+
+show ip ospf database
+```
+# Network
+Comando utilizzabile in varie versioni
+```cisco IOS
+config-router#network network-address wildcard-mask area area-id
+```

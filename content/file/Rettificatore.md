@@ -30,3 +30,11 @@ La PIV per questi due rettificatori è $\text{PIV}= 2 \cdot V_M$.
 ![[rettificatore_ponte_centrale.png]]
 # Raddrizzatore a Ponte di Graetz
 ![[rettificatore_graetz.png]]
+# Confronto
+
+| Caratteristica     | Presa Centrale | Ponte di Graetz   |
+| ------------------ | -------------- | ----------------- |
+| PIV                | $2 \cdot V_M$  | $V_M$             |
+| `#diodi`           | 2              | 4                 |
+| Ingombro           | Elevato        | Ridotto           |
+| Caduta di Tensione | $V_\gamma$     | $2\cdot V_\gamma$ |

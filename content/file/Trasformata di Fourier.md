@@ -126,6 +126,6 @@ $$
 | f. esponenziale monolatera | $x(t)=e^{-t/T}u(t)$                        | $X(t)=\frac{T}{1+2j\pi f T}$            |
 | funzione rettangolare      | $x(t)=\text{rect}\left(\frac{1}{T}\right)$ | $X(t)=T\text{sinc}(fT)$                 |
 | f. Seno Cardinale          | $x(t)=\text{sinc}(2Bt)$                    | $\frac{1}{2B}\text{rect}(\frac{f}{2B})$ |
-|                            |                                            |                                         |
+|                            | $x(t)=\text{sinc}^2(2 Bt)$                 | $\frac{1}{2B}\text{tri}(\frac{f}{4B})$  |
 note:
 - seno cardinale: $\text{sinc}(\alpha)=\frac{\sin(\pi\alpha)}{\pi \alpha} \quad \forall \alpha \neq 0,\quad \text{sinc}(0)=1$ 

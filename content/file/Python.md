@@ -1003,3 +1003,239 @@ for num in count_up(1, 5):
 # Creating a list from a generator
 numbers = list(count_up(1, 5)) # [1, 2, 3, 4, 5]
 ```
+### Generator Expression
+Le espressioni dei generatori sono simili alle list comprehension ma ritornano un generatore invece di una list.
+```python
+# List comprehension (creates the entire list in memory)
+squares_list = [x * x for x in range(10)]
+# Generator expression (creates a generator object)
+squares_gen = (x * x for x in range(10))
+# List comprehension vs. generator expression for large data
+import sys
+list_comp = [x for x in range(10000)]
+gen_exp = (x for x in range(10000))
+print(f"List size: {sys.getsizeof(list_comp)} bytes")
+print(f"Generator size: {sys.getsizeof(gen_exp)} bytes")
+```
+### State of generators
+I generatori mantengono lo stato tra chiamate.
+### Infinite Generators
+I generatori possono rappresentare sequenze infinite senza consumare inifinita memoria.
+```python
+def fibonacci():
+	a, b = 0, 1
+	while True:
+		yield a
+			a, b = b, a + b
+
+# Using the infinite generator
+fib = fibonacci()
+for _ in range(10):
+	print(next(fib)) # First 10 Fibonacci numbers
+```
+### Lazy evaluation
+I generatori usano evaluazione lazy, e calcolano i valori solo quando serve.
+### Chaining Generators
+I generatori possono essere composti insieme per creare pipeline di processazione dati:
+```python
+def generate_numbers(n):
+	for i in range(n):
+		yield i
+
+def square(numbers):
+	for number in numbers:
+		yield number * number
+
+def filter_even(numbers):
+	for number in numbers:
+		if number % 2 == 0:
+			yield number
+
+# Creating a pipeline
+numbers = generate_numbers(10) # 0, 1, 2, ..., 9
+squared = square(numbers) # 0, 1, 4, ..., 81
+even_squares = filter_even(squared) # 0, 4, 16, 36, 64
+
+# Process the pipeline
+for num in even_squares:
+	print(num)
+```
+### Yield From
+Lo statement `yield from` (3.3+) permette di delegare ad altri generatori.
+```python
+def gen1():
+	yield 1
+	yield 2
+	yield 3
+
+def gen2():
+	yield 4
+	yield 5
+	yield 6
+
+def combined():
+	yield from gen1()
+	yield from gen2()
+
+# Using the combined generator
+for num in combined():
+	print(num) # Output: 1, 2, 3, 4, 5, 6
+```
+### Generatori ricorsivi
+I generatori possono essere definiti in maniera ricorsiva usando `yield from`.
+```python
+def flatten(nested_list):
+	"""Flatten a nested list structure."""
+	for item in nested_list:
+		if isinstance(item, list):
+			yield from flatten(item)
+		else:
+			yield item
+
+# Using the recursive generator
+nested = [1, [2, [3, 4], 5], 6]
+for num in flatten(nested):
+	print(num) # Output: 1, 2, 3, 4, 5, 6
+```
+### Sending Values to Generators
+I generatori possono anche riceve valori usando `send()`, permettendo comunicazione a due vie:
+```python
+def echo():
+	while True:
+		received = yield
+		print(f"Received: {received}")
+
+gen = echo()
+next(gen) # Prime the generator
+gen.send("Hello") # Output: Received: Hello
+gen.send(42) # Output: Received: 42
+gen.close() # Stop the generator
+```
+### Coroutine con Generatori
+### Sending Exceptions to Generators
+```python
+def handler():
+	try:
+		while True:
+			try:
+				value = yield
+				print(f"Handling: {value}")
+			except ValueError:
+				print("Caught ValueError!")
+			finally:
+				print("Generator closed")
+
+h = handler()
+next(h) # Prime the generator
+h.send("data") # Output: Handling: data
+h.throw(ValueError) # Output: Caught ValueError!
+h.close() # Output: Generator closed
+```
+### Generators in the Standard Library
+```python
+import itertools
+
+# Count indefinitely starting from 0
+for i in itertools.count(0):
+	if i > 5:
+		break
+	print(i) # Output: 0, 1, 2, 3, 4, 5
+
+# Cycle through elements
+count = 0
+for color in itertools.cycle(['red', 'green', 'blue']):
+	if count >= 6:
+		break
+	print(color)
+	count += 1 # Output: red, green, blue, red, green, blue
+
+# Chain multiple iterables
+for item in itertools.chain([1, 2], ['a', 'b']):
+	print(item) # Output: 1, 2, a, b
+```
+# Context Managers
+Sono uno strumento per allocare e rilasciare risorse automaticamente quando desideriamo.
+```python
+# File handling without context manager
+file = open('data.txt', 'r')
+try:
+	content = file.read()
+finally:
+	file.close()
+
+# File handling with context manager (cleaner and safer)
+with open('data.txt', 'r') as file:
+	content = file.read()
+# File is automatically closed when exiting the with block
+```
+## Come funzionano
+Un context manager è un oggetto che implementa il context manager protocol, che consiste di due metodi, `__enter__()` e `__exit__()`:
+```python
+class DatabaseConnection:
+def __enter__(self):
+	# Connect to a database
+	print("Database connection opened")
+	return self
+
+def __exit__(self, exc_type, exc_val, exc_tb):
+	# Close the connection
+	print("Database connection closed")
+	
+	# Log any exceptions
+	if exc_type:
+	print(f"Exception occurred: {exc_val}")
+	# Return False to propagate exceptions, True to suppress them
+	return False
+
+with DatabaseConnection() as db:
+	print("Working with database...")
+	raise ValueError("Something went wrong") # This will be propagated
+```
+## Esempio timer
+```python
+# Example: A simple timer context manager
+import time
+
+class Timer:
+	def __enter__(self):
+		self.start = time.time()
+		return self
+	
+	def __exit__(self,
+		*args):
+		self.end = time.time()
+		self.elapsed = self.end - self.start
+		print(f"Elapsed time: {self.elapsed:.2f} seconds")
+# Usage
+with Timer():
+	# Do some time-consuming operation
+	time.sleep(1.5)
+# quando esce stampa il tempo
+```
+# Contextlib Module
+Il decoratore `@contextmanager` permette di trasformare per esempio un generatore in un context manager:
+```python
+from contextlib import contextmanager
+
+@contextmanager
+def open_file(filename, mode):
+	file = open(filename, mode)
+	try:
+		yield file finally: # This is what gets returned by the context manager
+	file.close() # This is always executed, even if there's an exception
+
+# Using our generator-based context manager
+with open_file('data.txt', 'r') as file:
+	content = file.read()
+```
+# Walrus Operator
+Assegna un valore e lo restituisce anche, introdotto in python 3.8, formalmente chiamato `assignment expression`:
+```python
+n = numero
+if n > 10:
+	...
+	
+# diventa
+if (n := numero) > 10:
+	...
+```

@@ -26,9 +26,7 @@ Nella routing table in Cisco IOS in ogni riga ho `[y/x]`, `x` è il costo.
 
 Ci sono tante metriche ma usiamo solo `Costo`, che dipende dall'algoritmo usato: in OSPF dipende dalla banda, in RIP è l'hop-count.
 
-Il costo 
-
-`y` è la **distanza amministrativa**: non ha nulla a che fare con una misura reale (distanza, destinazione), è una cosa decisa a tavolino e dipende dal router. Minore è il numero e meglio è, indica quale algoritmo viene preferito.
+Il costo `y` è la **distanza amministrativa**: non ha nulla a che fare con una misura reale (distanza, destinazione), è una cosa decisa a tavolino e dipende dal router. Minore è il numero e meglio è, indica quale algoritmo viene preferito.
 Ovviamente `Connected` ha costo 0.
 # Rotta statica
 Una rotta statica è una rotta per una destinazione che inserisco manualmente.
@@ -40,3 +38,5 @@ router#ip route ADDRESS MASK
 
 router#debug ip routing
 ```
+# Default Static Route
+È una rotta inclusa nella tabella di routing che ha prefisso di lunghezza 0, quindi ogni destinazione che non ha altri match, matcha di sicuro con questa route di default.
