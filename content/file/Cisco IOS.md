@@ -147,3 +147,9 @@ Comando utilizzabile in varie versioni
 ```cisco IOS
 config-router#network network-address wildcard-mask area area-id
 ```
+
+# More
+```
+# default gateway
+(config)#ip default-gateway INDIRIZZOIP
+```

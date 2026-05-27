@@ -19,3 +19,24 @@ Typically routers also include a DHCP server, serving every subnet to which the 
 > - the address of the first-hop router for the client
 > - name and IP address of the DNS server
 > - the network (subnet) mask
+
+# Allocation Modes
+DHCP has three different allocation modes:
+- **manual**: the administrator assigns the address to the host and the server provides the rest of the informations needed
+- **automatic**: the server permanently assign an IP to the host
+- **dynamic**: the server assign the IP address to a host for a limited amount of time (*leasing*)
+# DHCP State Diagram
+![[lab12.1 - DHCP (dragged).pdf]]
+# Address Allocation
+1. DHCPDISCOVER: host ask for available DHCP servers
+2. DHCPOFFER: server respond with available addresses
+3. DHCPREQUEST: host ask for one ip address
+4. DHCPACK: server acknowledges the clients use of said address
+	1. 50% of lease time passes -- client tries to renew the lease for its ip address
+	2. DHCPREQUEST: host asks to renew lease
+		1. DHCPACK: renew given
+		2. DHCPNACK: address cannot be renewd
+			1. DHCPREQUEST: for a different ip address
+			2. ecc
+5. DHCPRELEASE: the host gives up the ip address
+# Configuring DHCP on a Cisco Router

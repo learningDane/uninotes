@@ -23,7 +23,7 @@ $$
 
 5. calcolo il passo effettivo 
 $$
-t_k \in argmax_{t\in[0;\hat t_k]}\phi(t)
+t_k \in \text{argmax}_{t\in[0;\hat t_k]}\phi(t)
 $$
 con $\phi(t)=f(x^k+t\cdot d^k)$
 6. calcolo il nuovo punto 
@@ -36,7 +36,6 @@ $$
 $$
 \lambda=-(MM^T)^{-1}M\cdot \nabla f(x^k)
 $$
-
 	2. se $\lambda≤0$ allora $x^k$ risolve $LKKT$ 
 	3. altrimenti sia $j:\lambda_j=\max_{i\in[0;k]} \lambda_i$ , sappiamo che è $>0$ 
 	4. elimino la riga $j$ da $M$ e ritorno al passo ___2___.
@@ -75,7 +74,6 @@ $$
 $$
 \lambda=-(MM^T)^{-1}M\cdot \nabla f(x^k)
 $$
-
 	2. se $\lambda≥0$ allora $x^k$ risolve $LKKT$ 
 	3. altrimenti sia $j:\lambda_j=\min_{i\in[0;k]} \lambda_i$ 
 	4. elimino la riga $j$ da $M$ e ritorno al passo ___2___.

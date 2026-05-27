@@ -18,3 +18,12 @@ Poi ci servirà:
 	Nel caso $m=n$ ($m$ eq. in $n$ incognite) se $det(A)\neq 0$ quindi $(rango(A)=n)$ la soluzione di $Ax=b$ è __unica__ $\forall b\in \mathbb{R}^n \longrightarrow x=A^{-1}\cdot b$
 - [[Teorema di Rouché-Capelli]] 
 - [[Regola di Cramer]]
+
+Matrici a Blocchi
+- Se una matrice è triangolare a bocchi allora l'insieme degli autovalori corrisponde all'unione degli insiemi di autovalori associati ai blocchi sulla sua diagonale
+- $\text{det}(A)=\prod_{j=1}^s \text{det}(A_{jj})$ con $\text{det}(A_{jj})=\prod_i^\frac{n}{s} \lambda_i$ 
+
+Matrici riducibili
+- una matrice si dice riducibile se $\exists \Pi$ matrice di permutazione tale che $\Pi A \Pi^T=\begin{pmatrix} A_{11}& A_{12} \\ 0 & A_{22}\end{pmatrix}$ a blocchi, oppure uguale ma triangolare inferiore: $\Pi_2 A \Pi_2^T=\begin{pmatrix} A_{11}& 0 \\ A_{21} & A_{22}\end{pmatrix}$ 
+- una matrice è riducibile quando non è irriducibile, ovvero quando il suo grafo non è fortemente connesso
+- come trovare $\Pi$: scrivo la tabella di adiacenza $nodo|raggiungibili|non\ raggiungibili$, prendiamo la riga che ci da la partizione migliore (più equa), scrivo la permutazione $\Pi$ che manda i nodi non raggiungibili in quella riga in testa

@@ -13,6 +13,8 @@ Python:
 - [[Pandas]]
 - [[Seaborn]] 
 - [[SciPy]] 
+- [[Flask]] 
+- [[OpenCV]] basato su Numpy, per immagini, cv2
 
 version control:
 - [[Version Control Systems (VCS)]] 
@@ -20,5 +22,14 @@ version control:
 - [[GitHub]] 
 
 Docker:
-[[Docker]] 
-[[Colima]] 
+- [[Docker]] 
+- [[Colima]] 
+
+Machine Learning:
+- [[Machine Learning Basics]] 
+- [[Statistical Learning Theory]] 
+- [[Regression]] 
+- [[Scikit-learn]] 
+- [[Neural Networks]] 
+- [[PyTorch]] 
+- [[Image Processing with PyTorch]] 
