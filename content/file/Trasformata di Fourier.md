@@ -76,7 +76,7 @@ P_x= \lim_{T\to \infty}\frac{E_{x_T}}{T}=\lim_{T\to \infty}\int \frac{|X(f)|^2}{
 \large P_x=\int \cal P_x(f)df
 \end{matrix}
 $$
-dove $\cal P_x(f)$ è la densità spettrale di energia.
+dove $\cal P_x(f)$ è la densità spettrale di potenza.
 # Spectrum Analyzer
 I dispositivi che prendono in ingresso un segnale e restituiscono l'ampiezza e la fase del segnale si chiamano **spectrum analyzer**.
 
@@ -99,7 +99,7 @@ x(t)=ax_1(t)+bx_2(t)\iff  X(f)=aX_1(f)+bX_2(f)
 $$
 ## Dualità
 $$
-x(t)\iff X(f) \leftrightarrow X(t) \iff x(-f)
+x(t)\iff X(f)\quad \leftrightarrow \quad X(t) \iff x(-f)
 $$
 Se inverto le forme d'onda
 ## Teorema del Ritardo

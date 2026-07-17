@@ -40,3 +40,8 @@ Costo: $O(nm^2)$.
 
 Metodo non stabile: mal condizionato se $\mu(A^TA)=\mu(A^2)>>1$.
 ### Metodo QR per problemi ai minimi quadrati
+1. Trovare $Q \in \mathbb C^{m \times n}$ matrice unitaria e $R=\begin{bmatrix} R_1 \\ 0\end{bmatrix} \in \mathbb C^{n\times n}$ tali per cui $A=QR$: **fattorizzazione QR**
+2. Calcolare $Q^H b = \begin{bmatrix}c_1 \\ c_2 \end{bmatrix}$. $O(m^2)$
+3. Risolvere $R_1 x = c_1$, che è un sistema triangolare. $O(n^2)$ 
+
+Osservazione: se il rango non e1 massimo, $R_1$ non è invertibile e quindi $R_1 x = c_1$ ha infinite soluzioni, ognuna valido punto di minimo per il problema ai minimi quadrati.

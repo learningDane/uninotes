@@ -1,4 +1,14 @@
 #uni 
+# Esame
+```ciscoIOS
+router ospf 1
+passive-interface FastEthernet0/0 # per reti stub
+network subnetIP NOT_subnet_mask area 0
+...
+default-information originate # IO HO INTERNET
+ip route 0.0.0.0 0.0.0.0 IP_di_internet
+```
+# Open Shortest Path First
 OSPF è un algoritmo di routing dinamico che implementa il link state algorithm.
 
 Un singolo dominio di routing OSPF prende il nome di **autonomous system** (**AS**), ed ogni AS ha un identificatore univoco assegnato centralmente.

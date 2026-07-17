@@ -28,3 +28,9 @@ Attività da consegnare durante il corso.
 # Note
 Concesso usare AI varie, la responsabilità di quello che consegniamo è nostra però!
 Evitare il debito cognitivo.
+# Progetto
+Presentazione + Documentazione.
+
+Come valutare parte di machine learning: si parte da una baseline semplicissima e aggiungo complessità, verificano via via se le nuova funzionalità aiutano la performance.
+## Presentazione
+10-15 minuti (~7 slide??), una slide al minuto

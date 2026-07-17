@@ -4,6 +4,9 @@
 [[MatLab]] 
 Argomenti:
 [[Introduzione al Calcolo Numerico]] 
+[[Formulario Algebra Lineare]]
+
+[[Teoremi di Calcolo Numerico]] 
 
 Errori:
 - [[Rappresentazione in Virgola Mobile]] 
@@ -20,3 +23,6 @@ Risoluzione dei Sistemi Lineari:
 - [[Metodi diretti per la Risoluzione di Sistemi Lineari]] 
 - [[Metodi iterativi per la Risoluzione di Sistemi Lineari]] 
 - [[Risoluzione di Sistemi Rettangolari]] 
+
+Interpolazione di Funzioni
+- [[Interpolazione]] 

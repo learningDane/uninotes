@@ -13,3 +13,5 @@ Argomenti:
 [[LAN switching]] 
 [[VLAN]] 
 [[DHCP]] 
+
+[[Esame PRI]] 

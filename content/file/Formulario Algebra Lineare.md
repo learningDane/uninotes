@@ -38,7 +38,7 @@
   1. scrivo $v_1$ usando la prima base: $v_1=c_{1,1}w_1+c_{1,2}w_2+...+c_{1,n}w_n$ e i coefficienti $c_{x,y}$ formano la prima colonna della matrice
   2. continuo fino ad $c_n$ 
   oppure
-  1. $mat=$ (inversa di matrice base d'arrivo) $\cdot$ (matrice associata rispetto a basi canoniche) $\cdot$ (matrice base di partenza)
+  3. $mat=$ (inversa di matrice base d'arrivo) $\cdot$ (matrice associata rispetto a basi canoniche) $\cdot$ (matrice base di partenza)
 - ___Determinante___ 
   1. _Algoritmo di Gauss_: porto in forma a scala usando solo scambi di riga e operazioni ultraortodosse ($R_i = 1 \times R_1 + bR_j$), il $det(A) = (moltiplico \ diagonale)\cdot (-1)^{numero \ di \ scambi \ di \ riga}$
   2. _Sviluppi di Laplace_: scelgo la riga o colonna con più $0$, formata da diciamo $(a,b,c,d)$, $det(A)= a\cdot (det\ resto)-b\cdot (det\ resto)+c\cdot (det\ resto) -d\cdot (det\ resto)$ 
@@ -61,8 +61,8 @@
   1. considero un sistema $Ax=b$ 
   2. costruisco la matrice $\hat A=(A |b)$ , aggiungiamo quindi la colonna $b$ 
   Allora
-  1. il sistema ammette soluzione solo se $rango(A)=rango(\hat A)$ 
-  2. se ha soluzione, allora la soluzione generale dipende da $k$ parametri con $k=n-r$ , $n$ numero di incognite e $r$ rango delle due matrici ed inoltre $k=dim(ker(A))$ .
+  3. il sistema ammette soluzione solo se $rango(A)=rango(\hat A)$ 
+  4. se ha soluzione, allora la soluzione generale dipende da $k$ parametri con $k=n-r$ , $n$ numero di incognite e $r$ rango delle due matrici ed inoltre $k=dim(ker(A))$ .
   I casi quindi sono 2:
 	  1. i due ranghi sono uguali $\to$ $b$ è comb lin di $c_1,...,c_n$ 
 	  2. $rango(\hat A) = rango(A) + 1$ $\to$ $b$ NON è comb lin di $c_1,...,c_n$ 

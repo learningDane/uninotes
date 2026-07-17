@@ -33,3 +33,4 @@ Machine Learning:
 - [[Neural Networks]] 
 - [[PyTorch]] 
 - [[Image Processing with PyTorch]] 
+- [[NLP]] 
