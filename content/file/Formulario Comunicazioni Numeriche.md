@@ -1,5 +1,21 @@
  #uni 
+# And
+>[!Theorem] Probabilità Condizionata
+>$$
+>P(A|B)=\frac{P(A\cap B)}{P(B)}
+>$$
 
+>[!Theorem] Teorema di Bayes
+>$$
+>P(B|A)=\frac{P(A|B)P(B)}{P(A)}
+>$$
+
+>[!Theorem] Distribuzione Normale
+>$$
+>\large
+>f_{\cal N}\left(x\right)=\frac{1}{\sqrt{2\pi \sigma ^2}}e^{\frac{-(x-\eta)^2}{2\sigma ^2}}
+>$$
+# Sang
 >[!theorem] Trasformata Continua di Fourier (TCF)
 >$$
 >\large
@@ -514,9 +530,36 @@
 >\eta_{sp}=\frac{R_d}{B_T}=[bit/s/Hz]
 >$$
 >con $R_d=\frac{\log_2M}{T_s}$.
+>
 >Quindi l'efficienza spettrale del sistema aumenta al crescere della cardinalità $M$ dell'alfabeto impiegato.
+>
 >L'efficienza energetica decresce al crescere di $M$.
+>
 >Si definisce **perdita energetica** di un sistema rispetto ad un altro l'aumento in dB del rapporto $E_d/N_0$ necessario per raggiungere la stessa SER.
+
+>[!Theorem] Sistemi QAM, con $M^2-\text{QAM}$ 
+>DSP:
+>$$
+>S_{RF}(f)=\frac{S_T(f-f_0)+S_T(f+f_0)}{4}
+>$$
+>Banda:
+>$$
+>B_s=\frac{1+\alpha}{r\log_2M^2}\frac{1}{T_b}
+>$$
+>quindi la QAM dimezza la banda necessaria.
+>
+>Efficienza Spettrale:
+>$$
+>\eta_s=\frac{R_b}{B_s}=\frac{r\cdot \log M^2}{1+\alpha}
+>$$
+>Probabilità di Errore:
+>$$
+>P(e)=2Q(\sqrt{\beta/N_0})=2Q\left(\sqrt{\frac{6E_s}{(M^2-1)N_0}}\right)
+>$$
+>Rapporto $E_s/N_0$:
+>$$
+>\frac{E_s}{N_0}=\frac{\beta E_{RF}}{N_0}=\frac{\beta}{2N_0}\frac{M^2-1}{3}
+>$$
 # Trasformate Notevoli
 
 | Nome                       | tempo                                      | frequenza                               |
@@ -530,9 +573,3 @@
 | Coseno                     | $x(t)=\cos t(2 \pi f_0 t)$                 | $\frac{\delta(f-f_0)+\delta(f+f_0)}{2}$ |
 note:
 - seno cardinale: $\text{sinc}(\alpha)=\frac{\sin(\pi\alpha)}{\pi \alpha} \quad \forall \alpha \neq 0,\quad \text{sinc}(0)=1$ 
-# Domande
-## 1
-
-
-
-

@@ -23,6 +23,7 @@ Risoluzione dei Sistemi Lineari:
 - [[Metodi diretti per la Risoluzione di Sistemi Lineari]] 
 - [[Metodi iterativi per la Risoluzione di Sistemi Lineari]] 
 - [[Risoluzione di Sistemi Rettangolari]] 
+- [[Fattorizzazione QR]] 
 
 Interpolazione di Funzioni
 - [[Interpolazione]] 

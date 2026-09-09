@@ -7,9 +7,9 @@ Un diodo è l'applicazione più semplice della [[Giunzione PN]]. È un dispositi
 
 ![[Legge di Shockley]]
 
-Va notato però che per correnti $I_D$ molto grandi si raggiunge una sorta di saturazione, noi però questo fenomeno non lo studiamo.
+*Va notato però che per correnti $I_D$ molto grandi si raggiunge una sorta di saturazione*, noi però questo fenomeno non lo studiamo.
 
-Ad un diodo è anche possibile associare una Capacità, ma di solito è un valore trascurabile, sopratutto se utilizzato in bassa frequenza.
+*Ad un diodo è anche possibile associare una Capacità, ma di solito è un valore trascurabile, sopratutto se utilizzato in bassa frequenza*.
 
 Esempio di datasheet di un diodo: `1N4148 PHILIPS | Alldatasheet`.
 # Breakdown
@@ -17,13 +17,11 @@ Se analizziamo il valore della corrente $I_D$ a tensioni $V_D$ che si aggirano a
 ![[breakdown.svg]]
 Due fenomeni fisici diversi contribuiscono al Breakdown, questi però entrano in azione generalmente a tensioni diverse, si può dire che quello che entra in effetto per $|V_D|$ minore "vince" e causa il breakdown prima dell'altro.
 
-Il fenomeno di breakdown di per se non causa danni permanenti, tuttavia se la corrente $I_D$ supera certi valori (che dipendono dallo specifico diodo utilizzato) il diodo non riesce a dissipare abbastanza energia e si brucia.
+Il fenomeno di breakdown di per sé non causa danni permanenti, tuttavia se la corrente $I_D$ supera certi valori (che dipendono dallo specifico diodo utilizzato) il diodo non riesce a dissipare abbastanza energia e si brucia ($P=RI^2>P_\text{max}$).
 
 Per questo motivo di solito mettiamo una resistenza in serie per limitare la quantità di corrente.
 ## Effetto Valanga
 Questo effetto, che si verifica di solito $|V_D |= |V_{BR}| > 7\text V$, si verifica quando le cariche libere (sia elettroni sia lacune, anche se è più difficile da spiegare), tra un urto e l'altro riescono ad accumulare abbastanza energia da rompere il legame della carica colpita al prossimo urto (questo fenomeno prende il nome di **Ionizzazione per Urto**), causando una reazione *a valanga*.
-
-
 ## Effetto Zener
 Questo effetto, che si verifica di solito a $|V_D |= |V_{BR}| < 5\text V$, si verifica quando il campo elettrico interno al diodo diventa abbastanza forte da rompere i legami covalenti, causando un aumento del potenziale built-in e del campo elettrico stesso, causando un aumento esponenziale di corrente (diretta da catodo a anodo).
 ### Diodi Zener
@@ -92,7 +90,7 @@ V_D \geq 0 &V_D=0 \text V&\text{corcocircuito}
 \end{matrix}
 $$
 ![[modello_diodo_ideale.svg]]
-Se so che le tensioni in gioco nel circuito sono molto maggiori di $0.7 \text V$ questo metodo è all'incirca preciso quanto il modello a caduta costante, ma è molto più veloce da computare.
+*Se so che le tensioni in gioco nel circuito sono molto maggiori di $0.7 \text V$ questo metodo è all'incirca preciso quanto il modello a caduta costante*, ma è molto più veloce da computare.
 ## Modello Lineare a tratti
 $$
 \begin{matrix}

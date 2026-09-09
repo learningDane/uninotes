@@ -3,6 +3,7 @@
 [[Glossario Economia]] 
 [codice civile online](https://www.codice-civile-online.it) 
 IGNORANTIA LEGIS NON EXCUSAT
+[[Casi Aziendali EOA 2026]] 
 
 Argomenti:
 [[PIL]] 

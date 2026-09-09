@@ -16,10 +16,10 @@ Il modello si basa sulle seguenti assunzioni:
   - impurità
   - difetti del reticolo
 - tra due urti consecutivi, l’elettrone si muove di moto rettilineo uniforme
-- il tempo medio tra due urti è costante (tempo di rilassamento τ)
+- il tempo medio tra due urti è costante (tempo di rilassamento $\tau$)
 # Moto degli elettroni senza campo elettrico
 In assenza di campo elettrico a temperatura maggiore dello zero assoluto:
-- il moto degli elettroni è caotico, è puro moto Browniano
+- il moto degli elettroni è caotico, è puro [[moto Browniano]]
 - la velocità media è zero
 - non c’è corrente macroscopica, ovvero non vi è **Corrente di Deriva**
 # Moto degli elettroni con campo elettrico

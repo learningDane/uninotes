@@ -25,7 +25,7 @@ ___Davide Squeri___
 ---
 - [ ] [[Fondamenti di Automatica]] †9 
 - [x] [[Economia ed Organizzazione Aziendale]] †6 
-- [x] [[Calcolo Numerico]] †6 
+- [ ] [[Calcolo Numerico]] †6 
 - [ ] [[Calcolatori Elettronici]] †9 
 ---
 # Anno III
@@ -38,5 +38,5 @@ ___Davide Squeri___
 # Esami a scelta
 - [x] Interazione Uomo Macchina †6
 - [x] [[Crittografia]] †6
-- [ ] [[Progettazione di Reti Informatiche]] †6
+- [x] [[Progettazione di Reti Informatiche]] †6
 - [ ] [[Laboratorio di Informatica Applicata]]  †6

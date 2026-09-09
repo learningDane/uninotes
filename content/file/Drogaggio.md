@@ -10,7 +10,7 @@ Esistono più tecniche di drogaggio, che si differenziano per costi, complessit�
 Il metodo più facile, e meno preciso, è quello di spalmare sulla superficie del semiconduttore il materiale drogante e sottoporre il tutto ad alte temperature, a questo punto per effetto della [[Corrente di Diffusione]] il drogante entrerà naturalmente a fare parte del reticolo cristallino.
 ## Tecnica Industriale
 Industrialmente il drogaggio si ottiene tramite l'**Impiantazione Ionica**, utilizzando un **impiantatore**, il quale genera ioni di drogante e li "spara" sul semiconduttore.
-A questa prima fase segue l'**annihilazione termica**, svolta a temperature estremamente elevate ($\sim 1000^\circ \text C$) durante la quale vengono eliminate impurità per via della [[Corrente di Diffusione]].
+A questa prima fase segue l'**annichilazione termica**, svolta a temperature estremamente elevate ($\sim 1000^\circ \text C$) durante la quale vengono eliminate impurità per via della [[Corrente di Diffusione]].
 
 Questa procedura può essere resa meno invasiva, in modo da causare meno danni al reticolo, "sparando" gli ioni droganti attraverso un primo strato di un altro materiale, rallentando gli ioni e mantenendo contenuti i danni.
 

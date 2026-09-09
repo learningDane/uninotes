@@ -18,7 +18,7 @@ $$
 - $H$ matrice di iterazione
 
 > [!Theorem] 
-> Condizione necessaria e sufficiente affinché un metodo iterativo della forma $x^{(k+1)}=Hx^{(k)}+c$ sia convergente per qualunque vettore iniziale $x^{(0)}$, è che la sua matrice di iterazione $H$ sia convergente
+> Condizione necessaria e sufficiente affinché un metodo iterativo della forma $x^{(k+1)}=Hx^{(k)}+c$ sia convergente per qualunque vettore iniziale $x^{(0)}$, è che la sua matrice di iterazione $H$ sia convergente, ovvero abbia $\rho(H)<1$.
 
 Corollari:
 - per la convergenza è necessaria e sufficiente $\rho(H)<1$ 
@@ -45,6 +45,7 @@ x^{(k+1)}=H x^{(k)} + c \quad \text{equazione di punto fisso}
 \end{cases}
 $$
 ## Metodo di Jacobi
+$A$ non deve avere elementi nulli sulla diagonale!
 $$
 H_J=D^{-1}(E+F)
 $$
@@ -59,6 +60,7 @@ x_i^{(k+1)}=\frac{1}{a_{ii}}(b_i-\underbrace{\sum _{\begin{matrix}j=1\\ j \neq i
 $$
 - per calcolare $x_j^{(k+1)}$ servono tutte le entrate di $x^{(k)}$, quindi non posso sovrascriverlo finché non ho tutto $x^{(k+1)}$.
 ## Metodo di Gauss-Seidel
+$D-E$ deve essere invertibile!
 $$
 H_{GS}=(D-E)^{-1}\cdot F \quad \quad c=(D-E)^{-1}\cdot b
 $$

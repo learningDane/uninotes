@@ -1,7 +1,7 @@
 #uni 
 Il fenomeno della diffusione è la tendenza a raggiungere l'equilibrio di concentrazione dei portatori di carica.
 
-Questo processo è descritto dalla Legge di Fick, che vale per vari tipi di particelle, non sono portatori di carica.
+Questo processo è descritto dalla Legge di Fick, che vale per vari tipi di particelle, non solo portatori di carica.
 
 >[!theorem] Legge di Fick
 >Il processo di diffusione passiva delle particelle (soluti o gas) da una zona a concentrazione maggiore verso una a concentrazione minore, proporzionalmente al gradiente di concentrazione crea un flusso.
@@ -22,7 +22,7 @@ $D_n$ è la **costante di diffusione**, sempre positiva, è legata alla mobilit�
 $$
 \frac{D_n}{\mu_n}=\frac{D_p}{\mu_p}=\frac{K_B \cdot T}{q}=V_T
 $$
-Qua $V_T$ è detta **thermal voltage**, a 300 Kelvin vale circa $26 mV$.
+Qua $V_T$ è detta **thermal voltage**, a 300 Kelvin vale circa $26 \text{mV}$.
 
 Valori di costante di diffusione:
 - $D_n=34 \text{ cm}^2/s$ 
@@ -33,7 +33,7 @@ $$
 \begin{matrix}
 \vec J_n=\vec J_\text{n,drift} + \vec J_\text{n, diffusione}=nq\mu_n\cdot \vec E+\vec J_\text{n,diffusione}
 \\
-\vec J_p=\vec J_\text{p,drift} + \vec J_\text{p, diffusione}=pq\mu_p \cdot \vec E=pq\mu_p\cdot \vec E+\vec J_\text{p,diffusione}
+\vec J_p=\vec J_\text{p,drift} + \vec J_\text{p, diffusione}=pq\mu_p\cdot \vec E+\vec J_\text{p,diffusione}
 \\
 \vec J_\text{tot}=\vec J_n + \vec J_p
 \end{matrix}

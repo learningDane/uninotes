@@ -1,16 +1,16 @@
 #uni 
-Una **Giunzione PN** è l’unione tra due tipi diversi di materiale semiconduttore: uno di tipo P e uno di tipo N ([[Drogaggio]]). È uno dei componenti fondamentali dell’elettronica moderna (per esempio nei diodi, nei transistor e nei LED).
+Una **Giunzione PN** è l’unione tra due tipi diversi di materiale semiconduttore: uno di tipo P e uno di tipo N ([[Drogaggio]]). È uno dei componenti fondamentali dell’elettronica moderna (per esempio nei diodi ([[Diodo]]), nei transistor e nei LED).
 
 > Giunzione P/N: 
 > ![[giunzionePN.svg]]
 
 Quando uniamo questi due semiconduttori (che essendo di tipo diverso hanno diverse concentrazioni $P$ ed $N$), si mette in moto il fenomeno della diffusione ([[Corrente di Diffusione]]): le lacune, abbondanti in P, cercando di muoversi verso N, dove invece sono minoritarie, gli elettroni in N fanno il duale, c'è quindi una tendenza dei portatori di carica a ricombinarsi in prossimità della giunzione.
 
-Si viene a creare quindi in prossimità della giuntura una **zona di svuotamento**, larga $W$, una zona priva di portatori di carica.
+Si viene a creare quindi in prossimità della giuntura una **zona di svuotamento**, larga $W$, una zona priva di portatori di carica liberi.
 
-Questa tendenza genera un campo elettrico dentro il componente (diretto da N verso P), causato dal fatto che in P vi sono atomi accettatori non più bilanciati dalle lacune, e in N vi sono atomi donatori non più bilanciati da elettroni liberi, generando una differenza di carica tra il semiconduttore P e il semiconduttore N.
+Questa tendenza genera un campo elettrico dentro il componente (diretto da N verso P), causato dal fatto che in P vi sono atomi accettatori (ioni negativi) non più bilanciati dalle lacune, e in N vi sono atomi donatori non più bilanciati da elettroni liberi, generando una differenza di carica tra il semiconduttore P e il semiconduttore N.
 
-Questo campo elettrico comincia ad opporsi al movimento dei portatori di carica, creando una corrente di drift, raggiungendo una situazione di equilibrio in cui non vi è (a livello macroscopico) una corrente nel componente, anche perché questo porterebbe ad un **livello di Fermi** non uniforme, il che all'equilibrio è impossibile:
+Questo campo elettrico comincia ad opporsi al movimento dei portatori di carica, creando una corrente di drift, raggiungendo una situazione di equilibrio in cui non vi è (a livello macroscopico) una corrente nel componente, anche perché questo porterebbe ad un [[Livello di Fermi]] non uniforme, il che all'equilibrio è impossibile:
 $$
 \vec J_{tot} = \vec J_P + \vec J_N = \vec J_\text{P,diffusione} + \vec J_\text{P,drift} + \vec J_\text{N,diffusione} +\vec J_\text{N,drift} = 0
 $$
@@ -64,7 +64,7 @@ $$
 I=I_S\cdot \left( e^{\frac{V}{\eta\cdot V_T}}-1 \right)
 $$
 dove:
-- $V$ è la tensione applicata alla giuntura (positiva se in polarizzazione diretta)
+- $V$ è la tensione applicata alla giunzione (positiva se in polarizzazione diretta)
 - $I_S$ è la corrente di saturazione inversa (la corrente di drift): normalmente vale: $10^{-15}A< I_S <10^{-9}A$
 - $\eta$ è il **Fattore di Idealità**, che varia tra 1 (ideale) e 2
 - $V_T$ è la tensione termica: $V_T=\frac{K_B\cdot T}{q}$, a temperatura ambiente vale circa $26\text{mV}$ 

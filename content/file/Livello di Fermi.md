@@ -1,0 +1,2 @@
+#self-taught 
+In fisica dei semiconduttori, una legge fondamentale stabilisce che in una struttura in equilibrio termodinamico (senza tensioni applicate esternamente o illuminazione), il **livello di Fermi deve essere costante (uniforme)** in tutto il materiale. Se ci fosse una variazione spaziale del livello di Fermi, esisterebbe un gradiente di energia che spingerebbe i portatori a muoversi, generando una corrente netta. Poiché all'equilibrio la corrente totale deve essere nulla (Jtot​=0), il livello di Fermi deve necessariamente "appiattirsi".

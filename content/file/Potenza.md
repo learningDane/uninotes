@@ -9,7 +9,7 @@ In elettrotecnica si definisce potenza elettrica il [[Flusso]] di lavoro elettri
 
 $$
 
-P=VI
+P=VI=RI^2
 
 $$
 
