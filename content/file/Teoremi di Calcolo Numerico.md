@@ -95,6 +95,13 @@
 
 ## Misc
 
+>[!Theorem] Formula di Taylor, no dim
+>Data $f: \mathbb R \to \mathbb R,f\in \mathbb C^1$, allora dato $x_0\in \mathbb R$:
+>$$
+>f(x)=\sum_{n=0}^k \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n +\underbrace{\frac{f^{(k+1)}(\xi)}{(k+1)!}(x-x_0)^{(k+1)}}_{\epsilon_l \quad :\quad \text{Errore di Lagrange}}
+>$$
+>con $\epsilon_l$ Errore di Lagrange al k-esimo grado, con $\xi\in[x_0,x]$ punto di massimo della derivata $k+1$-esima: $\xi=\text{argmax}_{x\in[x_0,\overline x]}f^{(k+1)}(\overline x)$.
+
 > [!Theorem] Teorema della rappresentazione, no dim
 > La rappresentazione in virgola mobile è unica se:
 > $$

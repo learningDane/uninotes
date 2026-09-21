@@ -22,7 +22,7 @@
 >\begin{matrix}
 >\text{Equazione di Analisi:} & X(f)=\int x(t)e^{-j2\pi f t}dt
 >\\
->\text{Equazione di Sintesi:} & x(t)=\int X(f)e^{-j2\pi f t}df
+>\text{Equazione di Sintesi:} & x(t)=\int X(f)e^{j2\pi f t}df
 >\\
 >\text{Univocità:} & x(t) \iff X(f)
 >\end{matrix}
@@ -570,6 +570,6 @@
 |                            | $x(t)=\text{sinc}^2(2 Bt)$                 | $\frac{1}{2B}\text{tri}(\frac{f}{4B})$  |
 | Delta di Dirac             | $\delta(t)$                                | $\Delta(f)=1$                           |
 | Funzione Costante          | $1(t)=1$                                   | $\delta(-f)=\delta(f)$                  |
-| Coseno                     | $x(t)=\cos t(2 \pi f_0 t)$                 | $\frac{\delta(f-f_0)+\delta(f+f_0)}{2}$ |
+| Coseno                     | $x(t)=\cos (2 \pi f_0 t)$                  | $\frac{\delta(f-f_0)+\delta(f+f_0)}{2}$ |
 note:
 - seno cardinale: $\text{sinc}(\alpha)=\frac{\sin(\pi\alpha)}{\pi \alpha} \quad \forall \alpha \neq 0,\quad \text{sinc}(0)=1$ 
