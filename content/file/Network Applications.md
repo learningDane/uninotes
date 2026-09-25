@@ -1,63 +1,8 @@
 ---
 number headings: auto, first-level 1, max 3, 1.1
 ---
-- [[#1 Principles of network apps (2.1)|1 Principles of network apps (2.1)]]
-	- [[#1 Principles of network apps (2.1)#1.1 Client-Server vs P2P|1.1 Client-Server vs P2P]]
-		- [[#1.1 Client-Server vs P2P#1.1.1 Client-Server paradigm|1.1.1 Client-Server paradigm]]
-		- [[#1.1 Client-Server vs P2P#1.1.2 Peer-to-Peer paradigm|1.1.2 Peer-to-Peer paradigm]]
-	- [[#1 Principles of network apps (2.1)#1.2 Process Communicating (2.1.2)|1.2 Process Communicating (2.1.2)]]
-		- [[#1.2 Process Communicating (2.1.2)#1.2.1 Socket|1.2.1 Socket]]
-		- [[#1.2 Process Communicating (2.1.2)#1.2.2 Addressing Processes|1.2.2 Addressing Processes]]
-	- [[#1 Principles of network apps (2.1)#1.3 Application-layer protocols (2.1.5)|1.3 Application-layer protocols (2.1.5)]]
-	- [[#1 Principles of network apps (2.1)#1.4 Choosing the correct transport service (2.1.3)|1.4 Choosing the correct transport service (2.1.3)]]
-		- [[#1.4 Choosing the correct transport service (2.1.3)#1.4.1 Securing TCP|1.4.1 Securing TCP]]
-- [[#2 Client-Server Applications|2 Client-Server Applications]]
-	- [[#2 Client-Server Applications#2.1 Web and HTTP (2.2)|2.1 Web and HTTP (2.2)]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.1 Overview|2.1.1 Overview]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.2 HTTP|2.1.2 HTTP]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.3 HTTP messages|2.1.3 HTTP messages]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.4 Status Codes|2.1.4 Status Codes]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.5 TELNET|2.1.5 TELNET]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.6 Cookies (2.2.4)|2.1.6 Cookies (2.2.4)]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.7 Web Caches (proxy servers) (2.2.5)|2.1.7 Web Caches (proxy servers) (2.2.5)]]
-		- [[#2.1 Web and HTTP (2.2)#2.1.8 Important updates|2.1.8 Important updates]]
-	- [[#2 Client-Server Applications#2.2 E-mail, SMTP, IMAP (2.3)|2.2 E-mail, SMTP, IMAP (2.3)]]
-		- [[#2.2 E-mail, SMTP, IMAP (2.3)#2.2.1 Sending Emails|2.2.1 Sending Emails]]
-		- [[#2.2 E-mail, SMTP, IMAP (2.3)#2.2.2 Sample SMTP interaction|2.2.2 Sample SMTP interaction]]
-		- [[#2.2 E-mail, SMTP, IMAP (2.3)#2.2.3 Comparison SMTP-HTTP|2.2.3 Comparison SMTP-HTTP]]
-		- [[#2.2 E-mail, SMTP, IMAP (2.3)#2.2.4 Mail message format|2.2.4 Mail message format]]
-		- [[#2.2 E-mail, SMTP, IMAP (2.3)#2.2.5 Mail access protocols (2.3.4)|2.2.5 Mail access protocols (2.3.4)]]
-	- [[#2 Client-Server Applications#2.3 The Domain Name System (DNS) (2.4)|2.3 The Domain Name System (DNS) (2.4)]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.1 ICANN|2.3.1 ICANN]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.2 DNS services (2.4.1)|2.3.2 DNS services (2.4.1)]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.3 DNS structure|2.3.3 DNS structure]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.4 Name resolution Approaches|2.3.4 Name resolution Approaches]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.5 DNS records (2.4.3)|2.3.5 DNS records (2.4.3)]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.6 DNS protocol messages|2.3.6 DNS protocol messages]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.7 Inserting Records into DNS|2.3.7 Inserting Records into DNS]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.8 example of DNS resolution|2.3.8 example of DNS resolution]]
-		- [[#2.3 The Domain Name System (DNS) (2.4)#2.3.9 DNS security|2.3.9 DNS security]]
-- [[#3 P2P applications (2.5)|3 P2P applications (2.5)]]
-	- [[#3 P2P applications (2.5)#3.1 Content Indexes|3.1 Content Indexes]]
-		- [[#3.1 Content Indexes#3.1.1 Centralized Index|3.1.1 Centralized Index]]
-		- [[#3.1 Content Indexes#3.1.2 Query Flooding|3.1.2 Query Flooding]]
-		- [[#3.1 Content Indexes#3.1.3 Hierarchical Overlay|3.1.3 Hierarchical Overlay]]
-		- [[#3.1 Content Indexes#3.1.4 Distributed Hash Table (DHT)|3.1.4 Distributed Hash Table (DHT)]]
-	- [[#3 P2P applications (2.5)#3.2 How much time does it take to distribute one file to N peers?|3.2 How much time does it take to distribute one file to N peers?]]
-	- [[#3 P2P applications (2.5)#3.3 BitTorrent|3.3 BitTorrent]]
-		- [[#3.3 BitTorrent#3.3.1 Entering a Torrent|3.3.1 Entering a Torrent]]
-- [[#4 Video streaming and content distribution networks (2.6)|4 Video streaming and content distribution networks (2.6)]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.1 Images|4.1 Images]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.2 Video|4.2 Video]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.3 Coding|4.3 Coding]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.4 Challenges of streaming|4.4 Challenges of streaming]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.5 Compression|4.5 Compression]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.6 HTTP streaming (2.6.2)|4.6 HTTP streaming (2.6.2)]]
-		- [[#4.6 HTTP streaming (2.6.2)#4.6.1 Dynamic Adaptive Streaming over HTTP (DASH) (2.6.2)|4.6.1 Dynamic Adaptive Streaming over HTTP (DASH) (2.6.2)]]
-	- [[#4 Video streaming and content distribution networks (2.6)#4.7 Content Distribution Networks (CDNs) (2.6.3)|4.7 Content Distribution Networks (CDNs) (2.6.3)]]
-		- [[#4.7 Content Distribution Networks (CDNs) (2.6.3)#4.7.1 Netflix Case Study|4.7.1 Netflix Case Study]]
-
 #uni 
+Network apps are the reason we created computer networks in the first place, without the apps communication between pcs would be useless.
 # 1 Principles of network apps (2.1)
 Creating a network app means writing a program that runs on different end systems and communicates over a network.
 
@@ -65,81 +10,61 @@ There is no need to write software for device on the network-core: these devices
 
 Running applications only on systems on the edge of internet allows for a rapid app development and propagation.
 
-Internet is transparent, meaning the two (or more) devices communicating apparently are directly connected.
-## 1.1 Client-Server vs P2P
+Internet is transparent, meaning the two (or more) processes communicating do not worry about how the messages are exchanged and act like they are directly connected.
+## 1.1 Network Application Architectures (2.1.1)
 The two most important application paradigms are:
-- [[Peer to peer]]
-	- bitTorrent
 - [[Client-Server]]
-	- web, http
+	- web, [[http]] 
 	- e-mail, smtp, imap
-	- dns
+	- [[dns]] 
+- [[Peer to peer]]
+	- [[bitTorrent]] 
 ### 1.1.1 Client-Server paradigm
 A server is an always-on host with a permanent IP address ([[Internetworking#3 IP the internet protocol]]), often found in data centers, for scaling advantages.
 
 Clients contact and communicate with the server intermittently, the may have dynamic IP addresses and *do not* communicate directly with each other.
 ### 1.1.2 Peer-to-Peer paradigm
 Every peer looks more like a powerful client from the [[Client-Server]] paradigm.
-But technically every peer is on the same level.
-The availability of resources this way is not guaranteed from a powerful server, but from the sheer number of peers -> ***self scalability***.
-There isn't an always on server.
-End systems arbitrarily communicate with each other.
+Technically every peer is on the same level and there isn't an always on server: end systems arbitrarily communicate with each other.
+The availability of resources this way is not guaranteed from a powerful server, but from the sheer number of peers $\implies$ ***self scalability***.
 
 >Peers request service from other peers, providing service to other peers in return.
+>**Indexes** are needed for mapping information to the right host locations.
 
-**Indexes** are needed for mapping information to the right host locations.
+Common challenges this paradigm faces are related to security, performance and reliability, due to its highly decentralized architecture.
+
+There exist also mixed architectures, where both the peer-to-peer and client-server paradigms are used together (some messaging app use the server to find the IP address of the destination host and then use it to directly communicate with the destination host).
 ## 1.2 Process Communicating (2.1.2)
 A process is a program running within a host.
-Within a host two processes communicate using *inter-process communication*, which is offered and defined by the operating system ([[Sistemi Operativi]]).
-Processes in different hosts instead communicate by exchanging **messages** (obviously two processes on the same host can still communicate using messages if needed).
+Within a host two processes communicate using *inter-process communication*, which is offered and ruled over by the [operating system](Sistemi%20Operativi.md).
+Processes in different hosts instead communicate by exchanging **messages** on the network (obviously two processes on the same host can still communicate using messages if needed).
 
 > In the client-server paradigm the ***client process*** (often just called *the client*) is the process that initiates the communication, the ***server process*** (often just called *the server*) is the process that waits to be contacted.
 > P2P applications have both a client process and a server process!
 
 ### 1.2.1 Socket
 A process sends and receives messages to/from its **socket(s)**.
-Sending a message means leaving it in the socket, thrusting the transport infrastructure will bring it to the receiving process' socket, there are in fact two sockets involved in every message exchange, one on each side.
+Sending a message means leaving it in the socket, *thrusting* the transport layer infrastructure will bring it to the receiving process' socket; there are in fact two sockets involved in every message exchange, one on each side.
+
+The application developer has little control over the transport-layer side: they can choose the transport protocol and fix a few transport-layer parameters (maximum buffer and maximum segment size for example).
 ### 1.2.2 Addressing Processes
-To receive messages a process must have an *identifier*. The host device has a unique 32-bit IP address (or multiple unique IPs), but this is not enough since a single host can run multiple processes concurrently.
-A process is identified using both the host's IP address and a **port number** associated with said process on it's host. 
+To receive messages a process must have an *identifier*. The host device has a unique 32-bit IP address (or multiple unique IPs) used to identify it in the internet, but this is not enough since a single host can run multiple processes concurrently, therefore a process is identified using *both* the host's IP address and a **port number** associated with said process on its host. 
 
 This means different processes on the same host have the same IP address but different ports.
-## 1.3 Application-layer protocols (2.1.5)
-An application-layer protocol defines:
-- the types of messages exchanged
-- the message syntax: what fields are in the message and how these fields are delineated
-- the message semantics: what the different fields inside a message mean
-- rules for when and how processes should send and respond to messages
-
-Protocols can be:
-- **open protocols**
-	- defined by RFCs (requests for comments)
-	- allow for interoperability
-- **proprietary protocols** 
-## 1.4 Choosing the correct transport service (2.1.3)
+## 1.3 Transport Services for Applications (2.1.3)
 When designing a network application we must choose the correct transport-layer service for our needs: some apps require a 100% reliable data transfer, some are loss tolerant, some apps require a minimum amount of throughput to be effective, some don't, some apps need security and the list goes on.
 
-In short:
-- TCP service:
-	- reliable transport
+The internet makes 2 transport layer protocols available to applications: **UDP** and **TCP**, in short:
+- TCP services:
+	- reliable data transfer (RDT)
 	- flow control
 	- congestion control
-	- connection oriented
-- UDP service:
+	- connection-oriented
+- UDP services:
 	- unreliable data transfer
-
-Here is a quick cheat table:
-
-| application           | data loss tolerancy | minimum throughput                        | time sensitivity |
-| --------------------- | ------------------- | ----------------------------------------- | ---------------- |
-| file transfer         | no                  | no                                        | no               |
-| e-mail                | no                  | no                                        | no               |
-| web documents         | no                  | no                                        | no               |
-| real-time audio/video | yes                 | audio: 5Kbps-1Mbps<br>video: 10Kbps-5Mbps | 10's msec        |
-| interactive games     | yes                 | Kbps+                                     | 10's msec        |
-| text messaging        | no                  | no                                        | depends          |
-
-here is a table with different application-layer protocol and its used transport-layer protocol:
+	- connectionless
+#### Examples
+Here is a table with different application-layer protocol and its used transport-layer protocol:
 
 | application           | application-layer protocol | transport-layer protocol |
 | --------------------- | -------------------------- | ------------------------ |
@@ -149,66 +74,94 @@ here is a table with different application-layer protocol and its used transport
 | internet telephony    | SIP, RTP, or proprietary   | TCP or UDP               |
 | streaming audio/video | HTTP, DASH                 | TCP                      |
 | interactive games     | WOW, FPS (proprietary)     | UDP or TCP               |
-### 1.4.1 Securing TCP
-Normally TCP and UDP sockets do not offer encryption.
 
-**Transport layer security** (**TLS**) must be implemented in network applications, it provides encrypted TCP connections, data integrity and end-point authentication.
-Applications use TSL libraries, that in turn use TCP.
-Using a TLS socket API we send cleartext into a socket, but the message then gets encrypted and traverses the internet in security, before getting decrypted at arrival to destination.
+---
+And here is a table with different services some common applications need:
+
+| application           | data loss tolerancy | minimum throughput                        | time sensitivity |
+| --------------------- | ------------------- | ----------------------------------------- | ---------------- |
+| file transfer         | no                  | no                                        | no               |
+| e-mail                | no                  | no                                        | no               |
+| web documents         | no                  | no                                        | no               |
+| real-time audio/video | yes                 | audio: 5Kbps-1Mbps<br>video: 10Kbps-5Mbps | 10's msec        |
+| interactive games     | yes                 | Kbps+                                     | 10's msec        |
+| text messaging        | no                  | no                                        | depends          |
+### 1.3.2 Securing TCP
+Normally TCP and UDP sockets do not offer encryption: **Transport layer security** (**TLS**) must be implemented in network applications.
+
+The internet community developed the **Secure Sockets Layer** (**SSL**), which is not a third transport layer protocol, but an enhancement for TCP that lives at the application layer: developers who wish to utilize it must include SSL code (SSL libraries are highly optimized and available for use) inside both the client and the server's side of their application.
+
+SSL has its own socket API, similar to the traditional TCP socket API: when an application uses SSL the sending process passes cleartext data to the SSL socket, which encrypts it and sends it to the normal TCP socket. The encrypted data travels to the TCP socket in the receiving host, the TCP socket passes the encrypted data to the SSL socket, which decrypts it and finally sends the cleartext data to the destination process.
+## 1.4 Application-layer protocols (2.1.5)
+An application-layer protocol defines:
+- the types of messages exchanged
+- the message syntax: what fields are in the message and how these fields are delineated
+- the message semantics: what the different fields inside a message mean
+- rules for when and how processes should send and respond to messages
+
+Protocols can be:
+- **open protocols**: defined by RFCs (requests for comments) and allow for interoperability.
+- **proprietary protocols** 
 # 2 Client-Server Applications
 ## 2.1 Web and HTTP (2.2)
-### 2.1.1 Overview
-Web pages consist of **objects**, each of wich can be stored on different web servers. An object can be an [[HTML]] file, an image, a [[Java]] applet eccetera.
+Web pages consist of **web objects**, each of which can be stored on different web servers. An object can be an [[HTML]] file, an image, a [[Java]] applet eccetera.
 A web page consists of a base [[HTML]] file, which includes several referenced objects, each addressable by a URL.
-### 2.1.2 HTTP
-**HTTP** stands for (HyperText Transfer Protocol).
-This protocol is based on the Client-Server paradigm.
+
+**HTTP** stands for HyperText Transfer Protocol, it is based on the Client-Server paradigm and it defines how web clients request web pages from web servers and how servers transfer web pages to clients.
 
 HTTP uses TCP:
-1. the client initiates a TCP connection to the server, port 80
+1. the client initiates a TCP connection to the server, port 80 is the default for http
 2. the server accepts the TCP connection from the client
 3. now HTTP messages (which are application-layer protocol messages) are exchanged between the client (the browser) and the web server
 4. the TCP connection is finally closed
 
-HTTP is *stateless*: the server mantains no information about past client requests. 
+HTTP is a *stateless* protocol: the server maintains no information about past client requests. 
 *Stateful* protocols are complex: past history must be maintained, if the server or the client crashes their views of the "state" may be inconsistent and must be reconciled.
 
 There are two types of HTTP connections:
 - *non persistent HTTP*:
   At most one object is sent over the TCP connection between the client and the server, after which the connection is closed
 $$\text{response time for } n \text{ objects} = n \cdot ( 2 \cdot \text{RTT} + \text{file transmission time})$$
-- *persistent HTTP*:
+- *persistent HTTP* (default):
   Multiple objects can be sent over a single TCP connection, the connection is arbitrarily closed by either the client or the server
 $$\text{response time for } n \text{ objects} = 2 \cdot \text{RTT} + n \cdot \text{file transmission time}$$
 
 Where **RTT** (**round trip time**) is the time it takes for a small packet to travel from the client to the server and back.
 Generally speaking RTT is much larger than a sigle file transmission time, thus leading to MUCH longer response times for non-persistent HTTP connections when dealing with multiple objects.
 For example when transferring two small objects, *the response time is cut in half* using persistent HTTP.
+When using non-persistent connections, by default most browsers open 5 to 10 parallel TCP connections, and each one of these connections handles one request-response transaction, still, persistent connections are preferred.
 
-After a a timeout the connection is closed automatically: TCP connections consume memory and leaving them open leaves the data structures allocated waisting memory.
-### 2.1.3 HTTP messages
+After a a timeout the connection is closed automatically: TCP connections consume memory: leaving them open leaves the data structures allocated, waisting memory.
+### 2.1.1 HTTP messages
 There are two types of http messages:
 - *request*
 - *response*
 the message format is **ASCII**.
 #### HTTP request messages
-> HTTP request message general format: ![[Pasted image 20251113191922.png|500]]
+
+> HTTP request message general format: ![[http-message-table.svg|500]]
 
 There are multiple possible request messages:
 - **POST** method: web pages often include form input, the user's input is sent from the client to the server in the body of a HTTP POST request message
 - **GET** method: this is used to send data to a server: the user's data is included in the URL field of a HTTP GET request message, following a '?' (`www.site.com/subdomain?userdata`)
 - **HEAD** method: this is used to request only the headers, without any objects, it is used during implementation
 - **PUT** method: this uploads a new object to the server, completely replacing the file that exists at the specified URL with the content in the body of the POST HTTP request message
+
+Header field name examples:
+- Host: www.someschool.edu
+- Agent: Mozilla/5.0
+- Accept-language: fr
+- Connection: close/keep-alive
 #### HTTP response messages
 > Structure of a HTTP response message: ![[Pasted image 20251113193352.png|600]]
-### 2.1.4 Status Codes
+### 2.1.2 Status Codes
 The status code appears in the first line in the server-to-client response message, there are multiple status codes for http responses:
 - 200 -> Ok : request succeeded, the requested object is included later in this message
 - 301 -> Moved Permanently : the requested object got moved, new location is specified later in the message with the tag `Location` 
 - 400 -> Bad Request : request message not understood by the server
 - 404 -> Not Found : the requested document was not found on this server
 - 505 -> HTTP version not supported
-### 2.1.5 TELNET
+### 2.1.3 TELNET
 Telnet is a client-server application protocol that provides access to virtual terminals of remote systems on local area networks (LANs) or the Internet.
 It is a protocol for bidirectional 8-bit communications. Its main goal was to connect terminal devices and terminal-oriented processes.
 
@@ -217,7 +170,7 @@ It is a protocol for bidirectional 8-bit communications. Its main goal was to co
 	type `GET <url>` HTTP/1.1 to make a get request then press enter
 	type  `Host: <host>` and press enter twice so have the response
 
-### 2.1.6 Cookies (2.2.4)
+### 2.1.4 Cookies (2.2.4)
 **Cookies** are used by some browsers to *maintain some state* between transactions (HTTP is *stateless*).
 
 The Cookies mechanism can be divided in four components:
@@ -246,7 +199,7 @@ The question is *How do we keep the state?*
 > - **Cookies** permit the sites to learn (a lot) about you on *their* site.
 > - **Third party persistent cookies** allow common identity to be tracked *across multiple web sites*.
 
-### 2.1.7 Web Caches (proxy servers) (2.2.5)
+### 2.1.5 Web Caches (proxy servers) (2.2.5)
 *Goal*: satisfy client request without involving origin server
 *Why*: to alleviate the load on origin servers. Caches are closer to clients so it reduces response time. Caches also alleviate the load on internet as a whole.
 
@@ -264,7 +217,7 @@ What do we do if the object is updated on the remote servers and the proxy serve
 - Server: response contains no object if the cached copy is up to date: `http/1.0 304 Not Modified`. 
   Otherwise, if the object has been updated, the new version is included in the HTTP response: `HTTP/1.0 200 OK <data>`.
 This way the object is only sent if necessary, keeping the stress on the link low.
-### 2.1.8 Important updates
+### 2.1.6 Important updates
 #### HTTP 1.1
 This version introduced *multiple pipelined GETs over a single TCP connection*.
 

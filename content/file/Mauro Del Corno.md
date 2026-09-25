@@ -1,0 +1,1 @@
+Giornalista ed economicista per [[il Fatto Quotidiano]].

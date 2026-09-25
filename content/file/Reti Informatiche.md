@@ -53,5 +53,8 @@ Seminari:
 [[Network Neutrality]] 
 [[BitTorrent]] 
 
+external:
+https://www.digitalattackmap.com
+
 # Vocabolario
 - **best effort**: means a service or delivery is performed without any guarantee of success, speed, or reliability

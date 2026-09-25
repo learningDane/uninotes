@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="842"
+   height="504"
+   viewBox="0 0 842 504"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg32"
+   sodipodi:docname="http-message-table.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs32" />
+  <sodipodi:namedview
+     id="namedview32"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0669577"
+     inkscape:cx="330.37861"
+     inkscape:cy="144.80424"
+     inkscape:window-width="1402"
+     inkscape:window-height="938"
+     inkscape:window-x="0"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg32" />
+  <title
+     id="title">HTTP request and response message structure</title>
+  <desc
+     id="desc">A diagram showing request line, header lines, and body, with method, URL, version, header fields, values, and line ending labels.</desc>
+  <rect
+     width="842"
+     height="504"
+     fill="#fff"
+     id="rect1" />
+  <g
+     stroke="#111"
+     stroke-width="2"
+     fill="none"
+     shape-rendering="geometricPrecision"
+     id="g6">
+    <!-- Request line -->
+    <path
+       d="M19 20H685V73H19Z M173 20V73 M227 20V73 M381 20V73 M430 20V73 M584 20V73 M636 20V73"
+       id="path1" />
+    <!-- Header row (top and bottom examples) -->
+    <path
+       d="M19 73H558V125H19Z M302 73V125 M327 73V125 M457 73V125 M508 73V125"
+       id="path2" />
+    <path
+       d="M19 247H558V299H19Z M302 247V299 M327 247V299 M457 247V299 M508 247V299"
+       id="path3" />
+    <!-- Header ellipsis gap and message continuation -->
+    <path
+       d="M19 125V247"
+       id="path4" />
+    <!-- CR LF after headers -->
+    <path
+       d="M19 299H133V352H19Z M75 299V352"
+       id="path5" />
+    <!-- Body -->
+    <path
+       d="M19 352H629V485H19Z"
+       id="path6" />
+    <path
+       d="m 557.99929,124.93798 v 122"
+       id="path33" />
+  </g>
+  <g
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="29"
+     text-anchor="middle"
+     dominant-baseline="middle"
+     id="g24">
+    <g
+       fill="#071aa1"
+       id="g13">
+      <text
+         x="96"
+         y="47"
+         id="text6">method</text>
+      <text
+         x="304"
+         y="47"
+         id="text7">URL</text>
+      <text
+         x="508"
+         y="47"
+         id="text8">version</text>
+      <text
+         x="160"
+         y="99"
+         id="text9">header field name</text>
+      <text
+         x="392"
+         y="99"
+         id="text10">value</text>
+      <text
+         x="160"
+         y="273"
+         id="text11">header field name</text>
+      <text
+         x="392"
+         y="273"
+         id="text12">value</text>
+      <text
+         x="324"
+         y="418"
+         id="text13">entity body</text>
+    </g>
+    <g
+       fill="#111"
+       id="g23">
+      <text
+         x="200"
+         y="47"
+         id="text14">sp</text>
+      <text
+         x="405"
+         y="47"
+         id="text15">sp</text>
+      <text
+         x="660"
+         y="47"
+         id="text16">lf</text>
+      <text
+         x="611"
+         y="47"
+         id="text17">cr</text>
+      <text
+         x="481"
+         y="99"
+         id="text18">cr</text>
+      <text
+         x="533"
+         y="99"
+         id="text19">lf</text>
+      <text
+         x="481"
+         y="273"
+         id="text20">cr</text>
+      <text
+         x="533"
+         y="273"
+         id="text21">lf</text>
+      <text
+         x="47"
+         y="326"
+         id="text22">cr</text>
+      <text
+         x="104"
+         y="326"
+         id="text23">lf</text>
+      <text
+         x="323.19229"
+         y="95.751823"
+         id="text33"
+         transform="scale(0.97384078,1.0268619)"
+         style="font-size:17.7984px;stroke-width:0.613738">sp</text>
+      <text
+         x="323.19229"
+         y="265.20013"
+         id="text34"
+         transform="scale(0.97384078,1.0268619)"
+         style="font-size:17.7984px;stroke-width:0.613738">sp</text>
+    </g>
+  </g>
+  <!-- Continuation marks -->
+  <g
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="27"
+     fill="#111"
+     text-anchor="middle"
+     id="g27">
+    <text
+       x="19"
+       y="189"
+       id="text24">≈</text>
+    <text
+       x="558"
+       y="189"
+       id="text25">≈</text>
+    <text
+       x="19"
+       y="429"
+       id="text26">≈</text>
+    <text
+       x="629"
+       y="429"
+       id="text27">≈</text>
+  </g>
+  <!-- Red annotations -->
+  <g
+     fill="#d71916"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="29"
+     id="g32">
+    <text
+       x="717"
+       y="47"
+       id="text28">request</text>
+    <text
+       x="717"
+       y="79"
+       id="text29">line</text>
+    <text
+       x="717"
+       y="166"
+       id="text30">header</text>
+    <text
+       x="717"
+       y="198"
+       id="text31">lines</text>
+    <text
+       x="717"
+       y="425"
+       id="text32">body</text>
+  </g>
+  <path
+     d="M680 84H702V299H680"
+     fill="none"
+     stroke="#d71916"
+     stroke-width="2"
+     id="path32" />
+</svg>
