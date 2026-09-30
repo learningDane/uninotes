@@ -37,5 +37,5 @@ Viene ancora usato sopratutto per programmazione embedded.
 		- a+ read and append
 		- se il file non esiste e si specifica scrittura o append, il file viene creato
 # links
-- [[Unix Socket programming in C]] 
+- [[OLD Unix Socket programming in C]] 
 - [[C standard library]] 

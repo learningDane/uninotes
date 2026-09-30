@@ -7,7 +7,7 @@
    aria-labelledby="title desc"
    version="1.1"
    id="svg32"
-   sodipodi:docname="http-message-table.svg"
+   sodipodi:docname="http-response-message.svg"
    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,13 +26,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.91318403"
      inkscape:cx="390.39228"
-     inkscape:cy="206.4206"
+     inkscape:cy="206.42061"
      inkscape:window-width="1402"
      inkscape:window-height="938"
      inkscape:window-x="0"
      inkscape:window-y="39"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg32" />
+     inkscape:current-layer="g13" />
   <title
      id="title">HTTP request and response message structure</title>
   <desc
@@ -82,15 +82,17 @@
       <text
          x="96"
          y="47"
-         id="text6">method</text>
+         id="text6">version</text>
       <text
-         x="304"
-         y="47"
-         id="text7">URL</text>
+         x="319.05444"
+         y="45.022411"
+         id="text7"
+         transform="scale(0.95792361,1.0439246)"
+         style="font-size:27.7798px;stroke-width:0.957924">status code</text>
       <text
          x="508"
          y="47"
-         id="text8">version</text>
+         id="text8">phrase</text>
       <text
          x="160"
          y="99"

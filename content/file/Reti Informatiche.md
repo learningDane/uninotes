@@ -9,7 +9,7 @@ Argomenti
 1. Computer Networks and the Internet:
 	[[Internet Protocol Stack]] 
 2. Network Applications:
-	[[Network Applications]] (√)
+	[[Network Applications]] 
 3. Transport Layer
 	[[Transport Layer]] 
 4. The Network Layer: the Data Plane
@@ -35,6 +35,7 @@ Laboratorio:
 [[Analisi dei Pacchetti]] 
 [[Esercitazione 1 RI]] 
 [[Unix Socket programming in C]] 
+[[OLD Unix Socket programming in C]] 
 [[Apache Web Server]] 
 [[Firewall]] 
 Progetto:

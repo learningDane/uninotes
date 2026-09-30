@@ -138,7 +138,7 @@ With compose you can create a [[YAML]] file to define the services and with a si
 
 Each of the containers is run in isolation but can interact with each other when required. Docker Compose defines a multi-container application in a single file.
 
-Structure of a docker-compose file:
+Structure of a `docker-compose.yaml` file:
 - version
 - services
 	- build
